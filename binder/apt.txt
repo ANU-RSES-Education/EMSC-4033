@@ -1,0 +1,7 @@
+libgl1-mesa-dev 
+libglu1-mesa-dev 
+freeglut3-dev 
+mesa-common-dev 
+libglu1-mesa-dev 
+libx11-dev 
+xvfb 

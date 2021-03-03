@@ -1,0 +1,47 @@
+
+name: Update packages
+
+on:
+  push:
+    paths:
+      - apt_get_packages.txt                  # the list of apt-get packages
+      - conda_packages.yml                    # or the list of conda packages
+      - .github/workflows/update_packages.yml # or this file
+
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - uses: actions/checkout@v2
+      
+    - name: Install sshpass
+      run: |
+        sudo apt-get install -y sshpass
+      
+
+    # Runs a set of commands using the runners shell
+    - name: Install conda packages from packages.yml file
+      env:  
+        SSHPASS: ${{ secrets.DROPLET_PASS }}
+        REMOTE_SH: "sudo -E sshpass -e ssh -o StrictHostKeyChecking=no root@${{ secrets.DROPLET_IP }}"
+        
+      run: |
+        $REMOTE_SH "hostname"
+
+        sudo -E sshpass -e scp conda_packages.yml root@${{ secrets.DROPLET_IP }}:conda_packages.yml
+        $REMOTE_SH 'sudo -E /opt/tljh/user/bin/conda env update --file conda_packages.yml'
+
+        # Update/Install apt-get packages
+
+        sed '/^[[:blank:]]*#/d;s/#.*//' apt_get_packages.txt > apt_get_packages_no_comment.txt
+        sudo -E sshpass -e scp apt_get_packages_no_comment.txt root@${{ secrets.DROPLET_IP }}:apt_get_packages.txt
+        $REMOTE_SH 'sudo -E xargs apt-get install < apt_get_packages.txt'
+ 
+        $REMOTE_SH "sudo tljh-config reload hub"

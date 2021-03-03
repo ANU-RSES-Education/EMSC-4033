@@ -1,0 +1,17 @@
+- file: FrontPage.md
+  numbered: false
+
+- part: Stripy
+  chapters:
+  - file: Notebooks/Example1-Stripy-Spherical-Triangulations.ipynb
+  - file: Notebooks/Example2-Stripy-Smoothing.ipynb
+
+
+- part: Cartopy
+  chapters:
+  - file: Notebooks/Example3-Cartopy-WorkingWithShuttleRadarTopography.ipynb
+
+- part: Litho1.0
+  chapters:
+  - file: Notebooks/Example4-Litho1pt0-Layers.ipynb
+

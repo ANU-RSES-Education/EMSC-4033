@@ -1,0 +1,21 @@
+name: jupyter
+channels: 
+    - conda-forge
+    - geo-down-under    
+dependencies:
+    - stripy
+    - litho1pt0
+    - proj=7.*.        # errors with cartopy when 6.2.* is used
+    - cartopy=0.17.*
+    - obspy
+    - pandas
+    - pip 
+    - libiconv
+    - pip:
+      - lavavu<1.7
+      - xvfbwrapper 
+
+      
+      
+
+

@@ -1,0 +1,79 @@
+name: Initialise tljh
+
+on:
+  push:
+    paths:
+      - 'ServerID.md'                         # change the ID file
+      - .github/workflows/install_tljh.yml    # or this file
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - uses: actions/checkout@v2
+      
+    - name: Install sshpass
+      run: |
+        sudo apt-get install -y sshpass
+      
+
+    # Updates packages / reconfig tljh then reloads just in case
+    - name: Install tljh from scratch then update the packages
+      env:  
+        SSHPASS:       ${{ secrets.DROPLET_PASS }} 
+        HUBADMIN:      ${{ secrets.HUBADMIN_USER }} 
+        HUBADMIN_PASS: ${{ secrets.HUBADMIN_PASS }}
+        REMOTE_SH:     "sudo -E sshpass -e ssh -o StrictHostKeyChecking=no root@${{ secrets.DROPLET_IP }}"
+      
+      run: |
+        $REMOTE_SH "hostname"
+        $REMOTE_SH "curl -L https://tljh.jupyter.org/bootstrap.py | sudo python3 -  --admin $HUBADMIN:$HUBADMIN_PASS" 
+         
+        # This is optional if you want to use a different authenticator (1st use authenticator is default - add users, then let them choose a password)
+        # $REMOTE_SH "sudo tljh-config set auth.type nativeauthenticator.NativeAuthenticator"
+        $REMOTE_SH "sudo tljh-config set auth.FirstUseAuthenticator.create_users False"
+        $REMOTE_SH "sudo tljh-config reload hub"
+
+        # And this changes the default to use jupyterlab
+        $REMOTE_SH "sudo tljh-config set user_environment.default_app jupyterlab"
+
+        # Idle timeout 
+        $REMOTE_SH "sudo tljh-config set services.cull.timeout 1800"
+
+        # Activate all the above changes by reloading the hub 
+        $REMOTE_SH "sudo tljh-config reload hub"
+
+        # Update/Install apt-get packages
+        sed '/^[[:blank:]]*#/d;s/#.*//' apt_get_packages.txt > apt_get_packages_no_comment.txt
+        sudo -E sshpass -e scp apt_get_packages_no_comment.txt root@${{ secrets.DROPLET_IP }}:apt_get_packages.txt
+        $REMOTE_SH 'sudo -E xargs apt-get -y install < apt_get_packages.txt'
+  
+        # Update/Install python packages 
+        sudo -E sshpass -e scp conda_packages.yml root@${{ secrets.DROPLET_IP }}:conda_packages.yml
+        # $REMOTE_SH 'sudo -E /opt/tljh/user/bin/conda update -n base -c defaults conda'
+        $REMOTE_SH 'sudo -E /opt/tljh/user/bin/conda env update --file conda_packages.yml'
+        
+        # This is the lavavu install (note, lavavu introduces the list of apt-get dependencies)
+        # $REMOTE_SH 'sudo apt-get install libgl1-mesa-dev libglu1-mesa-dev freeglut3-dev mesa-common-dev libglu1-mesa-dev libx11-dev xvfb'
+        # $REMOTE_SH "sudo -E /opt/tljh/user/bin/pip install lavavu xvfbwrapper"
+
+        # # Notebook extensions are handled like this (mostly this does not work well with current versions of notebook)
+        # $REMOTE_SH 'sudo -E /opt/tljh/user/bin/pip install jupyter_contrib_nbextensions'
+        # $REMOTE_SH 'sudo -E /opt/tljh/user/bin/jupyter contrib nbextension install --sys-prefix'
+        # $REMOTE_SH 'sudo -E /opt/tljh/user/bin/jupyter nbextension enable freeze/main'
+        
+        # And this is how to enable https via letsencrypt (see tljh docs for details)
+        $REMOTE_SH "sudo tljh-config set https.enabled true"
+        $REMOTE_SH "sudo tljh-config set https.letsencrypt.email diablo@underworldcode.org"
+        $REMOTE_SH "sudo tljh-config add-item https.letsencrypt.domains ${{ secrets.DROPLET_IP }}"
+        $REMOTE_SH "sudo tljh-config reload proxy"
+
+
+
+        

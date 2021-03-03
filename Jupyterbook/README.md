@@ -1,0 +1,1 @@
+# Jupyterbook setup for github pages

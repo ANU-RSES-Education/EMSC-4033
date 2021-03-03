@@ -1,0 +1,37 @@
+# Book settings
+title: Jupyterbook with built in Jupyterhub
+author: Louis Moresi 
+logo: Figures/AuWorldEQ.jpg
+exclude_patterns: ["README.md", "Notes/*", "Scripts/*"]
+
+latex:
+  latex_documents:
+    targetname: JupyterBookHub.tex
+
+html:
+#  home_page_in_navbar option: true
+  use_repository_button: true
+
+parse:
+  myst_extended_syntax: true
+
+sphinx:
+  config:
+    mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+
+repository:
+  url         : https://github.com/underworld-geodynamics-cloud/self-managing-jupyterhub  # Online location of this book
+  branch      : master  # Which branch of the repository should be used when creating links (optional)
+
+launch_buttons:
+  # jupyterhub_url: "https://demon.underworldcloud.org"  # The URL for your JupyterHub. 
+  binderhub_url:  "https://mybinder.org"  # The URL of the BinderHub (e.g., https://mybinder.org)
+  notebook_interface: "classic" # "jupyterlab" or "classic"
+
+
+execute:
+  # exclude_patterns:
+  #   - File.ipynb
+
+  allow_errors : true # If `False`, when a code cell raises an error the execution is stopped, otherwise all cells are always run.
