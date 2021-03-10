@@ -306,6 +306,12 @@
                     alt="Interact on binder">Binder</button></a>
         
         
+        <a class="jupyterhub-button" href="https://emsc4033-2021.rses.underworldcloud.org/hub/user-redirect/git-pull?repo=https://github.com/ANU-RSES-Education/EMSC-4033&urlpath=tree/EMSC-4033/Notebooks/Practicals/Ex01/Exercise 1 - Getting started.ipynb&branch=master"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
+                data-placement="left"><img class="jupyterhub-button-logo"
+                    src="../../../_static/images/logo_jupyterhub.svg"
+                    alt="Interact on JupyterHub">JupyterHub</button></a>
+        
         
         
     </div>
@@ -365,7 +371,7 @@
                 
   <div class="section" id="exercise-1-getting-started-with-jupyter-and-python">
 <h1>Exercise 1 - Getting started with Jupyter and Python<a class="headerlink" href="#exercise-1-getting-started-with-jupyter-and-python" title="Permalink to this headline">¶</a></h1>
-<p><em>Andrew Valentine - andrew.valentine&#64;anu.edu.au</em></p>
+<p><em>Andrew Valentine - <a class="reference external" href="mailto:andrew&#46;valentine&#37;&#52;&#48;anu&#46;edu&#46;au">andrew<span>&#46;</span>valentine<span>&#64;</span>anu<span>&#46;</span>edu<span>&#46;</span>au</a></em></p>
 <p>In this course, we will make use of the RSES Jupyter server. This lets you write and run code on a remote server using nothing more than a standard web browser. ‘Jupyter’ is the software framework that makes this work. Jupyter can be used to provide an interface to a variety of different programming languages, but in this course we will concentrate on Python.</p>
 <p>The page you are looking at now is an example of a Jupyter ‘notebook’. This allows us to mix text, code and results, and provides a great format for structuring and keeping track of your thoughts and ideas as you work on a project. This is not the only way to write and run Python programmes, and later in the course we will discuss some alternatives that might be better for large, complex programs - but for many straightfoward data analysis tasks the notebook format is ideal.</p>
 <div class="section" id="using-jupyter">
@@ -386,10 +392,14 @@
 <p>The grey box contains some Python code, which is editable. If you click in this box, and then press <kbd>Shift</kbd>+<kbd>⏎</kbd> (i.e. hold down the <kbd>Shift</kbd> key on your keyboard and then hit the return key) the code will be run, and any output is displayed below the grey box.</p>
 <p><strong>➤ Try changing the message in the above cell, and run it.</strong></p>
 <p>You can also run cells by clicking the ‘Run’ button in the toolbar, as highlighted here:</p>
-<img width=700px src="jupyter_command_bar_run.png"/>
+<blockquote>
+<div><p><img alt="" src="../../../_images/jupyter_command_bar_run.png" /></p>
+</div></blockquote>
 <p>However, it’s good to get into the habit of using <kbd>Shift</kbd>+<kbd>⏎</kbd>, as it is much more convenient when you’re working on a big project.</p>
 <p>Only one cell can run at any time. Two things show that a cell is currently running. First, on the right of the menubar is an open circle, as highlighted here:</p>
-<img width=700px src="jupyter_command_bar_running.png" />
+<blockquote>
+<div><p><img alt="" src="../../../_images/jupyter_command_bar_running.png" /></p>
+</div></blockquote>
 <p>This changes to a filled circle while code is being executed. Secondly, to the left of each code cell is a cell number, such as</p>
 <p><code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[3]:</span></code></p>
 <p>While a cell is being executed, this will change to show an asterisk instead of a number:</p>
@@ -415,7 +425,9 @@
 </div>
 <p><strong>➤ Execute the above cell, and notice the two indicators that something is running.</strong></p>
 <p>If we want to stop the cell without waiting for it to finish naturally (perhaps we’ve realised we made a mistake in the code), we can click on the ‘stop’ button in the toolbar:</p>
-<img width=700px src="jupyter_command_bar_stop.png"/>
+<blockquote>
+<div><p><img alt="" src="../../../_images/jupyter_command_bar_stop.png" /></p>
+</div></blockquote>
 <p>The execution should finish immediately, and you will see an error message printed to the screen to highlight the fact that the cell didn’t finish ‘normally’.</p>
 <p>**➤ Run the above cell again, but this time use the ‘stop’ button to terminate execution. **</p>
 <div class="section" id="markdown">
@@ -444,14 +456,19 @@
 <div class="section" id="adding-and-removing-cells">
 <h3>Adding and removing cells<a class="headerlink" href="#adding-and-removing-cells" title="Permalink to this headline">¶</a></h3>
 <p>New cells can be created at any point in the document. First, select the cell by clicking once on it (outside the editable area, if it’s a code cell). It should be highlighted in blue, to indicate that you’ve selected it but are not attempting to edit it. If it’s highlighted in green, press <kbd>Esc</kbd> on your keyboard to exit ‘edit’ mode. Now, you can either:</p>
-<ol class="simple">
+<ol>
 <li><p>Press <kbd>A</kbd> or <kbd>B</kbd> to insert a new cell <u>a</u>bove or <u>b</u>elow the selected cell, or</p></li>
-<li><p>From the menu bar, select <code class="docutils literal notranslate"><span class="pre">Insert</span></code> → <code class="docutils literal notranslate"><span class="pre">Insert</span> <span class="pre">Cell</span> <span class="pre">Above</span></code> or <code class="docutils literal notranslate"><span class="pre">Insert</span></code> → <code class="docutils literal notranslate"><span class="pre">Insert</span> <span class="pre">Cell</span> <span class="pre">Below</span></code> as highlighted here:</p></li>
+<li><p>From the menu bar, select <code class="docutils literal notranslate"><span class="pre">Insert</span></code> → <code class="docutils literal notranslate"><span class="pre">Insert</span> <span class="pre">Cell</span> <span class="pre">Above</span></code> or <code class="docutils literal notranslate"><span class="pre">Insert</span></code> → <code class="docutils literal notranslate"><span class="pre">Insert</span> <span class="pre">Cell</span> <span class="pre">Below</span></code> as highlighted here:</p>
+<blockquote>
+<div><p><img alt="" src="../../../_images/jupyter_command_bar_insert.png" /></p>
+</div></blockquote>
+</li>
 </ol>
-<img width=700px src="jupyter_command_bar_insert.png"/>
 <p>Again, you will probably find things much easier if you get into the habit of using the keyboard commands.</p>
 <p>By default, new cells are ‘code’ cells. You can change this using the drop-down menu in the toolbar:</p>
-<img width=700px src="jupyter_command_bar_celltype.png"/>
+<blockquote>
+<div><p><img alt="" src="../../../_images/jupyter_command_bar_celltype.png" /></p>
+</div></blockquote>
 <p>Alternatively, while the cell is highlighted in blue, you can press <kbd>M</kbd> to make it a Markdown cell, and <kbd>Y</kbd> to turn it back into a code cell.</p>
 <p><strong>➤ Insert a new Markdown cell below this one, and write something in it.</strong></p>
 <p>As you work through these practicals, you are encouraged to add cells to record your notes and comments.</p>
@@ -541,7 +558,6 @@
         
           By Louis Moresi<br/>
         
-            &copy; Copyright 2020.<br/>
       </p>
     </div>
   </footer>

@@ -306,6 +306,12 @@
                     alt="Interact on binder">Binder</button></a>
         
         
+        <a class="jupyterhub-button" href="https://emsc4033-2021.rses.underworldcloud.org/hub/user-redirect/git-pull?repo=https://github.com/ANU-RSES-Education/EMSC-4033&urlpath=tree/EMSC-4033/Notebooks/Practicals/Ex14/Exercise 14 - Pandas.ipynb&branch=master"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
+                data-placement="left"><img class="jupyterhub-button-logo"
+                    src="../../../_static/images/logo_jupyterhub.svg"
+                    alt="Interact on JupyterHub">JupyterHub</button></a>
+        
         
         
     </div>
@@ -454,24 +460,24 @@
   <tbody>
     <tr>
       <th>0</th>
-      <td>273</td>
-      <td>167</td>
-      <td>177</td>
-      <td>71</td>
+      <td>371</td>
+      <td>135</td>
+      <td>935</td>
+      <td>997</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>955</td>
-      <td>252</td>
-      <td>52</td>
-      <td>158</td>
+      <td>832</td>
+      <td>63</td>
+      <td>164</td>
+      <td>184</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>664</td>
-      <td>993</td>
-      <td>971</td>
-      <td>415</td>
+      <td>795</td>
+      <td>934</td>
+      <td>591</td>
+      <td>238</td>
     </tr>
   </tbody>
 </table>
@@ -491,10 +497,10 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    664
-1    993
-2    971
-3    415
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    795
+1    934
+2    591
+3    238
 Name: 2, dtype: int64
 </pre></div>
 </div>
@@ -557,24 +563,24 @@ Name: 2, dtype: int64
   <tbody>
     <tr>
       <th>X</th>
-      <td>273</td>
-      <td>167</td>
-      <td>177</td>
-      <td>71</td>
+      <td>371</td>
+      <td>135</td>
+      <td>935</td>
+      <td>997</td>
     </tr>
     <tr>
       <th>Y</th>
-      <td>955</td>
-      <td>252</td>
-      <td>52</td>
-      <td>158</td>
+      <td>832</td>
+      <td>63</td>
+      <td>164</td>
+      <td>184</td>
     </tr>
     <tr>
       <th>Z</th>
-      <td>664</td>
-      <td>993</td>
-      <td>971</td>
-      <td>415</td>
+      <td>795</td>
+      <td>934</td>
+      <td>591</td>
+      <td>238</td>
     </tr>
   </tbody>
 </table>
@@ -592,9 +598,9 @@ Name: 2, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>X    273
-Y    955
-Z    664
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>X    371
+Y    832
+Z    795
 Name: A, dtype: int64
 </pre></div>
 </div>
@@ -888,7 +894,7 @@ Name: A, dtype: int64
 <h3>Reading from the Web(!)<a class="headerlink" href="#reading-from-the-web" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">pandas</span></code> can also read data directly from the web, which is useful if you’re using a central database which is regularly updated.</p>
 <p>For example, the famous <a class="reference external" href="https://www.esrl.noaa.gov/gmd/ccgg/trends/full.html">Mauna Load Atmospheric CO2 Dataset</a>, which is updated monthly.</p>
-<p>The URL for the monthly dataset is: ftp://aftp.cmdl.noaa.gov/products/trends/co2/co2_mm_mlo.txt</p>
+<p>The URL for the monthly dataset is: <span class="xref myst">ftp://aftp.cmdl.noaa.gov/products/trends/co2/co2_mm_mlo.txt</span></p>
 <p><strong>➤ Look at this dataset in your browser, and read it into a <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code> using the <code class="docutils literal notranslate"><span class="pre">pd.read_table</span></code> function.</strong></p>
 <p><strong>Hint 1:</strong> you’ll need to specify the delimiter between the data columns using the <code class="docutils literal notranslate"><span class="pre">delimiter</span></code> argument.</p>
 <p><strong>Hint 2:</strong> because of data formatting choices, there’s no simple way to get the column headings from this dataset, and you’ll have to assign them manually.</p>
@@ -1368,7 +1374,6 @@ Name: A, dtype: int64
         
           By Louis Moresi<br/>
         
-            &copy; Copyright 2020.<br/>
       </p>
     </div>
   </footer>

@@ -306,6 +306,12 @@
                     alt="Interact on binder">Binder</button></a>
         
         
+        <a class="jupyterhub-button" href="https://emsc4033-2021.rses.underworldcloud.org/hub/user-redirect/git-pull?repo=https://github.com/ANU-RSES-Education/EMSC-4033&urlpath=tree/EMSC-4033/Notebooks/Practicals/Ex07/Exercise 7 - Strings.ipynb&branch=master"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
+                data-placement="left"><img class="jupyterhub-button-logo"
+                    src="../../../_static/images/logo_jupyterhub.svg"
+                    alt="Interact on JupyterHub">JupyterHub</button></a>
+        
         
         
     </div>
@@ -342,7 +348,7 @@
   <div class="section" id="exercise-7-strings">
 <h1>Exercise 7 - Strings<a class="headerlink" href="#exercise-7-strings" title="Permalink to this headline">¶</a></h1>
 <p>Until now, we have mainly been dealing with numeric data (numbers). However, it is often necessary to process text sequences, referred to as ‘character strings’. In this exercise, we will see some of the mechanisms Python provides for text processing.</p>
-<p>As we have already seen, any literal text sequence can be entered between a pair of inverted commas (” ” or ‘ ‘), and stored to a variable. Python allows both single and double quotes to be used (not all languages do, so be careful if translating this sort of thinking to another language in the future).</p>
+<p>As we have already seen, any literal text sequence can be entered between a pair of inverted commas (” ” or ’ ‘), and stored to a variable. Python allows both single and double quotes to be used (not all languages do, so be careful if translating this sort of thinking to another language in the future).</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Hamlet&quot;</span>
 <span class="n">quote</span> <span class="o">=</span> <span class="s1">&#39;To be or not to be: that is the question.&#39;</span>
 </pre></div>
@@ -365,7 +371,7 @@
 <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Finally, we can use triple-quotes (“”” “””) to mark the beginning and end of the string, which allows ‘ and ” to appear within the string without difficulties:</p>
+<p>Finally, we can use triple-quotes (“”” “””) to mark the beginning and end of the string, which allows ’ and ” to appear within the string without difficulties:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">difficult</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot; Apparently &quot;we can&#39;t just use single quotes&quot; around this string &quot;&quot;&quot;</span>
 </pre></div>
 </div>
@@ -414,7 +420,7 @@
 To be or n...
 </pre></div>
 </div>
-<p>We therefore see that the character at position 2 is a space, ‘ ‘. In general, a substring specification takes the form</p>
+<p>We therefore see that the character at position 2 is a space, ’ ‘. In general, a substring specification takes the form</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">variable</span><span class="p">[</span><span class="n">istart</span><span class="p">:</span><span class="n">istop</span><span class="p">:</span><span class="n">istep</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -467,7 +473,7 @@ To be or n...
 <li><p><code class="docutils literal notranslate"><span class="pre">s.isupper()</span></code>, <code class="docutils literal notranslate"><span class="pre">s.islower()</span></code>, <code class="docutils literal notranslate"><span class="pre">s.istitle()</span></code> - Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">s</span></code> is entirely in UPPER CASE/lower case/Title Case respectively, otherwise <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">s.capitalize()</span></code> - Return a version of <code class="docutils literal notranslate"><span class="pre">s</span></code> where the first character is in UPPER CASE and the remainder in lower case.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">s.swapcase()</span></code> - Return a version of <code class="docutils literal notranslate"><span class="pre">s</span></code> where all UPPER CASE characters are converted to lower case and vice versa.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">s.center(n)</span></code> - Create a string of length <code class="docutils literal notranslate"><span class="pre">n</span></code> containing a copy of <code class="docutils literal notranslate"><span class="pre">s</span></code> centered within this. By default, this is achived by padding with spaces (‘ ‘) before and after <code class="docutils literal notranslate"><span class="pre">s</span></code>; optionally, you can specify a different charater. For example, <code class="docutils literal notranslate"><span class="pre">'hello'.center(11,'_')</span></code> returns <code class="docutils literal notranslate"><span class="pre">'___hello___'</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">s.center(n)</span></code> - Create a string of length <code class="docutils literal notranslate"><span class="pre">n</span></code> containing a copy of <code class="docutils literal notranslate"><span class="pre">s</span></code> centered within this. By default, this is achived by padding with spaces (’ ‘) before and after <code class="docutils literal notranslate"><span class="pre">s</span></code>; optionally, you can specify a different charater. For example, <code class="docutils literal notranslate"><span class="pre">'hello'.center(11,'_')</span></code> returns <code class="docutils literal notranslate"><span class="pre">'___hello___'</span></code>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">s.ljust(n)</span></code> - Create a string of length <code class="docutils literal notranslate"><span class="pre">n</span></code> containing a copy of <code class="docutils literal notranslate"><span class="pre">s</span></code> at its left. Optionally, specify a character to use for padding. Similarly, <code class="docutils literal notranslate"><span class="pre">s.rjust(n)</span></code> places <code class="docutils literal notranslate"><span class="pre">s</span></code> at the right of the <code class="docutils literal notranslate"><span class="pre">n</span></code>-character string.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">s.strip()</span></code> - Return a copy of <code class="docutils literal notranslate"><span class="pre">s</span></code> with all whitespace removed. <code class="docutils literal notranslate"><span class="pre">s.lstrip()</span></code> and <code class="docutils literal notranslate"><span class="pre">s.rstrip()</span></code> are variants removing whitespace only at the start or end of the string, respectively. For example, <code class="docutils literal notranslate"><span class="pre">'elephant'.strip('e')</span></code> returns <code class="docutils literal notranslate"><span class="pre">'lephant'</span></code>.</p></li>
 </ul>
@@ -723,7 +729,6 @@ triangles:3;squares:4;pentagons:5;hexagons:6;heptagons:7;octagons:8;nonagons:9
         
           By Louis Moresi<br/>
         
-            &copy; Copyright 2020.<br/>
       </p>
     </div>
   </footer>
