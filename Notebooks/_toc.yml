@@ -1,0 +1,53 @@
+file: README
+sections:
+- file: ScratchPad/Example2-Stripy-Smoothing
+  sections:
+  - file: ScratchPad/Example3-Cartopy-WorkingWithShuttleRadarTopography
+  - file: ScratchPad/Example4-Litho1pt0-Layers
+  - file: ScratchPad/Example1-Stripy-Spherical-Triangulations
+- file: Practicals/README
+  sections:
+  - file: Practicals/Ex12/Exercise 12 - Plotting
+  - file: Practicals/Ex15/original_ex_15
+    sections:
+    - file: Practicals/Ex15/Exercise 15 - More plotting
+  - file: Practicals/Ex14/Exercise 14 - Pandas
+  - file: Practicals/Ex13/radioactiveDecay
+    sections:
+    - file: Practicals/Ex13/Exercise 13 - Radioactive Decay
+  - file: Practicals/Ex09/Exercise 9 - Modules
+  - file: Practicals/Ex07/Exercise 7 - Strings
+    sections:
+    - file: Practicals/Ex07/caesar
+  - file: Practicals/Ex06/Exercise 6 - More loops
+  - file: Practicals/Ex01/Exercise 1 - Getting started
+  - file: Practicals/Ex08/Exercise 8 - Reading and writing files
+    sections:
+    - file: Practicals/Ex08/Charles other methods
+  - file: Practicals/Ex16/Exercise 16 - Maps
+  - file: Practicals/Ex11/Exercise 11 - Sudoku
+    sections:
+    - file: Practicals/Ex11/sudoku_solver
+  - file: Practicals/Ex18/Exercise 18 - Object-oriented programming
+  - file: Practicals/Ex20/sorting
+    sections:
+    - file: Practicals/Ex20/Exercise N - Sorting
+  - file: Practicals/Ex19/Exercise N - differential equations
+    sections:
+    - file: Practicals/Ex19/pendulum
+  - file: Practicals/Ex10/Exercise 10 - Exception handling
+  - file: Practicals/Ex17/sealevel
+    sections:
+    - file: Practicals/Ex17/Exercise 17 - Fourier analysis and Milankovitch cycles
+  - file: Practicals/ExNN/rotations
+    sections:
+    - file: Practicals/ExNN/Exercise 11 - NumPy
+  - file: Practicals/ExNS/spectroscopy
+    sections:
+    - file: Practicals/ExNS/Processing spectral data
+  - file: Practicals/Ex04/Guessing Games
+    sections:
+    - file: Practicals/Ex04/.hidden/guessingGames
+  - file: Practicals/Ex03/Exercise 3 - Loops and conditionals
+  - file: Practicals/Ex02/Exercise 2 - Variables and functions
+  - file: Practicals/Ex05/Exercise 5 - Lists, tuples and dictionaries

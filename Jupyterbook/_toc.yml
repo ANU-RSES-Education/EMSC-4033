@@ -1,17 +1,33 @@
 - file: FrontPage.md
-  numbered: false
 
-- part: Stripy
+- part: Examples
   chapters:
-  - file: Notebooks/Example1-Stripy-Spherical-Triangulations.ipynb
-  - file: Notebooks/Example2-Stripy-Smoothing.ipynb
+  - file: Notebooks/Practicals/Introduction.md
+  - file: Notebooks/Practicals/Ex01/Exercise 1 - Getting started
+  - file: Notebooks/Practicals/Ex02/Exercise 2 - Variables and functions
+  - file: Notebooks/Practicals/Ex03/Exercise 3 - Loops and conditionals
+  - file: Notebooks/Practicals/Ex04/Guessing Games
+  - file: Notebooks/Practicals/Ex05/Exercise 5 - Lists, tuples and dictionaries
+  - file: Notebooks/Practicals/Ex06/Exercise 6 - More loops
+  - file: Notebooks/Practicals/Ex07/Exercise 7 - Strings
+  - file: Notebooks/Practicals/Ex08/Exercise 8 - Reading and writing files
+  - file: Notebooks/Practicals/Ex09/Exercise 9 - Modules
+  - file: Notebooks/Practicals/Ex10/Exercise 10 - Exception handling
+  - file: Notebooks/Practicals/Ex11/Exercise 11 - Sudoku
+  - file: Notebooks/Practicals/Ex12/Exercise 12 - Plotting
+  - file: Notebooks/Practicals/Ex13/Exercise 13 - Radioactive Decay
+  - file: Notebooks/Practicals/Ex14/Exercise 14 - Pandas
+  - file: Notebooks/Practicals/Ex15/Exercise 15 - More plotting
+  - file: Notebooks/Practicals/Ex16/Exercise 16 - Maps
+  - file: Notebooks/Practicals/Ex17/Exercise 17 - Fourier analysis and Milankovitch cycles
+  - file: Notebooks/Practicals/Ex18/Exercise 18 - Object-oriented programming
+  - file: Notebooks/Practicals/Ex19/Exercise N - differential equations
+  - file: Notebooks/Practicals/Ex20/Exercise N - Sorting
+
+# - file: Notebooks/Practicals/ExNN/Exercise 11 - NumPy
+# - file: Notebooks/Practicals/ExNS/Processing spectral data
 
 
-- part: Cartopy
-  chapters:
-  - file: Notebooks/Example3-Cartopy-WorkingWithShuttleRadarTopography.ipynb
 
-- part: Litho1.0
-  chapters:
-  - file: Notebooks/Example4-Litho1pt0-Layers.ipynb
+
 

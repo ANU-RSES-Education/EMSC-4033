@@ -1,12 +1,12 @@
 # Book settings
-title: Jupyterbook with built in Jupyterhub
+title: EMSC 4033 Computing in Geoscience
 author: Louis Moresi 
 logo: Figures/AuWorldEQ.jpg
-exclude_patterns: ["README.md", "Notes/*", "Scripts/*"]
+exclude_patterns: ["README.md", "Notes/*", "Scripts/*, */ScratchPad/*"]
 
 latex:
   latex_documents:
-    targetname: JupyterBookHub.tex
+    targetname: EMSC4033.tex
 
 html:
 #  home_page_in_navbar option: true
@@ -21,7 +21,7 @@ sphinx:
 
 
 repository:
-  url         : https://github.com/underworld-geodynamics-cloud/self-managing-jupyterhub  # Online location of this book
+  url         : https://github.com/ANU-RSES-Education/EMSC-4033  # Online location of this book
   branch      : master  # Which branch of the repository should be used when creating links (optional)
 
 launch_buttons:
