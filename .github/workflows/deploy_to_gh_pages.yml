@@ -42,12 +42,15 @@ jobs:
           ~/Jupyterbook/_build
         key: ${{ runner.os }}-conda-${{ env.CACHE_NUMBER }}-${{ hashFiles('conda_packages.yml') }}
 
+    - name: switch base env name to something other than 'base'
+      run: |
+        sed 's/name: base/name: jupyter/' conda_packages.yml > conda_jupyter_env.yml
 
     - name: Miniconda / Miniforge
       uses: conda-incubator/setup-miniconda@v2
       with:
           miniconda-version: latest
-          environment-file: conda_packages.yml
+          environment-file: conda_jupyter_env.yml
           activate-environment: jupyter
           python-version: 3.7
           use-only-tar-bz2: true # IMPORTANT: This needs to be set for caching to work properly!
