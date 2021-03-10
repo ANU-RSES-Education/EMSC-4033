@@ -71,6 +71,7 @@ jobs:
     - name: Build the book
       shell: bash -l {0}
       run: |
+        conda list sphinx
         cd Jupyterbook 
         jupyter-book build .
 

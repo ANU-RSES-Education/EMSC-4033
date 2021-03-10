@@ -17,7 +17,21 @@ parse:
 
 sphinx:
   config:
+    html_show_copyright: false
+    # html_extra_path: ['files']
+
     mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+    myst_enable_extensions: 
+    - amsmath
+    - colon_fence
+    - deflist
+    - dollarmath
+    - html_image
+    - linkify
+    - replacements
+    - smartquotes
+    - substitution
 
 
 repository:
@@ -25,7 +39,7 @@ repository:
   branch      : master  # Which branch of the repository should be used when creating links (optional)
 
 launch_buttons:
-  # jupyterhub_url: "https://demon.underworldcloud.org"  # The URL for your JupyterHub. 
+  jupyterhub_url: "https://emsc4033-2021.rses.underworldcloud.org"  # The URL for your JupyterHub. 
   binderhub_url:  "https://mybinder.org"  # The URL of the BinderHub (e.g., https://mybinder.org)
   notebook_interface: "classic" # "jupyterlab" or "classic"
 
