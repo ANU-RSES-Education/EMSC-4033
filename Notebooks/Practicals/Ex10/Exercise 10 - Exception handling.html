@@ -1,0 +1,656 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise 10 - Exception handling &#8212; EMSC 4033 Computing in Geoscience</title>
+    
+  <link rel="stylesheet" href="../../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.c441f2ba0852f4cabcb80105e3a46ae6.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Exercise 11 - Sudoku" href="../Ex11/Exercise%2011%20-%20Sudoku.html" />
+    <link rel="prev" title="Exercise 9 - Modules" href="../Ex09/Exercise%209%20-%20Modules.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../../index.html">
+  
+  <img src="../../../_static/AuWorldEQ.jpg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">EMSC 4033 Computing in Geoscience</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../FrontPage.html">
+   Jupyterbook example
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Examples
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Introduction.html">
+   Andrew Valentine’s Exercises
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex01/Exercise%201%20-%20Getting%20started.html">
+   Exercise 1 - Getting started with Jupyter and Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex02/Exercise%202%20-%20Variables%20and%20functions.html">
+   Exercise 2 - Variables and functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex02/Exercise%202%20-%20Variables%20and%20functions.html#functions">
+   Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex03/Exercise%203%20-%20Loops%20and%20conditionals.html">
+   Exercise 3 - Loops and conditionals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex04/Guessing%20Games.html">
+   Exercise 4 - Guessing Games
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex05/Exercise%205%20-%20Lists%2C%20tuples%20and%20dictionaries.html">
+   Exercise 5 - Lists, tuples and dictionaries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex06/Exercise%206%20-%20More%20loops.html">
+   Exercise 6 - More loops
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex06/Exercise%206%20-%20More%20loops.html#try-it-here">
+   Try it here!
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex07/Exercise%207%20-%20Strings.html">
+   Exercise 7 - Strings
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex08/Exercise%208%20-%20Reading%20and%20writing%20files.html">
+   Exercise 8 - Reading and writing files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex09/Exercise%209%20-%20Modules.html">
+   Exercise 9 - Modules
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Exercise 10 - Exception handling
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex11/Exercise%2011%20-%20Sudoku.html">
+   Exercise 11 - Sudoku
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex12/Exercise%2012%20-%20Plotting.html">
+   Exercise 12 - Plotting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex13/Exercise%2013%20-%20Radioactive%20Decay.html">
+   Exercise 13 - Radioactive decay
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex14/Exercise%2014%20-%20Pandas.html">
+   Exercise 14 - Structured Data in Python (
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     pandas
+    </span>
+   </code>
+   )
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex15/Exercise%2015%20-%20More%20plotting.html">
+   Exercise 15 - More plotting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex16/Exercise%2016%20-%20Maps.html">
+   Exercise 16 - Maps
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex17/Exercise%2017%20-%20Fourier%20analysis%20and%20Milankovitch%20cycles.html">
+   Exercise 17 - Fourier analysis and Milankovitch cycles
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex18/Exercise%2018%20-%20Object-oriented%20programming.html">
+   Exercise N - Object-oriented programming
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex19/Exercise%20N%20-%20differential%20equations.html">
+   Exercise N - Differential equations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex20/Exercise%20N%20-%20Sorting.html">
+   Exercise N - Visualising sorting algorithms
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../_sources/Notebooks/Practicals/Ex10/Exercise 10 - Exception handling.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/ANU-RSES-Education/EMSC-4033"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/ANU-RSES-Education/EMSC-4033/master?urlpath=tree/Notebooks/Practicals/Ex10/Exercise 10 - Exception handling.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="exercise-10-exception-handling">
+<h1>Exercise 10 - Exception handling<a class="headerlink" href="#exercise-10-exception-handling" title="Permalink to this headline">¶</a></h1>
+<p>By now, you will almost certainly have encountered ‘exceptions’ - the error messages that appear when you ask Python to do something that it doesn’t like. For example, the following code will raise an exception:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>Attempting to execute this code results in some text similar to this:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>---------------------------------------------------------------------------
+IndexError                                Traceback (most recent call last)
+&lt;ipython-input-1-ba5ce40e4136&gt; in &lt;module&gt;()
+      1 a = [1,2,3]
+----&gt; 2 print(a[4])
+
+IndexError: list index out of range
+</pre></div>
+</div>
+<p>The error here is that we have tried to access the 5th element of <code class="docutils literal notranslate"><span class="pre">a</span></code> (remember, counting starts from zero!), but <code class="docutils literal notranslate"><span class="pre">a</span></code> only contains three entries.</p>
+<p>Another example might be</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="s1">&#39;hello&#39;</span>
+</pre></div>
+</div>
+<p>which generates</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+&lt;ipython-input-2-41d1b959c123&gt; in &lt;module&gt;()
+----&gt; 1 1+&#39;hello&#39;
+
+TypeError: unsupported operand type(s) for +: &#39;int&#39; and &#39;str&#39;
+</pre></div>
+</div>
+<p>Notice that these two error messages have different headlines: the first is an <code class="docutils literal notranslate"><span class="pre">IndexError</span></code>, whereas the second is a <code class="docutils literal notranslate"><span class="pre">TypeError</span></code>. You will notice that a variety of other kinds of error exist.</p>
+<p>If these errors are simply coding mistakes, it is useful to have the program terminate immediately, so we can fix it. However, in ‘real’ code these sorts of problem may arise for reasons beyond the programmer’s control - perhaps the user has provided an incorrect set of inputs, for example. It is therefore often useful to be able to ‘catch’ and ‘handle’ exceptions in a graceful manner.</p>
+<p>To do this, Python provides the <code class="docutils literal notranslate"><span class="pre">try...</span> <span class="pre">except...</span></code> construct. This looks like:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="p">[</span><span class="n">code</span> <span class="n">that</span> <span class="n">may</span> <span class="n">fail</span><span class="p">]</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="p">[</span><span class="n">code</span> <span class="n">to</span> <span class="n">handle</span> <span class="n">the</span> <span class="n">error</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>When a <code class="docutils literal notranslate"><span class="pre">try...except...</span></code> construct is encountered, Python first attempts to execute all the code within the indented <code class="docutils literal notranslate"><span class="pre">try</span></code> block. If this is successful, the code within the <code class="docutils literal notranslate"><span class="pre">except</span></code> block is never executed. However, as soon as an error is encountered, Python stops attempting to execute the <code class="docutils literal notranslate"><span class="pre">try</span></code> block, and jumps immediately to the first line in the <code class="docutils literal notranslate"><span class="pre">except</span></code> block. It executes everything in the <code class="docutils literal notranslate"><span class="pre">except</span></code> block, and then (assuming no more errors arise) continues with the first line <em>after</em> the <code class="docutils literal notranslate"><span class="pre">try...except...</span></code> construct.</p>
+<p>So, for example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Please enter a number: &#39;</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The next number is: &quot;</span><span class="p">,</span> <span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sorry, that is not a valid number&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>will gracefully handle cases where the user types text into the input field.</p>
+<p><strong>➤ Try it out!</strong> Compare how Python behaves with, and without, the <code class="docutils literal notranslate"><span class="pre">try...except...</span></code> construct.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try it here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This kind of error handling is sometimes referred to as the ‘EAFP’ model: “easier to ask forgiveness than permission”. Rather than attempting to verify that everything is correct <em>before</em> carrying out an operation - a process which can be tedious and computationally inefficient - we start by assuming everything will work, and then deal with any mess that we create.</p>
+<p>Our <code class="docutils literal notranslate"><span class="pre">try...</span> <span class="pre">except...</span></code> statement above will handle <em>any</em> kind of error that might arise. This may seem superficially attractive, but it can lead to confusion. For example, suppose we had made a typo in our code, referring to a variable <code class="docutils literal notranslate"><span class="pre">z</span></code> (which doesn’t exist):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Please enter a number: &#39;</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The next number is: &quot;</span><span class="p">,</span> <span class="n">z</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sorry, that is not a valid number&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Now, this will always complain that we have entered an invalid number - even though this is not the real problem. If we remove the <code class="docutils literal notranslate"><span class="pre">try...</span> <span class="pre">except...</span></code> we see that this code is triggerring a <code class="docutils literal notranslate"><span class="pre">NameError</span></code>, rather than the <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> that we intended to avoid. If this were ‘real’ code, we might waste a lot of time trying to understand why Python thought we were entering invalid numbers.</p>
+<p><strong>➤ Try it out!</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try it here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>To avoid this, we can specify what sort of error(s) the <code class="docutils literal notranslate"><span class="pre">except</span></code> block is intended to handle:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Please enter a number: &#39;</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The next number is: &quot;</span><span class="p">,</span> <span class="n">z</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sorry, that is not a valid number&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Now, our typo will be obvious when we try and run the code, but once it is fixed everything will work as expected. If necessary, we can have one <code class="docutils literal notranslate"><span class="pre">except</span></code> that catches multiple types of exception</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="p">[</span><span class="n">code</span><span class="p">]</span>
+<span class="k">except</span> <span class="ne">ValueError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">:</span>
+    <span class="p">[</span><span class="n">code</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>and we can have multiple <code class="docutils literal notranslate"><span class="pre">except</span></code> blocks to handle different errors in different ways:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="p">[</span><span class="n">code</span><span class="p">]</span>
+<span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+    <span class="p">[</span><span class="n">code</span><span class="p">]</span>
+<span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+    <span class="p">[</span><span class="n">code</span><span class="p">]</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="p">[</span><span class="n">code</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>In the above example, the ‘bare’ <code class="docutils literal notranslate"><span class="pre">except</span></code> at the end is optional, and will catch all errors that do not match one of the ‘named’ exception handlers. For example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Please enter a number: &#39;</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The next number is: &quot;</span><span class="p">,</span> <span class="n">z</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sorry, that is not a valid number&quot;</span><span class="p">)</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Something unexpected happened&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>will catch the error arising from our typo.</p>
+<p><strong>➤ Try it out!</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try it here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Exception handling can sometimes be a central part of your code design. Suppose you need to write a piece of code to sum up the entries in a list (and you have forgotten that Python’s <code class="docutils literal notranslate"><span class="pre">sum()</span></code> function exists to do this). One solution (the cleanest, and so the best) would be to loop over the entries in the array:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
+<span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">a</span><span class="p">:</span>
+    <span class="n">s</span><span class="o">+=</span><span class="n">x</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>However, you could also write something like:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">s</span><span class="o">+=</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="k">except</span> <span class="ne">IndexError</span><span class="p">:</span>
+        <span class="k">break</span>
+    <span class="n">i</span><span class="o">+=</span><span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>While this is unnecessarily complicated for such a straightfoward example, it illustrates how exception-handling can be used to control the flow of a program.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try it here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>It is tempting to overuse <code class="docutils literal notranslate"><span class="pre">try...except...</span></code> clauses, to supress Python’s built-in errror messages. Generally this will be a mistake, as it will make it harder to identify the causes of bugs. It is best to only use <code class="docutils literal notranslate"><span class="pre">try...except...</span></code> when necessary to handle ‘predictable’ error cases, or in production code.</p>
+<p><strong>➤ In Exercise 4, you made a guessing game. Using <code class="docutils literal notranslate"><span class="pre">try...except...</span></code>, adapt it so that if the user enters anything other than an integer, they are prompted to ‘try again’.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try it here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Sometimes, it is useful to be able to access more information about the exact error that occurred. This can be achieved by modifying the <code class="docutils literal notranslate"><span class="pre">except</span></code> statement:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="p">[</span><span class="n">code</span><span class="p">]</span>
+<span class="k">except</span> <span class="o">&lt;</span><span class="n">ErrorType</span><span class="o">&gt;</span> <span class="k">as</span> <span class="o">&lt;</span><span class="n">variable</span><span class="o">&gt;</span><span class="p">:</span>
+    <span class="p">[</span><span class="n">code</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>As an example,</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="o">+</span><span class="s1">&#39;hello&#39;</span>
+<span class="k">except</span> <span class="ne">TypeError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;There is an error&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Now, if a TypeError is raised, Python creates the variable <code class="docutils literal notranslate"><span class="pre">err</span></code> and sets it to contain some more detailed information about the error. We can then use this to give a more detailed report, or to help us handle the problem. Different types of error may store different information within the variable.</p>
+<p><strong>➤ Try it out!</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try it here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Sometimes, there may be code that you want to execute regardless of whether an error occurs or not. For example, you might wish to save some information about the stage your program has reached, or delete temporary files. To help with this, Python provides a variant of <code class="docutils literal notranslate"><span class="pre">try...except...</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="p">[</span><span class="n">code</span><span class="p">]</span>
+<span class="k">finally</span><span class="p">:</span>
+    <span class="p">[</span><span class="n">code</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>The code within the <code class="docutils literal notranslate"><span class="pre">finally</span></code> block is <em>always</em> executed, either after everything in <code class="docutils literal notranslate"><span class="pre">try</span></code> has been successfully completed, or <em>before</em> an error is propagated. For example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="s1">&#39;x&#39;</span><span class="p">]:</span>
+        <span class="n">s</span> <span class="o">+=</span> <span class="n">x</span>
+<span class="k">finally</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This line is printed *before* the error is raised...&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If the <code class="docutils literal notranslate"><span class="pre">try...finally...</span></code> occurs in a function, and <code class="docutils literal notranslate"><span class="pre">finally</span></code> contains a <code class="docutils literal notranslate"><span class="pre">return</span> </code>statement the error is never raised. Similarly, if <code class="docutils literal notranslate"><span class="pre">try...finally...</span></code> occurs in a loop, and <code class="docutils literal notranslate"><span class="pre">finally</span></code> contains a <code class="docutils literal notranslate"><span class="pre">break</span></code> statement, the error is discarded.</p>
+<p><strong>➤ Try it out!</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try it here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Python also allows you to <code class="docutils literal notranslate"><span class="pre">raise</span></code> errors within your code, triggering the error-handling mechanisms already described. This is achieved by the command</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">raise</span> <span class="o">&lt;</span><span class="n">ErrorType</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">raise</span> <span class="o">&lt;</span><span class="n">ErrorType</span><span class="o">&gt;</span><span class="p">(</span><span class="o">&lt;</span><span class="n">message</span><span class="o">&gt;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>For example,</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">raise</span> <span class="ne">IndexError</span>
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">raise</span> <span class="ne">IndexError</span><span class="p">(</span><span class="s2">&quot;This is just an example&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>A file <code class="docutils literal notranslate"><span class="pre">some_data.txt</span></code> is present in this folder. Use the skills you acquired during the last exercises to build a function that loads this file and multiply the two columns together. Do the sum for each line. If the sum is different from 100, raise a ValueError with a message saying that the sum of columns should be 100.</p>
+<p><strong>➤ Try it out!</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try it here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In conjunction with <code class="docutils literal notranslate"><span class="pre">try...except...</span></code>, <code class="docutils literal notranslate"><span class="pre">raise</span></code> can allow an effective mechanism for controlling program flow, since an exception raised within a function (within another function, within…) can be caught and handled at the top-most level. For example, one might write something like:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">check_consistency</span><span class="p">(</span><span class="n">datafile_lines</span><span class="p">):</span>
+    <span class="c1"># Checks whether datafile contents are self-consistent</span>
+    <span class="p">[</span><span class="o">...</span><span class="p">]</span>
+    <span class="k">if</span> <span class="p">[</span><span class="o">...</span><span class="p">]:</span>
+        <span class="c1"># File is good</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+   
+<span class="k">def</span> <span class="nf">load_datafile</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
+    <span class="c1"># Load data from file</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">datafile</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
+        <span class="n">lines</span> <span class="o">=</span> <span class="n">fp</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+        <span class="p">[</span><span class="o">...</span><span class="p">]</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">check_consistency</span><span class="p">(</span><span class="n">lines</span><span class="p">):</span> <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="s2">&quot;Datafile is not self-consistent&quot;</span><span class="p">)</span>
+            
+<span class="k">def</span> <span class="nf">restart_calculation</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
+    <span class="c1"># Attempt to resume interrupted calculation</span>
+    <span class="p">[</span><span class="o">...</span><span class="p">]</span>
+    <span class="n">load_datafile</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+    <span class="p">[</span><span class="o">...</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">program_startup</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
+    <span class="p">[</span><span class="o">...</span><span class="p">]</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">restart_calcuation</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">IOError</span><span class="p">:</span>
+        <span class="n">start_new_calculation</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Here, the <code class="docutils literal notranslate"><span class="pre">program_startup</span></code> routine attempts to restart an existing, previous calculation based on information in a file, but if reading this file fails for any reason, it will simply start the calculation afresh.</p>
+<p><strong>➤ Earlier, you wrote some code to compute the sum of columns of a dataset. Using the structure described above, adapt this so that if the file doesn’t exist, the dataset
+<code class="docutils literal notranslate"><span class="pre">[[1.,99.],[2.,98.],[3.,97.]]</span></code> is processed instead.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try it here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Notebooks/Practicals/Ex10"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="../Ex09/Exercise%209%20-%20Modules.html" title="previous page">Exercise 9 - Modules</a>
+    <a class='right-next' id="next-link" href="../Ex11/Exercise%2011%20-%20Sudoku.html" title="next page">Exercise 11 - Sudoku</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Louis Moresi<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

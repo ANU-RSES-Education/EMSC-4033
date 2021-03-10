@@ -1,0 +1,580 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise N - Object-oriented programming &#8212; EMSC 4033 Computing in Geoscience</title>
+    
+  <link rel="stylesheet" href="../../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.c441f2ba0852f4cabcb80105e3a46ae6.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Exercise N - Differential equations" href="../Ex19/Exercise%20N%20-%20differential%20equations.html" />
+    <link rel="prev" title="Exercise 17 - Fourier analysis and Milankovitch cycles" href="../Ex17/Exercise%2017%20-%20Fourier%20analysis%20and%20Milankovitch%20cycles.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../../index.html">
+  
+  <img src="../../../_static/AuWorldEQ.jpg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">EMSC 4033 Computing in Geoscience</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../FrontPage.html">
+   Jupyterbook example
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Examples
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Introduction.html">
+   Andrew Valentine’s Exercises
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex01/Exercise%201%20-%20Getting%20started.html">
+   Exercise 1 - Getting started with Jupyter and Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex02/Exercise%202%20-%20Variables%20and%20functions.html">
+   Exercise 2 - Variables and functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex02/Exercise%202%20-%20Variables%20and%20functions.html#functions">
+   Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex03/Exercise%203%20-%20Loops%20and%20conditionals.html">
+   Exercise 3 - Loops and conditionals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex04/Guessing%20Games.html">
+   Exercise 4 - Guessing Games
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex05/Exercise%205%20-%20Lists%2C%20tuples%20and%20dictionaries.html">
+   Exercise 5 - Lists, tuples and dictionaries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex06/Exercise%206%20-%20More%20loops.html">
+   Exercise 6 - More loops
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex06/Exercise%206%20-%20More%20loops.html#try-it-here">
+   Try it here!
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex07/Exercise%207%20-%20Strings.html">
+   Exercise 7 - Strings
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex08/Exercise%208%20-%20Reading%20and%20writing%20files.html">
+   Exercise 8 - Reading and writing files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex09/Exercise%209%20-%20Modules.html">
+   Exercise 9 - Modules
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex10/Exercise%2010%20-%20Exception%20handling.html">
+   Exercise 10 - Exception handling
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex11/Exercise%2011%20-%20Sudoku.html">
+   Exercise 11 - Sudoku
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex12/Exercise%2012%20-%20Plotting.html">
+   Exercise 12 - Plotting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex13/Exercise%2013%20-%20Radioactive%20Decay.html">
+   Exercise 13 - Radioactive decay
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex14/Exercise%2014%20-%20Pandas.html">
+   Exercise 14 - Structured Data in Python (
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     pandas
+    </span>
+   </code>
+   )
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex15/Exercise%2015%20-%20More%20plotting.html">
+   Exercise 15 - More plotting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex16/Exercise%2016%20-%20Maps.html">
+   Exercise 16 - Maps
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex17/Exercise%2017%20-%20Fourier%20analysis%20and%20Milankovitch%20cycles.html">
+   Exercise 17 - Fourier analysis and Milankovitch cycles
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Exercise N - Object-oriented programming
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex19/Exercise%20N%20-%20differential%20equations.html">
+   Exercise N - Differential equations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex20/Exercise%20N%20-%20Sorting.html">
+   Exercise N - Visualising sorting algorithms
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../_sources/Notebooks/Practicals/Ex18/Exercise 18 - Object-oriented programming.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/ANU-RSES-Education/EMSC-4033"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/ANU-RSES-Education/EMSC-4033/master?urlpath=tree/Notebooks/Practicals/Ex18/Exercise 18 - Object-oriented programming.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="exercise-n-object-oriented-programming">
+<h1>Exercise N - Object-oriented programming<a class="headerlink" href="#exercise-n-object-oriented-programming" title="Permalink to this headline">¶</a></h1>
+<p><em>Andrew Valentine - andrew.valentine&#64;anu.edu.au</em></p>
+<p>By now, you should be comfortable with the idea that variables have types, and often come with various functions and attributes ‘attached’ which can be accessed by using <code class="docutils literal notranslate"><span class="pre">&lt;variablename&gt;.&lt;functionname&gt;</span></code> or <code class="docutils literal notranslate"><span class="pre">&lt;variablename&gt;.&lt;attributename&gt;</span></code>. In this exercise, we will learn how we can implement our own data types and make use of this functionality.</p>
+<p>Sometimes, the motivation for doing this will simply be ease of organisation. For example, suppose you have a collection of rock samples, and you wish to represent them in your program. You have various pieces of information about each rock in your collection, for example:</p>
+<ul class="simple">
+<li><p>An ID number;</p></li>
+<li><p>The location at which it was collected;</p></li>
+<li><p>A brief description of the rock type (e.g. ‘Granite’);</p></li>
+<li><p>Various geochemical measurements.</p></li>
+</ul>
+<p>We have already seen various ways in which this information could be stored in a program, including tuples, dictionaries, and as a Pandas data frame. For many applications, these may be good choices. However, it is also possible to create a custom data type, which we will call <code class="docutils literal notranslate"><span class="pre">RockSample</span></code>, and encapsulate all the information about one physical rock within one Python ‘object’.</p>
+<p>To do this, we need to write a <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">definition</span></code>. This is an indented block beginning with the line <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">&lt;ClassName&gt;:</span></code>, containing one or more functions. In particular, it will usually contain a function with the name <code class="docutils literal notranslate"><span class="pre">__init__</span></code>. This is the initialisation (or ‘constructor’) function, which gets called when we want to create a new ‘instance’ of the object.</p>
+<p>For example, we might have a class definition:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">RockSample</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">idNumber</span><span class="p">,</span> <span class="n">location</span><span class="p">,</span> <span class="n">description</span><span class="p">,</span> <span class="n">percentNickel</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">percentCopper</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">idNumber</span> <span class="o">=</span> <span class="n">idNumber</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">location</span> <span class="o">=</span> <span class="n">location</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">description</span> <span class="o">=</span> <span class="n">description</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">percentNickel</span> <span class="o">=</span> <span class="n">percentNickel</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">percentCopper</span> <span class="o">=</span> <span class="n">percentCopper</span>
+</pre></div>
+</div>
+<p>Then we can use this to create variables representing each of our physical rock samples:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">r1</span> <span class="o">=</span> <span class="n">RockSample</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="o">-</span><span class="mf">35.3</span><span class="p">,</span><span class="mf">149.1</span><span class="p">),</span> <span class="s1">&#39;Heavily altered sandstone&#39;</span><span class="p">)</span>
+<span class="n">r2</span> <span class="o">=</span> <span class="n">RockSample</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="o">-</span><span class="mf">35.7</span><span class="p">,</span> <span class="mf">148.9</span><span class="p">),</span> <span class="s1">&#39;Granite&#39;</span><span class="p">,</span> <span class="n">percentCopper</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Notice that we use the class name as if it were a function, passing it the arguments required by <code class="docutils literal notranslate"><span class="pre">__init__()</span></code>. Now, we can access all our data as attributes of <code class="docutils literal notranslate"><span class="pre">r1</span></code> and <code class="docutils literal notranslate"><span class="pre">r2</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">r1</span><span class="o">.</span><span class="n">description</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">r2</span><span class="o">.</span><span class="n">percentNickel</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Attributes can be redefined, as necessary:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">r1</span><span class="o">.</span><span class="n">percentNickel</span> <span class="o">=</span> <span class="mf">0.05</span>
+</pre></div>
+</div>
+<p><strong>➤ Try it out.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try it here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>You have probably noticed that our <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> function is defined as having four non-optional arguments, but when we call it to create a new variable, we only appear to pass three values to it. The first argument, <code class="docutils literal notranslate"><span class="pre">self</span></code>, represents the variable on the <em>left</em> of the equals sign. In other words, when we write</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">r1</span> <span class="o">=</span> <span class="n">RockSample</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="o">-</span><span class="mf">35.3</span><span class="p">,</span><span class="mf">149.1</span><span class="p">),</span> <span class="s1">&#39;Heavily altered sandstone&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>we are effectively calling</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">RockSample</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">r1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="o">-</span><span class="mf">35.3</span><span class="p">,</span><span class="mf">149.1</span><span class="p">),</span> <span class="s1">&#39;Heavily altered sandstone&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>(although writing it this way will not actually work). Within the <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> function, lines like <code class="docutils literal notranslate"><span class="pre">self.idNumber=</span> <span class="pre">idNumber</span></code> attach attributes to the variable name. By convention, the variable name <code class="docutils literal notranslate"><span class="pre">self</span></code> is always used for this first argument, although it is technically possible to use any name here. Note that <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> should <em>not</em> contain a <code class="docutils literal notranslate"><span class="pre">return</span></code> statement.</p>
+<p>We can add other functions to the class, all of which should have <code class="docutils literal notranslate"><span class="pre">self</span></code> as the first argument. Functions in classes may return a value (by having a <code class="docutils literal notranslate"><span class="pre">return</span></code> statement as usual), but they can also modify the internal data in the class (i.e. set or change attributes attached to <code class="docutils literal notranslate"><span class="pre">self</span></code>) or have other ‘side-effects’. For example, we might write a <code class="docutils literal notranslate"><span class="pre">plot_location()</span></code> function, to create a map showing where the sample was collected.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">RockSample</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">idNumber</span><span class="p">,</span> <span class="n">location</span><span class="p">,</span> <span class="n">description</span><span class="p">,</span> <span class="n">percentNickel</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">percentCopper</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">idNumber</span> <span class="o">=</span> <span class="n">idNumber</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">location</span> <span class="o">=</span> <span class="n">location</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">description</span> <span class="o">=</span> <span class="n">description</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">percentNickel</span> <span class="o">=</span> <span class="n">percentNickel</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">percentCopper</span> <span class="o">=</span> <span class="n">percentCopper</span>
+    <span class="k">def</span> <span class="nf">plot_location</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="o">...</span><span class="p">):</span>
+        <span class="p">[</span><span class="o">...</span><span class="p">]</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">location</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="bp">self</span><span class="o">.</span><span class="n">location</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+        <span class="p">[</span><span class="o">...</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Then, we can call</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">r1</span><span class="o">.</span><span class="n">plot_location</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>and a map will be generated.</p>
+<p><strong>➤ Write and test the <code class="docutils literal notranslate"><span class="pre">plot_location()</span></code> function.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try it here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>What have we gained by doing this? One benefit lies in data organisation: by encapsulating information in this way, we ensure that all our data about a physical sample is kept together. We can easily pass the entire RockSample object to a function, ensuring that all information is accessible within that function. This becomes particularly useful when developing large, complex programs, where one might have something like</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">function_a</span><span class="p">(</span><span class="n">rock</span><span class="p">):</span>
+    <span class="p">[</span><span class="o">...</span><span class="p">]</span>
+    <span class="n">u</span> <span class="o">=</span> <span class="n">function_b</span><span class="p">(</span><span class="n">rock</span><span class="p">,</span><span class="o">...</span><span class="p">)</span>
+    <span class="p">[</span><span class="o">...</span><span class="p">]</span>
+<span class="k">def</span> <span class="nf">function_b</span><span class="p">(</span><span class="n">rock</span><span class="p">):</span>
+    <span class="p">[</span><span class="o">...</span><span class="p">]</span>
+    <span class="n">v</span> <span class="o">=</span> <span class="n">function_c</span><span class="p">(</span><span class="n">rock</span><span class="p">,</span><span class="o">...</span><span class="p">)</span>
+    <span class="p">[</span><span class="o">...</span><span class="p">]</span>
+<span class="k">def</span> <span class="nf">function_c</span><span class="p">(</span><span class="n">rock</span><span class="p">,</span><span class="o">...</span><span class="p">):</span>
+    <span class="c1"># The function that actually</span>
+    <span class="c1"># uses the attributes of rock</span>
+    <span class="p">[</span><span class="o">...</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>i.e., we pass <code class="docutils literal notranslate"><span class="pre">rock</span></code> down through several layers of function-call before we actually make use of the information it contains. By encapsulating everything within a class, we can write <code class="docutils literal notranslate"><span class="pre">function_a</span></code> and <code class="docutils literal notranslate"><span class="pre">function_b</span></code> without needing to think about what information <code class="docutils literal notranslate"><span class="pre">function_c</span></code> will be accessing. If we subsequently decide to change how <code class="docutils literal notranslate"><span class="pre">function_c</span></code> works, we can easily add new information to the class and access it inside <code class="docutils literal notranslate"><span class="pre">function_c</span></code>, without needing to make any modifications in <code class="docutils literal notranslate"><span class="pre">function_a</span></code> and <code class="docutils literal notranslate"><span class="pre">function_b</span></code>.</p>
+<p>Employing classes can also be powerful in situations where we want to handle distinct classes of data in a unified way. For example, we might have two different models of mass spectrometer, which produce data files in different formats. By wrapping everything into classes, we can avoid our analysis code needing to know anything about the different machines:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">instrumentA</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="o">...</span><span class="p">):</span>
+        <span class="p">[</span><span class="o">...</span><span class="p">]</span>
+    <span class="k">def</span> <span class="nf">getExperimentDate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="o">...</span><span class="p">):</span>
+        <span class="c1"># Read experiment date from data file</span>
+        <span class="k">return</span> <span class="n">date</span>
+    <span class="p">[</span><span class="o">...</span><span class="p">]</span>
+    
+<span class="k">class</span> <span class="nc">instrumentB</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="o">...</span><span class="p">):</span>
+        <span class="p">[</span><span class="o">...</span><span class="p">]</span>
+    <span class="k">def</span> <span class="nf">getExperimentDate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="o">...</span><span class="p">):</span>
+        <span class="c1"># Read experiment date from data file</span>
+        <span class="p">[</span><span class="o">...</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">date</span>
+    <span class="p">[</span><span class="o">...</span><span class="p">]</span>
+    
+<span class="k">def</span> <span class="nf">processData</span><span class="p">(</span><span class="n">instrument</span><span class="p">,</span><span class="o">...</span><span class="p">):</span>
+    <span class="p">[</span><span class="o">...</span><span class="p">]</span>
+    <span class="n">date</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">getExperimentDate</span><span class="p">()</span>
+    <span class="p">[</span><span class="o">...</span><span class="p">]</span>
+
+<span class="n">inst</span> <span class="o">=</span> <span class="n">instrumentA</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="n">processData</span><span class="p">(</span><span class="n">inst</span><span class="p">,</span><span class="o">...</span><span class="p">)</span>
+<span class="n">inst</span> <span class="o">=</span> <span class="n">instrumentB</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="n">processData</span><span class="p">(</span><span class="n">inst</span><span class="p">,</span><span class="o">...</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The philosophy here is that the <code class="docutils literal notranslate"><span class="pre">processData()</span></code> function needs to know nothing about where or how the data is stored; it simply receives an <code class="docutils literal notranslate"><span class="pre">instrument</span></code> object from which it can ‘request’ any information that it requires. If in the future a new instrument is purchased, we only need to write a new <code class="docutils literal notranslate"><span class="pre">instrumentC</span></code> class containing the appropriate functions, and then all our existing analysis code will be ready to use.</p>
+<p>Sometimes, we may wish to have two or more classes that have some functionality in common. This can be achieved by using subclasses and ‘inheritance’. First, we write the ‘parent’ class, containing the common parts.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">a</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+    <span class="k">def</span> <span class="nf">product</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span>
+</pre></div>
+</div>
+<p>This is a fully-functioning class, and we can create instanstances of it, e.g. <code class="docutils literal notranslate"><span class="pre">p</span> <span class="pre">=</span> <span class="pre">a(3,4)</span></code>. However, we can also extend it by writing a subclass.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">b</span><span class="p">(</span><span class="n">a</span><span class="p">):</span> <span class="c1"># &lt;=========================== (1)</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">):</span>
+        <span class="n">a</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span> <span class="c1"># &lt;========== (2)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">z</span> <span class="o">=</span> <span class="n">z</span>
+    <span class="k">def</span> <span class="nf">tripleProduct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">product</span><span class="p">()</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">z</span> <span class="c1"># &lt;== (3)</span>
+</pre></div>
+</div>
+<p>Objects of class <code class="docutils literal notranslate"><span class="pre">b</span></code> have all the functionality found in objects of class <code class="docutils literal notranslate"><span class="pre">a</span></code>, plus some additional features (specifically, the <code class="docutils literal notranslate"><span class="pre">tripleProduct()</span></code> function). Note three things:</p>
+<ol class="simple">
+<li><p>When we define the subclass name, it is followed by the parent class name in brackets. It is possible to inherit from more than one parent class simultaneously, although this is unlikely to be used except in the most complex codes.</p></li>
+<li><p>In the <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> function for the subclass, we need to explicitly call the <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> function of the parent class(es).</p></li>
+<li><p>We can make use of functions and attributes from the parent class within the subclass.</p></li>
+</ol>
+<p><strong>➤ Try it for yourself.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try it here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Subclasses are not something you are likely to use often. However, they can occasionally be useful, especially if you want to modify one of the ‘standard’ Python classes. For example, you might choose to represent a dataset by creating a subclass of Python’s standard <code class="docutils literal notranslate"><span class="pre">list</span></code> type, adding additional attributes and functions specific to your dataset.</p>
+<p>Finally, there are a number of ‘special’ functions you can add to any class. These are the function names with double underscores, such as <code class="docutils literal notranslate"><span class="pre">__add__()</span></code>, <code class="docutils literal notranslate"><span class="pre">__str__()</span></code>, <code class="docutils literal notranslate"><span class="pre">__mul__()</span></code> and so on. These allow your class to work with standard Python operations such as <code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">print</span></code> and <code class="docutils literal notranslate"><span class="pre">*</span></code> act on your class. For example, we can modify our <code class="docutils literal notranslate"><span class="pre">RockSample</span></code> object to include a <code class="docutils literal notranslate"><span class="pre">__str__()</span></code> function, which should return a text string containing whatever information we deem useful:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">RockSample</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">idNumber</span><span class="p">,</span> <span class="n">location</span><span class="p">,</span> <span class="n">description</span><span class="p">,</span> <span class="n">percentNickel</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">percentCopper</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">idNumber</span> <span class="o">=</span> <span class="n">idNumber</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">location</span> <span class="o">=</span> <span class="n">location</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">description</span> <span class="o">=</span> <span class="n">description</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">percentNickel</span> <span class="o">=</span> <span class="n">percentNickel</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">percentCopper</span> <span class="o">=</span> <span class="n">percentCopper</span>
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">location</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">:</span> 
+            <span class="n">clat</span> <span class="o">=</span> <span class="s1">&#39;S&#39;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">clat</span> <span class="o">=</span> <span class="s1">&#39;N&#39;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">location</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">:</span>
+            <span class="n">clon</span><span class="o">=</span><span class="s1">&#39;W&#39;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">clon</span><span class="o">=</span><span class="s1">&#39;E&#39;</span>            
+        <span class="k">return</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2"> from (</span><span class="si">%.2f%c</span><span class="s2">, </span><span class="si">%.2f%c</span><span class="s2">)&quot;</span><span class="o">%</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">description</span><span class="p">,</span><span class="nb">abs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">location</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span><span class="n">clat</span><span class="p">,</span><span class="nb">abs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">location</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span><span class="n">clon</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Now, if <code class="docutils literal notranslate"><span class="pre">r1</span> <span class="pre">=</span> <span class="pre">RockSample(1,</span> <span class="pre">(-35.3,149.1),</span> <span class="pre">'Heavily</span> <span class="pre">altered</span> <span class="pre">sandstone')</span></code> then we can call <code class="docutils literal notranslate"><span class="pre">print(r1)</span></code> and see a meaningful message.</p>
+<p><strong>➤ Try it out.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try it here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In Exercise 7, you wrote an encoder and decoder for the Caeser cipher.</p>
+<p><strong>➤ Rewrite your code to make use of classes.</strong></p>
+<p><em>Hint: Create a <code class="docutils literal notranslate"><span class="pre">caesar</span></code> class that contains at least three functions: <code class="docutils literal notranslate"><span class="pre">__init__()</span></code>, <code class="docutils literal notranslate"><span class="pre">encode()</span></code> and <code class="docutils literal notranslate"><span class="pre">decode()</span></code>. Put all of the ‘set-up’ code into <code class="docutils literal notranslate"><span class="pre">__init__()</span></code>.</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try it here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Notebooks/Practicals/Ex18"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="../Ex17/Exercise%2017%20-%20Fourier%20analysis%20and%20Milankovitch%20cycles.html" title="previous page">Exercise 17 - Fourier analysis and Milankovitch cycles</a>
+    <a class='right-next' id="next-link" href="../Ex19/Exercise%20N%20-%20differential%20equations.html" title="next page">Exercise N - Differential equations</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Louis Moresi<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

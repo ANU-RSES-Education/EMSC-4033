@@ -1,0 +1,468 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise 8 - Reading and writing files &#8212; EMSC 4033 Computing in Geoscience</title>
+    
+  <link rel="stylesheet" href="../../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.c441f2ba0852f4cabcb80105e3a46ae6.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Exercise 9 - Modules" href="../Ex09/Exercise%209%20-%20Modules.html" />
+    <link rel="prev" title="Exercise 7 - Strings" href="../Ex07/Exercise%207%20-%20Strings.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../../index.html">
+  
+  <img src="../../../_static/AuWorldEQ.jpg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">EMSC 4033 Computing in Geoscience</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../FrontPage.html">
+   Jupyterbook example
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Examples
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Introduction.html">
+   Andrew Valentine’s Exercises
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex01/Exercise%201%20-%20Getting%20started.html">
+   Exercise 1 - Getting started with Jupyter and Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex02/Exercise%202%20-%20Variables%20and%20functions.html">
+   Exercise 2 - Variables and functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex02/Exercise%202%20-%20Variables%20and%20functions.html#functions">
+   Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex03/Exercise%203%20-%20Loops%20and%20conditionals.html">
+   Exercise 3 - Loops and conditionals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex04/Guessing%20Games.html">
+   Exercise 4 - Guessing Games
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex05/Exercise%205%20-%20Lists%2C%20tuples%20and%20dictionaries.html">
+   Exercise 5 - Lists, tuples and dictionaries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex06/Exercise%206%20-%20More%20loops.html">
+   Exercise 6 - More loops
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex06/Exercise%206%20-%20More%20loops.html#try-it-here">
+   Try it here!
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex07/Exercise%207%20-%20Strings.html">
+   Exercise 7 - Strings
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Exercise 8 - Reading and writing files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex09/Exercise%209%20-%20Modules.html">
+   Exercise 9 - Modules
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex10/Exercise%2010%20-%20Exception%20handling.html">
+   Exercise 10 - Exception handling
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex11/Exercise%2011%20-%20Sudoku.html">
+   Exercise 11 - Sudoku
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex12/Exercise%2012%20-%20Plotting.html">
+   Exercise 12 - Plotting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex13/Exercise%2013%20-%20Radioactive%20Decay.html">
+   Exercise 13 - Radioactive decay
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex14/Exercise%2014%20-%20Pandas.html">
+   Exercise 14 - Structured Data in Python (
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     pandas
+    </span>
+   </code>
+   )
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex15/Exercise%2015%20-%20More%20plotting.html">
+   Exercise 15 - More plotting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex16/Exercise%2016%20-%20Maps.html">
+   Exercise 16 - Maps
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex17/Exercise%2017%20-%20Fourier%20analysis%20and%20Milankovitch%20cycles.html">
+   Exercise 17 - Fourier analysis and Milankovitch cycles
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex18/Exercise%2018%20-%20Object-oriented%20programming.html">
+   Exercise N - Object-oriented programming
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex19/Exercise%20N%20-%20differential%20equations.html">
+   Exercise N - Differential equations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex20/Exercise%20N%20-%20Sorting.html">
+   Exercise N - Visualising sorting algorithms
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../_sources/Notebooks/Practicals/Ex08/Exercise 8 - Reading and writing files.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/ANU-RSES-Education/EMSC-4033"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/ANU-RSES-Education/EMSC-4033/master?urlpath=tree/Notebooks/Practicals/Ex08/Exercise 8 - Reading and writing files.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="exercise-8-reading-and-writing-files">
+<h1>Exercise 8 - Reading and writing files<a class="headerlink" href="#exercise-8-reading-and-writing-files" title="Permalink to this headline">¶</a></h1>
+<p>So far, we have typed all the data for our programs in ‘by hand’. However, as you have no doubt noticed, this quickly gets tedious. It is useful to be able to read and write data files, allowing information to be stored and shared with other people.</p>
+<p>In order to read a data file, we need to understand what information it contains, and how this has been encoded. This is generally referred to as the ‘file format’. Different programs produce files in different formats - a photograph in <code class="docutils literal notranslate"><span class="pre">.jpeg</span></code> format cannot be read by a spreadsheet package, which might expect to receive files in <code class="docutils literal notranslate"><span class="pre">.xlsx</span></code> format.</p>
+<p>The simplest file format for storing and transferring scientific data is a plain text file in ‘ascii’ (‘American Standard Code for Information Exchange’) format. This is the sort of file that can be read and produced using a simple text editor such as ‘notepad’ (on Windows) or ‘TextEdit’ (on a Mac). Commonly, such files will have an extension such as <code class="docutils literal notranslate"><span class="pre">.txt</span></code> or <code class="docutils literal notranslate"><span class="pre">.dat</span></code>.</p>
+<p>Reading ascii files in Python is a four-step process:</p>
+<ol class="simple">
+<li><p>Open the file;</p></li>
+<li><p>Read each line from the file;</p></li>
+<li><p>Parse each line (i.e., extract the required information from it);</p></li>
+<li><p>Close the file.</p></li>
+</ol>
+<p>We assume that the file is already saved on your computer, and you know the ‘path’ to the file. To open the file, we use the <code class="docutils literal notranslate"><span class="pre">open()</span></code> function, which returns a <code class="docutils literal notranslate"><span class="pre">file</span></code> object. It is important to assign this to a variable (here, <code class="docutils literal notranslate"><span class="pre">fp</span></code>) so that we can continue to access the open file.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;sample.dat&#39;</span>
+<span class="n">fp</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Here, <code class="docutils literal notranslate"><span class="pre">filename</span></code> is a variable holding the file name (or file path and name, if it is not in our current working directory), and the second argument, <code class="docutils literal notranslate"><span class="pre">'r'</span></code>, specifies that we want to open the file for reading only.</p>
+<p>Once the file is open, we can read from it. There are various ways of doing this, but for small files the simplest method is generally to call the <code class="docutils literal notranslate"><span class="pre">readlines()</span></code> function, which returns the entire file in the form of a list:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">lines</span> <span class="o">=</span> <span class="n">fp</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Each element of the list <code class="docutils literal notranslate"><span class="pre">lines</span></code> is now a string, containing one of the lines from the file <code class="docutils literal notranslate"><span class="pre">sample.dat</span></code>. Since we have read all the information in the file, we can now close the file:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fp</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>➤ Try it out!</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try it here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Opening and closing files explicitly is useful to illustrate how Python handles reading and writing files. However, doing this in practice can get quite messy because these ‘connections’ to files stay open until you explicitly close them. With single files, this can lead to data corruption and data loss, with more complex scripts you might open 10,000 files and not close any of them, clogging up your computer!</p>
+<p>Luckily, Python has a really handy construct for dealing with this automatically, called ‘<a class="reference external" href="https://jeffknupp.com/blog/2016/03/07/python-with-context-managers/">context managers</a>’. They have a number of uses, but in the case of reading/writing files, you create a ‘context’ that contains a connection to a file, which is automatically closed when the code within the context is finished. This sounds complex… so an example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;sample.dat&#39;</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="n">fp</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">with</span></code> statement tells python that the file you’re giving it is only used in the following indented code, and can be closed afterwards.</p>
+<p>This performs exactly the same as manually opening and closing the file, as above, but automatically cleans up after you.</p>
+<p><strong>➤ Try it out!</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try it here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Once you have a list of strings, you can use the list- and string-parsing tools we have already encountered to extract the necessary data and store it in appropriate data structures.</p>
+<p>The file <code class="docutils literal notranslate"><span class="pre">sample.dat</span></code> contains records of the mass and volume of twenty samples of a given material.</p>
+<p><strong>➤ Read the data from this file, compute the density of each sample and hence the average density of the material.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try it here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>To write data to file, we need to first open the file for writing. This can be done by using <code class="docutils literal notranslate"><span class="pre">'w'</span></code> instead of <code class="docutils literal notranslate"><span class="pre">'r'</span></code> when opening the file. Note that if a file already exists with the specified name, it will be immediately overwritten and lost. To avoid this, you can instead use <code class="docutils literal notranslate"><span class="pre">'x'</span></code> when opening the file. This will throw an error if there is an existing file, rather than overwrite it. Again, when opening the file it is important to assign the result of <code class="docutils literal notranslate"><span class="pre">open()</span></code> to a variable, so we can write to it.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">outputfile</span> <span class="o">=</span> <span class="s1">&#39;processed_samples.dat&#39;</span>
+<span class="n">fp</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">outputfile</span><span class="p">,</span><span class="s1">&#39;w&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Once the file is open, we can write any text strings to it by calling the <code class="docutils literal notranslate"><span class="pre">write()</span></code> function. Remember, to insert a new line, you use the symbol <code class="docutils literal notranslate"><span class="pre">'\n'</span></code>, otherwise everything will be on a single line:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fp</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Hello!</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">fp</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;This is some text to store in a file... &quot;</span><span class="p">)</span>
+<span class="n">line</span> <span class="o">=</span> <span class="s2">&quot;The file has only two lines.&quot;</span>
+<span class="n">fp</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Once everything is written to the file, call <code class="docutils literal notranslate"><span class="pre">close()</span></code> to close it.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fp</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>➤ Create a new file, based on the data you read earlier. It should contain three columns: mass, sample volume and sample density. All quantities should be in SI units.</strong></p>
+<p>Remember, you can use the string-formatting tools we encountered in the last exercise to control how your numbers are written out. You can open a text file by clicking its name in Jupyter’s file browser. Verify that the file has been correctly written.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try it here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>From the examples above, we just saw how to read and write data using Python built-in methods. These are good for simple files, but not for more complex information such as an Excel spreadsheet. Later in the course, we will encounter a number of more sophisticated tools that can help us with these kinds of files.</p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Notebooks/Practicals/Ex08"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="../Ex07/Exercise%207%20-%20Strings.html" title="previous page">Exercise 7 - Strings</a>
+    <a class='right-next' id="next-link" href="../Ex09/Exercise%209%20-%20Modules.html" title="next page">Exercise 9 - Modules</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Louis Moresi<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

@@ -1,0 +1,551 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise 4 - Guessing Games &#8212; EMSC 4033 Computing in Geoscience</title>
+    
+  <link rel="stylesheet" href="../../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.c441f2ba0852f4cabcb80105e3a46ae6.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Exercise 5 - Lists, tuples and dictionaries" href="../Ex05/Exercise%205%20-%20Lists%2C%20tuples%20and%20dictionaries.html" />
+    <link rel="prev" title="Exercise 3 - Loops and conditionals" href="../Ex03/Exercise%203%20-%20Loops%20and%20conditionals.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../../index.html">
+  
+  <img src="../../../_static/AuWorldEQ.jpg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">EMSC 4033 Computing in Geoscience</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../FrontPage.html">
+   Jupyterbook example
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Examples
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Introduction.html">
+   Andrew Valentine’s Exercises
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex01/Exercise%201%20-%20Getting%20started.html">
+   Exercise 1 - Getting started with Jupyter and Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex02/Exercise%202%20-%20Variables%20and%20functions.html">
+   Exercise 2 - Variables and functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex02/Exercise%202%20-%20Variables%20and%20functions.html#functions">
+   Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex03/Exercise%203%20-%20Loops%20and%20conditionals.html">
+   Exercise 3 - Loops and conditionals
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Exercise 4 - Guessing Games
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex05/Exercise%205%20-%20Lists%2C%20tuples%20and%20dictionaries.html">
+   Exercise 5 - Lists, tuples and dictionaries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex06/Exercise%206%20-%20More%20loops.html">
+   Exercise 6 - More loops
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex06/Exercise%206%20-%20More%20loops.html#try-it-here">
+   Try it here!
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex07/Exercise%207%20-%20Strings.html">
+   Exercise 7 - Strings
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex08/Exercise%208%20-%20Reading%20and%20writing%20files.html">
+   Exercise 8 - Reading and writing files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex09/Exercise%209%20-%20Modules.html">
+   Exercise 9 - Modules
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex10/Exercise%2010%20-%20Exception%20handling.html">
+   Exercise 10 - Exception handling
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex11/Exercise%2011%20-%20Sudoku.html">
+   Exercise 11 - Sudoku
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex12/Exercise%2012%20-%20Plotting.html">
+   Exercise 12 - Plotting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex13/Exercise%2013%20-%20Radioactive%20Decay.html">
+   Exercise 13 - Radioactive decay
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex14/Exercise%2014%20-%20Pandas.html">
+   Exercise 14 - Structured Data in Python (
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     pandas
+    </span>
+   </code>
+   )
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex15/Exercise%2015%20-%20More%20plotting.html">
+   Exercise 15 - More plotting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex16/Exercise%2016%20-%20Maps.html">
+   Exercise 16 - Maps
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex17/Exercise%2017%20-%20Fourier%20analysis%20and%20Milankovitch%20cycles.html">
+   Exercise 17 - Fourier analysis and Milankovitch cycles
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex18/Exercise%2018%20-%20Object-oriented%20programming.html">
+   Exercise N - Object-oriented programming
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex19/Exercise%20N%20-%20differential%20equations.html">
+   Exercise N - Differential equations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex20/Exercise%20N%20-%20Sorting.html">
+   Exercise N - Visualising sorting algorithms
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../_sources/Notebooks/Practicals/Ex04/Guessing Games.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/ANU-RSES-Education/EMSC-4033"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/ANU-RSES-Education/EMSC-4033/master?urlpath=tree/Notebooks/Practicals/Ex04/Guessing Games.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-happens-if-the-user-types-something-in-that-isn-t-an-integer-can-you-make-your-version-robust">
+   What happens if the user types something in that isn’t an integer? Can you make your version robust?
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="exercise-4-guessing-games">
+<h1>Exercise 4 - Guessing Games<a class="headerlink" href="#exercise-4-guessing-games" title="Permalink to this headline">¶</a></h1>
+<p><em>Andrew Valentine - andrew.valentine&#64;anu.edu.au</em></p>
+<p><strong>➤ Try playing this simple game.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span><span class="o">+</span><span class="s1">&#39;/.hidden/&#39;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">guessingGames</span> <span class="k">as</span> <span class="nn">gg</span>
+<span class="n">gg</span><span class="o">.</span><span class="n">guessingGame</span><span class="p">(</span><span class="n">nmax</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>I am thinking of a number between 1 and 10
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="n">d255f4b3d8c5</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span><span class="o">+</span><span class="s1">&#39;/.hidden/&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">import</span> <span class="nn">guessingGames</span> <span class="k">as</span> <span class="nn">gg</span>
+<span class="ne">----&gt; </span><span class="mi">6</span> <span class="n">gg</span><span class="o">.</span><span class="n">guessingGame</span><span class="p">(</span><span class="n">nmax</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="nn">~/work/EMSC-4033/EMSC-4033/Notebooks/Practicals/Ex04/.hidden/guessingGames.py</span> in <span class="ni">guessingGame</span><span class="nt">(nmax)</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>     <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span>         <span class="k">try</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">10</span>             <span class="n">guess</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Make a guess:&quot;</span><span class="p">))</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span>         <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span>             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Please enter an integer.&quot;</span><span class="p">)</span>
+
+<span class="nn">/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/ipykernel/kernelbase.py</span> in <span class="ni">raw_input</span><span class="nt">(self, prompt)</span>
+<span class="g g-Whitespace">    </span><span class="mi">844</span>         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_allow_stdin</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">845</span>             <span class="k">raise</span> <span class="n">StdinNotImplementedError</span><span class="p">(</span>
+<span class="ne">--&gt; </span><span class="mi">846</span>                 <span class="s2">&quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">847</span>             <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">848</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_input_request</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">prompt</span><span class="p">),</span>
+
+<span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>➤ Can you write your own version?</strong></p>
+<p>A couple of hints to help you:</p>
+<ul class="simple">
+<li><p>To read input from the keyboard, you can use</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">message</span></code> is the prompt shown to the user (e.g. ‘Make a guess:’ in <code class="docutils literal notranslate"><span class="pre">gg.guessingGame</span></code>). Whatever the user types in gets stored in the variable <code class="docutils literal notranslate"><span class="pre">x</span></code>. Note that <code class="docutils literal notranslate"><span class="pre">x</span></code> contains a string of characters, even if the user types in a number. You can use <code class="docutils literal notranslate"><span class="pre">int(x)</span></code> to convert the input to an integer (and <code class="docutils literal notranslate"><span class="pre">float(x)</span></code> if you want to convert it to a floating-point number).</p>
+<ul class="simple">
+<li><p>To generate a random integer, you can call the function <code class="docutils literal notranslate"><span class="pre">np.random.randint(lo,hi)</span></code> where <code class="docutils literal notranslate"><span class="pre">lo</span></code> is the smallest integer you want to generate, and <code class="docutils literal notranslate"><span class="pre">hi</span></code> is <strong>one greater than</strong> the largest integer.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try it here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="what-happens-if-the-user-types-something-in-that-isn-t-an-integer-can-you-make-your-version-robust">
+<h2>What happens if the user types something in that isn’t an integer? Can you make your version robust?<a class="headerlink" href="#what-happens-if-the-user-types-something-in-that-isn-t-an-integer-can-you-make-your-version-robust" title="Permalink to this headline">¶</a></h2>
+<p><strong>➤ Here’s another one to play:</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gg</span><span class="o">.</span><span class="n">higherOrLower</span><span class="p">(</span><span class="n">nmax</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>I am thinking of a number between 1 and 100
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="mf">2e5</span><span class="n">d8eead2a9</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">gg</span><span class="o">.</span><span class="n">higherOrLower</span><span class="p">(</span><span class="n">nmax</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+
+<span class="nn">~/work/EMSC-4033/EMSC-4033/Notebooks/Practicals/Ex04/.hidden/guessingGames.py</span> in <span class="ni">higherOrLower</span><span class="nt">(nmax)</span>
+<span class="g g-Whitespace">     </span><span class="mi">26</span>     <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">27</span>         <span class="k">try</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">28</span>             <span class="n">guess</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Make a guess:&quot;</span><span class="p">))</span>
+<span class="g g-Whitespace">     </span><span class="mi">29</span>         <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">30</span>             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Please enter an integer.&quot;</span><span class="p">)</span>
+
+<span class="nn">/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/ipykernel/kernelbase.py</span> in <span class="ni">raw_input</span><span class="nt">(self, prompt)</span>
+<span class="g g-Whitespace">    </span><span class="mi">844</span>         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_allow_stdin</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">845</span>             <span class="k">raise</span> <span class="n">StdinNotImplementedError</span><span class="p">(</span>
+<span class="ne">--&gt; </span><span class="mi">846</span>                 <span class="s2">&quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">847</span>             <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">848</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_input_request</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">prompt</span><span class="p">),</span>
+
+<span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>➤ Try writing your own version.</strong></p>
+<p>You should be able to use the code you wrote for <code class="docutils literal notranslate"><span class="pre">guessingGame</span></code> as a starting point.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try it here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>➤ Here’s a final one to try.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gg</span><span class="o">.</span><span class="n">montyHall</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>You have 3 numbered boxes. One of them contains $1 million; the
+others are empty. Which one do you think contains the money?
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">5</span><span class="o">-</span><span class="n">fece82f590ed</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">gg</span><span class="o">.</span><span class="n">montyHall</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="nn">~/work/EMSC-4033/EMSC-4033/Notebooks/Practicals/Ex04/.hidden/guessingGames.py</span> in <span class="ni">montyHall</span><span class="nt">(nBoxes)</span>
+<span class="g g-Whitespace">     </span><span class="mi">46</span>             <span class="s2">&quot;others are empty. Which one do you think contains the money?</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">%</span><span class="k">nBoxes</span>)
+<span class="g g-Whitespace">     </span><span class="mi">47</span>     <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">48</span>     <span class="n">iBox</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter a box number: &quot;</span><span class="p">))</span>
+<span class="g g-Whitespace">     </span><span class="mi">49</span>     <span class="n">iMH</span> <span class="o">=</span> <span class="n">iBox</span>
+<span class="g g-Whitespace">     </span><span class="mi">50</span>     <span class="k">while</span> <span class="n">iMH</span><span class="o">==</span><span class="n">iBox</span> <span class="ow">or</span> <span class="n">iMH</span><span class="o">==</span><span class="n">iCash</span><span class="p">:</span>
+
+<span class="nn">/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/ipykernel/kernelbase.py</span> in <span class="ni">raw_input</span><span class="nt">(self, prompt)</span>
+<span class="g g-Whitespace">    </span><span class="mi">844</span>         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_allow_stdin</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">845</span>             <span class="k">raise</span> <span class="n">StdinNotImplementedError</span><span class="p">(</span>
+<span class="ne">--&gt; </span><span class="mi">846</span>                 <span class="s2">&quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">847</span>             <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">848</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_input_request</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">prompt</span><span class="p">),</span>
+
+<span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>➤ Can you make your own version?</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try it here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Notebooks/Practicals/Ex04"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="../Ex03/Exercise%203%20-%20Loops%20and%20conditionals.html" title="previous page">Exercise 3 - Loops and conditionals</a>
+    <a class='right-next' id="next-link" href="../Ex05/Exercise%205%20-%20Lists%2C%20tuples%20and%20dictionaries.html" title="next page">Exercise 5 - Lists, tuples and dictionaries</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Louis Moresi<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

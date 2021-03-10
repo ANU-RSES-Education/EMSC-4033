@@ -1,0 +1,656 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cartopy and the Shuttle Radar Topography Map data &#8212; EMSC 4033 Computing in Geoscience</title>
+    
+  <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.c441f2ba0852f4cabcb80105e3a46ae6.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/AuWorldEQ.jpg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">EMSC 4033 Computing in Geoscience</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../FrontPage.html">
+   Jupyterbook example
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Examples
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Practicals/Introduction.html">
+   Andrew Valentine’s Exercises
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Practicals/Ex01/Exercise%201%20-%20Getting%20started.html">
+   Exercise 1 - Getting started with Jupyter and Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Practicals/Ex02/Exercise%202%20-%20Variables%20and%20functions.html">
+   Exercise 2 - Variables and functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Practicals/Ex02/Exercise%202%20-%20Variables%20and%20functions.html#functions">
+   Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Practicals/Ex03/Exercise%203%20-%20Loops%20and%20conditionals.html">
+   Exercise 3 - Loops and conditionals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Practicals/Ex04/Guessing%20Games.html">
+   Exercise 4 - Guessing Games
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Practicals/Ex05/Exercise%205%20-%20Lists%2C%20tuples%20and%20dictionaries.html">
+   Exercise 5 - Lists, tuples and dictionaries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Practicals/Ex06/Exercise%206%20-%20More%20loops.html">
+   Exercise 6 - More loops
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Practicals/Ex06/Exercise%206%20-%20More%20loops.html#try-it-here">
+   Try it here!
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Practicals/Ex07/Exercise%207%20-%20Strings.html">
+   Exercise 7 - Strings
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Practicals/Ex08/Exercise%208%20-%20Reading%20and%20writing%20files.html">
+   Exercise 8 - Reading and writing files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Practicals/Ex09/Exercise%209%20-%20Modules.html">
+   Exercise 9 - Modules
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Practicals/Ex10/Exercise%2010%20-%20Exception%20handling.html">
+   Exercise 10 - Exception handling
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Practicals/Ex11/Exercise%2011%20-%20Sudoku.html">
+   Exercise 11 - Sudoku
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Practicals/Ex12/Exercise%2012%20-%20Plotting.html">
+   Exercise 12 - Plotting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Practicals/Ex13/Exercise%2013%20-%20Radioactive%20Decay.html">
+   Exercise 13 - Radioactive decay
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Practicals/Ex14/Exercise%2014%20-%20Pandas.html">
+   Exercise 14 - Structured Data in Python (
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     pandas
+    </span>
+   </code>
+   )
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Practicals/Ex15/Exercise%2015%20-%20More%20plotting.html">
+   Exercise 15 - More plotting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Practicals/Ex16/Exercise%2016%20-%20Maps.html">
+   Exercise 16 - Maps
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Practicals/Ex17/Exercise%2017%20-%20Fourier%20analysis%20and%20Milankovitch%20cycles.html">
+   Exercise 17 - Fourier analysis and Milankovitch cycles
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Practicals/Ex18/Exercise%2018%20-%20Object-oriented%20programming.html">
+   Exercise N - Object-oriented programming
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Practicals/Ex19/Exercise%20N%20-%20differential%20equations.html">
+   Exercise N - Differential equations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Practicals/Ex20/Exercise%20N%20-%20Sorting.html">
+   Exercise N - Visualising sorting algorithms
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/Notebooks/ScratchPad/Example3-Cartopy-WorkingWithShuttleRadarTopography.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/ANU-RSES-Education/EMSC-4033"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/ANU-RSES-Education/EMSC-4033/master?urlpath=tree/Notebooks/ScratchPad/Example3-Cartopy-WorkingWithShuttleRadarTopography.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="cartopy-and-the-shuttle-radar-topography-map-data">
+<h1>Cartopy and the Shuttle Radar Topography Map data<a class="headerlink" href="#cartopy-and-the-shuttle-radar-topography-map-data" title="Permalink to this headline">¶</a></h1>
+<p>The SRTM project provides a global land elevation model at a resolution of (roughly) 30m. That’s a useful thing to be able to access - either as raw data or simply for plotting into maps. Here are some examples of methods to access, process and display this data using the cartopy interfaces.</p>
+<p>For more information on the project: http://www2.jpl.nasa.gov/srtm/</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">pylab</span> inline
+
+<span class="c1"># from osgeo import gdal</span>
+<span class="c1"># from osgeo import gdal_array</span>
+
+<span class="kn">import</span> <span class="nn">cartopy.crs</span> <span class="k">as</span> <span class="nn">ccrs</span>
+<span class="kn">from</span> <span class="nn">cartopy.io</span> <span class="kn">import</span> <span class="n">srtm</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="kn">from</span> <span class="nn">cartopy.io</span> <span class="kn">import</span> <span class="n">PostprocessedRasterSource</span><span class="p">,</span> <span class="n">RasterSourceContainer</span><span class="p">,</span> <span class="n">LocatedImage</span>
+<span class="kn">from</span> <span class="nn">cartopy.io.srtm</span> <span class="kn">import</span> <span class="n">SRTM3Source</span>
+
+<span class="kn">import</span> <span class="nn">cartopy.feature</span> <span class="k">as</span> <span class="nn">cfeature</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Populating the interactive namespace from numpy and matplotlib
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python</span>
+<span class="kn">from</span> <span class="nn">http.cookiejar</span> <span class="kn">import</span> <span class="n">CookieJar</span>
+<span class="c1"># from urllib import urlencode</span>
+<span class="kn">import</span> <span class="nn">urllib.request</span>
+
+
+<span class="c1"># The user credentials that will be used to authenticate access to the data</span>
+
+<span class="n">username</span> <span class="o">=</span> <span class="s2">&quot;lmoresi&quot;</span>
+<span class="n">password</span> <span class="o">=</span> <span class="s2">&quot;hpX-AnW-xrT-5D6&quot;</span>
+
+
+<span class="c1"># The url of the file we wish to retrieve</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://e4ftl01.cr.usgs.gov/MOLA/MYD17A3H.006/2009.01.01/MYD17A3H.A2009001.h12v05.006.2015198130546.hdf.xml&quot;</span>
+
+
+<span class="c1"># Create a password manager to deal with the 401 reponse that is returned from</span>
+<span class="c1"># Earthdata Login</span>
+
+<span class="n">password_manager</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">HTTPPasswordMgrWithDefaultRealm</span><span class="p">()</span>
+<span class="n">password_manager</span><span class="o">.</span><span class="n">add_password</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;https://urs.earthdata.nasa.gov&quot;</span><span class="p">,</span> <span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="p">)</span>
+
+
+<span class="c1"># Create a cookie jar for storing cookies. This is used to store and return</span>
+<span class="c1"># the session cookie given to use by the data server (otherwise it will just</span>
+<span class="c1"># keep sending us back to Earthdata Login to authenticate).  Ideally, we</span>
+<span class="c1"># should use a file based cookie jar to preserve cookies between runs. This</span>
+<span class="c1"># will make it much more efficient.</span>
+
+<span class="n">cookie_jar</span> <span class="o">=</span> <span class="n">CookieJar</span><span class="p">()</span>
+
+
+<span class="c1"># Install all the handlers.</span>
+
+<span class="n">opener</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">build_opener</span><span class="p">(</span>
+    <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">HTTPBasicAuthHandler</span><span class="p">(</span><span class="n">password_manager</span><span class="p">),</span>
+    <span class="c1">#urllib2.HTTPHandler(debuglevel=1),    # Uncomment these two lines to see</span>
+    <span class="c1">#urllib2.HTTPSHandler(debuglevel=1),   # details of the requests/responses</span>
+    <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">HTTPCookieProcessor</span><span class="p">(</span><span class="n">cookie_jar</span><span class="p">))</span>
+<span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">install_opener</span><span class="p">(</span><span class="n">opener</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Region of interest</span>
+
+<span class="n">map_extent</span> <span class="o">=</span> <span class="p">[</span> <span class="o">-</span><span class="mi">120</span><span class="p">,</span> <span class="o">-</span><span class="mi">117</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">36</span><span class="p">]</span>
+
+<span class="n">lon0</span> <span class="o">=</span> <span class="n">map_extent</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">lat0</span> <span class="o">=</span> <span class="n">map_extent</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+
+<span class="c1"># High res coastline</span>
+
+<span class="n">coastline</span> <span class="o">=</span> <span class="n">cfeature</span><span class="o">.</span><span class="n">NaturalEarthFeature</span><span class="p">(</span><span class="s1">&#39;physical&#39;</span><span class="p">,</span> <span class="s1">&#39;coastline&#39;</span><span class="p">,</span> <span class="s1">&#39;10m&#39;</span><span class="p">,</span>
+                           <span class="n">edgecolor</span><span class="o">=</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">0.8</span><span class="p">,</span><span class="mf">0.0</span><span class="p">),</span>
+                           <span class="n">facecolor</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">)</span>
+
+<span class="n">ocean</span> <span class="o">=</span> <span class="n">cfeature</span><span class="o">.</span><span class="n">NaturalEarthFeature</span><span class="p">(</span><span class="s1">&#39;physical&#39;</span><span class="p">,</span> <span class="s1">&#39;ocean&#39;</span><span class="p">,</span> <span class="s1">&#39;50m&#39;</span><span class="p">,</span>
+                           <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">,</span>
+                           <span class="n">facecolor</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># SRTM - how to grab the data and plot it as an image (in the usual way)</span>
+
+<span class="c1"># There may be some &quot;download&quot; warnings but this is simply a result of the way that the SRTM </span>
+<span class="c1"># module caches data the first time that it needs a tile. Replotting will be a lot quicker.</span>
+ 
+<span class="n">elev</span><span class="p">,</span> <span class="n">crs</span><span class="p">,</span> <span class="n">extent</span> <span class="o">=</span> <span class="n">SRTM3Source</span><span class="p">()</span><span class="o">.</span><span class="n">combined</span><span class="p">(</span><span class="n">lon0</span><span class="p">,</span> <span class="n">lat0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+
+<span class="c1"># Take out low points </span>
+<span class="c1">#elev = np.ma.masked_less_equal(elev, -100, copy=False)</span>
+
+<span class="nb">print</span> <span class="p">(</span><span class="n">elev</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">elev</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="n">elev</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/cartopy/io/srtm.py:418: UserWarning: SRTM requires an account set up and log in to access. Use of this Downloader is likely to fail with HTTP 401 errors.
+  warnings.warn(&#39;SRTM requires an account set up and log in to access. &#39;
+/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/cartopy/io/__init__.py:260: DownloadWarning: Downloading: https://e4ftl01.cr.usgs.gov/MEASURES/SRTMGL3.003/2000.02.11/N33W120.SRTMGL3.hgt.zip
+  warnings.warn(&#39;Downloading: {}&#39;.format(url), DownloadWarning)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/cartopy/io/__init__.py:260: DownloadWarning: Downloading: https://e4ftl01.cr.usgs.gov/MEASURES/SRTMGL3.003/2000.02.11/N34W120.SRTMGL3.hgt.zip
+  warnings.warn(&#39;Downloading: {}&#39;.format(url), DownloadWarning)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/cartopy/io/__init__.py:260: DownloadWarning: Downloading: https://e4ftl01.cr.usgs.gov/MEASURES/SRTMGL3.003/2000.02.11/N35W120.SRTMGL3.hgt.zip
+  warnings.warn(&#39;Downloading: {}&#39;.format(url), DownloadWarning)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/cartopy/io/__init__.py:260: DownloadWarning: Downloading: https://e4ftl01.cr.usgs.gov/MEASURES/SRTMGL3.003/2000.02.11/N33W119.SRTMGL3.hgt.zip
+  warnings.warn(&#39;Downloading: {}&#39;.format(url), DownloadWarning)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/cartopy/io/__init__.py:260: DownloadWarning: Downloading: https://e4ftl01.cr.usgs.gov/MEASURES/SRTMGL3.003/2000.02.11/N34W119.SRTMGL3.hgt.zip
+  warnings.warn(&#39;Downloading: {}&#39;.format(url), DownloadWarning)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/cartopy/io/__init__.py:260: DownloadWarning: Downloading: https://e4ftl01.cr.usgs.gov/MEASURES/SRTMGL3.003/2000.02.11/N35W119.SRTMGL3.hgt.zip
+  warnings.warn(&#39;Downloading: {}&#39;.format(url), DownloadWarning)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/cartopy/io/__init__.py:260: DownloadWarning: Downloading: https://e4ftl01.cr.usgs.gov/MEASURES/SRTMGL3.003/2000.02.11/N33W118.SRTMGL3.hgt.zip
+  warnings.warn(&#39;Downloading: {}&#39;.format(url), DownloadWarning)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/cartopy/io/__init__.py:260: DownloadWarning: Downloading: https://e4ftl01.cr.usgs.gov/MEASURES/SRTMGL3.003/2000.02.11/N34W118.SRTMGL3.hgt.zip
+  warnings.warn(&#39;Downloading: {}&#39;.format(url), DownloadWarning)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/cartopy/io/__init__.py:260: DownloadWarning: Downloading: https://e4ftl01.cr.usgs.gov/MEASURES/SRTMGL3.003/2000.02.11/N35W118.SRTMGL3.hgt.zip
+  warnings.warn(&#39;Downloading: {}&#39;.format(url), DownloadWarning)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-39.0 3061.0 537.2393995228173
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">coastline</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">elev</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="n">extent</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">crs</span><span class="p">,</span>
+           <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;terrain&#39;</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;lower&#39;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=-</span><span class="mf">400.</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mf">2000.</span><span class="p">)</span>
+
+<span class="n">cb</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">orientation</span><span class="o">=</span><span class="s1">&#39;vertical&#39;</span><span class="p">)</span>
+<span class="n">cb</span><span class="o">.</span><span class="n">set_label</span><span class="p">(</span><span class="s1">&#39;Altitude&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;SRTM Map&quot;</span><span class="p">)</span>
+<span class="n">gl</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">gridlines</span><span class="p">(</span><span class="n">draw_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">gl</span><span class="o">.</span><span class="n">xlabels_top</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">gl</span><span class="o">.</span><span class="n">ylabels_left</span> <span class="o">=</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/cartopy/mpl/geoaxes.py:388: MatplotlibDeprecationWarning: 
+The &#39;inframe&#39; parameter of draw() was deprecated in Matplotlib 3.3 and will be removed two minor releases later. Use Axes.redraw_in_frame() instead. If any parameter follows &#39;inframe&#39;, they should be passed as keyword, not positionally.
+  inframe=inframe)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/cartopy/io/__init__.py:260: DownloadWarning: Downloading: http://naciscdn.org/naturalearth/10m/physical/ne_10m_coastline.zip
+  warnings.warn(&#39;Downloading: {}&#39;.format(url), DownloadWarning)
+</pre></div>
+</div>
+<img alt="../../_images/Example3-Cartopy-WorkingWithShuttleRadarTopography_5_2.png" src="../../_images/Example3-Cartopy-WorkingWithShuttleRadarTopography_5_2.png" />
+</div>
+</div>
+<p>Patching data</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Here is a completely different way to do this !! </span>
+
+<span class="c1"># Rather than downloading data, we can make use of on-demand downloading</span>
+<span class="c1"># through interfaces provided by cartopy. This might save us managing a</span>
+<span class="c1"># huge amount of data but the manipulations we used routinely above now</span>
+<span class="c1"># have to be handled by helper functions handed into the cartopy classes.</span>
+
+
+<span class="c1"># The &quot;container&quot; is like a placeholder for what will need to be called </span>
+<span class="c1"># when the plotting routines need to grab data</span>
+
+<span class="n">srtm</span> <span class="o">=</span> <span class="n">RasterSourceContainer</span><span class="p">(</span><span class="n">SRTM3Source</span><span class="p">())</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_extent</span><span class="p">(</span><span class="n">map_extent</span><span class="p">)</span>
+
+<span class="n">data_norm</span> <span class="o">=</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">Normalize</span><span class="p">(</span><span class="n">vmin</span><span class="o">=-</span><span class="mi">300</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">2000</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">add_raster</span><span class="p">(</span><span class="n">srtm</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;terrain&#39;</span><span class="p">,</span> <span class="n">norm</span><span class="o">=</span><span class="n">data_norm</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">coastline</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;cartopy.mpl.feature_artist.FeatureArtist at 0x7f35f56501d0&gt;
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/cartopy/io/srtm.py:418: UserWarning: SRTM requires an account set up and log in to access. Use of this Downloader is likely to fail with HTTP 401 errors.
+  warnings.warn(&#39;SRTM requires an account set up and log in to access. &#39;
+</pre></div>
+</div>
+<img alt="../../_images/Example3-Cartopy-WorkingWithShuttleRadarTopography_7_2.png" src="../../_images/Example3-Cartopy-WorkingWithShuttleRadarTopography_7_2.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Shuttle radar shaded relief map </span>
+
+<span class="kn">from</span> <span class="nn">cartopy.io</span> <span class="kn">import</span> <span class="n">srtm</span> <span class="k">as</span> <span class="n">csrtm</span>
+
+<span class="k">def</span> <span class="nf">shade</span><span class="p">(</span><span class="n">located_elevations</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Given an array of elevations in a LocatedImage, fill any holes in</span>
+<span class="sd">    the data and add a relief (shadows) to give a realistic 3d appearance.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">new_img</span> <span class="o">=</span> <span class="n">csrtm</span><span class="o">.</span><span class="n">add_shading</span><span class="p">(</span><span class="n">located_elevations</span><span class="o">.</span><span class="n">image</span><span class="p">,</span> <span class="n">azimuth</span><span class="o">=</span><span class="mi">135</span><span class="p">,</span> <span class="n">altitude</span><span class="o">=</span><span class="mi">33</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">LocatedImage</span><span class="p">(</span><span class="n">new_img</span><span class="p">,</span> <span class="n">located_elevations</span><span class="o">.</span><span class="n">extent</span><span class="p">)</span>
+
+
+<span class="c1"># Define a raster source which uses the SRTM3 data and applies the</span>
+<span class="c1"># fill_and_shade function when the data is retrieved.</span>
+
+<span class="n">shaded_srtm</span> <span class="o">=</span> <span class="n">PostprocessedRasterSource</span><span class="p">(</span><span class="n">SRTM3Source</span><span class="p">(),</span> <span class="n">shade</span><span class="p">)</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">ax</span>  <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_extent</span><span class="p">(</span><span class="n">map_extent</span><span class="p">)</span>
+
+<span class="c1"># Add the shaded SRTM source to our map with a grayscale colormap.</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">add_raster</span><span class="p">(</span><span class="n">shaded_srtm</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Greys&#39;</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">coastline</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">ocean</span><span class="p">,</span>  <span class="n">zorder</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">)</span>
+
+<span class="c1"># This data is high resolution, so pick a small area which has some</span>
+<span class="c1"># interesting orography.</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;SRTM Shaded Relief Map&quot;</span><span class="p">)</span>
+
+<span class="n">gl</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">gridlines</span><span class="p">(</span><span class="n">draw_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">gl</span><span class="o">.</span><span class="n">xlabels_top</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">gl</span><span class="o">.</span><span class="n">ylabels_left</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;LA_Region_ShadedRelief&quot;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/cartopy/io/__init__.py:260: DownloadWarning: Downloading: http://naciscdn.org/naturalearth/50m/physical/ne_50m_ocean.zip
+  warnings.warn(&#39;Downloading: {}&#39;.format(url), DownloadWarning)
+</pre></div>
+</div>
+<img alt="../../_images/Example3-Cartopy-WorkingWithShuttleRadarTopography_8_1.png" src="../../_images/Example3-Cartopy-WorkingWithShuttleRadarTopography_8_1.png" />
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Notebooks/ScratchPad"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Louis Moresi<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>
