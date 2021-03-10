@@ -1,7 +1,7 @@
 # EMSC 4033 
 
 
-![Health check](https://github.com/ANU-RSES-Education/droplet-template/workflows/Health%20check/badge.svg)
+![Health check](https://github.com/ANU-RSES-Education/EMSC-4033/workflows/Health%20check/badge.svg)
 
 
 
@@ -13,17 +13,17 @@ the Notebooks directory.
 There is some additional configuration to make this work smoothly and you can read what needs to be done 
 in [Jupyterbook/README.md](Jupyterbook/README.md)
 
-For this example, you can see the [online version](https://underworld-geodynamics-cloud.github.io/self-managing-jupyterhub/FrontPage.html) which is automatically built by github using this repository.
+For this example, you can see the [online version](https://ANU-RSES-Education.github.io/EMSC-4033/FrontPage.html) which is automatically built by github using this repository.
 
 ## Try out the Nbgitpuller
 
 To make a "binder-like" link to a repository on a droplet that you have set up, you can read the [nbgitpuller documentation](https://jupyterhub.github.io/nbgitpuller/link.html) or fill out a form here:
 
-[![https://img.shields.io/badge/<LABEL>-<MESSAGE>-<COLOR>](https://img.shields.io/badge/Admin-LinkMaker-Red)](https://jupyterhub.github.io/nbgitpuller/link.html?hub=https://emsc4033-2021.rses.underworldcloud.org&repo=https://github.com/ANU-RSES-Education/droplet-template)
+[![https://img.shields.io/badge/<LABEL>-<MESSAGE>-<COLOR>](https://img.shields.io/badge/Admin-LinkMaker-Red)](https://jupyterhub.github.io/nbgitpuller/link.html?hub=https://emsc4033-2021.rses.underworldcloud.org&repo=https://github.com/ANU-RSES-Education/EMSC-4033)
 
 You can launch this example particular example to try it out by clicking on this link. Your work is persistent. 
 
-[![https://img.shields.io/badge/<LABEL>-<MESSAGE>-<COLOR>](https://img.shields.io/badge/Launch-Demo-blue)](https://emsc4033-2021.rses.underworldcloud.org/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2FANU-RSES-Education%2Fdroplet-template&urlpath=tree%2Fdroplet-template%2FStartHere.ipynb&branch=master)
+[![https://img.shields.io/badge/<LABEL>-<MESSAGE>-<COLOR>](https://img.shields.io/badge/Launch-Demo-blue)](https://emsc4033-2021.rses.underworldcloud.org/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2FANU-RSES-Education%2FEMSC-4033&urlpath=tree%2FEMSC-4033%2FStartHere.ipynb&branch=master)
     
 ## Administration tasks
 
