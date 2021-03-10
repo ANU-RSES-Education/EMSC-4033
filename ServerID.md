@@ -13,7 +13,7 @@ There will be errors if the github secrets have not been set up
  
  ## Comments
    
-
+ - Updated conda_packages.yml
   
   
   
