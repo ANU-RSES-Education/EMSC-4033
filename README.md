@@ -3,8 +3,6 @@
 
 ![Health check](https://github.com/ANU-RSES-Education/EMSC-4033/workflows/Health%20check/badge.svg)
 
-
-
 ## Using Jupyterbook
 
 This repository also contains the information for building a jupyterbook using the notebooks that are in
