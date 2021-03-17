@@ -2,31 +2,122 @@
 
 - part: Examples
   chapters:
-  - file: Notebooks/Practicals/Introduction.md
-  - file: Notebooks/Practicals/Ex01/Exercise 1 - Getting started
-  - file: Notebooks/Practicals/Ex02/Exercise 2 - Variables and functions
-  - file: Notebooks/Practicals/Ex03/Exercise 3 - Loops and conditionals
-  - file: Notebooks/Practicals/Ex04/Guessing Games
-  - file: Notebooks/Practicals/Ex05/Exercise 5 - Lists, tuples and dictionaries
-  - file: Notebooks/Practicals/Ex06/Exercise 6 - More loops
-  - file: Notebooks/Practicals/Ex07/Exercise 7 - Strings
-  - file: Notebooks/Practicals/Ex08/Exercise 8 - Reading and writing files
-  - file: Notebooks/Practicals/Ex09/Exercise 9 - Modules
-  - file: Notebooks/Practicals/Ex10/Exercise 10 - Exception handling
-  - file: Notebooks/Practicals/Ex11/Exercise 11 - Sudoku
-  - file: Notebooks/Practicals/Ex12/Exercise 12 - Plotting
-  - file: Notebooks/Practicals/Ex13/Exercise 13 - Radioactive Decay
-  - file: Notebooks/Practicals/Ex14/Exercise 14 - Pandas
-  - file: Notebooks/Practicals/Ex15/Exercise 15 - More plotting
-  - file: Notebooks/Practicals/Ex16/Exercise 16 - Maps
-  - file: Notebooks/Practicals/Ex17/Exercise 17 - Fourier analysis and Milankovitch cycles
-  - file: Notebooks/Practicals/Ex18/Exercise 18 - Object-oriented programming
-  - file: Notebooks/Practicals/Ex19/Exercise N - differential equations
-  - file: Notebooks/Practicals/Ex20/Exercise N - Sorting
+  - file: Notebooks/StepByStep/Introduction.md
+  - file: Notebooks/StepByStep/Ex01/Exercise 1 - Getting started
+  - file: Notebooks/StepByStep/Ex02/Exercise 2 - Variables and functions
+  - file: Notebooks/StepByStep/Ex03/Exercise 3 - Loops and conditionals
+  - file: Notebooks/StepByStep/Ex04/Guessing Games
+  - file: Notebooks/StepByStep/Ex05/Exercise 5 - Lists, tuples and dictionaries
+  - file: Notebooks/StepByStep/Ex06/Exercise 6 - More loops
+  - file: Notebooks/StepByStep/Ex07/Exercise 7 - Strings
+  - file: Notebooks/StepByStep/Ex08/Exercise 8 - Reading and writing files
+  - file: Notebooks/StepByStep/Ex09/Exercise 9 - Modules
+  - file: Notebooks/StepByStep/Ex10/Exercise 10 - Exception handling
+  - file: Notebooks/StepByStep/Ex11/Exercise 11 - Sudoku
+  - file: Notebooks/StepByStep/Ex12/Exercise 12 - Plotting
+  - file: Notebooks/StepByStep/Ex13/Exercise 13 - Radioactive Decay
+  - file: Notebooks/StepByStep/Ex14/Exercise 14 - Pandas
+  - file: Notebooks/StepByStep/Ex15/Exercise 15 - More plotting
+  - file: Notebooks/StepByStep/Ex16/Exercise 16 - Maps
+  - file: Notebooks/StepByStep/Ex17/Exercise 17 - Fourier analysis and Milankovitch cycles
+  - file: Notebooks/StepByStep/Ex18/Exercise 18 - Object-oriented programming
+  - file: Notebooks/StepByStep/Ex19/Exercise N - differential equations
+  - file: Notebooks/StepByStep/Ex20/Exercise N - Sorting
 
-# - file: Notebooks/Practicals/ExNN/Exercise 11 - NumPy
-# - file: Notebooks/Practicals/ExNS/Processing spectral data
+# - file: Notebooks/StepByStep/ExNN/Exercise 11 - NumPy
+# - file: Notebooks/StepByStep/ExNS/Processing spectral data
 
+
+# - part: Themes/0-StartHere
+#   chapters:
+#   - file: Themes/Mapping/0-Maps_with_Cartopy
+#     sections:
+#     - file: Themes/Mapping/4-ContouringGlobalData
+#     - file: Themes/Mapping/3-WorkingWithRealData
+#     - file: Themes/Mapping/0-Preliminaries
+#     - file: Themes/Mapping/5-WorkingWithPointData
+#     - file: Themes/Mapping/8-GlobalPlateMotionsEtc
+#     - file: Themes/Mapping/9-HimalayaRegionMapsAndImages
+#     - file: Themes/Mapping/1-IntroductingCartopy
+#     - file: Themes/Mapping/6-WorkingWithShuttleRadarTopography
+#     - file: Themes/Mapping/2-ImagesAndGeoTIFFs
+#     - file: Themes/Mapping/7-WorkingWithOn-DemandMappingServices
+#     - file: Themes/Mapping/9a-HimalayaRegionMapsAndImages-Pt2
+    
+  # - file: Themes/Introduction2Python/4-PythonClasses
+  #   sections:
+  #   - file: Themes/Introduction2Python/2-IntroductionToIpython
+  #   - file: Themes/Introduction2Python/3-PythonDataTypes
+  #   - file: Themes/Introduction2Python/1-IntroductionToJupyterNotebooks
+
+  # - file: Themes/SympleSympy/StartingWithSympy-3
+  #   sections:
+  #   - file: Themes/SympleSympy/StartingWithSympy-2
+  #   - file: Themes/SympleSympy/StartingWithSympy
+  #   - file: Themes/SympleSympy/StartingWithSympy-4
+
+  # - file: Themes/SphericalMeshing/0-Stripy
+  #   sections:
+  #   - file: Themes/SphericalMeshing/Litho1pt0/WorkEx1-CratonAverageProperties
+  #     sections:
+  #     - file: Themes/SphericalMeshing/Litho1pt0/Ex2-Litho1Properties
+  #     - file: Themes/SphericalMeshing/Litho1pt0/WorkEx2-OceanDepthAge
+  #     - file: Themes/SphericalMeshing/Litho1pt0/Ex1-Litho1Layers
+  #     - file: Themes/SphericalMeshing/Litho1pt0/Ex3-CrustalRegionalisation
+  #     - file: Themes/SphericalMeshing/Litho1pt0/WEx2-Tutorial/Notebook-2
+  #       sections:
+  #       - file: Themes/SphericalMeshing/Litho1pt0/WEx2-Tutorial/Notebook-3
+  #       - file: Themes/SphericalMeshing/Litho1pt0/WEx2-Tutorial/Notebook-4
+  #       - file: Themes/SphericalMeshing/Litho1pt0/WEx2-Tutorial/Notebook-1
+  #       - file: Themes/SphericalMeshing/Litho1pt0/WEx2-Tutorial/Notebook-5
+
+  #   - file: Themes/SphericalMeshing/SphericalTriangulations/Ex5-Smoothing
+  #     sections:
+  #     - file: Themes/SphericalMeshing/SphericalTriangulations/0-Spherical
+  #     - file: Themes/SphericalMeshing/SphericalTriangulations/Ex6-Scattered-Data
+  #     - file: Themes/SphericalMeshing/SphericalTriangulations/Ex9-Voronoi-Diagram
+  #     - file: Themes/SphericalMeshing/SphericalTriangulations/Ex7-Refinement-of-Triangulations
+  #     - file: Themes/SphericalMeshing/SphericalTriangulations/Ex2-SphericalGrids
+  #     - file: Themes/SphericalMeshing/SphericalTriangulations/Ex8-Spline-Tension
+  #     - file: Themes/SphericalMeshing/SphericalTriangulations/Ex1-Spherical-Triangulations
+  #     - file: Themes/SphericalMeshing/SphericalTriangulations/Ex4-Gradients
+  #     - file: Themes/SphericalMeshing/SphericalTriangulations/Ex3-Interpolation
+
+  #   - file: Themes/SphericalMeshing/CartesianTriangulations/Ex5-Smoothing
+  #     sections:
+  #     - file: Themes/SphericalMeshing/CartesianTriangulations/0-Cartesian
+  #     - file: Themes/SphericalMeshing/CartesianTriangulations/Ex6-Scattered-Data
+  #     - file: Themes/SphericalMeshing/CartesianTriangulations/Ex9-Voronoi-Diagram
+  #     - file: Themes/SphericalMeshing/CartesianTriangulations/Ex7-Refinement-of-Triangulations
+  #     - file: Themes/SphericalMeshing/CartesianTriangulations/Ex1-Cartesian-Triangulations
+  #     - file: Themes/SphericalMeshing/CartesianTriangulations/Ex8-Spline-Tension
+  #     - file: Themes/SphericalMeshing/CartesianTriangulations/Ex2-CartesianGrids
+  #     - file: Themes/SphericalMeshing/CartesianTriangulations/Ex4-Gradients
+  #     - file: Themes/SphericalMeshing/CartesianTriangulations/Ex3-Interpolation
+
+  # - file: Themes/NumpyAndScipy/0-NumpyAndScipy
+  #   sections:
+  #   - file: Themes/NumpyAndScipy/1-IntroductionToNumpy
+  #   - file: Themes/NumpyAndScipy/5-ScipyInterpolate
+  #   - file: Themes/NumpyAndScipy/2-Application-TheGameOfLife
+  #   - file: Themes/NumpyAndScipy/8-Numpy+ScipyMiscellany
+  #   - file: Themes/NumpyAndScipy/6-ScipySpatialAndMeshing
+  #   - file: Themes/NumpyAndScipy/4-IntroductionToScipy
+  #   - file: Themes/NumpyAndScipy/3-Discussion-TheGameOfLife
+  #   - file: Themes/NumpyAndScipy/7-ScipyOptimize
+
+  # - file: Themes/Plotting/1-IntroductionToMatplotlib
+
+  # - file: Themes/Introduction2VersionControl/3-YourOwnRepositories
+  #   sections:
+  #   - file: Themes/Introduction2VersionControl/1-GettingStartedWithGit
+  #   - file: Themes/Introduction2VersionControl/2-NextStepsWithGit
+
+  # - file: Themes/SolveMathProblems/1-GroundwaterFlow-LectureNotes
+  #   sections:
+  #   - file: Themes/SolveMathProblems/0-IntroductionToNumericalSolutions
+  #   - file: Themes/SolveMathProblems/3-AdvancedFiniteDifferences
+  #   - file: Themes/SolveMathProblems/2-FiniteDifferences
 
 
 
