@@ -14,6 +14,8 @@
      - file: Notebooks/Themes/Introduction2VersionControl/2-NextStepsWithGit
      - file: Notebooks/Themes/Introduction2VersionControl/3-YourOwnRepositories
 
+  - file: Notebooks/Themes/Plotting/1-IntroductionToMatplotlib
+
 
 - part: Step by Step
   chapters:
@@ -82,15 +84,15 @@
 
     - file: Notebooks/Themes/SphericalMeshing/CartesianTriangulations/0-Cartesian
       sections:
-      - file: Notebooks/Themes/SphericalMeshing/CartesianTriangulations/Ex6-Scattered-Data
-      - file: Notebooks/Themes/SphericalMeshing/CartesianTriangulations/Ex9-Voronoi-Diagram
-      - file: Notebooks/Themes/SphericalMeshing/CartesianTriangulations/Ex7-Refinement-of-Triangulations
       - file: Notebooks/Themes/SphericalMeshing/CartesianTriangulations/Ex1-Cartesian-Triangulations
-      - file: Notebooks/Themes/SphericalMeshing/CartesianTriangulations/Ex8-Spline-Tension
       - file: Notebooks/Themes/SphericalMeshing/CartesianTriangulations/Ex2-CartesianGrids
-      - file: Notebooks/Themes/SphericalMeshing/CartesianTriangulations/Ex4-Gradients
       - file: Notebooks/Themes/SphericalMeshing/CartesianTriangulations/Ex3-Interpolation
+      - file: Notebooks/Themes/SphericalMeshing/CartesianTriangulations/Ex4-Gradients
       - file: Notebooks/Themes/SphericalMeshing/CartesianTriangulations/Ex5-Smoothing
+      - file: Notebooks/Themes/SphericalMeshing/CartesianTriangulations/Ex6-Scattered-Data
+      - file: Notebooks/Themes/SphericalMeshing/CartesianTriangulations/Ex7-Refinement-of-Triangulations
+      - file: Notebooks/Themes/SphericalMeshing/CartesianTriangulations/Ex8-Spline-Tension
+      - file: Notebooks/Themes/SphericalMeshing/CartesianTriangulations/Ex9-Voronoi-Diagram
 
     - file: Notebooks/Themes/SphericalMeshing/Litho1pt0/Ex1-Litho1Layers
       sections:
@@ -112,23 +114,20 @@
   - file: Notebooks/Themes/NumpyAndScipy/0-NumpyAndScipy
     sections:
     - file: Notebooks/Themes/NumpyAndScipy/1-IntroductionToNumpy
-    - file: Notebooks/Themes/NumpyAndScipy/5-ScipyInterpolate
     - file: Notebooks/Themes/NumpyAndScipy/2-Application-TheGameOfLife
-    - file: Notebooks/Themes/NumpyAndScipy/8-Numpy+ScipyMiscellany
-    - file: Notebooks/Themes/NumpyAndScipy/6-ScipySpatialAndMeshing
-    - file: Notebooks/Themes/NumpyAndScipy/4-IntroductionToScipy
     - file: Notebooks/Themes/NumpyAndScipy/3-Discussion-TheGameOfLife
+    - file: Notebooks/Themes/NumpyAndScipy/4-IntroductionToScipy
+    - file: Notebooks/Themes/NumpyAndScipy/5-ScipyInterpolate
+    - file: Notebooks/Themes/NumpyAndScipy/6-ScipySpatialAndMeshing
     - file: Notebooks/Themes/NumpyAndScipy/7-ScipyOptimize
-
-  - file: Notebooks/Themes/Plotting/1-IntroductionToMatplotlib
-
+    - file: Notebooks/Themes/NumpyAndScipy/8-Numpy+ScipyMiscellany
 
 
-  - file: Notebooks/Themes/SolveMathProblems/1-GroundwaterFlow-LectureNotes
+  - file: Notebooks/Themes/SolveMathProblems/0-IntroductionToNumericalSolutions
     sections:
-    - file: Notebooks/Themes/SolveMathProblems/0-IntroductionToNumericalSolutions
-    - file: Notebooks/Themes/SolveMathProblems/3-AdvancedFiniteDifferences
+    - file: Notebooks/Themes/SolveMathProblems/1-GroundwaterFlow-LectureNotes
     - file: Notebooks/Themes/SolveMathProblems/2-FiniteDifferences
+    - file: Notebooks/Themes/SolveMathProblems/3-AdvancedFiniteDifferences
 
 
 
