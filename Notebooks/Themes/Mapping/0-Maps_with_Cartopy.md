@@ -3,12 +3,12 @@ jupytext:
   text_representation:
     extension: .md
     format_name: myst
-    format_version: '0.9'
-    jupytext_version: 1.5.2
+    format_version: 0.12
+    jupytext_version: 1.9.1
 kernelspec:
-  display_name: Python 2
+  display_name: Python 3
   language: python
-  name: python2
+  name: python3
 ---
 
 # Maps with the Cartopy Package
