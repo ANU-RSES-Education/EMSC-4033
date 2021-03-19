@@ -63,7 +63,7 @@ $$  S\frac{\partial h}{\partial t} + H =
 
 +++ {"slideshow": {"slide_type": "slide"}}
 
-# Finite Differences
+## Finite Differences
 
 Still working backwards !!
 
