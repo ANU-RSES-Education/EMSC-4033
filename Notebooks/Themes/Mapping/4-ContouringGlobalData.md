@@ -3,8 +3,8 @@ jupytext:
   text_representation:
     extension: .md
     format_name: myst
-    format_version: 0.12
-    jupytext_version: 1.6.0
+    format_version: 0.13
+    jupytext_version: 1.10.3
 kernelspec:
   display_name: Python 3
   language: python
@@ -18,7 +18,7 @@ We will look at a couple of datasets and see how best to view them with contours
 ```{code-cell} ipython3
 %pylab inline
 
-import gdal
+from osgeo import gdal
 import cartopy
 import cartopy.crs as ccrs
 import matplotlib.pyplot as plt
@@ -149,7 +149,6 @@ ax.contourf(strainrate_data[:,:,0], strainrate_data[:,:,1], strainrate_data[:,:,
 ax.add_feature(coastline, linewidth=0.33, zorder=3)
 
 plt.savefig("GlobalAgeAndStrainRate.png", dpi=300, frameon=False, edgecolor="none", facecolor="none", bbox_inches='tight', pad_inches=0.0)
-
 ```
 
 ```{code-cell} ipython3

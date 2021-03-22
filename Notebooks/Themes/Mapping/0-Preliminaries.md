@@ -3,8 +3,8 @@ jupytext:
   text_representation:
     extension: .md
     format_name: myst
-    format_version: 0.12
-    jupytext_version: 1.9.1
+    format_version: 0.13
+    jupytext_version: 1.10.3
 kernelspec:
   display_name: Python 3
   language: python
@@ -112,7 +112,7 @@ for file in download_list:
     
     if not os.path.exists(os.path.join("Resources/",file)):
         print("Downloading {} to Resources directory".format(file))
-        teaching_data.download_file(file, os.path.join("Resources/",file))
+        teaching_data.download_file(file, os.path.join("Resources",file))
 ```
 
 ```{code-cell} ipython3

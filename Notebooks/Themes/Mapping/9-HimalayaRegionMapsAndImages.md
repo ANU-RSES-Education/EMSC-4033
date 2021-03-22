@@ -3,8 +3,8 @@ jupytext:
   text_representation:
     extension: .md
     format_name: myst
-    format_version: 0.12
-    jupytext_version: 1.6.0
+    format_version: 0.13
+    jupytext_version: 1.10.3
 kernelspec:
   display_name: Python 3
   language: python
@@ -349,7 +349,6 @@ ax.set_extent(himalaya_region_extent)
 ax.add_image(map_tiles, 5)
 
 ax.add_feature(coastline, linewidth=1.5,  edgecolor="Black", zorder=1)
-
 ```
 
 ```{code-cell} ipython3

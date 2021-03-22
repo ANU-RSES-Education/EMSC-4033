@@ -3,8 +3,8 @@ jupytext:
   text_representation:
     extension: .md
     format_name: myst
-    format_version: 0.12
-    jupytext_version: 1.6.0
+    format_version: 0.13
+    jupytext_version: 1.10.3
 kernelspec:
   display_name: Python 3
   language: python
@@ -15,11 +15,11 @@ kernelspec:
 
 Here I am going to show you how to make a map of magnetic intensity using 2 different datasets and various masks. The data for the Australian continent came from tiles from the AuScope data portal which I downloaded one day and stitched together with an open-source geotiff tool.
 
-We'll use that dataset in conjunction with the global magnetic dataset I already gave you.
+We'll use that dataset in conjunction with the global magnetic dataset that we downloaded from the 0-Preliminaries.md notebook. If you did not already do this, then please, go back, run the notebook and download all the files that we need.
 
 ```{code-cell} ipython3
 %pylab inline
-import gdal
+from osgeo import gdal
 import cartopy
 import cartopy.crs as ccrs
 import matplotlib.pyplot as plt

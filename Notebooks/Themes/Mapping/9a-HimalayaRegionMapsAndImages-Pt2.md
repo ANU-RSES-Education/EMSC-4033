@@ -3,8 +3,8 @@ jupytext:
   text_representation:
     extension: .md
     format_name: myst
-    format_version: 0.12
-    jupytext_version: 1.6.0
+    format_version: 0.13
+    jupytext_version: 1.10.3
 kernelspec:
   display_name: Python 3
   language: python
@@ -192,16 +192,20 @@ client = Client("IRIS")
 
 himalaya_extent = [65, 110, 5, 45 ]
 
-starttime = UTCDateTime("1965-01-01")
-endtime   = UTCDateTime("2016-01-01")
+starttime = UTCDateTime("1971-01-01")
+endtime   = UTCDateTime("2021-01-01")
 cat = client.get_events(starttime=starttime, endtime=endtime,
                         minlongitude=himalaya_extent[0],
                         maxlongitude=himalaya_extent[1],
                         minlatitude=himalaya_extent[2],
                         maxlatitude=himalaya_extent[3],
-                        minmagnitude=4.5, catalog="ISC")
+                        minmagnitude=5.5, catalog="ISC")
 
 print (cat.count(), " events in catalogue")
+```
+
+```{code-cell} ipython3
+
 ```
 
 ```{code-cell} ipython3
@@ -220,7 +224,7 @@ for ev, event in enumerate(cat.events):
 ```
 
 ```{code-cell} ipython3
-rootgrp = netcdf.netcdf_file(filename="../../Data/Reference/velocity_EU.nc", version=2)
+rootgrp = netcdf.netcdf_file(filename="Resources/velocity_EU.nc", version=2)
 
 ve = rootgrp.variables["ve"]
 vn = rootgrp.variables["vn"]
@@ -252,7 +256,7 @@ from matplotlib.transforms import offset_copy
 import cartopy.crs as ccrs
 import cartopy.io.img_tiles as cimgt
 
-import gdal
+from osgeo import gdal
 from cartopy.mpl.gridliner import LONGITUDE_FORMATTER, LATITUDE_FORMATTER
 import matplotlib.ticker as mticker
 
@@ -334,7 +338,7 @@ fig.savefig("HimalayaRivers.png", dpi=300)
 ## earthquake hypocentres plotted on top
 
 
-import gdal
+from osgeo import gdal
 from cartopy.mpl.gridliner import LONGITUDE_FORMATTER, LATITUDE_FORMATTER
 import matplotlib.ticker as mticker
 
@@ -392,20 +396,20 @@ gl.ylabel_style = {'size': 18, 'color': 'black'}
 #  For the published figure, I used these circles to give me the scale and colour
 # but made my own legend in a drawing program
 
-mag4_color     = cm.Blues( 1.0 )
-mag4_dot35km   = ax.scatter(66.0, 6.0, 50.0*(4.6-4.5), marker='o', color=mag4_color,
-                 vmin=30000, vmax=100000, alpha = 0.85, linewidth=0.5, zorder=21)
+# mag4_color     = cm.Blues( 1.0 )
+# mag4_dot35km   = ax.scatter(66.0, 6.0, 50.0*(4.6-4.5), marker='o', color=mag4_color,
+#                  vmin=30000, vmax=100000, alpha = 0.85, linewidth=0.5, zorder=21)
 
 mag5_color     = cm.Blues( 1.0- (50 - 30) / 70 )
-mag5_dot50km   = ax.scatter(66.0, 7.0, 50.0*(5.0-4.5), marker='o', color=mag5_color,
+mag5_dot50km   = ax.scatter(66.0, 7.0, 50.0*(6.0-5.5), marker='o', color=mag5_color,
                  vmin=30000, vmax=100000, alpha = 0.85, linewidth=0.5, zorder=21)
 
 mag6_color     = cm.Blues(1.0- (70 - 30) / 70 )
-mag6_dot70km   = ax.scatter(66.0, 8.0, 50.0*(6.0-4.5), marker='o', color=mag6_color,
+mag6_dot70km   = ax.scatter(66.0, 8.0, 50.0*(6.5-5.5), marker='o', color=mag6_color,
                  vmin=30000, vmax=100000, alpha = 0.85, linewidth=0.5, zorder=21)
 
 mag7_color     = cm.Blues( 0.0 )
-mag7_dot100km   = ax.scatter(66.0, 9.0, 50.0*(7.0-4.5), marker='o', color=mag7_color,
+mag7_dot100km   = ax.scatter(66.0, 9.0, 50.0*(7.5-5.5), marker='o', color=mag7_color,
                  vmin=30000, vmax=100000, alpha = 0.85, linewidth=0.5, zorder=21)
 ```
 
@@ -434,7 +438,6 @@ ax.set_extent(himalaya_region_extent)
 ax.add_image(map_tiles, 5, alpha=0.45, zorder=2)
 
 ax.add_feature(coastline, linewidth=1.5,  edgecolor="Black", zorder=1)
-
 ```
 
 ```{code-cell} ipython3

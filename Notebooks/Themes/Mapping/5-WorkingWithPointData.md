@@ -3,8 +3,8 @@ jupytext:
   text_representation:
     extension: .md
     format_name: myst
-    format_version: 0.12
-    jupytext_version: 1.6.0
+    format_version: 0.13
+    jupytext_version: 1.10.3
 kernelspec:
   display_name: Python 3
   language: python
@@ -275,8 +275,6 @@ plt.scatter(eqlon, eqlat, c=eqdep, cmap=mpl.cm.jet_r, norm=norm_eqdep, linewidth
             s=(eqmag-5.5)*10, transform=ccrs.PlateCarree(), alpha=0.7, zorder=2)
 
 plt.savefig("GlobalAgeMapEq.png", dpi=600, frameon=False, edgecolor="none", facecolor="none", bbox_inches='tight', pad_inches=0.0)
-
-
 ```
 
 ```{code-cell} ipython3
@@ -360,5 +358,4 @@ ax.plot(x, y, marker='o', transform=ccrs.Geodetic())
 ax.fill(xx, yy,  color='coral', alpha=0.4, transform=ccrs.Geodetic())
 ax.gridlines()
 plt.show()
-
 ```

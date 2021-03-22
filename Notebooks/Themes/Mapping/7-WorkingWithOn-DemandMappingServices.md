@@ -3,8 +3,8 @@ jupytext:
   text_representation:
     extension: .md
     format_name: myst
-    format_version: 0.12
-    jupytext_version: 1.6.0
+    format_version: 0.13
+    jupytext_version: 1.10.3
 kernelspec:
   display_name: Python 3
   language: python
@@ -79,14 +79,18 @@ map_quest_street = cimgt.MapQuestOSM()
 ## Open Street map
 open_street_map = cimgt.OSM()
 
+## Satellite Quadtree
+qtree_satellite_plus = cimgt.QuadtreeTiles()
+
 ## Mapbox Satellite images 
 
 mapbox_satellite = cimgt.MapboxTiles(map_id='satellite', 
                                      access_token='pk.eyJ1IjoibG91aXNtb3Jlc2kiLCJhIjoiY2pzeG1mZzFqMG5sZDQ0czF5YzY1NmZ4cSJ9.lpsUzmLasydBlS0IOqe5JA')
 
+## No longer supported
+# mapbox_streets = cimgt.MapboxTiles(map_id='streets', 
+#                                      access_token='pk.eyJ1IjoibG91aXNtb3Jlc2kiLCJhIjoiY2pzeG1mZzFqMG5sZDQ0czF5YzY1NmZ4cSJ9.lpsUzmLasydBlS0IOqe5JA')
 
-mapbox_streets = cimgt.MapboxTiles(map_id='streets', 
-                                     access_token='pk.eyJ1IjoibG91aXNtb3Jlc2kiLCJhIjoiY2pzeG1mZzFqMG5sZDQ0czF5YzY1NmZ4cSJ9.lpsUzmLasydBlS0IOqe5JA')
 
 
 ## Google maps image tiles ()
@@ -224,13 +228,13 @@ map_extent = [lon0, lon1, lat0, lat1]
 
 
 maptype1 = mapbox_satellite
-maptype2 = mapbox_streets
+maptype2 = stamen_TerrainPlus
+
 
 ## Could also try these ... 
 
-# maptype1 = stamen_Terrain
-# maptype2 = stamen_TerrainPlus
-
+# maptype1 = open_street_map
+maptype1 = cimgt.QuadtreeTiles()
 
 
 fig  = plt.figure(figsize=(12, 12), facecolor="none")
@@ -278,7 +282,7 @@ ax1.set_extent(map_extent)
 ax2.set_extent(map_extent)
 
 ax1.add_image(google_maps_street, 17,    )
-ax2.add_image(google_maps_satellite  , 17)
+ax2.add_image(open_street_map, 17)
 ```
 
 ```{code-cell} ipython3

@@ -3,8 +3,8 @@ jupytext:
   text_representation:
     extension: .md
     format_name: myst
-    format_version: 0.12
-    jupytext_version: 1.6.0
+    format_version: 0.13
+    jupytext_version: 1.10.3
 kernelspec:
   display_name: Python 3
   language: python
@@ -21,7 +21,7 @@ Here is an example - it uses the **gdal** library for manipulating geospatial da
 %pylab inline
 
 import cartopy
-import gdal
+from osgeo import gdal
 import cartopy.crs as ccrs
 import matplotlib.pyplot as plt
 ```
