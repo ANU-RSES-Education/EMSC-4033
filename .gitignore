@@ -141,3 +141,10 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Downloads
+
+Notebooks/Themes/Mapping/Resources
+Notebooks/Themes/SphericalMeshing/CartesianTriangulations/*.png 
+Notebooks/Themes/SphericalMeshing/SphericalTriangulations/*.png 
+Notebooks/Themes/SphericalMeshing/Litho1pt0/*.png 
