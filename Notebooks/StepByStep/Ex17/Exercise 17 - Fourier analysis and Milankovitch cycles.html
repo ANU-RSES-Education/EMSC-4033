@@ -1,0 +1,1111 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise 17 - Fourier analysis and Milankovitch cycles &#8212; EMSC 4033 Computing in Geoscience</title>
+    
+  <link rel="stylesheet" href="../../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Exercise N - Object-oriented programming" href="../Ex18/Exercise%2018%20-%20Object-oriented%20programming.html" />
+    <link rel="prev" title="Exercise 16 - Maps" href="../Ex16/Exercise%2016%20-%20Maps.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../../index.html">
+  
+  <img src="../../../_static/AuWorldEQ.jpg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">EMSC 4033 Computing in Geoscience</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../FrontPage.html">
+   Jupyterbook example
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Modern Approaches to Programming
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../Themes/Introduction2Python/1-IntroductionToJupyterNotebooks.html">
+   Jupyter Notebooks
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/Introduction2Python/2-IntroductionToIpython.html">
+     ipython
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/Introduction2Python/3-PythonDataTypes.html">
+     Python data types
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/Introduction2Python/4-PythonClasses.html">
+     Classes and objects
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../Themes/Introduction2VersionControl/1-GettingStartedWithGit.html">
+   An introduction to Version Control
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/Introduction2VersionControl/2-NextStepsWithGit.html">
+     An introduction to Version Control pt 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/Introduction2VersionControl/3-YourOwnRepositories.html">
+     How to use git for yourself
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Themes/Plotting/1-IntroductionToMatplotlib.html">
+   Introduction to matplotlib
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Step by Step
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="../Introduction.html">
+   Andrew Valentine’s Exercises
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex01/Exercise%201%20-%20Getting%20started.html">
+     Exercise 1 - Getting started with Jupyter and Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex02/Exercise%202%20-%20Variables%20and%20functions.html">
+     Exercise 2 - Variables and functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex02/Exercise%202%20-%20Variables%20and%20functions.html#functions">
+     Functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex03/Exercise%203%20-%20Loops%20and%20conditionals.html">
+     Exercise 3 - Loops and conditionals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex04/Guessing%20Games.html">
+     Exercise 4 - Guessing Games
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex05/Exercise%205%20-%20Lists%2C%20tuples%20and%20dictionaries.html">
+     Exercise 5 - Lists, tuples and dictionaries
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex06/Exercise%206%20-%20More%20loops.html">
+     Exercise 6 - More loops
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex07/Exercise%207%20-%20Strings.html">
+     Exercise 7 - Strings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex08/Exercise%208%20-%20Reading%20and%20writing%20files.html">
+     Exercise 8 - Reading and writing files
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex09/Exercise%209%20-%20Modules.html">
+     Exercise 9 - Modules
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex10/Exercise%2010%20-%20Exception%20handling.html">
+     Exercise 10 - Exception handling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex11/Exercise%2011%20-%20Sudoku.html">
+     Exercise 11 - Sudoku
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex12/Exercise%2012%20-%20Plotting.html">
+     Exercise 12 - Plotting
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex13/Exercise%2013%20-%20Radioactive%20Decay.html">
+     Exercise 13 - Radioactive decay
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex14/Exercise%2014%20-%20Pandas.html">
+     Exercise 14 - Structured Data in Python (
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       pandas
+      </span>
+     </code>
+     )
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex15/Exercise%2015%20-%20More%20plotting.html">
+     Exercise 15 - More plotting
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex16/Exercise%2016%20-%20Maps.html">
+     Exercise 16 - Maps
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Exercise 17 - Fourier analysis and Milankovitch cycles
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex18/Exercise%2018%20-%20Object-oriented%20programming.html">
+     Exercise N - Object-oriented programming
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex19/Exercise%20N%20-%20differential%20equations.html">
+     Exercise N - Differential equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex20/Exercise%20N%20-%20Sorting.html">
+     Exercise N - Visualising sorting algorithms
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Going deeper - examples from the Earth Sciences
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../Themes/Mapping/0-Maps_with_Cartopy.html">
+   Maps with the Cartopy Package
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/Mapping/0-Preliminaries.html">
+     Datasets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/Mapping/1-IntroductingCartopy.html">
+     Cartopy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/Mapping/2-ImagesAndGeoTIFFs.html">
+     Handling images
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/Mapping/3-WorkingWithRealData.html">
+     Australian magnetic intensity
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/Mapping/4-ContouringGlobalData.html">
+     How to use contours to view global data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/Mapping/5-WorkingWithPointData.html">
+     Point Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/Mapping/6-WorkingWithShuttleRadarTopography.html">
+     Cartopy and the Shuttle Radar Topography Map data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/Mapping/7-WorkingWithOn-DemandMappingServices.html">
+     On demand mapping services
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/Mapping/8-GlobalPlateMotionsEtc.html">
+     Global Plate Motions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/Mapping/9-HimalayaRegionMapsAndImages.html">
+     Himalaya Maps (1)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/Mapping/9a-HimalayaRegionMapsAndImages-Pt2.html">
+     Himalaya Maps (2)
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Themes/SympleSympy/StartingWithSympy.html">
+   Getting started with
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     sympy
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../Themes/SympleSympy/StartingWithSympy.html#differentiation-integration">
+   Differentiation / Integration
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/SympleSympy/StartingWithSympy-2.html">
+     Using
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       sympy
+      </span>
+     </code>
+     for ODEs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/SympleSympy/StartingWithSympy-2.html#use-of-the-sympy-equation-module-eq">
+     Use of the
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       sympy
+      </span>
+     </code>
+     equation module (
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Eq
+      </span>
+     </code>
+     )
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/SympleSympy/StartingWithSympy-3.html">
+     Using
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       sympy
+      </span>
+     </code>
+     for a PDE
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/SympleSympy/StartingWithSympy-4.html">
+     The biharmonic equation for Stokes flow
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../Themes/SphericalMeshing/0-Stripy.html">
+   Triangulations
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../../Themes/SphericalMeshing/SphericalTriangulations/0-Spherical.html">
+     Spherical Meshes
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/SphericalTriangulations/Ex1-Spherical-Triangulations.html">
+       Example 1 - Triangulation of arbitrary points on the sphere
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/SphericalTriangulations/Ex2-SphericalGrids.html">
+       Example 2 -
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         stripy
+        </span>
+       </code>
+       predefined meshes
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/SphericalTriangulations/Ex3-Interpolation.html">
+       Example 3 -
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         stripy
+        </span>
+       </code>
+       interpolation on the sphere
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/SphericalTriangulations/Ex4-Gradients.html">
+       Example 4 -
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         stripy
+        </span>
+       </code>
+       gradients on the sphere
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/SphericalTriangulations/Ex5-Smoothing.html">
+       Example 5 -
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         stripy
+        </span>
+       </code>
+       smoothing operations
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/SphericalTriangulations/Ex6-Scattered-Data.html">
+       Example 6 - Scattered Data and ‘Heat Maps’
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/SphericalTriangulations/Ex7-Refinement-of-Triangulations.html">
+       Example 7 - Refining a triangulation
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/SphericalTriangulations/Ex8-Spline-Tension.html">
+       Example 8 - Spline Tension
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/SphericalTriangulations/Ex9-Voronoi-Diagram.html">
+       Example 9 - Constructing the Voronoi diagram
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../../Themes/SphericalMeshing/CartesianTriangulations/0-Cartesian.html">
+     Cartesian Meshes
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/CartesianTriangulations/Ex1-Cartesian-Triangulations.html">
+       Example 1 - Triangulation of arbitrary points
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/CartesianTriangulations/Ex2-CartesianGrids.html">
+       Example 2 -
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         stripy
+        </span>
+       </code>
+       predefined meshes
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/CartesianTriangulations/Ex3-Interpolation.html">
+       Example 3 -
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         stripy
+        </span>
+       </code>
+       interpolation
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/CartesianTriangulations/Ex4-Gradients.html">
+       Example 4 -
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         stripy
+        </span>
+       </code>
+       gradients
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/CartesianTriangulations/Ex5-Smoothing.html">
+       Example 5 -
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         stripy
+        </span>
+       </code>
+       smoothing operations
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/CartesianTriangulations/Ex6-Scattered-Data.html">
+       Example 6 - Scattered Data and ‘Heat Maps’
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/CartesianTriangulations/Ex7-Refinement-of-Triangulations.html">
+       Example 7 - Refining a triangulation
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/CartesianTriangulations/Ex8-Spline-Tension.html">
+       Example 8 - Spline Tension
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/CartesianTriangulations/Ex9-Voronoi-Diagram.html">
+       Example 9 - Constructing the Voronoi diagram
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../../Themes/SphericalMeshing/Litho1pt0/Ex1-Litho1Layers.html">
+     Introduction to the stripy wrapper for litho 1.0
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/Litho1pt0/Ex2-Litho1Properties.html">
+       Litho 1.0 global sampling
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/Litho1pt0/Ex3-CrustalRegionalisation.html">
+       Crust 1.0 data
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/Litho1pt0/WorkEx1-CratonAverageProperties.html">
+       Properties of the cratons
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/Litho1pt0/WorkEx2-OceanDepthAge.html">
+       Age of the oceans / depth of the oceans
+      </a>
+     </li>
+     <li class="toctree-l3 collapsible-parent">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/Litho1pt0/WEx2-Tutorial/Notebook-1.html">
+       A quick look at the depth-age relationship for the seafloor.
+      </a>
+      <ul class="collapse-ul">
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../Themes/SphericalMeshing/Litho1pt0/WEx2-Tutorial/Notebook-2.html">
+         A quick look at the depth-age relationship for the seafloor.
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../Themes/SphericalMeshing/Litho1pt0/WEx2-Tutorial/Notebook-3.html">
+         A quick look at the depth-age relationship for the seafloor.
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../Themes/SphericalMeshing/Litho1pt0/WEx2-Tutorial/Notebook-4.html">
+         A quick look at the depth-age relationship for the seafloor.
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../Themes/SphericalMeshing/Litho1pt0/WEx2-Tutorial/Notebook-5.html">
+         A quick look at the depth-age relationship for the seafloor.
+        </a>
+       </li>
+      </ul>
+      <i class="fas fa-chevron-down">
+      </i>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../Themes/NumpyAndScipy/0-NumpyAndScipy.html">
+   Numpy and Scipy
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/NumpyAndScipy/1-IntroductionToNumpy.html">
+     Numpy data structures
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/NumpyAndScipy/2-Application-TheGameOfLife.html">
+     The game of life
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/NumpyAndScipy/3-Discussion-TheGameOfLife.html">
+     The game of life (Advanced)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/NumpyAndScipy/3-Discussion-TheGameOfLife.html#animation">
+     Animation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/NumpyAndScipy/4-IntroductionToScipy.html">
+     scipy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/NumpyAndScipy/5-ScipyInterpolate.html">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       scipy.interpolate
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/NumpyAndScipy/6-ScipySpatialAndMeshing.html">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       scipy.spatial
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/NumpyAndScipy/7-ScipyOptimize.html">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       scipy.optimize
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/NumpyAndScipy/8-Numpy%2BScipyMiscellany.html">
+     Data storage
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../Themes/SolveMathProblems/0-IntroductionToNumericalSolutions.html">
+   Numerical models
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/SolveMathProblems/1-GroundwaterFlow-LectureNotes.html">
+     Partial Differential Equations of Groundwater Flow
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/SolveMathProblems/2-FiniteDifferences.html">
+     Finite difference operations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/SolveMathProblems/3-AdvancedFiniteDifferences.html">
+     Advanced finite difference
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../_sources/Notebooks/StepByStep/Ex17/Exercise 17 - Fourier analysis and Milankovitch cycles.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/ANU-RSES-Education/EMSC-4033"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/ANU-RSES-Education/EMSC-4033/master?urlpath=tree/Notebooks/StepByStep/Ex17/Exercise 17 - Fourier analysis and Milankovitch cycles.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        <a class="jupyterhub-button" href="https://emsc4033-2021.rses.underworldcloud.org/hub/user-redirect/git-pull?repo=https://github.com/ANU-RSES-Education/EMSC-4033&urlpath=tree/EMSC-4033/Notebooks/StepByStep/Ex17/Exercise 17 - Fourier analysis and Milankovitch cycles.ipynb&branch=master"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
+                data-placement="left"><img class="jupyterhub-button-logo"
+                    src="../../../_static/images/logo_jupyterhub.svg"
+                    alt="Interact on JupyterHub">JupyterHub</button></a>
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#filtering">
+   Filtering
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="exercise-17-fourier-analysis-and-milankovitch-cycles">
+<h1>Exercise 17 - Fourier analysis and Milankovitch cycles<a class="headerlink" href="#exercise-17-fourier-analysis-and-milankovitch-cycles" title="Permalink to this headline">¶</a></h1>
+<p><em>Andrew Valentine - <a class="reference external" href="mailto:andrew&#46;valentine&#37;&#52;&#48;anu&#46;edu&#46;au">andrew<span>&#46;</span>valentine<span>&#64;</span>anu<span>&#46;</span>edu<span>&#46;</span>au</a> - With thanks to Dr Katharine Grant</em></p>
+<p>The Excel spreadsheet <code class="docutils literal notranslate"><span class="pre">RSL_data.xlsx</span></code> contains information about relative sea level over the last 500,000 years.</p>
+<p><strong>➤ Use the Pandas library to read the data from this spreadsheet and plot the relative sea level over time.</strong></p>
+<p>You may wish to ‘flip’ the x-axis so that the most recent measurements are on the right-hand side, as usual. To do this, you can use the following command:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>    <span class="c1"># Get current axes</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">invert_xaxis</span><span class="p">()</span> <span class="c1"># Flip x</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try it here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This signal appears to have strong periodicities. To understand these better, we can analyse the signal using a Fourier transform. A range of different Fourier transform functions are available within <code class="docutils literal notranslate"><span class="pre">np.fft</span></code>; since our signal is purely real (i.e., can be expressed without using complex numbers), we will use <code class="docutils literal notranslate"><span class="pre">np.fft.rfft</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">np.fft.rfft</span></code> assumes that our time samples are all equally-spaced. This is not the case for the dataset within <code class="docutils literal notranslate"><span class="pre">RSL_data.xlsx</span></code>. We therefore need to interpolate the signal onto a regular set of points.</p>
+<p>** ➤ Using the function <code class="docutils literal notranslate"><span class="pre">np.interp</span></code>, interpolate the data onto a regular set of points.** Plot your interpolated time series and verify that it looks the same as the original.</p>
+<p>** ➤ Subtract the mean from this interpolated data.**</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try it here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Given a time series in an array <code class="docutils literal notranslate"><span class="pre">timeSeries</span></code>, we can generate a spectrum by calling</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>npoints = &lt;?&gt;
+spectrum = np.fft.rfft(timeSeries,npoints,norm=&#39;ortho&#39;)
+</pre></div>
+</div>
+<p>The variable <code class="docutils literal notranslate"><span class="pre">npoints</span></code> should be set to a value equal to or greater than <code class="docutils literal notranslate"><span class="pre">len(timeSeries)</span></code>. The larger this number, the ‘cleaner’ the spectrum will appear, but the calculations will be slower. The Fast Fourier Transform is most efficient if <code class="docutils literal notranslate"><span class="pre">npoints</span></code> is a power of two. The <code class="docutils literal notranslate"><span class="pre">norm='ortho'</span></code> argument ensures that the Fourier transform is properly normalised.</p>
+<p>The ordering of the points in the spectrum is counter-intuitive, and governed by efficiency considerations. Fortunately, one can use the function</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">frequencies</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfftfreq</span><span class="p">(</span><span class="n">npoints</span><span class="p">,</span><span class="n">timeStep</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>to obtain an array which gives the frequency of each spectral point. Here, <code class="docutils literal notranslate"><span class="pre">npoints</span></code> is identical to the <code class="docutils literal notranslate"><span class="pre">npoints</span></code> used in <code class="docutils literal notranslate"><span class="pre">np.fft.rfft</span></code>; <code class="docutils literal notranslate"><span class="pre">timeStep</span></code> should be set to the time-spacing between each point in timeSeries.</p>
+<p>** ➤ Obtain a spectrum and corresponding array of frequencies for your interpolated dataset. **</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try it here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If you print your spectrum, you will see it contains numbers like <code class="docutils literal notranslate"><span class="pre">1.323+0.25j</span></code>. This is how Python represents complex numbers. When plotting spectra, it is most common to plot the ‘power spectrum’, <span class="math notranslate nohighlight">\(P(\omega) = |f(\omega)|^2 = f^*(\omega)f(\omega)\)</span>, where the asterisk (<span class="math notranslate nohighlight">\(*\)</span>) denotes a ‘complex conjugate’. This is implemented in NumPy as the <code class="docutils literal notranslate"><span class="pre">conj()</span></code> function. Therefore, to obtain a power spectrum from the array <code class="docutils literal notranslate"><span class="pre">spectrum</span></code> produced by <code class="docutils literal notranslate"><span class="pre">np.fft.rfft</span></code>, you can use</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">power</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">spectrum</span><span class="o">.</span><span class="n">conj</span><span class="p">()</span><span class="o">*</span><span class="n">spectrum</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>** ➤ Plot the power spectrum of your signal. **</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try it here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Hopefully you now see a number of clear peaks, which correspond to periodicities within the dataset. In particular, you should be able to see a number of peaks relating to the Milankovitch cycle - variations in Earth’s climatic conditions that arise from variations in the Earth’s orbit around the sun. This has strong components at periods of around 23,000 years, 41,000 years, and 100,000 years.</p>
+<p>** ➤ Modify your plot to reproduce this figure. **</p>
+<p>Remember that period = 1/frequency !</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">sealevel</span>
+<span class="n">sealevel</span><span class="o">.</span><span class="n">plot_Milankovitch</span><span class="p">(</span><span class="s2">&quot;RSL_data.xlsx&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">5</span><span class="o">-</span><span class="mi">2</span><span class="n">ad77827283d</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_line_magic</span><span class="p">(</span><span class="s1">&#39;matplotlib&#39;</span><span class="p">,</span> <span class="s1">&#39;inline&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">sealevel</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">sealevel</span><span class="o">.</span><span class="n">plot_Milankovitch</span><span class="p">(</span><span class="s2">&quot;RSL_data.xlsx&quot;</span><span class="p">)</span>
+
+<span class="nn">~/work/EMSC-4033/EMSC-4033/Notebooks/StepByStep/Ex17/sealevel.py</span> in <span class="ni">plot_Milankovitch</span><span class="nt">(filename, nfft, figsize)</span>
+<span class="g g-Whitespace">     </span><span class="mi">21</span> 
+<span class="g g-Whitespace">     </span><span class="mi">22</span> <span class="k">def</span> <span class="nf">plot_Milankovitch</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span><span class="n">nfft</span><span class="o">=</span><span class="mi">40960</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">8</span><span class="p">)):</span>
+<span class="ne">---&gt; </span><span class="mi">23</span>     <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">24</span>     <span class="n">interpTimes</span><span class="p">,</span> <span class="n">interpData</span> <span class="o">=</span> <span class="n">interpolate_data</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">25</span> 
+
+<span class="nn">/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/pandas/util/_decorators.py</span> in <span class="ni">wrapper</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">297</span>                 <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">298</span>                 <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="ne">FutureWarning</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="n">stacklevel</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">299</span>             <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">300</span> 
+<span class="g g-Whitespace">    </span><span class="mi">301</span>         <span class="k">return</span> <span class="n">wrapper</span>
+
+<span class="nn">/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/pandas/io/excel/_base.py</span> in <span class="ni">read_excel</span><span class="nt">(io, sheet_name, header, names, index_col, usecols, squeeze, dtype, engine, converters, true_values, false_values, skiprows, nrows, na_values, keep_default_na, na_filter, verbose, parse_dates, date_parser, thousands, comment, skipfooter, convert_float, mangle_dupe_cols, storage_options)</span>
+<span class="g g-Whitespace">    </span><span class="mi">334</span>     <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">io</span><span class="p">,</span> <span class="n">ExcelFile</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">335</span>         <span class="n">should_close</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="ne">--&gt; </span><span class="mi">336</span>         <span class="n">io</span> <span class="o">=</span> <span class="n">ExcelFile</span><span class="p">(</span><span class="n">io</span><span class="p">,</span> <span class="n">storage_options</span><span class="o">=</span><span class="n">storage_options</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="n">engine</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">337</span>     <span class="k">elif</span> <span class="n">engine</span> <span class="ow">and</span> <span class="n">engine</span> <span class="o">!=</span> <span class="n">io</span><span class="o">.</span><span class="n">engine</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">338</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+
+<span class="nn">/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/pandas/io/excel/_base.py</span> in <span class="ni">__init__</span><span class="nt">(self, path_or_buffer, engine, storage_options)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1129</span>         <span class="bp">self</span><span class="o">.</span><span class="n">storage_options</span> <span class="o">=</span> <span class="n">storage_options</span>
+<span class="g g-Whitespace">   </span><span class="mi">1130</span> 
+<span class="ne">-&gt; </span><span class="mi">1131</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_reader</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_engines</span><span class="p">[</span><span class="n">engine</span><span class="p">](</span><span class="bp">self</span><span class="o">.</span><span class="n">_io</span><span class="p">,</span> <span class="n">storage_options</span><span class="o">=</span><span class="n">storage_options</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1132</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1133</span>     <span class="k">def</span> <span class="nf">__fspath__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<span class="nn">/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/pandas/io/excel/_xlrd.py</span> in <span class="ni">__init__</span><span class="nt">(self, filepath_or_buffer, storage_options)</span>
+<span class="g g-Whitespace">     </span><span class="mi">22</span>         <span class="s2">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">23</span><span class="s2">         err_msg = &quot;Install xlrd &gt;= 1.0.0 for Excel support&quot;</span>
+<span class="ne">---&gt; </span><span class="mi">24</span><span class="s2">         import_optional_dependency(&quot;xlrd&quot;, extra=err_msg)</span>
+<span class="g g-Whitespace">     </span><span class="mi">25</span><span class="s2">         super().__init__(filepath_or_buffer, storage_options=storage_options)</span>
+<span class="g g-Whitespace">     </span><span class="mi">26</span><span class="s2"> </span>
+
+<span class="nn">/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/pandas/compat/_optional.py</span> in <span class="ni">import_optional_dependency</span><span class="nt">(name, extra, raise_on_missing, on_version)</span>
+<span class="g g-Whitespace">    </span><span class="mi">107</span><span class="s2">     except ImportError:</span>
+<span class="g g-Whitespace">    </span><span class="mi">108</span><span class="s2">         if raise_on_missing:</span>
+<span class="ne">--&gt; </span><span class="mi">109</span><span class="s2">             raise ImportError(msg) from None</span>
+<span class="g g-Whitespace">    </span><span class="mi">110</span><span class="s2">         else:</span>
+<span class="g g-Whitespace">    </span><span class="mi">111</span><span class="s2">             return None</span>
+
+<span class="ne">ImportError</span>: Missing optional dependency &#39;xlrd&#39;. Install xlrd &gt;= 1.0.0 for Excel support Use pip or conda to install xlrd.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try it here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="filtering">
+<h2>Filtering<a class="headerlink" href="#filtering" title="Permalink to this headline">¶</a></h2>
+<p>Most natural signals have energy across a broad range of frequencies. However, we are often interested in only a subset of this frequency band. To isolate the time series arising from this subset, we can employ a frequency-domain filter.</p>
+<p>Filtering and signal processing are complex topics, and we will not go into any significant detail in this course. However, at a basic level, filtering can be understood as a frequency-dependent rescaling of the spectrum. The simplest filter imaginable might be:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>cutoff = &lt;?&gt;
+filt = np.where(freqs &gt; cutoff,1,0)
+</pre></div>
+</div>
+<p>where freqs is the array produced by <code class="docutils literal notranslate"><span class="pre">np.fft.rfftfreqs</span></code>, as above. <code class="docutils literal notranslate"><span class="pre">filt</span></code> is now an array which contains the value 1 for frequencies <em>above</em> some cutoff frequency, and 0 below this point. This is known as a ‘high-pass’ filter, as it leaves high-frequncy signals unchanged, but stops low-frequency ones. We can then do:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">filtered_spectrum</span> <span class="o">=</span> <span class="n">spectrum</span> <span class="o">*</span> <span class="n">filt</span>
+</pre></div>
+</div>
+<p>** ➤ Make this filter and plot the spectrum. **</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try it here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can then use an <em>inverse</em> Fourier transform to convert our filtered spectrum back into a time series. To do this, you use the function <code class="docutils literal notranslate"><span class="pre">np.fft.irfft</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">filtered_series</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">irfft</span><span class="p">(</span><span class="n">filtered_spectrum</span><span class="p">,</span> <span class="n">npoints</span><span class="p">,</span><span class="n">norm</span><span class="o">=</span><span class="s1">&#39;ortho&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">npoints</span></code> is exactly the same variable as you used for the <em>forward</em> transform.</p>
+<p>** ➤ Plot the filtered time series. **</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try it here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>You may notice that this doesn’t seem to give very good results. A sharp cutoff in a filter tends to create lots of ‘ringing’ - an effect known as <a class="reference external" href="https://en.wikipedia.org/wiki/Gibbs_phenomenon">Gibb’s Phenomenon</a>. We will get much better results if we allow a smooth transition between the ‘stop-band’ and the ‘pass-band’. One way to do this is to create a ‘cosine high-pass’ filter, which is described by the following formula as a function of frequency ( <span class="math notranslate nohighlight">\(f\)</span> ):
+$<span class="math notranslate nohighlight">\( F(f) =\begin{cases}0 &amp;f&lt;f_\mathrm{lo}\\\frac{1}{2}\left[1-\cos\left(\pi\cdot\frac{f-f_\mathrm{lo}}{f_\mathrm{hi}-f_\mathrm{lo}}\right)\right]&amp;f_\mathrm{lo}&lt;f&lt;f_\mathrm{hi}\\1&amp;f&gt;f_\mathrm{hi}\end{cases}\)</span><span class="math notranslate nohighlight">\(
+Here, \)</span>f_\mathrm{lo}<span class="math notranslate nohighlight">\( and \)</span>f_\mathrm{hi}$ define a range of frequencies which are attenuated, but not stopped completely.</p>
+<p>** ➤ Write a <code class="docutils literal notranslate"><span class="pre">cosineHighPass()</span></code> function and plot its output. Then apply it to your time series, and explore how it performs as you vary <span class="math notranslate nohighlight">\(f_\mathrm{lo}\)</span> and <span class="math notranslate nohighlight">\(f_\mathrm{hi}\)</span>. **</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Try it here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>A cosine low-pass filter is very similar, except it lets <em>low</em> frequencies through unchanged, and stops high frequencies.</p>
+<p>** ➤ Create a <code class="docutils literal notranslate"><span class="pre">cosineLowPass()</span></code> function and explore its performance. **</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try it here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Sometimes, we want to stop both very-low and very-high frequency signals, while preserving the middle band. This can be achieved by using a ‘band-pass’ filter. One way to achieve this is to simply combine (multiply) the output from a low-pass and a high-pass filter. Clearly, the cutoff for the high-pass filter must be below the cutoff for the low-pass filter if this is to succeed.</p>
+<p>** ➤ Create a <code class="docutils literal notranslate"><span class="pre">cosineBandPass()</span></code> function and explore its performance. **</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try it here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Alternatively, we might choose to use a Gaussian-shaped filter:</p>
+<div class="math notranslate nohighlight">
+\[ F(f) = \exp\left[-\frac{(f-f_\mathrm{cen})^2}{2 w^2}\right] \]</div>
+<p>where <span class="math notranslate nohighlight">\(f_\mathrm{cen}\)</span> defines the central point of the pass-band, and <span class="math notranslate nohighlight">\(w\)</span> controls its width.</p>
+<p>** ➤ Create a <code class="docutils literal notranslate"><span class="pre">gaussianBandPass()</span></code> function and explore its performance. **</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try it here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Notebooks/StepByStep/Ex17"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="../Ex16/Exercise%2016%20-%20Maps.html" title="previous page">Exercise 16 - Maps</a>
+    <a class='right-next' id="next-link" href="../Ex18/Exercise%2018%20-%20Object-oriented%20programming.html" title="next page">Exercise N - Object-oriented programming</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Louis Moresi<br/>
+        
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

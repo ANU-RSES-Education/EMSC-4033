@@ -1,0 +1,1077 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise 1 - Getting started with Jupyter and Python &#8212; EMSC 4033 Computing in Geoscience</title>
+    
+  <link rel="stylesheet" href="../../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Exercise 2 - Variables and functions" href="../Ex02/Exercise%202%20-%20Variables%20and%20functions.html" />
+    <link rel="prev" title="Andrew Valentine’s Exercises" href="../Introduction.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../../index.html">
+  
+  <img src="../../../_static/AuWorldEQ.jpg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">EMSC 4033 Computing in Geoscience</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../FrontPage.html">
+   Jupyterbook example
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Modern Approaches to Programming
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../Themes/Introduction2Python/1-IntroductionToJupyterNotebooks.html">
+   Jupyter Notebooks
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/Introduction2Python/2-IntroductionToIpython.html">
+     ipython
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/Introduction2Python/3-PythonDataTypes.html">
+     Python data types
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/Introduction2Python/4-PythonClasses.html">
+     Classes and objects
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../Themes/Introduction2VersionControl/1-GettingStartedWithGit.html">
+   An introduction to Version Control
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/Introduction2VersionControl/2-NextStepsWithGit.html">
+     An introduction to Version Control pt 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/Introduction2VersionControl/3-YourOwnRepositories.html">
+     How to use git for yourself
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Themes/Plotting/1-IntroductionToMatplotlib.html">
+   Introduction to matplotlib
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Step by Step
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="../Introduction.html">
+   Andrew Valentine’s Exercises
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Exercise 1 - Getting started with Jupyter and Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex02/Exercise%202%20-%20Variables%20and%20functions.html">
+     Exercise 2 - Variables and functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex02/Exercise%202%20-%20Variables%20and%20functions.html#functions">
+     Functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex03/Exercise%203%20-%20Loops%20and%20conditionals.html">
+     Exercise 3 - Loops and conditionals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex04/Guessing%20Games.html">
+     Exercise 4 - Guessing Games
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex05/Exercise%205%20-%20Lists%2C%20tuples%20and%20dictionaries.html">
+     Exercise 5 - Lists, tuples and dictionaries
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex06/Exercise%206%20-%20More%20loops.html">
+     Exercise 6 - More loops
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex07/Exercise%207%20-%20Strings.html">
+     Exercise 7 - Strings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex08/Exercise%208%20-%20Reading%20and%20writing%20files.html">
+     Exercise 8 - Reading and writing files
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex09/Exercise%209%20-%20Modules.html">
+     Exercise 9 - Modules
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex10/Exercise%2010%20-%20Exception%20handling.html">
+     Exercise 10 - Exception handling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex11/Exercise%2011%20-%20Sudoku.html">
+     Exercise 11 - Sudoku
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex12/Exercise%2012%20-%20Plotting.html">
+     Exercise 12 - Plotting
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex13/Exercise%2013%20-%20Radioactive%20Decay.html">
+     Exercise 13 - Radioactive decay
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex14/Exercise%2014%20-%20Pandas.html">
+     Exercise 14 - Structured Data in Python (
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       pandas
+      </span>
+     </code>
+     )
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex15/Exercise%2015%20-%20More%20plotting.html">
+     Exercise 15 - More plotting
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex16/Exercise%2016%20-%20Maps.html">
+     Exercise 16 - Maps
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex17/Exercise%2017%20-%20Fourier%20analysis%20and%20Milankovitch%20cycles.html">
+     Exercise 17 - Fourier analysis and Milankovitch cycles
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex18/Exercise%2018%20-%20Object-oriented%20programming.html">
+     Exercise N - Object-oriented programming
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex19/Exercise%20N%20-%20differential%20equations.html">
+     Exercise N - Differential equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex20/Exercise%20N%20-%20Sorting.html">
+     Exercise N - Visualising sorting algorithms
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Going deeper - examples from the Earth Sciences
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../Themes/Mapping/0-Maps_with_Cartopy.html">
+   Maps with the Cartopy Package
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/Mapping/0-Preliminaries.html">
+     Datasets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/Mapping/1-IntroductingCartopy.html">
+     Cartopy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/Mapping/2-ImagesAndGeoTIFFs.html">
+     Handling images
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/Mapping/3-WorkingWithRealData.html">
+     Australian magnetic intensity
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/Mapping/4-ContouringGlobalData.html">
+     How to use contours to view global data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/Mapping/5-WorkingWithPointData.html">
+     Point Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/Mapping/6-WorkingWithShuttleRadarTopography.html">
+     Cartopy and the Shuttle Radar Topography Map data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/Mapping/7-WorkingWithOn-DemandMappingServices.html">
+     On demand mapping services
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/Mapping/8-GlobalPlateMotionsEtc.html">
+     Global Plate Motions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/Mapping/9-HimalayaRegionMapsAndImages.html">
+     Himalaya Maps (1)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/Mapping/9a-HimalayaRegionMapsAndImages-Pt2.html">
+     Himalaya Maps (2)
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Themes/SympleSympy/StartingWithSympy.html">
+   Getting started with
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     sympy
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../Themes/SympleSympy/StartingWithSympy.html#differentiation-integration">
+   Differentiation / Integration
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/SympleSympy/StartingWithSympy-2.html">
+     Using
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       sympy
+      </span>
+     </code>
+     for ODEs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/SympleSympy/StartingWithSympy-2.html#use-of-the-sympy-equation-module-eq">
+     Use of the
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       sympy
+      </span>
+     </code>
+     equation module (
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Eq
+      </span>
+     </code>
+     )
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/SympleSympy/StartingWithSympy-3.html">
+     Using
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       sympy
+      </span>
+     </code>
+     for a PDE
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/SympleSympy/StartingWithSympy-4.html">
+     The biharmonic equation for Stokes flow
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../Themes/SphericalMeshing/0-Stripy.html">
+   Triangulations
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../../Themes/SphericalMeshing/SphericalTriangulations/0-Spherical.html">
+     Spherical Meshes
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/SphericalTriangulations/Ex1-Spherical-Triangulations.html">
+       Example 1 - Triangulation of arbitrary points on the sphere
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/SphericalTriangulations/Ex2-SphericalGrids.html">
+       Example 2 -
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         stripy
+        </span>
+       </code>
+       predefined meshes
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/SphericalTriangulations/Ex3-Interpolation.html">
+       Example 3 -
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         stripy
+        </span>
+       </code>
+       interpolation on the sphere
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/SphericalTriangulations/Ex4-Gradients.html">
+       Example 4 -
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         stripy
+        </span>
+       </code>
+       gradients on the sphere
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/SphericalTriangulations/Ex5-Smoothing.html">
+       Example 5 -
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         stripy
+        </span>
+       </code>
+       smoothing operations
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/SphericalTriangulations/Ex6-Scattered-Data.html">
+       Example 6 - Scattered Data and ‘Heat Maps’
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/SphericalTriangulations/Ex7-Refinement-of-Triangulations.html">
+       Example 7 - Refining a triangulation
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/SphericalTriangulations/Ex8-Spline-Tension.html">
+       Example 8 - Spline Tension
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/SphericalTriangulations/Ex9-Voronoi-Diagram.html">
+       Example 9 - Constructing the Voronoi diagram
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../../Themes/SphericalMeshing/CartesianTriangulations/0-Cartesian.html">
+     Cartesian Meshes
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/CartesianTriangulations/Ex1-Cartesian-Triangulations.html">
+       Example 1 - Triangulation of arbitrary points
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/CartesianTriangulations/Ex2-CartesianGrids.html">
+       Example 2 -
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         stripy
+        </span>
+       </code>
+       predefined meshes
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/CartesianTriangulations/Ex3-Interpolation.html">
+       Example 3 -
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         stripy
+        </span>
+       </code>
+       interpolation
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/CartesianTriangulations/Ex4-Gradients.html">
+       Example 4 -
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         stripy
+        </span>
+       </code>
+       gradients
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/CartesianTriangulations/Ex5-Smoothing.html">
+       Example 5 -
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         stripy
+        </span>
+       </code>
+       smoothing operations
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/CartesianTriangulations/Ex6-Scattered-Data.html">
+       Example 6 - Scattered Data and ‘Heat Maps’
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/CartesianTriangulations/Ex7-Refinement-of-Triangulations.html">
+       Example 7 - Refining a triangulation
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/CartesianTriangulations/Ex8-Spline-Tension.html">
+       Example 8 - Spline Tension
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/CartesianTriangulations/Ex9-Voronoi-Diagram.html">
+       Example 9 - Constructing the Voronoi diagram
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../../Themes/SphericalMeshing/Litho1pt0/Ex1-Litho1Layers.html">
+     Introduction to the stripy wrapper for litho 1.0
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/Litho1pt0/Ex2-Litho1Properties.html">
+       Litho 1.0 global sampling
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/Litho1pt0/Ex3-CrustalRegionalisation.html">
+       Crust 1.0 data
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/Litho1pt0/WorkEx1-CratonAverageProperties.html">
+       Properties of the cratons
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/Litho1pt0/WorkEx2-OceanDepthAge.html">
+       Age of the oceans / depth of the oceans
+      </a>
+     </li>
+     <li class="toctree-l3 collapsible-parent">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/Litho1pt0/WEx2-Tutorial/Notebook-1.html">
+       A quick look at the depth-age relationship for the seafloor.
+      </a>
+      <ul class="collapse-ul">
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../Themes/SphericalMeshing/Litho1pt0/WEx2-Tutorial/Notebook-2.html">
+         A quick look at the depth-age relationship for the seafloor.
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../Themes/SphericalMeshing/Litho1pt0/WEx2-Tutorial/Notebook-3.html">
+         A quick look at the depth-age relationship for the seafloor.
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../Themes/SphericalMeshing/Litho1pt0/WEx2-Tutorial/Notebook-4.html">
+         A quick look at the depth-age relationship for the seafloor.
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../Themes/SphericalMeshing/Litho1pt0/WEx2-Tutorial/Notebook-5.html">
+         A quick look at the depth-age relationship for the seafloor.
+        </a>
+       </li>
+      </ul>
+      <i class="fas fa-chevron-down">
+      </i>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../Themes/NumpyAndScipy/0-NumpyAndScipy.html">
+   Numpy and Scipy
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/NumpyAndScipy/1-IntroductionToNumpy.html">
+     Numpy data structures
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/NumpyAndScipy/2-Application-TheGameOfLife.html">
+     The game of life
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/NumpyAndScipy/3-Discussion-TheGameOfLife.html">
+     The game of life (Advanced)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/NumpyAndScipy/3-Discussion-TheGameOfLife.html#animation">
+     Animation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/NumpyAndScipy/4-IntroductionToScipy.html">
+     scipy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/NumpyAndScipy/5-ScipyInterpolate.html">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       scipy.interpolate
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/NumpyAndScipy/6-ScipySpatialAndMeshing.html">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       scipy.spatial
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/NumpyAndScipy/7-ScipyOptimize.html">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       scipy.optimize
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/NumpyAndScipy/8-Numpy%2BScipyMiscellany.html">
+     Data storage
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../Themes/SolveMathProblems/0-IntroductionToNumericalSolutions.html">
+   Numerical models
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/SolveMathProblems/1-GroundwaterFlow-LectureNotes.html">
+     Partial Differential Equations of Groundwater Flow
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/SolveMathProblems/2-FiniteDifferences.html">
+     Finite difference operations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/SolveMathProblems/3-AdvancedFiniteDifferences.html">
+     Advanced finite difference
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../_sources/Notebooks/StepByStep/Ex01/Exercise 1 - Getting started.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/ANU-RSES-Education/EMSC-4033"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/ANU-RSES-Education/EMSC-4033/master?urlpath=tree/Notebooks/StepByStep/Ex01/Exercise 1 - Getting started.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        <a class="jupyterhub-button" href="https://emsc4033-2021.rses.underworldcloud.org/hub/user-redirect/git-pull?repo=https://github.com/ANU-RSES-Education/EMSC-4033&urlpath=tree/EMSC-4033/Notebooks/StepByStep/Ex01/Exercise 1 - Getting started.ipynb&branch=master"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
+                data-placement="left"><img class="jupyterhub-button-logo"
+                    src="../../../_static/images/logo_jupyterhub.svg"
+                    alt="Interact on JupyterHub">JupyterHub</button></a>
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-jupyter">
+   Using Jupyter
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#markdown">
+     Markdown
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#adding-and-removing-cells">
+     Adding and removing cells
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#first-steps-in-python">
+   First steps in Python
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#comments">
+     Comments
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="exercise-1-getting-started-with-jupyter-and-python">
+<h1>Exercise 1 - Getting started with Jupyter and Python<a class="headerlink" href="#exercise-1-getting-started-with-jupyter-and-python" title="Permalink to this headline">¶</a></h1>
+<p><em>Andrew Valentine - <a class="reference external" href="mailto:andrew&#46;valentine&#37;&#52;&#48;anu&#46;edu&#46;au">andrew<span>&#46;</span>valentine<span>&#64;</span>anu<span>&#46;</span>edu<span>&#46;</span>au</a></em></p>
+<p>In this course, we will make use of the RSES Jupyter server. This lets you write and run code on a remote server using nothing more than a standard web browser. ‘Jupyter’ is the software framework that makes this work. Jupyter can be used to provide an interface to a variety of different programming languages, but in this course we will concentrate on Python.</p>
+<p>The page you are looking at now is an example of a Jupyter ‘notebook’. This allows us to mix text, code and results, and provides a great format for structuring and keeping track of your thoughts and ideas as you work on a project. This is not the only way to write and run Python programmes, and later in the course we will discuss some alternatives that might be better for large, complex programs - but for many straightfoward data analysis tasks the notebook format is ideal.</p>
+<div class="section" id="using-jupyter">
+<h2>Using Jupyter<a class="headerlink" href="#using-jupyter" title="Permalink to this headline">¶</a></h2>
+<p>Jupyter is built around the concept of ‘cells’. There are two main types of cell: ‘Markdown’ cells, which are used for text (you’re reading a Markdown cell now!), and ‘Code’ cells, which are used for writing code. Here’s a code cell:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Welcome to Jupyter!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Welcome to Jupyter!
+</pre></div>
+</div>
+</div>
+</div>
+<p>The grey box contains some Python code, which is editable. If you click in this box, and then press <kbd>Shift</kbd>+<kbd>⏎</kbd> (i.e. hold down the <kbd>Shift</kbd> key on your keyboard and then hit the return key) the code will be run, and any output is displayed below the grey box.</p>
+<p><strong>➤ Try changing the message in the above cell, and run it.</strong></p>
+<p>You can also run cells by clicking the ‘Run’ button in the toolbar, as highlighted here:</p>
+<blockquote>
+<div><p><img alt="" src="../../../_images/jupyter_command_bar_run.png" /></p>
+</div></blockquote>
+<p>However, it’s good to get into the habit of using <kbd>Shift</kbd>+<kbd>⏎</kbd>, as it is much more convenient when you’re working on a big project.</p>
+<p>Only one cell can run at any time. Two things show that a cell is currently running. First, on the right of the menubar is an open circle, as highlighted here:</p>
+<blockquote>
+<div><p><img alt="" src="../../../_images/jupyter_command_bar_running.png" /></p>
+</div></blockquote>
+<p>This changes to a filled circle while code is being executed. Secondly, to the left of each code cell is a cell number, such as</p>
+<p><code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[3]:</span></code></p>
+<p>While a cell is being executed, this will change to show an asterisk instead of a number:</p>
+<p><code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[*]:</span></code></p>
+<p>The example above executes so quickly that it is difficult to see these changes. To make it more obvious, we can make the computer ‘sleep’ (do nothing) for 15 seconds before printing a message:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;...zzz....&quot;</span><span class="p">)</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I&#39;m awake again now!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>...zzz....
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>I&#39;m awake again now!
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>➤ Execute the above cell, and notice the two indicators that something is running.</strong></p>
+<p>If we want to stop the cell without waiting for it to finish naturally (perhaps we’ve realised we made a mistake in the code), we can click on the ‘stop’ button in the toolbar:</p>
+<blockquote>
+<div><p><img alt="" src="../../../_images/jupyter_command_bar_stop.png" /></p>
+</div></blockquote>
+<p>The execution should finish immediately, and you will see an error message printed to the screen to highlight the fact that the cell didn’t finish ‘normally’.</p>
+<p>**➤ Run the above cell again, but this time use the ‘stop’ button to terminate execution. **</p>
+<div class="section" id="markdown">
+<h3>Markdown<a class="headerlink" href="#markdown" title="Permalink to this headline">¶</a></h3>
+<p>Markdown is a lightweight markup language that you can use to add formatting elements to plaintext text documents. Markdown cells in notebooks allow you to write and describe your thoughts, code, equations directly in your program, making it more readable.</p>
+<p>You can also edit markdown cells. If you double-click on this text, it will become editable (and be highlighted in green). Once you’ve made any changes, you can press <kbd>Shift</kbd>+<kbd>⏎</kbd> and it will be rendered nicely on the screen. Notice that the highlighting changes back to blue.</p>
+<p><strong>➤ Try adding some text to this cell.</strong></p>
+<p>It is easy to make text in Markdown <em>italic</em> or <strong>bold</strong>. You can also:</p>
+<ul class="simple">
+<li><p>Make bullet points</p>
+<ul>
+<li><p>Including sub-bullets</p></li>
+</ul>
+</li>
+<li><p>Insert mathematical expressions using LaTeX syntax, e.g. <span class="math notranslate nohighlight">\(y=3 \sin\left(\frac{(n+1)x}{2\pi}\right)\)</span></p></li>
+</ul>
+<p>Markdown also enables nicely-formatted code blocks, for example this Python code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">printHello</span><span class="p">(</span><span class="n">message</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello! &quot;</span><span class="o">+</span><span class="n">message</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Note that this code is <em>not</em> executable, because Markdown cells are intended for displaying information rather than performing computations.</p>
+<p><strong>➤ Double-click on this cell to see how the text formatting is achieved. Try changing it!</strong></p>
+<p>If you want to know more about Markdown, plenty of information can be found online. <a class="reference external" href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">This site</a> might be one good place to start.</p>
+</div>
+<div class="section" id="adding-and-removing-cells">
+<h3>Adding and removing cells<a class="headerlink" href="#adding-and-removing-cells" title="Permalink to this headline">¶</a></h3>
+<p>New cells can be created at any point in the document. First, select the cell by clicking once on it (outside the editable area, if it’s a code cell). It should be highlighted in blue, to indicate that you’ve selected it but are not attempting to edit it. If it’s highlighted in green, press <kbd>Esc</kbd> on your keyboard to exit ‘edit’ mode. Now, you can either:</p>
+<ol>
+<li><p>Press <kbd>A</kbd> or <kbd>B</kbd> to insert a new cell <u>a</u>bove or <u>b</u>elow the selected cell, or</p></li>
+<li><p>From the menu bar, select <code class="docutils literal notranslate"><span class="pre">Insert</span></code> → <code class="docutils literal notranslate"><span class="pre">Insert</span> <span class="pre">Cell</span> <span class="pre">Above</span></code> or <code class="docutils literal notranslate"><span class="pre">Insert</span></code> → <code class="docutils literal notranslate"><span class="pre">Insert</span> <span class="pre">Cell</span> <span class="pre">Below</span></code> as highlighted here</p>
+<blockquote>
+<div><p><img alt="" src="../../../_images/jupyter_command_bar_insert.png" /></p>
+</div></blockquote>
+</li>
+</ol>
+<p>Again, you will probably find things much easier if you get into the habit of using the keyboard commands.
+By default, new cells are ‘code’ cells. You can change this using the drop-down menu in the toolbar:</p>
+<blockquote>
+<div><p><img alt="" src="../../../_images/jupyter_command_bar_celltype.png" /></p>
+</div></blockquote>
+<p>Alternatively, while the cell is highlighted in blue, you can press <kbd>M</kbd> to make it a Markdown cell, and <kbd>Y</kbd> to turn it back into a code cell.</p>
+<p><strong>➤ Insert a new Markdown cell below this one, and write something in it.</strong></p>
+<p>As you work through these practicals, you are encouraged to add cells to record your notes and comments.</p>
+<p>Of course, you can also easily delete cells. To do this, select the cell so that it is highlighted in blue, and either press the <kbd>X</kbd> key, or select <code class="docutils literal notranslate"><span class="pre">Edit</span></code> → <code class="docutils literal notranslate"><span class="pre">Delete</span> <span class="pre">Cells</span></code> from the toolbar. You can select multiple cells by holding down the <kbd>Shift</kbd> key.</p>
+<p><strong>➤ Delete the cell you added above this one.</strong></p>
+<p>It is also possible to cut, copy and paste cells, as you will have done when using many other programs.</p>
+</div>
+</div>
+<div class="section" id="first-steps-in-python">
+<h2>First steps in Python<a class="headerlink" href="#first-steps-in-python" title="Permalink to this headline">¶</a></h2>
+<p>We’ve already seen a couple of examples of Python code.  Now let’s try making something from scratch. One thing we can do is simply use Python like a calculator!</p>
+<p><strong>➤ Try typing simple arithmetic into the code cell below and see what happens.</strong> For example, try entering</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span><span class="o">+</span><span class="mi">17</span>
+</pre></div>
+</div>
+<p>and then hit <kbd>Shift</kbd>+<kbd>⏎</kbd>. You can also use the operators <code class="docutils literal notranslate"><span class="pre">*</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">/</span></code> (for division), and the parentheses <code class="docutils literal notranslate"><span class="pre">()</span></code>. Finally, <code class="docutils literal notranslate"><span class="pre">**</span></code> is used to raise a number to some power, so that <span class="math notranslate nohighlight">\(3^2\)</span> is entered as <code class="docutils literal notranslate"><span class="pre">3**2</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try it here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>➤ What happens if you enter two lines of calculations before hitting <kbd>Shift</kbd>+<kbd>⏎</kbd>?</strong> Try something like</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span><span class="o">+</span><span class="mi">17</span>
+<span class="mi">5</span><span class="o">*</span><span class="mi">9</span>
+</pre></div>
+</div>
+<p>What are you seeing? Looking back at the code examples earlier in this notebook, can you work out how to get it to display both answers?</p>
+<div class="section" id="comments">
+<h3>Comments<a class="headerlink" href="#comments" title="Permalink to this headline">¶</a></h3>
+<p>In the code cell above, you may have noticed the line</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try it here!</span>
+</pre></div>
+</div>
+<p>which doesn’t look as though it ought to be valid Python code. This is a ‘comment’ line: the computer ignores the <code class="docutils literal notranslate"><span class="pre">#</span></code> and anything following it on the same line. Comments should be used to document information that helps people to understand how the code works internally. This may seem like a waste of time - but you (or your colleagues) will be grateful in two years’ time when you find you need to change something! The comment character can also be useful for ‘switching off’ lines of code without deleting them.  For example, look at this piece of code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">readDataFile</span><span class="p">(</span><span class="n">fp</span><span class="p">):</span>
+    <span class="c1"># This function assumes that fp is</span>
+    <span class="c1"># a valid file-like object and that the</span>
+    <span class="c1"># file has already been opened for reading</span>
+    <span class="n">header</span> <span class="o">=</span> <span class="n">fp</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+    <span class="c1"># print(header)</span>
+    <span class="p">[</span><span class="o">...</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>The first three lines of comments provide information recording some of the assumptions the programmer made when writing this function  (don’t worry if it doesn’t make sense yet!). The fourth comment line is a piece of code that has been ‘commented out’: we don’t want to routinely print the file header, but it is useful to be able to reinstate this easily in case we encounter problems and need to check what the function has read.</p>
+<p>In fact, ‘commenting out’ code is so common that Jupyter provides a straightforward way to do it. If you select a block of code and press <kbd>Ctrl</kbd>+<kbd>/</kbd> (or on a Mac, <kbd>⌘</kbd>+<kbd>/</kbd>), the selected lines will all be changed to begin with <code class="docutils literal notranslate"><span class="pre">#</span></code> comment characters. Pressing <kbd>Ctrl</kbd>+<kbd>/</kbd> again will restore the original version.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Notebooks/StepByStep/Ex01"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="../Introduction.html" title="previous page">Andrew Valentine’s Exercises</a>
+    <a class='right-next' id="next-link" href="../Ex02/Exercise%202%20-%20Variables%20and%20functions.html" title="next page">Exercise 2 - Variables and functions</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Louis Moresi<br/>
+        
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>
