@@ -1,0 +1,13 @@
+
+# Large files that should be ignored
+
+*.dat
+*.tif
+*.tiff
+*.npy
+*.nc
+*.npz
+EQs
+HYP_50M_SR_W
+OB_50M
+
