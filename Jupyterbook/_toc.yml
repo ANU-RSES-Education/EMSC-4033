@@ -45,9 +45,19 @@
 # - file: Notebooks/StepByStep/ExNN/Exercise 11 - NumPy
 # - file: Notebooks/StepByStep/ExNS/Processing spectral data
 
-
 - part: "Going deeper - examples from the Earth Sciences"
   chapters:
+  - file: Notebooks/Themes/NumpyAndScipy/0-NumpyAndScipy
+    sections:
+    - file: Notebooks/Themes/NumpyAndScipy/1-IntroductionToNumpy
+    - file: Notebooks/Themes/NumpyAndScipy/2-Application-TheGameOfLife
+    - file: Notebooks/Themes/NumpyAndScipy/3-Discussion-TheGameOfLife
+    - file: Notebooks/Themes/NumpyAndScipy/4-IntroductionToScipy
+    - file: Notebooks/Themes/NumpyAndScipy/5-ScipyInterpolate
+    - file: Notebooks/Themes/NumpyAndScipy/6-ScipySpatialAndMeshing
+    - file: Notebooks/Themes/NumpyAndScipy/7-ScipyOptimize
+    - file: Notebooks/Themes/NumpyAndScipy/8-Numpy+ScipyMiscellany
+
   - file: Notebooks/Themes/Mapping/0-Maps_with_Cartopy
     sections:
     - file: Notebooks/Themes/Mapping/0-Preliminaries
@@ -61,13 +71,7 @@
     - file: Notebooks/Themes/Mapping/8-GlobalPlateMotionsEtc
     - file: Notebooks/Themes/Mapping/9-HimalayaRegionMapsAndImages
     - file: Notebooks/Themes/Mapping/9a-HimalayaRegionMapsAndImages-Pt2
-    
-  - file: Notebooks/Themes/SympleSympy/StartingWithSympy
-    sections:
-    - file: Notebooks/Themes/SympleSympy/StartingWithSympy-2
-    - file: Notebooks/Themes/SympleSympy/StartingWithSympy-3
-    - file: Notebooks/Themes/SympleSympy/StartingWithSympy-4
-
+ 
   - file: Notebooks/Themes/SphericalMeshing/0-Stripy    
     sections:
     - file: Notebooks/Themes/SphericalMeshing/SphericalTriangulations/0-Spherical
@@ -109,19 +113,12 @@
         - file: Notebooks/Themes/SphericalMeshing/Litho1pt0/WEx2-Tutorial/Notebook-3
         - file: Notebooks/Themes/SphericalMeshing/Litho1pt0/WEx2-Tutorial/Notebook-4
         - file: Notebooks/Themes/SphericalMeshing/Litho1pt0/WEx2-Tutorial/Notebook-5
-
-
-  - file: Notebooks/Themes/NumpyAndScipy/0-NumpyAndScipy
+   
+  - file: Notebooks/Themes/SympleSympy/StartingWithSympy
     sections:
-    - file: Notebooks/Themes/NumpyAndScipy/1-IntroductionToNumpy
-    - file: Notebooks/Themes/NumpyAndScipy/2-Application-TheGameOfLife
-    - file: Notebooks/Themes/NumpyAndScipy/3-Discussion-TheGameOfLife
-    - file: Notebooks/Themes/NumpyAndScipy/4-IntroductionToScipy
-    - file: Notebooks/Themes/NumpyAndScipy/5-ScipyInterpolate
-    - file: Notebooks/Themes/NumpyAndScipy/6-ScipySpatialAndMeshing
-    - file: Notebooks/Themes/NumpyAndScipy/7-ScipyOptimize
-    - file: Notebooks/Themes/NumpyAndScipy/8-Numpy+ScipyMiscellany
-
+    - file: Notebooks/Themes/SympleSympy/StartingWithSympy-2
+    - file: Notebooks/Themes/SympleSympy/StartingWithSympy-3
+    - file: Notebooks/Themes/SympleSympy/StartingWithSympy-4
 
   - file: Notebooks/Themes/SolveMathProblems/0-IntroductionToNumericalSolutions
     sections:
