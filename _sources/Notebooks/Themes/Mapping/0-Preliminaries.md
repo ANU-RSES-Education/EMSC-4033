@@ -105,18 +105,19 @@ download_list = [
 ]
 
 for file in download_list:
-    
     import os
+    # Check if it exists already / is the same size
+    teaching_data.download_file_if_distinct(file, os.path.join("Resources",file))
     
-    # Check if it exists already (should check to see if it is the correct file ... compare checksum)
-    
-    if not os.path.exists(os.path.join("Resources/",file)):
-        print("Downloading {} to Resources directory".format(file))
-        teaching_data.download_file(file, os.path.join("Resources",file))
+ 
 ```
 
 ```{code-cell} ipython3
-# This is how we download a whole directory
+ls Resources/
+```
+
+```{code-cell} ipython3
+# This is how we download a whole directory - we don't have a size-check comparison for that case
 
 teaching_data.download_directory("EQs","Resources/EQs")
 teaching_data.download_directory("HYP_50M_SR_W","Resources/HYP_50M_SR_W")
@@ -129,9 +130,9 @@ teaching_data.download_directory("OB_50M","Resources/OB_50M")
 import zipfile
 import glob
 
-for zipped in glob.glob("../../Data/Resources/*.zip"):
+for zipped in glob.glob("Resources/*.zip"):
     with zipfile.ZipFile(zipped) as zf:
-        zf.extractall("../../Data/Resources")
+        zf.extractall("Resources")
         print ("Unzipped {}".format(zipped))
 ```
 

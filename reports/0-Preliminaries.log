@@ -32,8 +32,10 @@ nbclient.exceptions.CellTimeoutError: A cell timed out while it was being execut
 The message was: Cell execution timed out.
 Here is a preview of the cell contents:
 -------------------
-['download_list = [', " 'AusMagAll.tiff',", " 'BlueMarbleNG-TB_2004-12-01_rgb_3600x1800.TIFF',", " 'EMAG2_image_V2_Small.tif',", " 'EMAG2_image_V2_no_compr.tif',"]
-...
-['    # Check if it exists already (should check to see if it is the correct file ... compare checksum)', '    ', '    if not os.path.exists(os.path.join("Resources/",file)):', '        print("Downloading {} to Resources directory".format(file))', '        teaching_data.download_file(file, os.path.join("Resources",file))']
+# This is how we download a whole directory - we don't have a size-check comparison for that case
+
+teaching_data.download_directory("EQs","Resources/EQs")
+teaching_data.download_directory("HYP_50M_SR_W","Resources/HYP_50M_SR_W")
+teaching_data.download_directory("OB_50M","Resources/OB_50M")
 -------------------
 
