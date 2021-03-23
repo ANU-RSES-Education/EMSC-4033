@@ -24,7 +24,24 @@ import cartopy.feature as cfeature
 
 import matplotlib.pyplot as plt
 import numpy
-import gdal 
+from osgeo import gdal 
+```
+
+```{code-cell} ipython3
+from cloudstor import cloudstor
+teaching_data = cloudstor(url="L93TxcmtLQzcfbk", password='')
+
+teaching_data.download_file_if_distinct("BlueMarbleNG-TB_2004-12-01_rgb_3600x1800.TIFF", "Resources/BlueMarbleNG-TB_2004-12-01_rgb_3600x1800.TIFF")
+teaching_data.download_file_if_distinct("color_etopo1_ice_low.tif", "Resources/color_etopo1_ice_low.tif")
+teaching_data.download_file_if_distinct("EMAG2_image_V2_no_compr.tif", "Resources/EMAG2_image_V2_no_compr.tif")
+teaching_data.download_file_if_distinct("global_age_data.3.6.z.npz", "Resources/global_age_data.3.6.z.npz")
+teaching_data.download_file_if_distinct("etopo1_grayscale_hillshade.tif", "Resources/etopo1_grayscale_hillshade.tif")
+
+teaching_data.download_directory("EQs","Resources/EQs")
+```
+
+```{code-cell} ipython3
+ls -trl Resources/EQs/
 ```
 
 ```{code-cell} ipython3

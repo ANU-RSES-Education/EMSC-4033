@@ -26,6 +26,14 @@ import matplotlib.pyplot as plt
 ```
 
 ```{code-cell} ipython3
+from cloudstor import cloudstor
+teaching_data = cloudstor(url="L93TxcmtLQzcfbk", password='')
+
+teaching_data.download_file_if_distinct("EMAG2_image_V2_no_compr.tif", "Resources/EMAG2_image_V2_no_compr.tif")
+teaching_data.download_file_if_distinct("AusMagAll.tiff", "Resources/AusMagAll.tiff")
+```
+
+```{code-cell} ipython3
 base_projection   = ccrs.PlateCarree() 
 globalmag         = gdal.Open("Resources/EMAG2_image_V2_no_compr.tif")
 globalmag_img     = globalmag.ReadAsArray().transpose(1,2,0)

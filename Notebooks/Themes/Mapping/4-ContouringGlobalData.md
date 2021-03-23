@@ -25,6 +25,16 @@ import matplotlib.pyplot as plt
 ```
 
 ```{code-cell} ipython3
+from cloudstor import cloudstor
+teaching_data = cloudstor(url="L93TxcmtLQzcfbk", password='')
+
+teaching_data.download_file_if_distinct("BlueMarbleNG-TB_2004-12-01_rgb_3600x1800.TIFF", "Resources/BlueMarbleNG-TB_2004-12-01_rgb_3600x1800.TIFF")
+teaching_data.download_file_if_distinct("color_etopo1_ice_low.tif", "Resources/color_etopo1_ice_low.tif")
+teaching_data.download_file_if_distinct("global_age_data.3.6.z.npz", "Resources/global_age_data.3.6.z.npz")
+teaching_data.download_file_if_distinct("sec_invariant_strain_0.2.dat", "Resources/sec_invariant_strain_0.2.dat")
+```
+
+```{code-cell} ipython3
 global_extent     = [-180.0, 180.0, -90.0, 90.0]
 globalmarble      = gdal.Open("Resources/BlueMarbleNG-TB_2004-12-01_rgb_3600x1800.TIFF")
 globalmarble_img  = globalmarble.ReadAsArray().transpose(1,2,0)

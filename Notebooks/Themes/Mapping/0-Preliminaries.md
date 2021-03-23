@@ -76,7 +76,6 @@ teaching_data.list()
 
 ```{code-cell} ipython3
 from cloudstor import cloudstor
-
 teaching_data = cloudstor(url="L93TxcmtLQzcfbk", password='')
 teaching_data.list()
 ```
