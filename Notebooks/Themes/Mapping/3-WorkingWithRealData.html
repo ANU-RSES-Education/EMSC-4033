@@ -869,23 +869,32 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">base_projection</span>   <span class="o">=</span> <span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">()</span> 
-<span class="n">globalmag</span>         <span class="o">=</span> <span class="n">gdal</span><span class="o">.</span><span class="n">Open</span><span class="p">(</span><span class="s2">&quot;Resources/EMAG2_image_V2_no_compr.tif&quot;</span><span class="p">)</span>
-<span class="n">globalmag_img</span>     <span class="o">=</span> <span class="n">globalmag</span><span class="o">.</span><span class="n">ReadAsArray</span><span class="p">()</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
-<span class="k">del</span><span class="p">(</span><span class="n">globalmag</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">cloudstor</span> <span class="kn">import</span> <span class="n">cloudstor</span>
+<span class="n">teaching_data</span> <span class="o">=</span> <span class="n">cloudstor</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s2">&quot;L93TxcmtLQzcfbk&quot;</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+<span class="n">teaching_data</span><span class="o">.</span><span class="n">download_file_if_distinct</span><span class="p">(</span><span class="s2">&quot;EMAG2_image_V2_no_compr.tif&quot;</span><span class="p">,</span> <span class="s2">&quot;Resources/EMAG2_image_V2_no_compr.tif&quot;</span><span class="p">)</span>
+<span class="n">teaching_data</span><span class="o">.</span><span class="n">download_file_if_distinct</span><span class="p">(</span><span class="s2">&quot;AusMagAll.tiff&quot;</span><span class="p">,</span> <span class="s2">&quot;Resources/AusMagAll.tiff&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">2</span><span class="o">-</span><span class="n">aa6752701383</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">base_projection</span>   <span class="o">=</span> <span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">globalmag</span>         <span class="o">=</span> <span class="n">gdal</span><span class="o">.</span><span class="n">Open</span><span class="p">(</span><span class="s2">&quot;Resources/EMAG2_image_V2_no_compr.tif&quot;</span><span class="p">)</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">globalmag_img</span>     <span class="o">=</span> <span class="n">globalmag</span><span class="o">.</span><span class="n">ReadAsArray</span><span class="p">()</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="k">del</span><span class="p">(</span><span class="n">globalmag</span><span class="p">)</span>
-
-<span class="ne">AttributeError</span>: &#39;NoneType&#39; object has no attribute &#39;ReadAsArray&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cloudstore connection established
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Remote and local file size both 147.72 MB, skipping - Resources/EMAG2_image_V2_no_compr.tif
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Remote and local file size both 97.37 MB, skipping - Resources/AusMagAll.tiff
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">base_projection</span>   <span class="o">=</span> <span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">()</span> 
+<span class="n">globalmag</span>         <span class="o">=</span> <span class="n">gdal</span><span class="o">.</span><span class="n">Open</span><span class="p">(</span><span class="s2">&quot;Resources/EMAG2_image_V2_no_compr.tif&quot;</span><span class="p">)</span>
+<span class="n">globalmag_img</span>     <span class="o">=</span> <span class="n">globalmag</span><span class="o">.</span><span class="n">ReadAsArray</span><span class="p">()</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="k">del</span><span class="p">(</span><span class="n">globalmag</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -963,8 +972,8 @@ The &#39;inframe&#39; parameter of draw() was deprecated in Matplotlib 3.3 and w
   inframe=inframe)
 </pre></div>
 </div>
-<img alt="../../../_images/3-WorkingWithRealData_4_1.png" src="../../../_images/3-WorkingWithRealData_4_1.png" />
-<img alt="../../../_images/3-WorkingWithRealData_4_2.png" src="../../../_images/3-WorkingWithRealData_4_2.png" />
+<img alt="../../../_images/3-WorkingWithRealData_5_1.png" src="../../../_images/3-WorkingWithRealData_5_1.png" />
+<img alt="../../../_images/3-WorkingWithRealData_5_2.png" src="../../../_images/3-WorkingWithRealData_5_2.png" />
 </div>
 </div>
 <div class="section" id="features">
@@ -1007,7 +1016,7 @@ The &#39;inframe&#39; parameter of draw() was deprecated in Matplotlib 3.3 and w
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/3-WorkingWithRealData_7_0.png" src="../../../_images/3-WorkingWithRealData_7_0.png" />
+<img alt="../../../_images/3-WorkingWithRealData_8_0.png" src="../../../_images/3-WorkingWithRealData_8_0.png" />
 </div>
 </div>
 <p>Now let us add the global (lower resolution) dataset in the background, mask things up and add coastlines</p>
@@ -1032,19 +1041,7 @@ The &#39;inframe&#39; parameter of draw() was deprecated in Matplotlib 3.3 and w
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">7</span><span class="o">-</span><span class="n">bd87a040536a</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_extent</span><span class="p">([</span><span class="mi">90</span><span class="p">,</span> <span class="mi">180</span><span class="p">,</span> <span class="o">-</span><span class="mi">50</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span> 
-<span class="ne">----&gt; </span><span class="mi">9</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">globalmag_img</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;upper&#39;</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">base_projection</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="n">global_extent</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="c1"># ax.add_feature(land, facecolor=&quot;red&quot;, edgecolor=&quot;red&quot;, alpha=0.1, linewidth=0.5, zorder=1)</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="n">ax</span><span class="o">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">ocean</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="p">(</span><span class="mf">0.4</span><span class="p">,</span><span class="mf">0.4</span><span class="p">,</span><span class="mf">0.6</span><span class="p">),</span> <span class="n">edgecolor</span><span class="o">=</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">),</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;globalmag_img&#39; is not defined
-</pre></div>
-</div>
-<img alt="../../../_images/3-WorkingWithRealData_9_1.png" src="../../../_images/3-WorkingWithRealData_9_1.png" />
+<img alt="../../../_images/3-WorkingWithRealData_10_0.png" src="../../../_images/3-WorkingWithRealData_10_0.png" />
 </div>
 </div>
 </div>

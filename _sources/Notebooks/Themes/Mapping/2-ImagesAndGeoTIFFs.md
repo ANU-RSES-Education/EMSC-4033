@@ -27,7 +27,12 @@ import matplotlib.pyplot as plt
 ```
 
 ```{code-cell} ipython3
-!ls Resources/
+from cloudstor import cloudstor
+teaching_data = cloudstor(url="L93TxcmtLQzcfbk", password='')
+
+teaching_data.download_file_if_distinct("BlueMarbleNG-TB_2004-12-01_rgb_3600x1800.TIFF", "Resources/BlueMarbleNG-TB_2004-12-01_rgb_3600x1800.TIFF")
+teaching_data.download_file_if_distinct("EMAG2_image_V2_no_compr.tif", "Resources/EMAG2_image_V2_no_compr.tif")
+teaching_data.download_file_if_distinct("color_etopo1_ice_low.tif", "Resources/color_etopo1_ice_low.tif")
 ```
 
 ```{code-cell} ipython3

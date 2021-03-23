@@ -34,7 +34,12 @@ import cartopy.feature as cfeature
 ```
 
 ```{code-cell} ipython3
-#!/usr/bin/python
+from cloudstor import cloudstor
+teaching_data = cloudstor(url="L93TxcmtLQzcfbk", password='')
+teaching_data.download_file_if_distinct("color_etopo1_ice_low.tif", "Resources/color_etopo1_ice_low.tif")
+```
+
+```{code-cell} ipython3
 from http.cookiejar import CookieJar
 # from urllib import urlencode
 import urllib.request

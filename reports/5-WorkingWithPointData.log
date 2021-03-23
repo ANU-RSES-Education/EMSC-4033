@@ -32,8 +32,15 @@ nbclient.exceptions.CellTimeoutError: A cell timed out while it was being execut
 The message was: Cell execution timed out.
 Here is a preview of the cell contents:
 -------------------
-['import stripy as stripy', '', 'str_fmt = "{:35} {:3}\\t{:6}"', '', '']
-...
-['randR = stripy.spherical_meshes.random_mesh(number_of_points=5000)', 'rand0 = stripy.sTriangulation(lons=randR.lons[::50],lats=randR.lats[::50])', 'rand2 = stripy.sTriangulation(lons=randR.lons[::25],lats=randR.lats[::25])', '', 'print(str_fmt.format("Random mesh (6)", rand0.npoints, randR.npoints))']
+from cloudstor import cloudstor
+teaching_data = cloudstor(url="L93TxcmtLQzcfbk", password='')
+
+teaching_data.download_file_if_distinct("BlueMarbleNG-TB_2004-12-01_rgb_3600x1800.TIFF", "Resources/BlueMarbleNG-TB_2004-12-01_rgb_3600x1800.TIFF")
+teaching_data.download_file_if_distinct("color_etopo1_ice_low.tif", "Resources/color_etopo1_ice_low.tif")
+teaching_data.download_file_if_distinct("EMAG2_image_V2_no_compr.tif", "Resources/EMAG2_image_V2_no_compr.tif")
+teaching_data.download_file_if_distinct("global_age_data.3.6.z.npz", "Resources/global_age_data.3.6.z.npz")
+teaching_data.download_file_if_distinct("etopo1_grayscale_hillshade.tif", "Resources/etopo1_grayscale_hillshade.tif")
+
+teaching_data.download_directory("EQs","Resources/EQs")
 -------------------
 

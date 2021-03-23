@@ -37,71 +37,28 @@ import cartopy.feature as cfeature
 import scipy.ndimage
 import scipy.misc
 
+from osgeo import gdal
 from scipy.io import netcdf
 ```
 
-```{raw-cell}
-# The colormap routine creates enormous arrays in intermediary calculations. This is
-# a way to avoid memory errors: process to RGB (int8) in advance
+```{code-cell} ipython3
+from cloudstor import cloudstor
+teaching_data = cloudstor(url="L93TxcmtLQzcfbk", password='')
 
-def apply_colormap_to_image(rawimage, colormap, norm):
+teaching_data.download_file_if_distinct("BlueMarbleNG-TB_2004-12-01_rgb_3600x1800.TIFF", "Resources/BlueMarbleNG-TB_2004-12-01_rgb_3600x1800.TIFF")
+teaching_data.download_file_if_distinct("color_etopo1_ice_low.tif", "Resources/color_etopo1_ice_low.tif")
+teaching_data.download_file_if_distinct("EMAG2_image_V2_no_compr.tif", "Resources/EMAG2_image_V2_no_compr.tif")
+teaching_data.download_file_if_distinct("global_age_data.3.6.z.npz", "Resources/global_age_data.3.6.z.npz")
+teaching_data.download_file_if_distinct("etopo1_grayscale_hillshade.tif", "Resources/etopo1_grayscale_hillshade.tif")
+teaching_data.download_file_if_distinct("sec_invariant_strain_0.2.dat", "Resources/sec_invariant_strain_0.2.dat")
 
-    greyimage = norm(rawimage)
-    rgbimage = np.empty((greyimage.shape[0], greyimage.shape[1] , 4), dtype=uint8)
-
-    for i in range(0, greyimage.shape[0]):
-        rgbimage[i,:,:] = colormap(greyimage[i,:]) * 256
-                
-    rgbimage2 = rgbimage[:,:,0:3]        
-    
-    return rgbimage2
-    
+teaching_data.download_file_if_distinct("HYP_50M_SR_W/HYP_50M_SR_W.tif", "Resources/HYP_50M_SR_W/HYP_50M_SR_W.tif")
+teaching_data.download_file_if_distinct("OB_50M/OB_50M.tif", "Resources/OB_50M/OB_50M.tif")
 ```
 
 ```{code-cell} ipython3
 base_projection     = ccrs.PlateCarree() 
 global_extent     = [-180.0, 180.0, -90.0, 90.0]
-
-# etopo1       = gdal.Open("../../Data/Resources/color_etopo1_ice_low.tif")
-# etopo_img    = etopo1.ReadAsArray().transpose(1,2,0)
-# del(etopo1)
-
-# # Height field only ... 
-# etopoH = gdal.Open("../../Data/Resources/ETOPO1_Ice_c_geotiff.tif") 
-# etopoH_img = etopoH.ReadAsArray()[::2,::2].astype(numpy.float16)
-# del(etopoH)
-
-# colormap = plt.get_cmap('Greys_r')
-# norm = matplotlib.colors.Normalize(vmin=-5000, vmax=7500)
-# etopoH_img_grey = apply_colormap_to_image(etopoH_img, colormap, norm)
-
-# strainrate_extent=[-180,180,-68,80]
-# strainrate = numpy.loadtxt("../../Data/Resources/sec_invariant_strain_0.2.dat")
-# strainrate_data = strainrate.reshape(741,1800,3)  # I had to look at the data to work this out !
-
-# globalrelief      = gdal.Open("../../Data/Resources/HYP_50M_SR_W/HYP_50M_SR_W.tif")
-# globalrelief_img  = globalrelief.ReadAsArray().transpose(1,2,0)
-# del(globalrelief)
-
-# globalbathym      = gdal.Open("../../Data/Resources/OB_50M/OB_50M.tif")
-# globalbathym_img  = globalbathym.ReadAsArray().transpose(1,2,0)
-# del(globalbathym)
-
-# print ("etopoH_img - ", etopoH_img.shape)
-# print ("globalrelief_img - ", globalrelief_img.shape)
-
-# ## If the shapes are different then see the cell below for a way to fix it.
-
-# blended_img = np.empty_like(globalrelief_img)
-# blended_img[...,0] = np.where( etopoH_img < 0.0, globalbathym_img[...,0], globalrelief_img[...,0] )
-# blended_img[...,1] = np.where( etopoH_img < 0.0, globalbathym_img[...,1], globalrelief_img[...,1] )
-# blended_img[...,2] = np.where( etopoH_img < 0.0, globalbathym_img[...,2], globalrelief_img[...,2] )
-
-# # Clean up ... we'll just keep the int8 rgb versions for plotting
-
-# del(globalbathym_img)
-# del(globalrelief_img)
-# del(etopoH_img)
 ```
 
 ```{code-cell} ipython3
@@ -186,14 +143,14 @@ graticules_5 = cfeature.NaturalEarthFeature('physical', 'graticules_5', '10m',
 # client = Client("IRIS")
 
 
-# starttime = UTCDateTime("1965-01-01")
-# endtime   = UTCDateTime("2016-01-01")
+# starttime = UTCDateTime("1980-01-01")
+# endtime   = UTCDateTime("2021-01-01")
 # cat = client.get_events(starttime=starttime, endtime=endtime,
 #                         minlongitude=himalaya_extent[0],
 #                         maxlongitude=himalaya_extent[1],
 #                         minlatitude=himalaya_extent[2],
 #                         maxlatitude=himalaya_extent[3],
-#                         minmagnitude=4.5, catalog="ISC")
+#                         minmagnitude=5.5, catalog="ISC")
 
 # print (cat.count(), " events in catalogue")
 ```
@@ -244,8 +201,8 @@ import cartopy.io.img_tiles as cimgt
 mapbox_satellite = cimgt.MapboxTiles(map_id='satellite', 
                                      access_token='pk.eyJ1IjoibG91aXNtb3Jlc2kiLCJhIjoiY2pzeG1mZzFqMG5sZDQ0czF5YzY1NmZ4cSJ9.lpsUzmLasydBlS0IOqe5JA')
 
-mapbox_streets = cimgt.MapboxTiles(map_id='streets', 
-                                     access_token='pk.eyJ1IjoibG91aXNtb3Jlc2kiLCJhIjoiY2pzeG1mZzFqMG5sZDQ0czF5YzY1NmZ4cSJ9.lpsUzmLasydBlS0IOqe5JA')
+# mapbox_streets = cimgt.MapboxTiles(map_id='streets', 
+#                                      access_token='pk.eyJ1IjoibG91aXNtb3Jlc2kiLCJhIjoiY2pzeG1mZzFqMG5sZDQ0czF5YzY1NmZ4cSJ9.lpsUzmLasydBlS0IOqe5JA')
 
 ## Continental US terrain images
 stamen_Terrain = cimgt.Stamen('terrain-background')

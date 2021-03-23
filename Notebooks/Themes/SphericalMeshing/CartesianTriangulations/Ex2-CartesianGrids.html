@@ -937,11 +937,11 @@ Elliptical mesh            21	  1301
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
 <span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="mi">23</span><span class="n">a57a654f67</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">     </span><span class="mi">29</span> 
 <span class="g g-Whitespace">     </span><span class="mi">30</span> <span class="n">randR</span> <span class="o">=</span> <span class="n">stripy</span><span class="o">.</span><span class="n">cartesian_meshes</span><span class="o">.</span><span class="n">random_mesh</span><span class="p">(</span><span class="n">extent</span><span class="p">,</span> <span class="n">nsamples</span><span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">31</span> <span class="n">rand0</span> <span class="o">=</span> <span class="n">stripy</span><span class="o">.</span><span class="n">Triangulation</span><span class="p">(</span><span class="n">randR</span><span class="o">.</span><span class="n">x</span><span class="p">[::</span><span class="mi">50</span><span class="p">],</span> <span class="n">randR</span><span class="o">.</span><span class="n">y</span><span class="p">[::</span><span class="mi">50</span><span class="p">])</span>
-<span class="g g-Whitespace">     </span><span class="mi">32</span> <span class="n">rand2</span> <span class="o">=</span> <span class="n">stripy</span><span class="o">.</span><span class="n">Triangulation</span><span class="p">(</span><span class="n">randR</span><span class="o">.</span><span class="n">x</span><span class="p">[::</span><span class="mi">25</span><span class="p">],</span> <span class="n">randR</span><span class="o">.</span><span class="n">y</span><span class="p">[::</span><span class="mi">25</span><span class="p">])</span>
+<span class="g g-Whitespace">     </span><span class="mi">31</span> <span class="n">rand0</span> <span class="o">=</span> <span class="n">stripy</span><span class="o">.</span><span class="n">Triangulation</span><span class="p">(</span><span class="n">randR</span><span class="o">.</span><span class="n">x</span><span class="p">[::</span><span class="mi">50</span><span class="p">],</span> <span class="n">randR</span><span class="o">.</span><span class="n">y</span><span class="p">[::</span><span class="mi">50</span><span class="p">])</span>
+<span class="ne">---&gt; </span><span class="mi">32</span> <span class="n">rand2</span> <span class="o">=</span> <span class="n">stripy</span><span class="o">.</span><span class="n">Triangulation</span><span class="p">(</span><span class="n">randR</span><span class="o">.</span><span class="n">x</span><span class="p">[::</span><span class="mi">25</span><span class="p">],</span> <span class="n">randR</span><span class="o">.</span><span class="n">y</span><span class="p">[::</span><span class="mi">25</span><span class="p">])</span>
 <span class="g g-Whitespace">     </span><span class="mi">33</span> 
+<span class="g g-Whitespace">     </span><span class="mi">34</span> 
 
 <span class="nn">/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/stripy/cartesian.py</span> in <span class="ni">__init__</span><span class="nt">(self, x, y, refinement_levels, permute, tree)</span>
 <span class="g g-Whitespace">    </span><span class="mi">110</span>         <span class="bp">self</span><span class="o">.</span><span class="n">tree</span> <span class="o">=</span> <span class="n">tree</span>
@@ -1101,7 +1101,7 @@ measure of the uniformity of each mesh.</p>
 <span class="g g-Whitespace">     </span><span class="mi">29</span> 
 <span class="ne">---&gt; </span><span class="mi">30</span> <span class="n">mesh_fig</span><span class="p">(</span><span class="n">rand0</span><span class="p">,</span> <span class="n">rand2</span><span class="p">,</span> <span class="s2">&quot;Random&quot;</span> <span class="p">)</span>
 
-<span class="ne">NameError</span>: name &#39;rand0&#39; is not defined
+<span class="ne">NameError</span>: name &#39;rand2&#39; is not defined
 </pre></div>
 </div>
 <img alt="../../../../_images/Ex2-CartesianGrids_7_1.png" src="../../../../_images/Ex2-CartesianGrids_7_1.png" />
