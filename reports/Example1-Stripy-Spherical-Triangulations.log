@@ -32,8 +32,8 @@ nbclient.exceptions.CellTimeoutError: A cell timed out while it was being execut
 The message was: Cell execution timed out.
 Here is a preview of the cell contents:
 -------------------
-['import matplotlib.pyplot as plt', '', '%matplotlib inline', '', 'import cartopy']
+['import stripy as stripy', '', 'str_fmt = "{:35} {:3}\\t{:6}"', '', '']
 ...
-['mesh_fig(ico3,        ico3mv,     "EdgeByVertex1to10" )', 'mesh_fig(ico3,        ico3ev,     "EdgeByVertexT1to10" )', 'mesh_fig(ico3,        ico3cv,     "CentroidByVertexT1to10" )', 'mesh_fig(ico3,        ico3et,     "EdgeByTriangle1to10" )', 'mesh_fig(ico3,        ico3ct,     "CentroidByTriangle1to10" )']
+['randR = stripy.spherical_meshes.random_mesh(number_of_points=5000)', 'rand0 = stripy.sTriangulation(lons=randR.lons[::50],lats=randR.lats[::50])', 'rand2 = stripy.sTriangulation(lons=randR.lons[::25],lats=randR.lats[::25])', '', 'print(str_fmt.format("Random mesh (6)", rand0.npoints, randR.npoints))']
 -------------------
 

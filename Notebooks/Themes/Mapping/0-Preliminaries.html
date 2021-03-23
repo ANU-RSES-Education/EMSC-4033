@@ -914,7 +914,7 @@ ls -l Resources/
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>total 4
--rw-r--r-- 1 runner docker 181 Mar 23 05:58 README.md
+-rw-r--r-- 1 runner docker 181 Mar 23 09:40 README.md
 </pre></div>
 </div>
 </div>
@@ -1017,8 +1017,17 @@ large binary files and break the notion of revision control.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloaded Resources/AusMagAll.tiff (97.37 MB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloaded Resources/BlueMarbleNG-TB_2004-12-01_rgb_3600x1800.TIFF (10.85 MB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloaded Resources/EMAG2_image_V2_Small.tif (25.92 MB)
+</pre></div>
+</div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">UnboundLocalError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
 <span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="mi">3</span><span class="n">c3d1c5f3ee1</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">     </span><span class="mi">24</span>     <span class="kn">import</span> <span class="nn">os</span>
 <span class="g g-Whitespace">     </span><span class="mi">25</span>     <span class="c1"># Check if it exists already / is the same size</span>
@@ -1027,13 +1036,111 @@ large binary files and break the notion of revision control.</p>
 <span class="g g-Whitespace">     </span><span class="mi">28</span> 
 
 <span class="nn">/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/cloudstor/cloudstor_webdav.py</span> in <span class="ni">download_file_if_distinct</span><span class="nt">(self, remote_path, local_path, check_size, silent)</span>
-<span class="g g-Whitespace">    </span><span class="mi">120</span>                     <span class="n">lsize</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="g g-Whitespace">    </span><span class="mi">121</span> 
-<span class="ne">--&gt; </span><span class="mi">122</span>                 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Downloaded </span><span class="si">{}</span><span class="s2"> (</span><span class="si">{}</span><span class="s2">)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">local_path</span><span class="p">,</span> <span class="n">hsize</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">123</span> 
-<span class="g g-Whitespace">    </span><span class="mi">124</span>         <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">111</span> 
+<span class="g g-Whitespace">    </span><span class="mi">112</span>         <span class="k">if</span> <span class="n">check_size</span> <span class="o">==</span> <span class="kc">False</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">compare_remote</span><span class="p">(</span><span class="n">remote_path</span><span class="p">,</span> <span class="n">local_path</span><span class="p">)</span> <span class="o">==</span> <span class="kc">False</span> <span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">113</span>             <span class="bp">self</span><span class="o">.</span><span class="n">download_file</span><span class="p">(</span><span class="n">remote_path</span><span class="p">,</span> <span class="n">local_path</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">114</span>             <span class="k">if</span> <span class="ow">not</span> <span class="n">silent</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">115</span>                 <span class="kn">import</span> <span class="nn">os</span>
 
-<span class="ne">UnboundLocalError</span>: local variable &#39;hsize&#39; referenced before assignment
+<span class="nn">/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/webdav/client.py</span> in <span class="ni">_wrapper</span><span class="nt">(self, *args, **kw)</span>
+<span class="g g-Whitespace">     </span><span class="mi">68</span>         <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Requesting </span><span class="si">{</span><span class="n">fn</span><span class="si">}</span><span class="s1">(</span><span class="si">{</span><span class="n">args</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="n">kw</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">69</span>         <span class="k">try</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">70</span>             <span class="n">res</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">71</span>         <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">ConnectionError</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">72</span>             <span class="k">raise</span> <span class="n">NoConnection</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">webdav</span><span class="o">.</span><span class="n">hostname</span><span class="p">)</span>
+
+<span class="nn">/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/webdav/client.py</span> in <span class="ni">download_file</span><span class="nt">(self, remote_path, local_path, progress)</span>
+<span class="g g-Whitespace">    </span><span class="mi">413</span> 
+<span class="g g-Whitespace">    </span><span class="mi">414</span>         <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">local_path</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">local_file</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">415</span>             <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">execute_request</span><span class="p">(</span><span class="s1">&#39;download&#39;</span><span class="p">,</span> <span class="n">urn</span><span class="o">.</span><span class="n">quote</span><span class="p">())</span>
+<span class="g g-Whitespace">    </span><span class="mi">416</span>             <span class="k">for</span> <span class="n">block</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">iter_content</span><span class="p">(</span><span class="mi">1024</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">417</span>                 <span class="n">local_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">block</span><span class="p">)</span>
+
+<span class="nn">/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/webdav/client.py</span> in <span class="ni">execute_request</span><span class="nt">(self, action, path, data, headers_ext)</span>
+<span class="g g-Whitespace">    </span><span class="mi">162</span>             <span class="n">headers</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">get_headers</span><span class="p">(</span><span class="n">action</span><span class="p">,</span> <span class="n">headers_ext</span><span class="p">),</span>
+<span class="g g-Whitespace">    </span><span class="mi">163</span>             <span class="n">timeout</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">timeout</span><span class="p">,</span>
+<span class="ne">--&gt; </span><span class="mi">164</span>             <span class="n">data</span><span class="o">=</span><span class="n">data</span>
+<span class="g g-Whitespace">    </span><span class="mi">165</span>         <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">166</span>         <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">507</span><span class="p">:</span>
+
+<span class="nn">/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/requests/sessions.py</span> in <span class="ni">request</span><span class="nt">(self, method, url, params, data, headers, cookies, files, auth, timeout, allow_redirects, proxies, hooks, stream, verify, cert, json)</span>
+<span class="g g-Whitespace">    </span><span class="mi">540</span>         <span class="p">}</span>
+<span class="g g-Whitespace">    </span><span class="mi">541</span>         <span class="n">send_kwargs</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">settings</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">542</span>         <span class="n">resp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">prep</span><span class="p">,</span> <span class="o">**</span><span class="n">send_kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">543</span> 
+<span class="g g-Whitespace">    </span><span class="mi">544</span>         <span class="k">return</span> <span class="n">resp</span>
+
+<span class="nn">/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/requests/sessions.py</span> in <span class="ni">send</span><span class="nt">(self, request, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">695</span> 
+<span class="g g-Whitespace">    </span><span class="mi">696</span>         <span class="k">if</span> <span class="ow">not</span> <span class="n">stream</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">697</span>             <span class="n">r</span><span class="o">.</span><span class="n">content</span>
+<span class="g g-Whitespace">    </span><span class="mi">698</span> 
+<span class="g g-Whitespace">    </span><span class="mi">699</span>         <span class="k">return</span> <span class="n">r</span>
+
+<span class="nn">/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/requests/models.py</span> in <span class="ni">content</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">829</span>                 <span class="bp">self</span><span class="o">.</span><span class="n">_content</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">830</span>             <span class="k">else</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">831</span>                 <span class="bp">self</span><span class="o">.</span><span class="n">_content</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">iter_content</span><span class="p">(</span><span class="n">CONTENT_CHUNK_SIZE</span><span class="p">))</span> <span class="ow">or</span> <span class="sa">b</span><span class="s1">&#39;&#39;</span>
+<span class="g g-Whitespace">    </span><span class="mi">832</span> 
+<span class="g g-Whitespace">    </span><span class="mi">833</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_content_consumed</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="nn">/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/requests/models.py</span> in <span class="ni">generate</span><span class="nt">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">751</span>             <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">raw</span><span class="p">,</span> <span class="s1">&#39;stream&#39;</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">752</span>                 <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">753</span>                     <span class="k">for</span> <span class="n">chunk</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">stream</span><span class="p">(</span><span class="n">chunk_size</span><span class="p">,</span> <span class="n">decode_content</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">754</span>                         <span class="k">yield</span> <span class="n">chunk</span>
+<span class="g g-Whitespace">    </span><span class="mi">755</span>                 <span class="k">except</span> <span class="n">ProtocolError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+
+<span class="nn">/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/urllib3/response.py</span> in <span class="ni">stream</span><span class="nt">(self, amt, decode_content)</span>
+<span class="g g-Whitespace">    </span><span class="mi">574</span>         <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">575</span>             <span class="k">while</span> <span class="ow">not</span> <span class="n">is_fp_closed</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_fp</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">576</span>                 <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">amt</span><span class="o">=</span><span class="n">amt</span><span class="p">,</span> <span class="n">decode_content</span><span class="o">=</span><span class="n">decode_content</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">577</span> 
+<span class="g g-Whitespace">    </span><span class="mi">578</span>                 <span class="k">if</span> <span class="n">data</span><span class="p">:</span>
+
+<span class="nn">/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/urllib3/response.py</span> in <span class="ni">read</span><span class="nt">(self, amt, decode_content, cache_content)</span>
+<span class="g g-Whitespace">    </span><span class="mi">517</span>             <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">518</span>                 <span class="n">cache_content</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="ne">--&gt; </span><span class="mi">519</span>                 <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fp</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">amt</span><span class="p">)</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">fp_closed</span> <span class="k">else</span> <span class="sa">b</span><span class="s2">&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">520</span>                 <span class="k">if</span> <span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">521</span>                     <span class="n">amt</span> <span class="o">!=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">data</span>
+
+<span class="nn">/usr/share/miniconda3/envs/jupyter/lib/python3.7/http/client.py</span> in <span class="ni">read</span><span class="nt">(self, amt)</span>
+<span class="g g-Whitespace">    </span><span class="mi">459</span>             <span class="c1"># Amount is given, implement using readinto</span>
+<span class="g g-Whitespace">    </span><span class="mi">460</span>             <span class="n">b</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="n">amt</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">461</span>             <span class="n">n</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">readinto</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">462</span>             <span class="k">return</span> <span class="nb">memoryview</span><span class="p">(</span><span class="n">b</span><span class="p">)[:</span><span class="n">n</span><span class="p">]</span><span class="o">.</span><span class="n">tobytes</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">463</span>         <span class="k">else</span><span class="p">:</span>
+
+<span class="nn">/usr/share/miniconda3/envs/jupyter/lib/python3.7/http/client.py</span> in <span class="ni">readinto</span><span class="nt">(self, b)</span>
+<span class="g g-Whitespace">    </span><span class="mi">503</span>         <span class="c1"># connection, and the user is reading more bytes than will be provided</span>
+<span class="g g-Whitespace">    </span><span class="mi">504</span>         <span class="c1"># (for example, reading in 1k chunks)</span>
+<span class="ne">--&gt; </span><span class="mi">505</span>         <span class="n">n</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fp</span><span class="o">.</span><span class="n">readinto</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">506</span>         <span class="k">if</span> <span class="ow">not</span> <span class="n">n</span> <span class="ow">and</span> <span class="n">b</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">507</span>             <span class="c1"># Ideally, we would raise IncompleteRead if the content-length</span>
+
+<span class="nn">/usr/share/miniconda3/envs/jupyter/lib/python3.7/socket.py</span> in <span class="ni">readinto</span><span class="nt">(self, b)</span>
+<span class="g g-Whitespace">    </span><span class="mi">587</span>         <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">588</span>             <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">589</span>                 <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sock</span><span class="o">.</span><span class="n">recv_into</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">590</span>             <span class="k">except</span> <span class="n">timeout</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">591</span>                 <span class="bp">self</span><span class="o">.</span><span class="n">_timeout_occurred</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="nn">/usr/share/miniconda3/envs/jupyter/lib/python3.7/ssl.py</span> in <span class="ni">recv_into</span><span class="nt">(self, buffer, nbytes, flags)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1069</span>                   <span class="s2">&quot;non-zero flags not allowed in calls to recv_into() on </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span>
+<span class="g g-Whitespace">   </span><span class="mi">1070</span>                   <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1071</span>             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">nbytes</span><span class="p">,</span> <span class="n">buffer</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1072</span>         <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1073</span>             <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">recv_into</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span> <span class="n">nbytes</span><span class="p">,</span> <span class="n">flags</span><span class="p">)</span>
+
+<span class="nn">/usr/share/miniconda3/envs/jupyter/lib/python3.7/ssl.py</span> in <span class="ni">read</span><span class="nt">(self, len, buffer)</span>
+<span class="g g-Whitespace">    </span><span class="mi">927</span>         <span class="k">try</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">928</span>             <span class="k">if</span> <span class="n">buffer</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">929</span>                 <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sslobj</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="nb">len</span><span class="p">,</span> <span class="n">buffer</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">930</span>             <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">931</span>                 <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sslobj</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="nb">len</span><span class="p">)</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
 </div>
 </div>
@@ -1041,11 +1148,6 @@ large binary files and break the notion of revision control.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="n">Resources</span><span class="o">/</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>AusMagAll.tiff  README.md
 </pre></div>
 </div>
 </div>
@@ -1057,154 +1159,6 @@ large binary files and break the notion of revision control.</p>
 <span class="n">teaching_data</span><span class="o">.</span><span class="n">download_directory</span><span class="p">(</span><span class="s2">&quot;EQs&quot;</span><span class="p">,</span><span class="s2">&quot;Resources/EQs&quot;</span><span class="p">)</span>
 <span class="n">teaching_data</span><span class="o">.</span><span class="n">download_directory</span><span class="p">(</span><span class="s2">&quot;HYP_50M_SR_W&quot;</span><span class="p">,</span><span class="s2">&quot;Resources/HYP_50M_SR_W&quot;</span><span class="p">)</span>
 <span class="n">teaching_data</span><span class="o">.</span><span class="n">download_directory</span><span class="p">(</span><span class="s2">&quot;OB_50M&quot;</span><span class="p">,</span><span class="s2">&quot;Resources/OB_50M&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">5</span><span class="o">-</span><span class="n">b8ed71f32748</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> 
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">teaching_data</span><span class="o">.</span><span class="n">download_directory</span><span class="p">(</span><span class="s2">&quot;EQs&quot;</span><span class="p">,</span><span class="s2">&quot;Resources/EQs&quot;</span><span class="p">)</span>
-<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">teaching_data</span><span class="o">.</span><span class="n">download_directory</span><span class="p">(</span><span class="s2">&quot;HYP_50M_SR_W&quot;</span><span class="p">,</span><span class="s2">&quot;Resources/HYP_50M_SR_W&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">teaching_data</span><span class="o">.</span><span class="n">download_directory</span><span class="p">(</span><span class="s2">&quot;OB_50M&quot;</span><span class="p">,</span><span class="s2">&quot;Resources/OB_50M&quot;</span><span class="p">)</span>
-
-<span class="nn">/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/webdav/client.py</span> in <span class="ni">download_directory</span><span class="nt">(self, remote_path, local_path, progress)</span>
-<span class="g g-Whitespace">    </span><span class="mi">353</span>             <span class="n">_remote_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">urn</span><span class="o">.</span><span class="n">path</span><span class="p">()</span><span class="si">}{</span><span class="n">resource_name</span><span class="si">}</span><span class="s1">&#39;</span>
-<span class="g g-Whitespace">    </span><span class="mi">354</span>             <span class="n">_local_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">local_path</span><span class="p">,</span> <span class="n">resource_name</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">355</span>             <span class="bp">self</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">local_path</span><span class="o">=</span><span class="n">_local_path</span><span class="p">,</span> <span class="n">remote_path</span><span class="o">=</span><span class="n">_remote_path</span><span class="p">,</span> <span class="n">progress</span><span class="o">=</span><span class="n">progress</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">356</span> 
-<span class="g g-Whitespace">    </span><span class="mi">357</span>     <span class="nd">@contextmanager</span>
-
-<span class="nn">/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/webdav/client.py</span> in <span class="ni">download</span><span class="nt">(self, remote_path, local_path, progress)</span>
-<span class="g g-Whitespace">    </span><span class="mi">328</span>         <span class="s2">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">329</span><span class="s2">         urn = Urn(remote_path)</span>
-<span class="ne">--&gt; </span><span class="mi">330</span><span class="s2">         if self.is_dir(urn.path()):</span>
-<span class="g g-Whitespace">    </span><span class="mi">331</span><span class="s2">             self.download_directory(local_path=local_path, remote_path=remote_path, progress=progress)</span>
-<span class="g g-Whitespace">    </span><span class="mi">332</span><span class="s2">         else:</span>
-
-<span class="nn">/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/webdav/client.py</span> in <span class="ni">_wrapper</span><span class="nt">(self, *args, **kw)</span>
-<span class="g g-Whitespace">     </span><span class="mi">68</span><span class="s2">         log.debug(f&#39;Requesting </span><span class="si">{fn}</span><span class="s2">(</span><span class="si">{args}</span><span class="s2">, </span><span class="si">{kw}</span><span class="s2">)&#39;)</span>
-<span class="g g-Whitespace">     </span><span class="mi">69</span><span class="s2">         try:</span>
-<span class="ne">---&gt; </span><span class="mi">70</span><span class="s2">             res = fn(self, *args, **kw)</span>
-<span class="g g-Whitespace">     </span><span class="mi">71</span><span class="s2">         except requests.ConnectionError:</span>
-<span class="g g-Whitespace">     </span><span class="mi">72</span><span class="s2">             raise NoConnection(self.webdav.hostname)</span>
-
-<span class="nn">/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/webdav/client.py</span> in <span class="ni">is_dir</span><span class="nt">(self, remote_path)</span>
-<span class="g g-Whitespace">    </span><span class="mi">632</span><span class="s2">         urn = Urn(remote_path)</span>
-<span class="g g-Whitespace">    </span><span class="mi">633</span><span class="s2">         parent_urn = Urn(urn.parent())</span>
-<span class="ne">--&gt; </span><span class="mi">634</span><span class="s2">         if not self.check(urn.path()) and not self.check(Urn(remote_path, directory=True).path()):</span>
-<span class="g g-Whitespace">    </span><span class="mi">635</span><span class="s2">             raise RemoteResourceNotFound(remote_path)</span>
-<span class="g g-Whitespace">    </span><span class="mi">636</span><span class="s2"> </span>
-
-<span class="nn">/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/webdav/client.py</span> in <span class="ni">_wrapper</span><span class="nt">(self, *args, **kw)</span>
-<span class="g g-Whitespace">     </span><span class="mi">68</span><span class="s2">         log.debug(f&#39;Requesting </span><span class="si">{fn}</span><span class="s2">(</span><span class="si">{args}</span><span class="s2">, </span><span class="si">{kw}</span><span class="s2">)&#39;)</span>
-<span class="g g-Whitespace">     </span><span class="mi">69</span><span class="s2">         try:</span>
-<span class="ne">---&gt; </span><span class="mi">70</span><span class="s2">             res = fn(self, *args, **kw)</span>
-<span class="g g-Whitespace">     </span><span class="mi">71</span><span class="s2">         except requests.ConnectionError:</span>
-<span class="g g-Whitespace">     </span><span class="mi">72</span><span class="s2">             raise NoConnection(self.webdav.hostname)</span>
-
-<span class="nn">/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/webdav/client.py</span> in <span class="ni">check</span><span class="nt">(self, remote_path)</span>
-<span class="g g-Whitespace">    </span><span class="mi">272</span><span class="s2">         urn = Urn(remote_path)</span>
-<span class="g g-Whitespace">    </span><span class="mi">273</span><span class="s2">         try:</span>
-<span class="ne">--&gt; </span><span class="mi">274</span><span class="s2">             response = self.execute_request(action=&#39;check&#39;, path=urn.quote())</span>
-<span class="g g-Whitespace">    </span><span class="mi">275</span><span class="s2">         except ResponseErrorCode:</span>
-<span class="g g-Whitespace">    </span><span class="mi">276</span><span class="s2">             return False</span>
-
-<span class="nn">/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/webdav/client.py</span> in <span class="ni">execute_request</span><span class="nt">(self, action, path, data, headers_ext)</span>
-<span class="g g-Whitespace">    </span><span class="mi">162</span><span class="s2">             headers=self.get_headers(action, headers_ext),</span>
-<span class="g g-Whitespace">    </span><span class="mi">163</span><span class="s2">             timeout=self.timeout,</span>
-<span class="ne">--&gt; </span><span class="mi">164</span><span class="s2">             data=data</span>
-<span class="g g-Whitespace">    </span><span class="mi">165</span><span class="s2">         )</span>
-<span class="g g-Whitespace">    </span><span class="mi">166</span><span class="s2">         if response.status_code == 507:</span>
-
-<span class="nn">/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/requests/sessions.py</span> in <span class="ni">request</span><span class="nt">(self, method, url, params, data, headers, cookies, files, auth, timeout, allow_redirects, proxies, hooks, stream, verify, cert, json)</span>
-<span class="g g-Whitespace">    </span><span class="mi">540</span><span class="s2">         }</span>
-<span class="g g-Whitespace">    </span><span class="mi">541</span><span class="s2">         send_kwargs.update(settings)</span>
-<span class="ne">--&gt; </span><span class="mi">542</span><span class="s2">         resp = self.send(prep, **send_kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">543</span><span class="s2"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">544</span><span class="s2">         return resp</span>
-
-<span class="nn">/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/requests/sessions.py</span> in <span class="ni">send</span><span class="nt">(self, request, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">653</span><span class="s2"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">654</span><span class="s2">         # Send the request</span>
-<span class="ne">--&gt; </span><span class="mi">655</span><span class="s2">         r = adapter.send(request, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">656</span><span class="s2"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">657</span><span class="s2">         # Total elapsed time of the request (approximately)</span>
-
-<span class="nn">/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/requests/adapters.py</span> in <span class="ni">send</span><span class="nt">(self, request, stream, timeout, verify, cert, proxies)</span>
-<span class="g g-Whitespace">    </span><span class="mi">447</span><span class="s2">                     decode_content=False,</span>
-<span class="g g-Whitespace">    </span><span class="mi">448</span><span class="s2">                     retries=self.max_retries,</span>
-<span class="ne">--&gt; </span><span class="mi">449</span><span class="s2">                     timeout=timeout</span>
-<span class="g g-Whitespace">    </span><span class="mi">450</span><span class="s2">                 )</span>
-<span class="g g-Whitespace">    </span><span class="mi">451</span><span class="s2"> </span>
-
-<span class="nn">/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/urllib3/connectionpool.py</span> in <span class="ni">urlopen</span><span class="nt">(self, method, url, body, headers, retries, redirect, assert_same_host, timeout, pool_timeout, release_conn, chunked, body_pos, **response_kw)</span>
-<span class="g g-Whitespace">    </span><span class="mi">704</span><span class="s2">                 body=body,</span>
-<span class="g g-Whitespace">    </span><span class="mi">705</span><span class="s2">                 headers=headers,</span>
-<span class="ne">--&gt; </span><span class="mi">706</span><span class="s2">                 chunked=chunked,</span>
-<span class="g g-Whitespace">    </span><span class="mi">707</span><span class="s2">             )</span>
-<span class="g g-Whitespace">    </span><span class="mi">708</span><span class="s2"> </span>
-
-<span class="nn">/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/urllib3/connectionpool.py</span> in <span class="ni">_make_request</span><span class="nt">(self, conn, method, url, timeout, chunked, **httplib_request_kw)</span>
-<span class="g g-Whitespace">    </span><span class="mi">443</span><span class="s2">                     # Python 3 (including for exceptions like SystemExit).</span>
-<span class="g g-Whitespace">    </span><span class="mi">444</span><span class="s2">                     # Otherwise it looks like a bug in the code.</span>
-<span class="ne">--&gt; </span><span class="mi">445</span><span class="s2">                     six.raise_from(e, None)</span>
-<span class="g g-Whitespace">    </span><span class="mi">446</span><span class="s2">         except (SocketTimeout, BaseSSLError, SocketError) as e:</span>
-<span class="g g-Whitespace">    </span><span class="mi">447</span><span class="s2">             self._raise_timeout(err=e, url=url, timeout_value=read_timeout)</span>
-
-<span class="nn">/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/urllib3/packages/six.py</span> in <span class="ni">raise_from</span><span class="nt">(value, from_value)</span>
-
-<span class="nn">/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/urllib3/connectionpool.py</span> in <span class="ni">_make_request</span><span class="nt">(self, conn, method, url, timeout, chunked, **httplib_request_kw)</span>
-<span class="g g-Whitespace">    </span><span class="mi">438</span><span class="s2">                 # Python 3</span>
-<span class="g g-Whitespace">    </span><span class="mi">439</span><span class="s2">                 try:</span>
-<span class="ne">--&gt; </span><span class="mi">440</span><span class="s2">                     httplib_response = conn.getresponse()</span>
-<span class="g g-Whitespace">    </span><span class="mi">441</span><span class="s2">                 except BaseException as e:</span>
-<span class="g g-Whitespace">    </span><span class="mi">442</span><span class="s2">                     # Remove the TypeError from the exception chain in</span>
-
-<span class="nn">/usr/share/miniconda3/envs/jupyter/lib/python3.7/http/client.py</span> in <span class="ni">getresponse</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1367</span><span class="s2">         try:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1368</span><span class="s2">             try:</span>
-<span class="ne">-&gt; </span><span class="mi">1369</span><span class="s2">                 response.begin()</span>
-<span class="g g-Whitespace">   </span><span class="mi">1370</span><span class="s2">             except ConnectionError:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1371</span><span class="s2">                 self.close()</span>
-
-<span class="nn">/usr/share/miniconda3/envs/jupyter/lib/python3.7/http/client.py</span> in <span class="ni">begin</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">308</span><span class="s2">         # read until we get a non-100 response</span>
-<span class="g g-Whitespace">    </span><span class="mi">309</span><span class="s2">         while True:</span>
-<span class="ne">--&gt; </span><span class="mi">310</span><span class="s2">             version, status, reason = self._read_status()</span>
-<span class="g g-Whitespace">    </span><span class="mi">311</span><span class="s2">             if status != CONTINUE:</span>
-<span class="g g-Whitespace">    </span><span class="mi">312</span><span class="s2">                 break</span>
-
-<span class="nn">/usr/share/miniconda3/envs/jupyter/lib/python3.7/http/client.py</span> in <span class="ni">_read_status</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">269</span><span class="s2"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">270</span><span class="s2">     def _read_status(self):</span>
-<span class="ne">--&gt; </span><span class="mi">271</span><span class="s2">         line = str(self.fp.readline(_MAXLINE + 1), &quot;iso-8859-1&quot;)</span>
-<span class="g g-Whitespace">    </span><span class="mi">272</span><span class="s2">         if len(line) &gt; _MAXLINE:</span>
-<span class="g g-Whitespace">    </span><span class="mi">273</span><span class="s2">             raise LineTooLong(&quot;status line&quot;)</span>
-
-<span class="nn">/usr/share/miniconda3/envs/jupyter/lib/python3.7/socket.py</span> in <span class="ni">readinto</span><span class="nt">(self, b)</span>
-<span class="g g-Whitespace">    </span><span class="mi">587</span><span class="s2">         while True:</span>
-<span class="g g-Whitespace">    </span><span class="mi">588</span><span class="s2">             try:</span>
-<span class="ne">--&gt; </span><span class="mi">589</span><span class="s2">                 return self._sock.recv_into(b)</span>
-<span class="g g-Whitespace">    </span><span class="mi">590</span><span class="s2">             except timeout:</span>
-<span class="g g-Whitespace">    </span><span class="mi">591</span><span class="s2">                 self._timeout_occurred = True</span>
-
-<span class="nn">/usr/share/miniconda3/envs/jupyter/lib/python3.7/ssl.py</span> in <span class="ni">recv_into</span><span class="nt">(self, buffer, nbytes, flags)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1069</span><span class="s2">                   &quot;non-zero flags not allowed in calls to recv_into() on </span><span class="si">%s</span><span class="s2">&quot; %</span>
-<span class="g g-Whitespace">   </span><span class="mi">1070</span><span class="s2">                   self.__class__)</span>
-<span class="ne">-&gt; </span><span class="mi">1071</span><span class="s2">             return self.read(nbytes, buffer)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1072</span><span class="s2">         else:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1073</span><span class="s2">             return super().recv_into(buffer, nbytes, flags)</span>
-
-<span class="nn">/usr/share/miniconda3/envs/jupyter/lib/python3.7/ssl.py</span> in <span class="ni">read</span><span class="nt">(self, len, buffer)</span>
-<span class="g g-Whitespace">    </span><span class="mi">927</span><span class="s2">         try:</span>
-<span class="g g-Whitespace">    </span><span class="mi">928</span><span class="s2">             if buffer is not None:</span>
-<span class="ne">--&gt; </span><span class="mi">929</span><span class="s2">                 return self._sslobj.read(len, buffer)</span>
-<span class="g g-Whitespace">    </span><span class="mi">930</span><span class="s2">             else:</span>
-<span class="g g-Whitespace">    </span><span class="mi">931</span><span class="s2">                 return self._sslobj.read(len)</span>
-
-<span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
 </div>
 </div>
