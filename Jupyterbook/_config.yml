@@ -40,7 +40,7 @@ repository:
 
 launch_buttons:
   jupyterhub_url: "https://emsc4033-2021.rses.underworldcloud.org"  # The URL for your JupyterHub. 
-  binderhub_url:  "https://mybinder.org"  # The URL of the BinderHub (e.g., https://mybinder.org)
+  # binderhub_url:  "https://mybinder.org"  # The URL of the BinderHub (e.g., https://mybinder.org)
   notebook_interface: "classic" # "jupyterlab" or "classic"
 
 
@@ -49,3 +49,7 @@ execute:
   #   - File.ipynb
 
   allow_errors : true # If `False`, when a code cell raises an error the execution is stopped, otherwise all cells are always run.
+  timeout: 120
+
+  # execute_notebooks: cache
+  # cache: .jupyter-cache 

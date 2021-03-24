@@ -14,6 +14,7 @@ dependencies:
     - pandas
     - pip 
     - libiconv
+    - jupytext
     - pip:
       - lavavu<1.7
       - xvfbwrapper 
