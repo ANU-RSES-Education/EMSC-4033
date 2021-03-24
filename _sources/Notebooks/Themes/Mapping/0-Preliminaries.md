@@ -1,5 +1,9 @@
 ---
 jupytext:
+  kernelspec:
+    display_name: Python 3
+    language: python
+    name: python3
   text_representation:
     extension: .md
     format_name: myst

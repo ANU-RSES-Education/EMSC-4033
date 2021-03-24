@@ -909,91 +909,7 @@
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Remote and local file size both 175.05 MB, skipping - Resources/HYP_50M_SR_W/HYP_50M_SR_W.tif
 </pre></div>
 </div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">2</span><span class="o">-</span><span class="mf">530e44481894</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span> 
-<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="n">teaching_data</span><span class="o">.</span><span class="n">download_file_if_distinct</span><span class="p">(</span><span class="s2">&quot;HYP_50M_SR_W/HYP_50M_SR_W.tif&quot;</span><span class="p">,</span> <span class="s2">&quot;Resources/HYP_50M_SR_W/HYP_50M_SR_W.tif&quot;</span><span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">12</span> <span class="n">teaching_data</span><span class="o">.</span><span class="n">download_file_if_distinct</span><span class="p">(</span><span class="s2">&quot;OB_50M/OB_50M.tif&quot;</span><span class="p">,</span> <span class="s2">&quot;Resources/OB_50M/OB_50M.tif&quot;</span><span class="p">)</span>
-
-<span class="nn">/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/cloudstor/cloudstor_webdav.py</span> in <span class="ni">download_file_if_distinct</span><span class="nt">(self, remote_path, local_path, check_size, silent)</span>
-<span class="g g-Whitespace">    </span><span class="mi">111</span> 
-<span class="g g-Whitespace">    </span><span class="mi">112</span>         <span class="k">if</span> <span class="n">check_size</span> <span class="o">==</span> <span class="kc">False</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">compare_remote</span><span class="p">(</span><span class="n">remote_path</span><span class="p">,</span> <span class="n">local_path</span><span class="p">)</span> <span class="o">==</span> <span class="kc">False</span> <span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">113</span>             <span class="bp">self</span><span class="o">.</span><span class="n">download_file</span><span class="p">(</span><span class="n">remote_path</span><span class="p">,</span> <span class="n">local_path</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">114</span>             <span class="k">if</span> <span class="ow">not</span> <span class="n">silent</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">115</span>                 <span class="kn">import</span> <span class="nn">os</span>
-
-<span class="nn">/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/webdav/client.py</span> in <span class="ni">_wrapper</span><span class="nt">(self, *args, **kw)</span>
-<span class="g g-Whitespace">     </span><span class="mi">68</span>         <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Requesting </span><span class="si">{</span><span class="n">fn</span><span class="si">}</span><span class="s1">(</span><span class="si">{</span><span class="n">args</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="n">kw</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">69</span>         <span class="k">try</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">70</span>             <span class="n">res</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">71</span>         <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">ConnectionError</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">72</span>             <span class="k">raise</span> <span class="n">NoConnection</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">webdav</span><span class="o">.</span><span class="n">hostname</span><span class="p">)</span>
-
-<span class="nn">/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/webdav/client.py</span> in <span class="ni">download_file</span><span class="nt">(self, remote_path, local_path, progress)</span>
-<span class="g g-Whitespace">    </span><span class="mi">413</span> 
-<span class="g g-Whitespace">    </span><span class="mi">414</span>         <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">local_path</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">local_file</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">415</span>             <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">execute_request</span><span class="p">(</span><span class="s1">&#39;download&#39;</span><span class="p">,</span> <span class="n">urn</span><span class="o">.</span><span class="n">quote</span><span class="p">())</span>
-<span class="g g-Whitespace">    </span><span class="mi">416</span>             <span class="k">for</span> <span class="n">block</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">iter_content</span><span class="p">(</span><span class="mi">1024</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">417</span>                 <span class="n">local_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">block</span><span class="p">)</span>
-
-<span class="nn">/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/webdav/client.py</span> in <span class="ni">execute_request</span><span class="nt">(self, action, path, data, headers_ext)</span>
-<span class="g g-Whitespace">    </span><span class="mi">162</span>             <span class="n">headers</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">get_headers</span><span class="p">(</span><span class="n">action</span><span class="p">,</span> <span class="n">headers_ext</span><span class="p">),</span>
-<span class="g g-Whitespace">    </span><span class="mi">163</span>             <span class="n">timeout</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">timeout</span><span class="p">,</span>
-<span class="ne">--&gt; </span><span class="mi">164</span>             <span class="n">data</span><span class="o">=</span><span class="n">data</span>
-<span class="g g-Whitespace">    </span><span class="mi">165</span>         <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">166</span>         <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">507</span><span class="p">:</span>
-
-<span class="nn">/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/requests/sessions.py</span> in <span class="ni">request</span><span class="nt">(self, method, url, params, data, headers, cookies, files, auth, timeout, allow_redirects, proxies, hooks, stream, verify, cert, json)</span>
-<span class="g g-Whitespace">    </span><span class="mi">540</span>         <span class="p">}</span>
-<span class="g g-Whitespace">    </span><span class="mi">541</span>         <span class="n">send_kwargs</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">settings</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">542</span>         <span class="n">resp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">prep</span><span class="p">,</span> <span class="o">**</span><span class="n">send_kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">543</span> 
-<span class="g g-Whitespace">    </span><span class="mi">544</span>         <span class="k">return</span> <span class="n">resp</span>
-
-<span class="nn">/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/requests/sessions.py</span> in <span class="ni">send</span><span class="nt">(self, request, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">695</span> 
-<span class="g g-Whitespace">    </span><span class="mi">696</span>         <span class="k">if</span> <span class="ow">not</span> <span class="n">stream</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">697</span>             <span class="n">r</span><span class="o">.</span><span class="n">content</span>
-<span class="g g-Whitespace">    </span><span class="mi">698</span> 
-<span class="g g-Whitespace">    </span><span class="mi">699</span>         <span class="k">return</span> <span class="n">r</span>
-
-<span class="nn">/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/requests/models.py</span> in <span class="ni">content</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">829</span>                 <span class="bp">self</span><span class="o">.</span><span class="n">_content</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="g g-Whitespace">    </span><span class="mi">830</span>             <span class="k">else</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">831</span>                 <span class="bp">self</span><span class="o">.</span><span class="n">_content</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">iter_content</span><span class="p">(</span><span class="n">CONTENT_CHUNK_SIZE</span><span class="p">))</span> <span class="ow">or</span> <span class="sa">b</span><span class="s1">&#39;&#39;</span>
-<span class="g g-Whitespace">    </span><span class="mi">832</span> 
-<span class="g g-Whitespace">    </span><span class="mi">833</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_content_consumed</span> <span class="o">=</span> <span class="kc">True</span>
-
-<span class="nn">/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/requests/models.py</span> in <span class="ni">generate</span><span class="nt">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">751</span>             <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">raw</span><span class="p">,</span> <span class="s1">&#39;stream&#39;</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">752</span>                 <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">753</span>                     <span class="k">for</span> <span class="n">chunk</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">stream</span><span class="p">(</span><span class="n">chunk_size</span><span class="p">,</span> <span class="n">decode_content</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">754</span>                         <span class="k">yield</span> <span class="n">chunk</span>
-<span class="g g-Whitespace">    </span><span class="mi">755</span>                 <span class="k">except</span> <span class="n">ProtocolError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-
-<span class="nn">/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/urllib3/response.py</span> in <span class="ni">stream</span><span class="nt">(self, amt, decode_content)</span>
-<span class="g g-Whitespace">    </span><span class="mi">574</span>         <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">575</span>             <span class="k">while</span> <span class="ow">not</span> <span class="n">is_fp_closed</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_fp</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">576</span>                 <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">amt</span><span class="o">=</span><span class="n">amt</span><span class="p">,</span> <span class="n">decode_content</span><span class="o">=</span><span class="n">decode_content</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">577</span> 
-<span class="g g-Whitespace">    </span><span class="mi">578</span>                 <span class="k">if</span> <span class="n">data</span><span class="p">:</span>
-
-<span class="nn">/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/urllib3/response.py</span> in <span class="ni">read</span><span class="nt">(self, amt, decode_content, cache_content)</span>
-<span class="g g-Whitespace">    </span><span class="mi">500</span>             <span class="nb">set</span><span class="o">.</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">501</span>         <span class="s2">&quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">502</span><span class="s2">         self._init_decoder()</span>
-<span class="g g-Whitespace">    </span><span class="mi">503</span><span class="s2">         if decode_content is None:</span>
-<span class="g g-Whitespace">    </span><span class="mi">504</span><span class="s2">             decode_content = self.decode_content</span>
-
-<span class="nn">/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/urllib3/response.py</span> in <span class="ni">_init_decoder</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">374</span><span class="s2">         # Section 3.2</span>
-<span class="g g-Whitespace">    </span><span class="mi">375</span><span class="s2">         content_encoding = self.headers.get(&quot;content-encoding&quot;, &quot;&quot;).lower()</span>
-<span class="ne">--&gt; </span><span class="mi">376</span><span class="s2">         if self._decoder is None:</span>
-<span class="g g-Whitespace">    </span><span class="mi">377</span><span class="s2">             if content_encoding in self.CONTENT_DECODERS:</span>
-<span class="g g-Whitespace">    </span><span class="mi">378</span><span class="s2">                 self._decoder = _get_decoder(content_encoding)</span>
-
-<span class="ne">KeyboardInterrupt</span>: 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Remote and local file size both 175.04 MB, skipping - Resources/OB_50M/OB_50M.tif
 </pre></div>
 </div>
 </div>
@@ -1064,6 +980,20 @@
 <span class="k">del</span><span class="p">(</span><span class="n">globalbathym_img</span><span class="p">)</span>
 <span class="k">del</span><span class="p">(</span><span class="n">globalrelief_img</span><span class="p">)</span>
 <span class="k">del</span><span class="p">(</span><span class="n">etopoH_img</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">4</span><span class="o">-</span><span class="mi">6</span><span class="n">f3e747e0af5</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="c1"># Height field only ...</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="n">etopoH</span> <span class="o">=</span> <span class="n">gdal</span><span class="o">.</span><span class="n">Open</span><span class="p">(</span><span class="s2">&quot;Resources/ETOPO1_Ice_c_geotiff.tif&quot;</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">10</span> <span class="n">etopoH_img</span> <span class="o">=</span> <span class="n">etopoH</span><span class="o">.</span><span class="n">ReadAsArray</span><span class="p">()[::</span><span class="mi">2</span><span class="p">,::</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">float16</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="k">del</span><span class="p">(</span><span class="n">etopoH</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span> 
+
+<span class="ne">AttributeError</span>: &#39;NoneType&#39; object has no attribute &#39;ReadAsArray&#39;
 </pre></div>
 </div>
 </div>
@@ -1171,6 +1101,11 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>858  events in catalogue
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1212,6 +1147,27 @@
 
 <span class="n">Vorientation</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arctan2</span><span class="p">(</span><span class="n">Vnorth</span><span class="p">,</span><span class="n">Veast</span><span class="p">)</span>
 <span class="n">Vspeed</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">Veast</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">Vnorth</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">9</span><span class="o">-</span><span class="mi">11421</span><span class="n">d59577c</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">rootgrp</span> <span class="o">=</span> <span class="n">netcdf</span><span class="o">.</span><span class="n">netcdf_file</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s2">&quot;Resources/velocity_EU.nc&quot;</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> 
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">ve</span> <span class="o">=</span> <span class="n">rootgrp</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="s2">&quot;ve&quot;</span><span class="p">]</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">vn</span> <span class="o">=</span> <span class="n">rootgrp</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="s2">&quot;vn&quot;</span><span class="p">]</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> 
+
+<span class="nn">/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/scipy/io/netcdf.py</span> in <span class="ni">__init__</span><span class="nt">(self, filename, mode, mmap, version, maskandscale)</span>
+<span class="g g-Whitespace">    </span><span class="mi">247</span>             <span class="bp">self</span><span class="o">.</span><span class="n">filename</span> <span class="o">=</span> <span class="n">filename</span>
+<span class="g g-Whitespace">    </span><span class="mi">248</span>             <span class="n">omode</span> <span class="o">=</span> <span class="s1">&#39;r+&#39;</span> <span class="k">if</span> <span class="n">mode</span> <span class="o">==</span> <span class="s1">&#39;a&#39;</span> <span class="k">else</span> <span class="n">mode</span>
+<span class="ne">--&gt; </span><span class="mi">249</span>             <span class="bp">self</span><span class="o">.</span><span class="n">fp</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;</span><span class="si">%s</span><span class="s1">b&#39;</span> <span class="o">%</span> <span class="n">omode</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">250</span>             <span class="k">if</span> <span class="n">mmap</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">251</span>                 <span class="c1"># Mmapped files on PyPy cannot be usually closed</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;Resources/velocity_EU.nc&#39;
 </pre></div>
 </div>
 </div>
@@ -1300,6 +1256,26 @@
 <span class="n">gl</span><span class="o">.</span><span class="n">ylabel_style</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;size&#39;</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span> <span class="s1">&#39;color&#39;</span><span class="p">:</span> <span class="s1">&#39;black&#39;</span><span class="p">}</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">881</span><span class="n">cb02b4a84</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">     </span><span class="mi">47</span>     <span class="c1"># Add the MapQuest data at zoom level 8.</span>
+<span class="g g-Whitespace">     </span><span class="mi">48</span> 
+<span class="ne">---&gt; </span><span class="mi">49</span> <span class="n">ax</span><span class="o">.</span><span class="n">streamplot</span><span class="p">(</span><span class="n">lons</span><span class="p">,</span> <span class="n">lats</span><span class="p">,</span> <span class="n">Veast</span><span class="p">,</span> <span class="n">Vnorth</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> 
+<span class="g g-Whitespace">     </span><span class="mi">50</span>               <span class="n">cmap</span><span class="o">=</span><span class="n">cm</span><span class="o">.</span><span class="n">gray_r</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="mf">5.0</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">(),</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">arrowstyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">51</span> 
+
+<span class="ne">NameError</span>: name &#39;lons&#39; is not defined
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/cartopy/mpl/geoaxes.py:388: MatplotlibDeprecationWarning: 
+The &#39;inframe&#39; parameter of draw() was deprecated in Matplotlib 3.3 and will be removed two minor releases later. Use Axes.redraw_in_frame() instead. If any parameter follows &#39;inframe&#39;, they should be passed as keyword, not positionally.
+  inframe=inframe)
+</pre></div>
+</div>
+<img alt="../../../_images/9a-HimalayaRegionMapsAndImages-Pt2_12_2.png" src="../../../_images/9a-HimalayaRegionMapsAndImages-Pt2_12_2.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1391,6 +1367,21 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="n">f1e81c16e781</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">(),</span> <span class="n">extent</span><span class="o">=</span><span class="n">himalaya_extent</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span> 
+<span class="ne">---&gt; </span><span class="mi">13</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">etopoH_img_grey</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">(),</span> <span class="n">origin</span><span class="o">=</span><span class="s2">&quot;upper&quot;</span><span class="p">,</span> 
+<span class="g g-Whitespace">     </span><span class="mi">14</span>            <span class="n">alpha</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="n">global_extent</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s2">&quot;spline16&quot;</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">15</span> 
+
+<span class="ne">NameError</span>: name &#39;etopoH_img_grey&#39; is not defined
+</pre></div>
+</div>
+<img alt="../../../_images/9a-HimalayaRegionMapsAndImages-Pt2_14_1.png" src="../../../_images/9a-HimalayaRegionMapsAndImages-Pt2_14_1.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1423,6 +1414,12 @@
 <span class="n">ax</span><span class="o">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">coastline</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span>  <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;Black&quot;</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;cartopy.mpl.feature_artist.FeatureArtist at 0x7f742ad2fe90&gt;
+</pre></div>
+</div>
+<img alt="../../../_images/9a-HimalayaRegionMapsAndImages-Pt2_16_1.png" src="../../../_images/9a-HimalayaRegionMapsAndImages-Pt2_16_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1463,6 +1460,21 @@
 <span class="n">ax</span><span class="o">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">lakes</span><span class="p">,</span>     <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>    <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;Blue&quot;</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.25</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">16</span><span class="o">-</span><span class="mi">8</span><span class="n">a0e5919faa6</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">etopo_img</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">(),</span> <span class="n">extent</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">180</span><span class="p">,</span><span class="mi">180</span><span class="p">,</span><span class="o">-</span><span class="mi">90</span><span class="p">,</span><span class="mi">90</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span> 
+<span class="ne">---&gt; </span><span class="mi">17</span> <span class="n">ax</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">strainrate_data</span><span class="p">[:,:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">strainrate_data</span><span class="p">[:,:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">strainrate_data</span><span class="p">[:,:,</span><span class="mi">2</span><span class="p">],</span> 
+<span class="g g-Whitespace">     </span><span class="mi">18</span>          <span class="n">levels</span><span class="o">=</span><span class="p">[</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">50</span><span class="p">],</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mf">20.0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">19</span>          <span class="n">transform</span><span class="o">=</span><span class="n">base_projection</span><span class="p">,</span>  <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;YlOrRd&quot;</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="n">strainrate_extent</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;strainrate_data&#39; is not defined
+</pre></div>
+</div>
+<img alt="../../../_images/9a-HimalayaRegionMapsAndImages-Pt2_18_1.png" src="../../../_images/9a-HimalayaRegionMapsAndImages-Pt2_18_1.png" />
 </div>
 </div>
 </div>

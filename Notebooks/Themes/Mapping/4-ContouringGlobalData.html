@@ -871,44 +871,13 @@
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Remote and local file size both 10.85 MB, skipping - Resources/BlueMarbleNG-TB_2004-12-01_rgb_3600x1800.TIFF
 </pre></div>
 </div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ServerException</span><span class="g g-Whitespace">                           </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">2</span><span class="o">-</span><span class="mi">3</span><span class="n">a2dacb0c710</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> 
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">teaching_data</span><span class="o">.</span><span class="n">download_file_if_distinct</span><span class="p">(</span><span class="s2">&quot;BlueMarbleNG-TB_2004-12-01_rgb_3600x1800.TIFF&quot;</span><span class="p">,</span> <span class="s2">&quot;Resources/BlueMarbleNG-TB_2004-12-01_rgb_3600x1800.TIFF&quot;</span><span class="p">)</span>
-<span class="ne">----&gt; </span><span class="mi">5</span> <span class="n">teaching_data</span><span class="o">.</span><span class="n">download_file_if_distinct</span><span class="p">(</span><span class="s2">&quot;color_etopo1_ice_low.tif&quot;</span><span class="p">,</span> <span class="s2">&quot;Resources/color_etopo1_ice_low.tif&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">teaching_data</span><span class="o">.</span><span class="n">download_file_if_distinct</span><span class="p">(</span><span class="s2">&quot;global_age_data.3.6.z.npz&quot;</span><span class="p">,</span> <span class="s2">&quot;Resources/global_age_data.3.6.z.npz&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">teaching_data</span><span class="o">.</span><span class="n">download_file_if_distinct</span><span class="p">(</span><span class="s2">&quot;sec_invariant_strain_0.2.dat&quot;</span><span class="p">,</span> <span class="s2">&quot;Resources/sec_invariant_strain_0.2.dat&quot;</span><span class="p">)</span>
-
-<span class="nn">/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/cloudstor/cloudstor_webdav.py</span> in <span class="ni">download_file_if_distinct</span><span class="nt">(self, remote_path, local_path, check_size, silent)</span>
-<span class="g g-Whitespace">    </span><span class="mi">111</span> 
-<span class="g g-Whitespace">    </span><span class="mi">112</span>         <span class="k">if</span> <span class="n">check_size</span> <span class="o">==</span> <span class="kc">False</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">compare_remote</span><span class="p">(</span><span class="n">remote_path</span><span class="p">,</span> <span class="n">local_path</span><span class="p">)</span> <span class="o">==</span> <span class="kc">False</span> <span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">113</span>             <span class="bp">self</span><span class="o">.</span><span class="n">download_file</span><span class="p">(</span><span class="n">remote_path</span><span class="p">,</span> <span class="n">local_path</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">114</span>             <span class="k">if</span> <span class="ow">not</span> <span class="n">silent</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">115</span>                 <span class="kn">import</span> <span class="nn">os</span>
-
-<span class="nn">/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/webdav/client.py</span> in <span class="ni">_wrapper</span><span class="nt">(self, *args, **kw)</span>
-<span class="g g-Whitespace">     </span><span class="mi">68</span>         <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Requesting </span><span class="si">{</span><span class="n">fn</span><span class="si">}</span><span class="s1">(</span><span class="si">{</span><span class="n">args</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="n">kw</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">69</span>         <span class="k">try</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">70</span>             <span class="n">res</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">71</span>         <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">ConnectionError</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">72</span>             <span class="k">raise</span> <span class="n">NoConnection</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">webdav</span><span class="o">.</span><span class="n">hostname</span><span class="p">)</span>
-
-<span class="nn">/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/webdav/client.py</span> in <span class="ni">download_file</span><span class="nt">(self, remote_path, local_path, progress)</span>
-<span class="g g-Whitespace">    </span><span class="mi">413</span> 
-<span class="g g-Whitespace">    </span><span class="mi">414</span>         <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">local_path</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">local_file</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">415</span>             <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">execute_request</span><span class="p">(</span><span class="s1">&#39;download&#39;</span><span class="p">,</span> <span class="n">urn</span><span class="o">.</span><span class="n">quote</span><span class="p">())</span>
-<span class="g g-Whitespace">    </span><span class="mi">416</span>             <span class="k">for</span> <span class="n">block</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">iter_content</span><span class="p">(</span><span class="mi">1024</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">417</span>                 <span class="n">local_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">block</span><span class="p">)</span>
-
-<span class="nn">/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/webdav/client.py</span> in <span class="ni">execute_request</span><span class="nt">(self, action, path, data, headers_ext)</span>
-<span class="g g-Whitespace">    </span><span class="mi">167</span>             <span class="k">raise</span> <span class="n">NotEnoughSpace</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">168</span>         <span class="k">if</span> <span class="mi">499</span> <span class="o">&lt;</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">&lt;</span> <span class="mi">600</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">169</span>             <span class="k">raise</span> <span class="n">ServerException</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">get_url</span><span class="p">(</span><span class="n">path</span><span class="p">),</span> <span class="n">code</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">170</span>         <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">&gt;=</span> <span class="mi">400</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">171</span>             <span class="k">raise</span> <span class="n">ResponseErrorCode</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">get_url</span><span class="p">(</span><span class="n">path</span><span class="p">),</span> <span class="n">code</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
-
-<span class="ne">ServerException</span>: WebDAV server failed to process request to https://cloudstor.aarnet.edu.au/plus/public.php/webdav/color_etopo1_ice_low.tif failed with code 500 and message: b&#39;Internal Server Error\n\nThe server encountered an internal error and was unable to complete your request.\nPlease contact the server administrator if this error reappears multiple times, please include the technical details below in your report.\nMore details can be found in the server log.\n&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Remote and local file size both 43.76 MB, skipping - Resources/color_etopo1_ice_low.tif
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloaded Resources/global_age_data.3.6.z.npz (21.99 MB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloaded Resources/sec_invariant_strain_0.2.dat (34.68 MB)
 </pre></div>
 </div>
 </div>
@@ -926,20 +895,6 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="mi">35</span><span class="n">f997f725a1</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">globalmarble_img</span>  <span class="o">=</span> <span class="n">globalmarble</span><span class="o">.</span><span class="n">ReadAsArray</span><span class="p">()</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">globaletopo</span>       <span class="o">=</span> <span class="n">gdal</span><span class="o">.</span><span class="n">Open</span><span class="p">(</span><span class="s2">&quot;Resources/color_etopo1_ice_low.tif&quot;</span><span class="p">)</span>
-<span class="ne">----&gt; </span><span class="mi">5</span> <span class="n">globaletopo_img</span>   <span class="o">=</span> <span class="n">globaletopo</span><span class="o">.</span><span class="n">ReadAsArray</span><span class="p">()</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> 
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="k">del</span><span class="p">(</span><span class="n">globalmarble</span><span class="p">)</span>
-
-<span class="ne">AttributeError</span>: &#39;NoneType&#39; object has no attribute &#39;ReadAsArray&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -949,41 +904,6 @@
 <span class="n">strainrate</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s2">&quot;Resources/sec_invariant_strain_0.2.dat&quot;</span><span class="p">)</span>
 <span class="n">strainrate_data</span> <span class="o">=</span> <span class="n">strainrate</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">741</span><span class="p">,</span><span class="mi">1800</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>  <span class="c1"># I had to look at the data to work this out !</span>
 <span class="c1"># strainrate_img  = strainrate_data[:,:,2]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">OSError</span><span class="g g-Whitespace">                                   </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">4</span><span class="o">-</span><span class="mf">8e745</span><span class="n">a151a12</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> 
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">strainrate_extent</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">180</span><span class="p">,</span><span class="mi">180</span><span class="p">,</span><span class="o">-</span><span class="mi">68</span><span class="p">,</span><span class="mi">80</span><span class="p">]</span>
-<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">strainrate</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s2">&quot;Resources/sec_invariant_strain_0.2.dat&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">strainrate_data</span> <span class="o">=</span> <span class="n">strainrate</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">741</span><span class="p">,</span><span class="mi">1800</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>  <span class="c1"># I had to look at the data to work this out !</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="c1"># strainrate_img  = strainrate_data[:,:,2]</span>
-
-<span class="nn">/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/numpy/lib/npyio.py</span> in <span class="ni">loadtxt</span><span class="nt">(fname, dtype, comments, delimiter, converters, skiprows, usecols, unpack, ndmin, encoding, max_rows, like)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1063</span>             <span class="n">fname</span> <span class="o">=</span> <span class="n">os_fspath</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1064</span>         <span class="k">if</span> <span class="n">_is_string_like</span><span class="p">(</span><span class="n">fname</span><span class="p">):</span>
-<span class="ne">-&gt; </span><span class="mi">1065</span>             <span class="n">fh</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">lib</span><span class="o">.</span><span class="n">_datasource</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="s1">&#39;rt&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1066</span>             <span class="n">fencoding</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">fh</span><span class="p">,</span> <span class="s1">&#39;encoding&#39;</span><span class="p">,</span> <span class="s1">&#39;latin1&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1067</span>             <span class="n">fh</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="n">fh</span><span class="p">)</span>
-
-<span class="nn">/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/numpy/lib/_datasource.py</span> in <span class="ni">open</span><span class="nt">(path, mode, destpath, encoding, newline)</span>
-<span class="g g-Whitespace">    </span><span class="mi">192</span> 
-<span class="g g-Whitespace">    </span><span class="mi">193</span>     <span class="n">ds</span> <span class="o">=</span> <span class="n">DataSource</span><span class="p">(</span><span class="n">destpath</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">194</span>     <span class="k">return</span> <span class="n">ds</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="n">newline</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">195</span> 
-<span class="g g-Whitespace">    </span><span class="mi">196</span> 
-
-<span class="nn">/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/numpy/lib/_datasource.py</span> in <span class="ni">open</span><span class="nt">(self, path, mode, encoding, newline)</span>
-<span class="g g-Whitespace">    </span><span class="mi">529</span>                                       <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="n">newline</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">530</span>         <span class="k">else</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">531</span>             <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2"> not found.&quot;</span> <span class="o">%</span> <span class="n">path</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">532</span> 
-<span class="g g-Whitespace">    </span><span class="mi">533</span> 
-
-<span class="ne">OSError</span>: Resources/sec_invariant_strain_0.2.dat not found.
 </pre></div>
 </div>
 </div>
@@ -1012,16 +932,8 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">5</span><span class="o">-</span><span class="mi">3281</span><span class="n">ef4bc0a6</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_global</span><span class="p">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span> 
-<span class="ne">---&gt; </span><span class="mi">10</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">globaletopo_img</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;upper&#39;</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">base_projection</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="n">global_extent</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">globalmarble_img</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;upper&#39;</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">base_projection</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="n">global_extent</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span> 
-
-<span class="ne">NameError</span>: name &#39;globaletopo_img&#39; is not defined
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/cartopy/mpl/geoaxes.py:1400: UserWarning: The following kwargs were not used by contour: &#39;linewidth&#39;
+  result = matplotlib.axes.Axes.contourf(self, *args, **kwargs)
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/cartopy/mpl/geoaxes.py:388: MatplotlibDeprecationWarning: 
@@ -1061,27 +973,6 @@ The &#39;inframe&#39; parameter of draw() was deprecated in Matplotlib 3.3 and w
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">6</span><span class="o">-</span><span class="mi">4</span><span class="n">b545b96d9ab</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="n">age_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">datasize</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span> 
-<span class="ne">---&gt; </span><span class="mi">15</span> <span class="n">ages</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;Resources/global_age_data.3.6.z.npz&quot;</span><span class="p">)[</span><span class="s2">&quot;ageData&quot;</span><span class="p">]</span>
-<span class="g g-Whitespace">     </span><span class="mi">16</span> 
-<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="n">lats</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">90</span><span class="p">,</span> <span class="o">-</span><span class="mi">90</span><span class="p">,</span> <span class="n">datasize</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-
-<span class="nn">/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/numpy/lib/npyio.py</span> in <span class="ni">load</span><span class="nt">(file, mmap_mode, allow_pickle, fix_imports, encoding)</span>
-<span class="g g-Whitespace">    </span><span class="mi">415</span>             <span class="n">own_fid</span> <span class="o">=</span> <span class="kc">False</span>
-<span class="g g-Whitespace">    </span><span class="mi">416</span>         <span class="k">else</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">417</span>             <span class="n">fid</span> <span class="o">=</span> <span class="n">stack</span><span class="o">.</span><span class="n">enter_context</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">os_fspath</span><span class="p">(</span><span class="n">file</span><span class="p">),</span> <span class="s2">&quot;rb&quot;</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">418</span>             <span class="n">own_fid</span> <span class="o">=</span> <span class="kc">True</span>
-<span class="g g-Whitespace">    </span><span class="mi">419</span> 
-
-<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;Resources/global_age_data.3.6.z.npz&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1115,18 +1006,7 @@ The &#39;inframe&#39; parameter of draw() was deprecated in Matplotlib 3.3 and w
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">7</span><span class="o">-</span><span class="mi">4</span><span class="n">d1163ba512d</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span>                            <span class="n">facecolor</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span> 
-<span class="ne">----&gt; </span><span class="mi">9</span> <span class="n">globaletopo_img2</span> <span class="o">=</span> <span class="n">globaletopo_img</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="n">globaletopo_img2</span><span class="p">[</span><span class="o">...</span><span class="p">]</span> <span class="o">=</span> <span class="mi">255</span> <span class="o">*</span> <span class="p">(</span><span class="n">globaletopo_img</span><span class="p">[</span><span class="o">...</span><span class="p">]</span> <span class="o">/</span> <span class="mf">255.0</span><span class="p">)</span> <span class="o">**</span> <span class="mf">2.0</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span> 
-
-<span class="ne">NameError</span>: name &#39;globaletopo_img&#39; is not defined
-</pre></div>
-</div>
+<img alt="../../../_images/4-ContouringGlobalData_7_0.png" src="../../../_images/4-ContouringGlobalData_7_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1162,16 +1042,7 @@ The &#39;inframe&#39; parameter of draw() was deprecated in Matplotlib 3.3 and w
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">8</span><span class="o">-</span><span class="n">f8fbea46baa0</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">projection</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span> 
-<span class="ne">---&gt; </span><span class="mi">11</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">globaletopo_img2</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;upper&#39;</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">base_projection</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="n">global_extent</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span> 
-<span class="g g-Whitespace">     </span><span class="mi">13</span> 
-
-<span class="ne">NameError</span>: name &#39;globaletopo_img2&#39; is not defined
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/ipykernel_launcher.py:27: MatplotlibDeprecationWarning: savefig() got unexpected keyword argument &quot;frameon&quot; which is no longer supported as of 3.3 and will become an error two minor releases later
 </pre></div>
 </div>
 <img alt="../../../_images/4-ContouringGlobalData_8_1.png" src="../../../_images/4-ContouringGlobalData_8_1.png" />
