@@ -44,7 +44,8 @@ teaching_data.download_file_if_distinct("BlueMarbleNG-TB_2004-12-01_rgb_3600x180
 teaching_data.download_file_if_distinct("color_etopo1_ice_low.tif", "Resources/color_etopo1_ice_low.tif")
 teaching_data.download_file_if_distinct("EMAG2_image_V2_no_compr.tif", "Resources/EMAG2_image_V2_no_compr.tif")
 teaching_data.download_file_if_distinct("global_age_data.3.6.z.npz", "Resources/global_age_data.3.6.z.npz")
-teaching_data.download_file_if_distinct("etopo1_grayscale_hillshade.tif", "Resources/etopo1_grayscale_hillshade.tif")
+teaching_data.download_file_if_distinct("etopo1_grayscale_hillshade.tif", "Resources/etopo1_grayscale_hillshade.tif")ETOPO1_Ice_c_geotiff.tif
+teaching_data.download_file_if_distinct("ETOPO1_Ice_c_geotiff.tif", "Resources/ETOPO1_Ice_c_geotiff.tif")
 
 teaching_data.download_file_if_distinct("HYP_50M_SR_W/HYP_50M_SR_W.tif", "Resources/HYP_50M_SR_W/HYP_50M_SR_W.tif")
 teaching_data.download_file_if_distinct("OB_50M/OB_50M.tif", "Resources/OB_50M/OB_50M.tif")
@@ -79,7 +80,7 @@ strainrate_data = strainrate.reshape(741,1800,3)  # I had to look at the data to
 ```
 
 ```{code-cell} ipython3
-# Note: we need to manage the memory here since the Docker version has more 
+# Note: we need to manage the memory here
 # memory constraints than the native installation. Be sure to del() unused arrays/images
 
 # Etopo Height field as geotiff

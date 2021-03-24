@@ -58,6 +58,8 @@ teaching_data.download_file_if_distinct("sec_invariant_strain_0.2.dat", "Resourc
 
 teaching_data.download_file_if_distinct("HYP_50M_SR_W/HYP_50M_SR_W.tif", "Resources/HYP_50M_SR_W/HYP_50M_SR_W.tif")
 teaching_data.download_file_if_distinct("OB_50M/OB_50M.tif", "Resources/OB_50M/OB_50M.tif")
+teaching_data.download_file_if_distinct("velocity_EU.nc", "Resources/velocity_EU.nc")
+
 ```
 
 ```{code-cell} ipython3
