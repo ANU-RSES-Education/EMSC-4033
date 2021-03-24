@@ -280,7 +280,7 @@ ax2  = plt.subplot(122, projection=google_maps_satellite.crs)
 ax1.set_extent(map_extent)
 ax2.set_extent(map_extent)
 
-ax1.add_image(google_maps_street, 17,    )
+ax1.add_image(mapbox_satellite, 17,    )
 ax2.add_image(open_street_map, 17)
 ```
 
