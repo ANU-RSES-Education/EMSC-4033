@@ -1,5 +1,5 @@
 # Book settings
-title: EMSC 4033 Computing in Geoscience
+title: EMSC 4033 Computational Geoscience
 author: Louis Moresi 
 logo: Figures/AuWorldEQ.jpg
 exclude_patterns: ["README.md", "Notes/*", "Scripts/*, */ScratchPad/*"]
@@ -48,8 +48,10 @@ execute:
   # exclude_patterns:
   #   - File.ipynb
 
+  execute_notebooks: 'off'
+
   allow_errors : true # If `False`, when a code cell raises an error the execution is stopped, otherwise all cells are always run.
   timeout: 240
 
-  # execute_notebooks: cache
-  # cache: .jupyter-cache 
+bibtex_bibfiles:
+   - JupyterBook.bib
