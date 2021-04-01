@@ -16,6 +16,7 @@ dependencies:
     - libiconv
     - xarray
     - jupytext
+    - h5netcdf
     - pip:
       - lavavu<1.7
       - xvfbwrapper 

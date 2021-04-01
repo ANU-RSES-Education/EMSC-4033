@@ -1,6 +1,12 @@
+
+
 - file: FrontPage.md
 
-- part: Modern Approaches to Programming
+- part: Introduction
+  chapters:
+  - file: IntroductoryRemarks
+
+- part: Literate, Re-usable Programming 
   chapters:
 
   - file: Notebooks/Themes/Introduction2Python/1-IntroductionToJupyterNotebooks
@@ -14,10 +20,13 @@
      - file: Notebooks/Themes/Introduction2VersionControl/2-NextStepsWithGit
      - file: Notebooks/Themes/Introduction2VersionControl/3-YourOwnRepositories
 
+
+  # Something here about tests
+
   - file: Notebooks/Themes/Plotting/1-IntroductionToMatplotlib
 
 
-- part: Step by Step
+- part: Python, Step by Step
   chapters:
   - file: Notebooks/StepByStep/Introduction.md
     sections:
@@ -128,4 +137,7 @@
 
 
 
+- part: Bibliography
+  chapters:
+  - file: Bibliography
 
