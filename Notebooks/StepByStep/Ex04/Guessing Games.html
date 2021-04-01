@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Exercise 4 - Guessing Games &#8212; EMSC 4033 Computing in Geoscience</title>
+    <title>Exercise 4 - Guessing Games &#8212; EMSC 4033 Computational Geoscience</title>
     
   <link rel="stylesheet" href="../../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -77,7 +77,7 @@
   <img src="../../../_static/AuWorldEQ.jpg" class="logo" alt="logo">
   
   
-  <h1 class="site-logo" id="site-title">EMSC 4033 Computing in Geoscience</h1>
+  <h1 class="site-logo" id="site-title">EMSC 4033 Computational Geoscience</h1>
   
 </a>
 </div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
@@ -88,13 +88,25 @@
     <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../../../FrontPage.html">
-   Jupyterbook example
+   Computational Geosciences
   </a>
  </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Modern Approaches to Programming
+  Introduction
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../IntroductoryRemarks.html">
+   Modern approaches to programming
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Literate, Re-usable Programming
  </span>
 </p>
 <ul class="nav sidenav_l1">
@@ -149,7 +161,7 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Step by Step
+  Python, Step by Step
  </span>
 </p>
 <ul class="current nav sidenav_l1">
@@ -721,6 +733,18 @@
   </i>
  </li>
 </ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Bibliography
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../Bibliography.html">
+   Bibliography
+  </a>
+ </li>
+</ul>
 
 </nav> <!-- To handle the deprecated key -->
 
@@ -861,30 +885,10 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>I am thinking of a number between 1 and 10
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="n">d255f4b3d8c5</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span><span class="o">+</span><span class="s1">&#39;/.hidden/&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">import</span> <span class="nn">guessingGames</span> <span class="k">as</span> <span class="nn">gg</span>
-<span class="ne">----&gt; </span><span class="mi">6</span> <span class="n">gg</span><span class="o">.</span><span class="n">guessingGame</span><span class="p">(</span><span class="n">nmax</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-
-<span class="nn">~/work/EMSC-4033/EMSC-4033/Notebooks/StepByStep/Ex04/.hidden/guessingGames.py</span> in <span class="ni">guessingGame</span><span class="nt">(nmax)</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span>     <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span>         <span class="k">try</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">10</span>             <span class="n">guess</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Make a guess:&quot;</span><span class="p">))</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span>         <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span>             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Please enter an integer.&quot;</span><span class="p">)</span>
-
-<span class="nn">/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/ipykernel/kernelbase.py</span> in <span class="ni">raw_input</span><span class="nt">(self, prompt)</span>
-<span class="g g-Whitespace">    </span><span class="mi">844</span>         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_allow_stdin</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">845</span>             <span class="k">raise</span> <span class="n">StdinNotImplementedError</span><span class="p">(</span>
-<span class="ne">--&gt; </span><span class="mi">846</span>                 <span class="s2">&quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">847</span>             <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">848</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_input_request</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">prompt</span><span class="p">),</span>
-
-<span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
+Make a guess:1
+Sorry, try again.
+Make a guess:4
+Sorry, try again.
 </pre></div>
 </div>
 </div>
@@ -917,33 +921,6 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>I am thinking of a number between 1 and 100
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="mf">2e5</span><span class="n">d8eead2a9</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">gg</span><span class="o">.</span><span class="n">higherOrLower</span><span class="p">(</span><span class="n">nmax</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
-
-<span class="nn">~/work/EMSC-4033/EMSC-4033/Notebooks/StepByStep/Ex04/.hidden/guessingGames.py</span> in <span class="ni">higherOrLower</span><span class="nt">(nmax)</span>
-<span class="g g-Whitespace">     </span><span class="mi">26</span>     <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">27</span>         <span class="k">try</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">28</span>             <span class="n">guess</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Make a guess:&quot;</span><span class="p">))</span>
-<span class="g g-Whitespace">     </span><span class="mi">29</span>         <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">30</span>             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Please enter an integer.&quot;</span><span class="p">)</span>
-
-<span class="nn">/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/ipykernel/kernelbase.py</span> in <span class="ni">raw_input</span><span class="nt">(self, prompt)</span>
-<span class="g g-Whitespace">    </span><span class="mi">844</span>         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_allow_stdin</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">845</span>             <span class="k">raise</span> <span class="n">StdinNotImplementedError</span><span class="p">(</span>
-<span class="ne">--&gt; </span><span class="mi">846</span>                 <span class="s2">&quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">847</span>             <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">848</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_input_request</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">prompt</span><span class="p">),</span>
-
-<span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
-</pre></div>
-</div>
-</div>
 </div>
 <p><strong>➤ Try writing your own version.</strong></p>
 <p>You should be able to use the code you wrote for <code class="docutils literal notranslate"><span class="pre">guessingGame</span></code> as a starting point.</p>
@@ -958,34 +935,6 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gg</span><span class="o">.</span><span class="n">montyHall</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>You have 3 numbered boxes. One of them contains $1 million; the
-others are empty. Which one do you think contains the money?
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">5</span><span class="o">-</span><span class="n">fece82f590ed</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">gg</span><span class="o">.</span><span class="n">montyHall</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-
-<span class="nn">~/work/EMSC-4033/EMSC-4033/Notebooks/StepByStep/Ex04/.hidden/guessingGames.py</span> in <span class="ni">montyHall</span><span class="nt">(nBoxes)</span>
-<span class="g g-Whitespace">     </span><span class="mi">46</span>             <span class="s2">&quot;others are empty. Which one do you think contains the money?</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">%</span><span class="k">nBoxes</span>)
-<span class="g g-Whitespace">     </span><span class="mi">47</span>     <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">48</span>     <span class="n">iBox</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter a box number: &quot;</span><span class="p">))</span>
-<span class="g g-Whitespace">     </span><span class="mi">49</span>     <span class="n">iMH</span> <span class="o">=</span> <span class="n">iBox</span>
-<span class="g g-Whitespace">     </span><span class="mi">50</span>     <span class="k">while</span> <span class="n">iMH</span><span class="o">==</span><span class="n">iBox</span> <span class="ow">or</span> <span class="n">iMH</span><span class="o">==</span><span class="n">iCash</span><span class="p">:</span>
-
-<span class="nn">/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/ipykernel/kernelbase.py</span> in <span class="ni">raw_input</span><span class="nt">(self, prompt)</span>
-<span class="g g-Whitespace">    </span><span class="mi">844</span>         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_allow_stdin</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">845</span>             <span class="k">raise</span> <span class="n">StdinNotImplementedError</span><span class="p">(</span>
-<span class="ne">--&gt; </span><span class="mi">846</span>                 <span class="s2">&quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">847</span>             <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">848</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_input_request</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">prompt</span><span class="p">),</span>
-
-<span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
 </pre></div>
 </div>
 </div>

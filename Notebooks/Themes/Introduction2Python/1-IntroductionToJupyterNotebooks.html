@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jupyter Notebooks &#8212; EMSC 4033 Computing in Geoscience</title>
+    <title>Jupyter Notebooks &#8212; EMSC 4033 Computational Geoscience</title>
     
   <link rel="stylesheet" href="../../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -57,7 +57,7 @@
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="ipython" href="2-IntroductionToIpython.html" />
-    <link rel="prev" title="Jupyterbook example" href="../../../FrontPage.html" />
+    <link rel="prev" title="Modern approaches to programming" href="../../../IntroductoryRemarks.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -79,7 +79,7 @@
   <img src="../../../_static/AuWorldEQ.jpg" class="logo" alt="logo">
   
   
-  <h1 class="site-logo" id="site-title">EMSC 4033 Computing in Geoscience</h1>
+  <h1 class="site-logo" id="site-title">EMSC 4033 Computational Geoscience</h1>
   
 </a>
 </div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
@@ -90,13 +90,25 @@
     <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../../../FrontPage.html">
-   Jupyterbook example
+   Computational Geosciences
   </a>
  </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Modern Approaches to Programming
+  Introduction
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../IntroductoryRemarks.html">
+   Modern approaches to programming
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Literate, Re-usable Programming
  </span>
 </p>
 <ul class="current nav sidenav_l1">
@@ -151,7 +163,7 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Step by Step
+  Python, Step by Step
  </span>
 </p>
 <ul class="nav sidenav_l1">
@@ -723,6 +735,18 @@
   </i>
  </li>
 </ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Bibliography
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../Bibliography.html">
+   Bibliography
+  </a>
+ </li>
+</ul>
 
 </nav> <!-- To handle the deprecated key -->
 
@@ -934,7 +958,7 @@ ls -l
 <p>Cells which are defined to be code cells contain python statements which will be executed when the cell is run. If multiple cells have code, then they will be run in the order you choose (or if you “run all” or “run all above” they will be run in the order they are listed).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Example of a simple python code cell</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">## Example of a simple python code cell</span>
 
 <span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;Hello little world&quot;</span><span class="p">)</span>
 <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
@@ -948,26 +972,13 @@ ls -l
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello little world
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
-</pre></div>
-</div>
-</div>
 </div>
 <p>When you run a code cell, it is just the same as typing all the code into the interpreter. If you run a cell twice it is the same as if you typed everything twice … the notebook remembers ! You can run some of a notebook or all of it, and you can run cells out of order. This is great for experimenting and getting things right, but be careful, this can break things easily.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Run number </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Run number </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
         
 <span class="n">a</span> <span class="o">+=</span> <span class="mi">1</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Run number 1
 </pre></div>
 </div>
 </div>
@@ -983,14 +994,15 @@ ls -l
 <p>and, more importantly, how would you fix this ?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try it !!</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try it !!</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Because b hasn&#39;t been defined. </span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+<span class="c1">## Because b hasn&#39;t been defined. </span>
 
 <span class="k">try</span><span class="p">:</span>
     <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Run number </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">c</span><span class="p">))</span>
@@ -999,11 +1011,6 @@ ls -l
     <span class="n">c</span> <span class="o">=</span> <span class="mi">1</span>
         
 <span class="n">c</span> <span class="o">+=</span> <span class="mi">1</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Run number 1
 </pre></div>
 </div>
 </div>
@@ -1038,7 +1045,7 @@ ls -l
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="../../../FrontPage.html" title="previous page">Jupyterbook example</a>
+    <a class='left-prev' id="prev-link" href="../../../IntroductoryRemarks.html" title="previous page">Modern approaches to programming</a>
     <a class='right-next' id="next-link" href="2-IntroductionToIpython.html" title="next page">ipython</a>
 
         </div>

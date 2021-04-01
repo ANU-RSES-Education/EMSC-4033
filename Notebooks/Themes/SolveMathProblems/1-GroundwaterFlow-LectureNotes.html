@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Partial Differential Equations of Groundwater Flow &#8212; EMSC 4033 Computing in Geoscience</title>
+    <title>Partial Differential Equations of Groundwater Flow &#8212; EMSC 4033 Computational Geoscience</title>
     
   <link rel="stylesheet" href="../../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -79,7 +79,7 @@
   <img src="../../../_static/AuWorldEQ.jpg" class="logo" alt="logo">
   
   
-  <h1 class="site-logo" id="site-title">EMSC 4033 Computing in Geoscience</h1>
+  <h1 class="site-logo" id="site-title">EMSC 4033 Computational Geoscience</h1>
   
 </a>
 </div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
@@ -90,13 +90,25 @@
     <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../../../FrontPage.html">
-   Jupyterbook example
+   Computational Geosciences
   </a>
  </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Modern Approaches to Programming
+  Introduction
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../IntroductoryRemarks.html">
+   Modern approaches to programming
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Literate, Re-usable Programming
  </span>
 </p>
 <ul class="nav sidenav_l1">
@@ -151,7 +163,7 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Step by Step
+  Python, Step by Step
  </span>
 </p>
 <ul class="nav sidenav_l1">
@@ -723,6 +735,18 @@
   </i>
  </li>
 </ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Bibliography
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../Bibliography.html">
+   Bibliography
+  </a>
+ </li>
+</ul>
 
 </nav> <!-- To handle the deprecated key -->
 
@@ -921,9 +945,9 @@
 <p>We can only calculate the changes at this finite set of points, but, if we have write this into a simple computer program, we can calculate this at an awful lot of points. Let’s see if it works !</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="o">%</span><span class="k">pylab</span> inline
+<span class="o">%</span><span class="n">pylab</span> <span class="n">inline</span>
 
 <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    This is a function to calculate the gradient at a point in a long line</span>
@@ -952,17 +976,12 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Populating the interactive namespace from numpy and matplotlib
-</pre></div>
-</div>
-</div>
 </div>
 <p>Let’s set up a bunch of points for <span class="math notranslate nohighlight">\(P_i\)</span> from the diagram we sketched earlier. We start making this <span class="math notranslate nohighlight">\(\sin(x)\)</span> since we know that the derivative should be <span class="math notranslate nohighlight">\(\cos(x)\)</span> and so we can easily check how well it works.</p>
 <a class="reference internal image-reference" href="../../../_images/BlockFlux.png"><img alt="../../../_images/BlockFlux.png" src="../../../_images/BlockFlux.png" style="height: 160px;" /></a>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>
 
 <span class="n">xP</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">2.0</span><span class="o">*</span><span class="n">numpy</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
 <span class="n">hP</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">xP</span><span class="p">)</span>
@@ -975,22 +994,16 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="p">(</span><span class="n">xP</span> <span class="o">/</span> <span class="n">numpy</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">hP</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="p">(</span><span class="n">xP</span> <span class="o">/</span> <span class="n">numpy</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">hP</span><span class="p">)</span>
 <span class="n">plot</span><span class="p">(</span><span class="n">xP</span> <span class="o">/</span> <span class="n">numpy</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">numpy</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">xP</span><span class="p">),</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;+&#39;</span><span class="p">)</span>
 <span class="n">plot</span><span class="p">(</span><span class="n">xP</span> <span class="o">/</span> <span class="n">numpy</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">gradx_hP</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f1d9e84c110&gt;]
-</pre></div>
-</div>
-<img alt="../../../_images/1-GroundwaterFlow-LectureNotes_9_1.png" src="../../../_images/1-GroundwaterFlow-LectureNotes_9_1.png" />
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hP2</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">xP</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">numpy</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">xP</span><span class="o">*</span><span class="mf">3.0</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">hP2</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">xP</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">numpy</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">xP</span><span class="o">*</span><span class="mf">3.0</span><span class="p">)</span>
 <span class="n">gradx_hP2</span> <span class="o">=</span> <span class="n">gradx</span><span class="p">(</span><span class="n">xP</span><span class="p">,</span><span class="n">hP2</span><span class="p">)</span> 
 </pre></div>
 </div>
@@ -998,23 +1011,17 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="p">(</span><span class="n">xP</span> <span class="o">/</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">hP2</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="p">(</span><span class="n">xP</span> <span class="o">/</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">hP2</span><span class="p">)</span>
 <span class="n">plot</span><span class="p">(</span><span class="n">xP</span> <span class="o">/</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">numpy</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">xP</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.3</span> <span class="o">*</span> <span class="n">numpy</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">xP</span><span class="o">*</span><span class="mf">3.0</span><span class="p">),</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;+&#39;</span><span class="p">)</span>
 <span class="n">plot</span><span class="p">(</span><span class="n">xP</span> <span class="o">/</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">gradx_hP2</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f1d9e767310&gt;]
-</pre></div>
-</div>
-<img alt="../../../_images/1-GroundwaterFlow-LectureNotes_11_1.png" src="../../../_images/1-GroundwaterFlow-LectureNotes_11_1.png" />
-</div>
 </div>
 <p>How about the second derivative, since we are dealing with a diffusion equation ?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># The rate of change with time is proportional to the gradient of the gradient !</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># The rate of change with time is proportional to the gradient of the gradient !</span>
 
 <span class="n">grad2x_hP</span> <span class="o">=</span> <span class="n">gradx</span><span class="p">(</span><span class="n">xP</span><span class="p">,</span><span class="n">gradx_hP</span><span class="p">)</span>
 <span class="n">grad2x_hP2</span> <span class="o">=</span> <span class="n">gradx</span><span class="p">(</span><span class="n">xP</span><span class="p">,</span><span class="n">gradx_hP2</span><span class="p">)</span>
@@ -1024,7 +1031,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">,</span> <span class="n">ax3</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">,</span> <span class="n">ax3</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">f</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
 
 <span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xP</span> <span class="o">/</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">hP</span><span class="p">)</span>
@@ -1044,18 +1051,12 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Error&#39;)
-</pre></div>
-</div>
-<img alt="../../../_images/1-GroundwaterFlow-LectureNotes_14_1.png" src="../../../_images/1-GroundwaterFlow-LectureNotes_14_1.png" />
-</div>
 </div>
 <p>So, it seems we can calculate reasonably accurate gradients with our little-boxes approximation. We can now try to solve the time-evolution of the pressure with the same function and see what happens.</p>
 <p><strong>Note:</strong> In the previous plots, errors are less than 1% in the second derivative away from the boundary but nearer 5% there. On the other hand, we haven’t even tried to do a clever job of building the interpolation / derivatives.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xP</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">xP</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
 <span class="n">hP</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">xP</span><span class="p">)</span>
 <span class="n">hP2</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">xP</span><span class="p">))</span>
 
@@ -1081,7 +1082,7 @@
 <span class="c1">## Timestepping loop </span>
 
 <span class="k">for</span> <span class="n">time</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">500</span><span class="p">):</span>
-    <span class="k">if</span><span class="p">(</span><span class="n">time</span><span class="o">%</span><span class="k">50</span>==0):    
+    <span class="k">if</span><span class="p">(</span><span class="n">time</span><span class="o">%</span><span class="mi">50</span><span class="o">==</span><span class="mi">0</span><span class="p">):</span>    
         <span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xP</span> <span class="o">/</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="n">hP</span><span class="p">)</span>
         <span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xP</span> <span class="o">/</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="n">hP2</span><span class="p">)</span>
 
@@ -1101,9 +1102,6 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../../../_images/1-GroundwaterFlow-LectureNotes_16_0.png" src="../../../_images/1-GroundwaterFlow-LectureNotes_16_0.png" />
-</div>
 </div>
 <p>We can start to obtain results which are clearly “right” in the sense that they evolve quantitatively the way the solutions are supposed to. They act like diffusion solutions – smoothing rapidly fluctuating (short wavelength) regions quickly.</p>
 <div class="section" id="harder-problems">
@@ -1113,7 +1111,7 @@
 <p><em>Try changing \(\Delta t\) and then \(\Delta x\)</em> – is that what you expected ?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># delta x = 1/100 ... also try 1/250 </span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># delta x = 1/100 ... also try 1/250 </span>
 
 <span class="n">xP</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>  
 
@@ -1153,13 +1151,10 @@
     <span class="n">gradx_hP</span> <span class="o">=</span> <span class="n">gradx</span><span class="p">(</span><span class="n">xP</span><span class="p">,</span><span class="n">hP</span><span class="p">)</span>
     <span class="n">grad2x_hP</span> <span class="o">=</span> <span class="n">gradx</span><span class="p">(</span><span class="n">xP</span><span class="p">,</span><span class="n">gradx_hP</span><span class="o">*</span><span class="n">K</span><span class="p">)</span>
       
-    <span class="k">if</span><span class="p">(</span><span class="n">time</span><span class="o">%</span><span class="k">100</span>==0):    
+    <span class="k">if</span><span class="p">(</span><span class="n">time</span><span class="o">%</span><span class="mi">100</span><span class="o">==</span><span class="mi">0</span><span class="p">):</span>    
         <span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xP</span> <span class="o">/</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="n">hP</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../../_images/1-GroundwaterFlow-LectureNotes_19_0.png" src="../../../_images/1-GroundwaterFlow-LectureNotes_19_0.png" />
 </div>
 </div>
 </div>

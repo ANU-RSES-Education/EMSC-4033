@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Classes and objects &#8212; EMSC 4033 Computing in Geoscience</title>
+    <title>Classes and objects &#8212; EMSC 4033 Computational Geoscience</title>
     
   <link rel="stylesheet" href="../../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -77,7 +77,7 @@
   <img src="../../../_static/AuWorldEQ.jpg" class="logo" alt="logo">
   
   
-  <h1 class="site-logo" id="site-title">EMSC 4033 Computing in Geoscience</h1>
+  <h1 class="site-logo" id="site-title">EMSC 4033 Computational Geoscience</h1>
   
 </a>
 </div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
@@ -88,13 +88,25 @@
     <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../../../FrontPage.html">
-   Jupyterbook example
+   Computational Geosciences
   </a>
  </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Modern Approaches to Programming
+  Introduction
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../IntroductoryRemarks.html">
+   Modern approaches to programming
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Literate, Re-usable Programming
  </span>
 </p>
 <ul class="current nav sidenav_l1">
@@ -149,7 +161,7 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Step by Step
+  Python, Step by Step
  </span>
 </p>
 <ul class="nav sidenav_l1">
@@ -721,6 +733,18 @@
   </i>
  </li>
 </ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Bibliography
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../Bibliography.html">
+   Bibliography
+  </a>
+ </li>
+</ul>
 
 </nav> <!-- To handle the deprecated key -->
 
@@ -855,7 +879,7 @@
 <p>Let’s just look at a couple of examples - ways to bundle up some data easily</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">colour</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">colour</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     
     <span class="n">rgb</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">)</span>
     <span class="n">description</span> <span class="o">=</span> <span class="s2">&quot;Black&quot;</span>
@@ -867,7 +891,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">colour</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">colour</span><span class="p">()</span>
 <span class="n">d</span> <span class="o">=</span> <span class="n">colour</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -875,25 +899,17 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">description</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">description</span><span class="p">)</span>
 <span class="nb">print</span> <span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">rgb</span><span class="p">)</span>
 <span class="nb">print</span> <span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">description</span><span class="p">)</span>
 <span class="nb">print</span> <span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">rgb</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Black
-(0.0, 0.0, 0.0)
-Black
-(0.0, 0.0, 0.0)
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span><span class="o">.</span><span class="n">description</span> <span class="o">=</span> <span class="s1">&#39;Blue&#39;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">d</span><span class="o">.</span><span class="n">description</span> <span class="o">=</span> <span class="s1">&#39;Blue&#39;</span>
 <span class="n">d</span><span class="o">.</span><span class="n">rgb</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -901,18 +917,10 @@ Black
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">description</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">description</span><span class="p">)</span>
 <span class="nb">print</span> <span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">rgb</span><span class="p">)</span>
 <span class="nb">print</span> <span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">description</span><span class="p">)</span>
 <span class="nb">print</span> <span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">rgb</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Black
-(0.0, 0.0, 0.0)
-Blue
-(0.0, 0.0, 1.0)
 </pre></div>
 </div>
 </div>
@@ -920,30 +928,15 @@ Blue
 <p><code class="docutils literal notranslate"><span class="pre">colour</span></code> is a data container that standardises how we refer to colours. By default it is “Black” but we can always change the values. The only thing is, we can also do this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span><span class="o">.</span><span class="n">complement</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">d</span><span class="o">.</span><span class="n">complement</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">)</span>
 <span class="nb">print</span> <span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">complement</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1.0, 1.0, 0.0)
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">complement</span><span class="p">)</span>  <span class="c1"># This is expected to fail (why ?)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">7</span><span class="o">-</span><span class="mi">0</span><span class="n">d6f0442d67f</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span> <span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">complement</span><span class="p">)</span>  <span class="c1"># This is expected to fail (why ?)</span>
-
-<span class="ne">AttributeError</span>: &#39;colour&#39; object has no attribute &#39;complement&#39;
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">complement</span><span class="p">)</span>  <span class="c1"># This is expected to fail (why ?)</span>
 </pre></div>
 </div>
 </div>
@@ -952,7 +945,7 @@ Blue
 <p>The <code class="docutils literal notranslate"><span class="pre">colour</span></code> class defines how objects will look once defined, but each ‘instance’ of the class (here <code class="docutils literal notranslate"><span class="pre">c</span></code> and <code class="docutils literal notranslate"><span class="pre">d</span></code>) lives a life of its own once built.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">colour</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">colour</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     
     <span class="n">rgb</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">)</span>
     <span class="n">description</span> <span class="o">=</span> <span class="s2">&quot;Black&quot;</span>
@@ -963,37 +956,17 @@ Blue
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1.0, 1.0, 1.0)
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">complement</span><span class="p">)</span>  <span class="c1"># This is also expected to fail (why ?)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">9</span><span class="o">-</span><span class="mi">2157</span><span class="n">bebc87ed</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span> <span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">complement</span><span class="p">)</span>  <span class="c1"># This is also expected to fail (why ?)</span>
-
-<span class="ne">AttributeError</span>: &#39;colour&#39; object has no attribute &#39;complement&#39;
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">complement</span><span class="p">)</span>  <span class="c1"># This is also expected to fail (why ?)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">e</span><span class="p">)</span> <span class="o">==</span> <span class="nb">type</span><span class="p">(</span><span class="n">d</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">e</span><span class="p">)</span> <span class="o">==</span> <span class="nb">type</span><span class="p">(</span><span class="n">d</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -1004,7 +977,7 @@ Blue
 <p>Let’s look at a better way to initialise the class:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">colour2</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>   
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">colour2</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>   
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    An rgb colour object with a description of the colour </span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -1025,47 +998,17 @@ Blue
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1.0, 0.0, 0.0)
-(0.0, 1.0, 1.0)
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">colour2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">colour2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on class colour2 in module __main__:
-
-class colour2(builtins.object)
- |  colour2(rgb=(0.0, 0.0, 0.0), description=&#39;Black&#39;)
- |  
- |  An rgb colour object with a description of the colour
- |  
- |  Methods defined here:
- |  
- |  __init__(self, rgb=(0.0, 0.0, 0.0), description=&#39;Black&#39;)
- |      Initialize self.  See help(type(self)) for accurate signature.
- |  
- |  ----------------------------------------------------------------------
- |  Data descriptors defined here:
- |  
- |  __dict__
- |      dictionary for instance variables (if defined)
- |  
- |  __weakref__
- |      list of weak references to the object (if defined)
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">colour2</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>   
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">colour2</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>   
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    An rgb colour object with a description of the colour </span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -1101,7 +1044,7 @@ class colour2(builtins.object)
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">new_c</span> <span class="o">=</span> <span class="n">colour2</span><span class="p">(</span><span class="n">rgb</span><span class="o">=</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">),</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Red&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">new_c</span> <span class="o">=</span> <span class="n">colour2</span><span class="p">(</span><span class="n">rgb</span><span class="o">=</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">),</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Red&quot;</span><span class="p">)</span>
 <span class="n">new_d</span> <span class="o">=</span> <span class="n">colour2</span><span class="p">(</span><span class="n">rgb</span><span class="o">=</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">),</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Green&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1109,14 +1052,8 @@ class colour2(builtins.object)
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">new_c</span><span class="o">.</span><span class="n">mix</span><span class="p">(</span><span class="n">new_d</span><span class="p">))</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">new_c</span><span class="o">.</span><span class="n">mix</span><span class="p">(</span><span class="n">new_d</span><span class="p">))</span>
 <span class="nb">print</span> <span class="p">(</span><span class="n">new_c</span><span class="o">.</span><span class="n">mixmax</span><span class="p">(</span><span class="n">new_d</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.5, 0.5, 0.0)
-(1.0, 1.0, 0.0)
 </pre></div>
 </div>
 </div>
@@ -1127,7 +1064,7 @@ class colour2(builtins.object)
 <p>Look at the following example.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">colour3</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>   
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">colour3</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>   
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    An rgb colour object with a description of the colour </span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -1179,7 +1116,7 @@ class colour2(builtins.object)
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">new_c</span><span class="o">.</span><span class="n">mix</span><span class="p">(</span><span class="n">new_d</span><span class="p">))</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">new_c</span><span class="o">.</span><span class="n">mix</span><span class="p">(</span><span class="n">new_d</span><span class="p">))</span>
 <span class="nb">print</span> <span class="p">(</span><span class="n">new_c</span> <span class="o">+</span> <span class="n">new_d</span><span class="p">)</span>
 
 <span class="nb">print</span> <span class="p">(</span><span class="n">new_c</span><span class="o">.</span><span class="n">mixmax</span><span class="p">(</span><span class="n">new_d</span><span class="p">))</span>
@@ -1187,19 +1124,11 @@ class colour2(builtins.object)
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.5, 0.5, 0.0)
-(0.5, 0.5, 0.0)
-(1.0, 1.0, 0.0)
-(1.0, 1.0, 0.0)
-</pre></div>
-</div>
-</div>
 </div>
 <p>That’s all we really need to know about classes, but if you want to know more about that last example, you’ll need to know about this page at the very least: <a class="reference external" href="https://docs.python.org/2/reference/datamodel.html#emulating-numeric-types">Object Model: numeric types</a> from the python documentation. This is mostly advanced stuff, but if you find yourself being given a class description when you ask for help on something, this information will help you.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## 1. Another example would be to make sure to set complement any time rgb gets changed</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">## 1. Another example would be to make sure to set complement any time rgb gets changed</span>
 <span class="c1">## 2. Another example would be to show how to subclass colour and match types so anything with an rgb works for mixing</span>
 </pre></div>
 </div>

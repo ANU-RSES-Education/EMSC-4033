@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Example 7 - Refining a triangulation &#8212; EMSC 4033 Computing in Geoscience</title>
+    <title>Example 7 - Refining a triangulation &#8212; EMSC 4033 Computational Geoscience</title>
     
   <link rel="stylesheet" href="../../../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -77,7 +77,7 @@
   <img src="../../../../_static/AuWorldEQ.jpg" class="logo" alt="logo">
   
   
-  <h1 class="site-logo" id="site-title">EMSC 4033 Computing in Geoscience</h1>
+  <h1 class="site-logo" id="site-title">EMSC 4033 Computational Geoscience</h1>
   
 </a>
 </div><form class="bd-search d-flex align-items-center" action="../../../../search.html" method="get">
@@ -88,13 +88,25 @@
     <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../../../../FrontPage.html">
-   Jupyterbook example
+   Computational Geosciences
   </a>
  </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Modern Approaches to Programming
+  Introduction
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../IntroductoryRemarks.html">
+   Modern approaches to programming
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Literate, Re-usable Programming
  </span>
 </p>
 <ul class="nav sidenav_l1">
@@ -149,7 +161,7 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Step by Step
+  Python, Step by Step
  </span>
 </p>
 <ul class="nav sidenav_l1">
@@ -721,6 +733,18 @@
   </i>
  </li>
 </ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Bibliography
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../Bibliography.html">
+   Bibliography
+  </a>
+ </li>
+</ul>
 
 </nav> <!-- To handle the deprecated key -->
 
@@ -886,7 +910,7 @@
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">stripy</span> <span class="k">as</span> <span class="nn">stripy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">stripy</span> <span class="k">as</span> <span class="nn">stripy</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="n">xmin</span> <span class="o">=</span> <span class="mf">0.0</span>
@@ -907,7 +931,7 @@
 <p>The <code class="docutils literal notranslate"><span class="pre">refinement_level</span></code> parameter of the <code class="docutils literal notranslate"><span class="pre">stripy</span></code> meshes makes repeated loops determining the bisection points of all the existing edges in the triangulation and then creating a new triangulation that includes these points and the original ones. These refinement operations can also be used for non-uniform refinement.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ellip0</span> <span class="o">=</span> <span class="n">stripy</span><span class="o">.</span><span class="n">cartesian_meshes</span><span class="o">.</span><span class="n">elliptical_mesh</span><span class="p">(</span><span class="n">extent</span><span class="p">,</span> <span class="n">spacingX</span><span class="p">,</span> <span class="n">spacingY</span><span class="p">,</span> <span class="n">refinement_levels</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ellip0</span> <span class="o">=</span> <span class="n">stripy</span><span class="o">.</span><span class="n">cartesian_meshes</span><span class="o">.</span><span class="n">elliptical_mesh</span><span class="p">(</span><span class="n">extent</span><span class="p">,</span> <span class="n">spacingX</span><span class="p">,</span> <span class="n">spacingY</span><span class="p">,</span> <span class="n">refinement_levels</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">ellip1</span> <span class="o">=</span> <span class="n">stripy</span><span class="o">.</span><span class="n">cartesian_meshes</span><span class="o">.</span><span class="n">elliptical_mesh</span><span class="p">(</span><span class="n">extent</span><span class="p">,</span> <span class="n">spacingX</span><span class="p">,</span> <span class="n">spacingY</span><span class="p">,</span> <span class="n">refinement_levels</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">ellip2</span> <span class="o">=</span> <span class="n">stripy</span><span class="o">.</span><span class="n">cartesian_meshes</span><span class="o">.</span><span class="n">elliptical_mesh</span><span class="p">(</span><span class="n">extent</span><span class="p">,</span> <span class="n">spacingX</span><span class="p">,</span> <span class="n">spacingY</span><span class="p">,</span> <span class="n">refinement_levels</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">ellip3</span> <span class="o">=</span> <span class="n">stripy</span><span class="o">.</span><span class="n">cartesian_meshes</span><span class="o">.</span><span class="n">elliptical_mesh</span><span class="p">(</span><span class="n">extent</span><span class="p">,</span> <span class="n">spacingX</span><span class="p">,</span> <span class="n">spacingY</span><span class="p">,</span> <span class="n">refinement_levels</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
@@ -926,17 +950,6 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Size of mesh - 1  253
-Size of mesh - 2  739
-Size of mesh - 3  2197
-Size of mesh - 4  6571
-Size of mesh - 5  19693
-Size of mesh - 6  59059
-Size of mesh - 7  177157
-</pre></div>
-</div>
-</div>
 </div>
 </div>
 <div class="section" id="refinement-strategies">
@@ -950,7 +963,7 @@ Size of mesh - 7  177157
 <p>These are provided as follows:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mx</span><span class="p">,</span> <span class="n">my</span> <span class="o">=</span> <span class="n">ellip2</span><span class="o">.</span><span class="n">midpoint_refine_triangulation_by_vertices</span><span class="p">(</span><span class="n">vertices</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">])</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mx</span><span class="p">,</span> <span class="n">my</span> <span class="o">=</span> <span class="n">ellip2</span><span class="o">.</span><span class="n">midpoint_refine_triangulation_by_vertices</span><span class="p">(</span><span class="n">vertices</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">])</span>
 <span class="n">ellip2mv</span> <span class="o">=</span> <span class="n">stripy</span><span class="o">.</span><span class="n">Triangulation</span><span class="p">(</span><span class="n">mx</span><span class="p">,</span> <span class="n">my</span><span class="p">)</span>
 
 <span class="n">mx</span><span class="p">,</span> <span class="n">my</span> <span class="o">=</span> <span class="n">ellip2</span><span class="o">.</span><span class="n">edge_refine_triangulation_by_vertices</span><span class="p">(</span><span class="n">vertices</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">])</span>
@@ -975,22 +988,13 @@ Size of mesh - 7  177157
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>refinement --- 795 points, 1570 simplices
-refinement --- 849 points, 1678 simplices
-refinement --- 795 points, 1570 simplices
-refinement --- 760 points, 1500 simplices
-refinement --- 749 points, 1478 simplices
-</pre></div>
-</div>
-</div>
 </div>
 </div>
 <div class="section" id="visualisation-of-refinement-strategies">
 <h2>Visualisation of refinement strategies<a class="headerlink" href="#visualisation-of-refinement-strategies" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
 
@@ -1028,13 +1032,6 @@ refinement --- 749 points, 1478 simplices
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../../../../_images/Ex7-Refinement-of-Triangulations_7_0.png" src="../../../../_images/Ex7-Refinement-of-Triangulations_7_0.png" />
-<img alt="../../../../_images/Ex7-Refinement-of-Triangulations_7_1.png" src="../../../../_images/Ex7-Refinement-of-Triangulations_7_1.png" />
-<img alt="../../../../_images/Ex7-Refinement-of-Triangulations_7_2.png" src="../../../../_images/Ex7-Refinement-of-Triangulations_7_2.png" />
-<img alt="../../../../_images/Ex7-Refinement-of-Triangulations_7_3.png" src="../../../../_images/Ex7-Refinement-of-Triangulations_7_3.png" />
-<img alt="../../../../_images/Ex7-Refinement-of-Triangulations_7_4.png" src="../../../../_images/Ex7-Refinement-of-Triangulations_7_4.png" />
-</div>
 </div>
 </div>
 <div class="section" id="targetted-refinement">
@@ -1042,14 +1039,14 @@ refinement --- 749 points, 1478 simplices
 <p>Here we refine a triangulation to a specific criterion - resolving two points in distinct triangles or with distinct nearest neighbour vertices.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">points</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span> <span class="mf">3.33</span><span class="p">,</span> <span class="mf">3.33</span><span class="p">],</span> <span class="p">[</span><span class="mf">7.77</span><span class="p">,</span> <span class="mf">7.77</span><span class="p">]])</span><span class="o">.</span><span class="n">T</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">points</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span> <span class="mf">3.33</span><span class="p">,</span> <span class="mf">3.33</span><span class="p">],</span> <span class="p">[</span><span class="mf">7.77</span><span class="p">,</span> <span class="mf">7.77</span><span class="p">]])</span><span class="o">.</span><span class="n">T</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">triangulations</span> <span class="o">=</span> <span class="p">[</span><span class="n">ellip1</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">triangulations</span> <span class="o">=</span> <span class="p">[</span><span class="n">ellip1</span><span class="p">]</span>
 <span class="n">nearest</span><span class="p">,</span> <span class="n">distances</span> <span class="o">=</span> <span class="n">triangulations</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">nearest_vertex</span><span class="p">(</span><span class="n">points</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">points</span><span class="p">[:,</span><span class="mi">1</span><span class="p">])</span>
 
 <span class="n">max_depth</span> <span class="o">=</span> <span class="mi">10</span>
@@ -1069,15 +1066,10 @@ refinement --- 749 points, 1478 simplices
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>refinement_steps = 11
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">triangulations</span> <span class="o">=</span> <span class="p">[</span><span class="n">ellip1</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">triangulations</span> <span class="o">=</span> <span class="p">[</span><span class="n">ellip1</span><span class="p">]</span>
 <span class="n">nearest</span><span class="p">,</span> <span class="n">distances</span> <span class="o">=</span> <span class="n">triangulations</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">nearest_vertex</span><span class="p">(</span><span class="n">points</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">points</span><span class="p">[:,</span><span class="mi">1</span><span class="p">])</span>
 
 <span class="n">max_depth</span> <span class="o">=</span> <span class="mi">10</span>
@@ -1097,15 +1089,10 @@ refinement --- 749 points, 1478 simplices
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>refinement_steps = 11
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">triangulations</span> <span class="o">=</span> <span class="p">[</span><span class="n">ellip1</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">triangulations</span> <span class="o">=</span> <span class="p">[</span><span class="n">ellip1</span><span class="p">]</span>
 
 <span class="n">in_triangle</span> <span class="o">=</span> <span class="n">triangulations</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">containing_triangle</span><span class="p">(</span><span class="n">points</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">points</span><span class="p">[:,</span><span class="mi">1</span><span class="p">])</span>
 
@@ -1133,25 +1120,10 @@ refinement --- 749 points, 1478 simplices
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[435 435]
-[496 496]
-[503 503]
-[509 509]
-[515 515]
-[521 521]
-[525 525]
-[532 532]
-[535 535]
-[537 537]
-refinement_steps = 11
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">triangulations</span> <span class="o">=</span> <span class="p">[</span><span class="n">ellip1</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">triangulations</span> <span class="o">=</span> <span class="p">[</span><span class="n">ellip1</span><span class="p">]</span>
 
 <span class="n">in_triangle</span> <span class="o">=</span> <span class="n">triangulations</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">containing_triangle</span><span class="p">(</span><span class="n">points</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">points</span><span class="p">[:,</span><span class="mi">1</span><span class="p">])</span>
 
@@ -1177,29 +1149,14 @@ refinement_steps = 11
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[418 418]
-[434 434]
-[435 435]
-[123 123]
-[494 494]
-[496 496]
-[497 497]
-[499 499]
-[503 503]
-[503 503]
-refinement_steps = 11
-</pre></div>
-</div>
-</div>
 </div>
 </div>
 <div class="section" id="visualisation-of-targetted-refinement">
 <h2>Visualisation of targetted refinement<a class="headerlink" href="#visualisation-of-targetted-refinement" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="o">%</span><span class="k">matplotlib</span> inline
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
 
 <span class="n">str_fmt</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{:18}</span><span class="s2"> --- </span><span class="si">{}</span><span class="s2"> simplices,  equant max = </span><span class="si">{:.2f}</span><span class="s2">,  equant min = </span><span class="si">{:.2f}</span><span class="s2">,  size ratio = </span><span class="si">{:.2f}</span><span class="s2">&quot;</span>
 
@@ -1245,24 +1202,6 @@ refinement_steps = 11
 <span class="nb">print</span><span class="p">(</span><span class="n">str_fmt</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;CentroidByTriangle&quot;</span><span class="p">,</span> <span class="n">T</span><span class="o">.</span><span class="n">simplices</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">equant</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="n">equant</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">size_ratio</span><span class="p">))</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>EdgeByVertex       --- 714 simplices,  equant max = 4.20,  equant min = 1.00,  size ratio = 1341.99
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>EdgeByTriangle     --- 546 simplices,  equant max = 2.72,  equant min = 1.00,  size ratio = 1341.99
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CentroidByVertex   --- 600 simplices,  equant max = 3.78,  equant min = 1.00,  size ratio = 317.88
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CentroidByTriangle --- 506 simplices,  equant max = 2.72,  equant min = 1.00,  size ratio = 68.22
-</pre></div>
-</div>
-<img alt="../../../../_images/Ex7-Refinement-of-Triangulations_15_4.png" src="../../../../_images/Ex7-Refinement-of-Triangulations_15_4.png" />
-<img alt="../../../../_images/Ex7-Refinement-of-Triangulations_15_5.png" src="../../../../_images/Ex7-Refinement-of-Triangulations_15_5.png" />
-<img alt="../../../../_images/Ex7-Refinement-of-Triangulations_15_6.png" src="../../../../_images/Ex7-Refinement-of-Triangulations_15_6.png" />
-<img alt="../../../../_images/Ex7-Refinement-of-Triangulations_15_7.png" src="../../../../_images/Ex7-Refinement-of-Triangulations_15_7.png" />
 </div>
 </div>
 </div>

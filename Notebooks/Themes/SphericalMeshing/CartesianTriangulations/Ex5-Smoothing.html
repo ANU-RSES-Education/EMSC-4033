@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Example 5 - stripy smoothing operations &#8212; EMSC 4033 Computing in Geoscience</title>
+    <title>Example 5 - stripy smoothing operations &#8212; EMSC 4033 Computational Geoscience</title>
     
   <link rel="stylesheet" href="../../../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -77,7 +77,7 @@
   <img src="../../../../_static/AuWorldEQ.jpg" class="logo" alt="logo">
   
   
-  <h1 class="site-logo" id="site-title">EMSC 4033 Computing in Geoscience</h1>
+  <h1 class="site-logo" id="site-title">EMSC 4033 Computational Geoscience</h1>
   
 </a>
 </div><form class="bd-search d-flex align-items-center" action="../../../../search.html" method="get">
@@ -88,13 +88,25 @@
     <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../../../../FrontPage.html">
-   Jupyterbook example
+   Computational Geosciences
   </a>
  </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Modern Approaches to Programming
+  Introduction
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../IntroductoryRemarks.html">
+   Modern approaches to programming
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Literate, Re-usable Programming
  </span>
 </p>
 <ul class="nav sidenav_l1">
@@ -149,7 +161,7 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Step by Step
+  Python, Step by Step
  </span>
 </p>
 <ul class="nav sidenav_l1">
@@ -721,6 +733,18 @@
   </i>
  </li>
 </ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Bibliography
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../Bibliography.html">
+   Bibliography
+  </a>
+ </li>
+</ul>
 
 </nav> <!-- To handle the deprecated key -->
 
@@ -891,7 +915,7 @@
 <p>Use the (usual) icosahedron with face points included.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">stripy</span> <span class="k">as</span> <span class="nn">stripy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">stripy</span> <span class="k">as</span> <span class="nn">stripy</span>
 
 <span class="n">xmin</span> <span class="o">=</span> <span class="mf">0.0</span>
 <span class="n">xmax</span> <span class="o">=</span> <span class="mf">10.0</span>
@@ -908,11 +932,6 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1744
-</pre></div>
-</div>
-</div>
 </div>
 </div>
 <div class="section" id="analytic-function-with-noise-and-short-wavelengths">
@@ -920,7 +939,7 @@
 <p>Define a relatively smooth function that we can interpolate from the coarse mesh to the fine mesh and analyse</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="k">def</span> <span class="nf">analytic</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">,</span> <span class="n">k1</span><span class="p">,</span> <span class="n">k2</span><span class="p">):</span>
      <span class="k">return</span>  <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">k1</span><span class="o">*</span><span class="n">xs</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">k2</span><span class="o">*</span><span class="n">ys</span><span class="p">)</span> 
@@ -945,7 +964,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
 <span class="k">def</span> <span class="nf">axis_mesh_field</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="n">mesh</span><span class="p">,</span> <span class="n">field</span><span class="p">,</span> <span class="n">label</span><span class="p">):</span>
@@ -967,9 +986,6 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../../../../_images/Ex5-Smoothing_5_0.png" src="../../../../_images/Ex5-Smoothing_5_0.png" />
-</div>
 </div>
 </div>
 <div class="section" id="smoothing-operations">
@@ -978,53 +994,14 @@
 by values on the mesh vertices to find a new surface f’ (also described on the mesh vertices) by choosing nodal function values and gradients to minimize the linearized curvature of F subject to a bound on the deviation from the data values.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">mesh</span><span class="o">.</span><span class="n">smoothing</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on method smoothing in module stripy.cartesian:
-
-smoothing(f, w, sm, smtol, gstol, sigma=None) method of stripy.cartesian.Triangulation instance
-    Smooths a surface `f` by choosing nodal function values and gradients to
-    minimize the linearized curvature of F subject to a bound on the
-    deviation from the data values. This is more appropriate than interpolation
-    when significant errors are present in the data.
-    
-    Args:
-        f : array of floats, shape (n,)
-            field to apply smoothing on
-        w : array of floats, shape (n,)
-            weights associated with data value in `f`
-            `w[i] = 1/sigma_f**2` is a good rule of thumb.
-        sm : float
-            positive parameter specifying an upper bound on Q2(f).
-            generally `n-sqrt(2n) &lt;= sm &lt;= n+sqrt(2n)`
-        smtol : float [0,1]
-            specifies relative error in satisfying the constraint
-            `sm(1-smtol) &lt;= Q2 &lt;= sm(1+smtol)` between 0 and 1.
-        gstol : float
-            tolerance for convergence.
-            `gstol = 0.05*mean(sigma_f)**2` is a good rule of thumb.
-        sigma : array of floats, shape (6n-12)
-            precomputed array of spline tension factors from
-            `get_spline_tension_factors(zdata, tol=1e-3, grad=None)`
-    
-    Returns:
-        f_smooth : array of floats, shape (n,)
-            smoothed version of f
-        derivatives : tuple of floats, shape (n,3)
-            \\( \partial f \partial y , \partial f \partial y \\) first derivatives
-            of `f_smooth` in the x and y directions
-        err : error indicator
-            0 indicates no error, +ve values indicate warnings, -ve values are errors
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">mesh</span><span class="o">.</span><span class="n">smoothing</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stripy_smoothed</span><span class="p">,</span>  <span class="n">dds</span><span class="p">,</span> <span class="n">err</span> <span class="o">=</span> <span class="n">mesh</span><span class="o">.</span><span class="n">smoothing</span><span class="p">(</span><span class="n">analytic_sol_n</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">analytic_sol_n</span><span class="p">),</span> <span class="mf">10.0</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">stripy_smoothed</span><span class="p">,</span>  <span class="n">dds</span><span class="p">,</span> <span class="n">err</span> <span class="o">=</span> <span class="n">mesh</span><span class="o">.</span><span class="n">smoothing</span><span class="p">(</span><span class="n">analytic_sol_n</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">analytic_sol_n</span><span class="p">),</span> <span class="mf">10.0</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span>
 <span class="n">stripy_smoothed2</span><span class="p">,</span> <span class="n">dds2</span><span class="p">,</span> <span class="n">err</span> <span class="o">=</span> <span class="n">mesh</span><span class="o">.</span><span class="n">smoothing</span><span class="p">(</span><span class="n">analytic_sol_n</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">analytic_sol_n</span><span class="p">),</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span>
 <span class="n">stripy_smoothed3</span><span class="p">,</span> <span class="n">dds3</span><span class="p">,</span> <span class="n">err</span> <span class="o">=</span> <span class="n">mesh</span><span class="o">.</span><span class="n">smoothing</span><span class="p">(</span><span class="n">analytic_sol_n</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">analytic_sol_n</span><span class="p">),</span> <span class="mf">20.0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span>
 
@@ -1042,17 +1019,7 @@ smoothing(f, w, sm, smtol, gstol, sigma=None) method of stripy.cartesian.Triangu
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stripy_smoothed</span><span class="p">,</span> <span class="n">dds</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([-0.69414794, -0.6276845 , -0.74819285, ...,  0.15918738,
-        -0.07480139, -0.17653722], dtype=float32),
- [array([ 0.06259426,  0.01485607,  0.02150706, ..., -0.03139762,
-         -0.02250736, -0.03669844], dtype=float32),
-  array([ 0.23830871,  0.40566853,  0.07749169, ..., -0.43345797,
-         -0.36653173, -0.3001659 ], dtype=float32)])
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">stripy_smoothed</span><span class="p">,</span> <span class="n">dds</span>
 </pre></div>
 </div>
 </div>
@@ -1062,7 +1029,7 @@ smoothing(f, w, sm, smtol, gstol, sigma=None) method of stripy.cartesian.Triangu
 <h2>Results of smoothing with different value of <code class="docutils literal notranslate"><span class="pre">sm</span></code><a class="headerlink" href="#results-of-smoothing-with-different-value-of-sm" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">facecolor</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">facecolor</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">)</span>
 
 <span class="n">axis_mesh_field</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">mesh</span><span class="p">,</span> <span class="n">analytic_sol_n</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;original&quot;</span><span class="p">)</span>
 <span class="n">axis_mesh_field</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">mesh</span><span class="p">,</span> <span class="n">stripy_smoothed</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;smoothed1&quot;</span><span class="p">)</span>
@@ -1073,14 +1040,11 @@ smoothing(f, w, sm, smtol, gstol, sigma=None) method of stripy.cartesian.Triangu
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../../../../_images/Ex5-Smoothing_11_0.png" src="../../../../_images/Ex5-Smoothing_11_0.png" />
-</div>
 </div>
 <p>The next example is <a class="reference internal" href="Ex6-Scattered-Data.html"><span class="doc std std-doc">Ex6-Scattered-Data</span></a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span> <span class="n">facecolor</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span> <span class="n">facecolor</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">)</span>
 
 <span class="n">axis_mesh_field</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">mesh</span><span class="p">,</span> <span class="n">analytic_sol_n</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;original&quot;</span><span class="p">)</span>
 <span class="n">axis_mesh_field</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">mesh</span><span class="p">,</span> <span class="n">dds</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;smoothed1&quot;</span><span class="p">)</span>
@@ -1090,9 +1054,6 @@ smoothing(f, w, sm, smtol, gstol, sigma=None) method of stripy.cartesian.Triangu
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../../../_images/Ex5-Smoothing_13_0.png" src="../../../../_images/Ex5-Smoothing_13_0.png" />
 </div>
 </div>
 <p>The next notebook is <a class="reference internal" href="Ex6-Scattered-Data.html"><span class="doc std std-doc">Ex6-Scattered-Data</span></a></p>

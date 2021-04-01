@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Python data types &#8212; EMSC 4033 Computing in Geoscience</title>
+    <title>Python data types &#8212; EMSC 4033 Computational Geoscience</title>
     
   <link rel="stylesheet" href="../../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -77,7 +77,7 @@
   <img src="../../../_static/AuWorldEQ.jpg" class="logo" alt="logo">
   
   
-  <h1 class="site-logo" id="site-title">EMSC 4033 Computing in Geoscience</h1>
+  <h1 class="site-logo" id="site-title">EMSC 4033 Computational Geoscience</h1>
   
 </a>
 </div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
@@ -88,13 +88,25 @@
     <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../../../FrontPage.html">
-   Jupyterbook example
+   Computational Geosciences
   </a>
  </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Modern Approaches to Programming
+  Introduction
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../IntroductoryRemarks.html">
+   Modern approaches to programming
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Literate, Re-usable Programming
  </span>
 </p>
 <ul class="current nav sidenav_l1">
@@ -149,7 +161,7 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Step by Step
+  Python, Step by Step
  </span>
 </p>
 <ul class="nav sidenav_l1">
@@ -721,6 +733,18 @@
   </i>
  </li>
 </ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Bibliography
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../Bibliography.html">
+   Bibliography
+  </a>
+ </li>
+</ul>
 
 </nav> <!-- To handle the deprecated key -->
 
@@ -877,7 +901,7 @@
 <p>Integers, Floating point numbers, and complex numbers are available automatically.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="mf">1.0</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="mf">1.0</span>
 <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
 
 <span class="nb">print</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
@@ -888,38 +912,19 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0 1
-Value of f is 1.0, value of i is 1
-Value of f is 1.000000, value of i is 1.000000
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## BUT !! </span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">## BUT !! </span>
 
 <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Value of f is </span><span class="si">{:d}</span><span class="s2">, value of i is </span><span class="si">{:f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">i</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">2</span><span class="o">-</span><span class="n">e1ff3effee27</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1">## BUT !!</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> 
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Value of f is </span><span class="si">{:d}</span><span class="s2">, value of i is </span><span class="si">{:f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">i</span><span class="p">))</span>
-
-<span class="ne">ValueError</span>: Unknown format code &#39;d&#39; for object of type &#39;float&#39;
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="mf">0.0</span> <span class="o">+</span> <span class="mf">1.0</span><span class="n">j</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="mf">0.0</span> <span class="o">+</span> <span class="mf">1.0</span><span class="n">j</span>
 
 <span class="nb">print</span> <span class="p">(</span><span class="n">c</span><span class="p">)</span>
 
@@ -929,77 +934,38 @@ Value of f is 1.000000, value of i is 1.000000
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1j
-Value of c is 0.000000+1.000000j
-Value of c**2 is -1.000000+0.000000j
-</pre></div>
-</div>
-</div>
 </div>
 <hr class="docutils" />
 <p>Notes: The <code class="docutils literal notranslate"><span class="pre">math</span></code> module needs to be imported before you can use it.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
 <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0
+</div>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">5</span><span class="o">-</span><span class="mi">5</span><span class="n">b2776b0f855</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
-
-<span class="ne">TypeError</span>: can&#39;t convert complex to float
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell tag_raises-exception docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">6</span><span class="o">-</span><span class="mi">2037</span><span class="n">b8d41d70</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-
-<span class="ne">ValueError</span>: math domain error
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cmath</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cmath</span>
 
 <span class="nb">print</span> <span class="p">(</span><span class="n">cmath</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">f</span><span class="p">))</span>
 <span class="nb">print</span> <span class="p">(</span><span class="n">cmath</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">c</span><span class="p">))</span>
 <span class="nb">print</span> <span class="p">(</span><span class="n">cmath</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1+0j)
-(0.7071067811865476+0.7071067811865475j)
-1j
 </pre></div>
 </div>
 </div>
@@ -1010,252 +976,31 @@ Value of c**2 is -1.000000+0.000000j
 <p>For example, a floating point number knows certain things that it can do as well as simply “being” a number:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">f</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on float object:
-
-class float(object)
- |  float(x=0, /)
- |  
- |  Convert a string or number to a floating point number, if possible.
- |  
- |  Methods defined here:
- |  
- |  __abs__(self, /)
- |      abs(self)
- |  
- |  __add__(self, value, /)
- |      Return self+value.
- |  
- |  __bool__(self, /)
- |      self != 0
- |  
- |  __divmod__(self, value, /)
- |      Return divmod(self, value).
- |  
- |  __eq__(self, value, /)
- |      Return self==value.
- |  
- |  __float__(self, /)
- |      float(self)
- |  
- |  __floordiv__(self, value, /)
- |      Return self//value.
- |  
- |  __format__(self, format_spec, /)
- |      Formats the float according to format_spec.
- |  
- |  __ge__(self, value, /)
- |      Return self&gt;=value.
- |  
- |  __getattribute__(self, name, /)
- |      Return getattr(self, name).
- |  
- |  __getnewargs__(self, /)
- |  
- |  __gt__(self, value, /)
- |      Return self&gt;value.
- |  
- |  __hash__(self, /)
- |      Return hash(self).
- |  
- |  __int__(self, /)
- |      int(self)
- |  
- |  __le__(self, value, /)
- |      Return self&lt;=value.
- |  
- |  __lt__(self, value, /)
- |      Return self&lt;value.
- |  
- |  __mod__(self, value, /)
- |      Return self%value.
- |  
- |  __mul__(self, value, /)
- |      Return self*value.
- |  
- |  __ne__(self, value, /)
- |      Return self!=value.
- |  
- |  __neg__(self, /)
- |      -self
- |  
- |  __pos__(self, /)
- |      +self
- |  
- |  __pow__(self, value, mod=None, /)
- |      Return pow(self, value, mod).
- |  
- |  __radd__(self, value, /)
- |      Return value+self.
- |  
- |  __rdivmod__(self, value, /)
- |      Return divmod(value, self).
- |  
- |  __repr__(self, /)
- |      Return repr(self).
- |  
- |  __rfloordiv__(self, value, /)
- |      Return value//self.
- |  
- |  __rmod__(self, value, /)
- |      Return value%self.
- |  
- |  __rmul__(self, value, /)
- |      Return value*self.
- |  
- |  __round__(self, ndigits=None, /)
- |      Return the Integral closest to x, rounding half toward even.
- |      
- |      When an argument is passed, work like built-in round(x, ndigits).
- |  
- |  __rpow__(self, value, mod=None, /)
- |      Return pow(value, self, mod).
- |  
- |  __rsub__(self, value, /)
- |      Return value-self.
- |  
- |  __rtruediv__(self, value, /)
- |      Return value/self.
- |  
- |  __str__(self, /)
- |      Return str(self).
- |  
- |  __sub__(self, value, /)
- |      Return self-value.
- |  
- |  __truediv__(self, value, /)
- |      Return self/value.
- |  
- |  __trunc__(self, /)
- |      Return the Integral closest to x between 0 and x.
- |  
- |  as_integer_ratio(self, /)
- |      Return integer ratio.
- |      
- |      Return a pair of integers, whose ratio is exactly equal to the original float
- |      and with a positive denominator.
- |      
- |      Raise OverflowError on infinities and a ValueError on NaNs.
- |      
- |      &gt;&gt;&gt; (10.0).as_integer_ratio()
- |      (10, 1)
- |      &gt;&gt;&gt; (0.0).as_integer_ratio()
- |      (0, 1)
- |      &gt;&gt;&gt; (-.25).as_integer_ratio()
- |      (-1, 4)
- |  
- |  conjugate(self, /)
- |      Return self, the complex conjugate of any float.
- |  
- |  hex(self, /)
- |      Return a hexadecimal representation of a floating-point number.
- |      
- |      &gt;&gt;&gt; (-0.1).hex()
- |      &#39;-0x1.999999999999ap-4&#39;
- |      &gt;&gt;&gt; 3.14159.hex()
- |      &#39;0x1.921f9f01b866ep+1&#39;
- |  
- |  is_integer(self, /)
- |      Return True if the float is an integer.
- |  
- |  ----------------------------------------------------------------------
- |  Class methods defined here:
- |  
- |  __getformat__(typestr, /) from builtins.type
- |      You probably don&#39;t want to use this function.
- |      
- |        typestr
- |          Must be &#39;double&#39; or &#39;float&#39;.
- |      
- |      It exists mainly to be used in Python&#39;s test suite.
- |      
- |      This function returns whichever of &#39;unknown&#39;, &#39;IEEE, big-endian&#39; or &#39;IEEE,
- |      little-endian&#39; best describes the format of floating point numbers used by the
- |      C type named by typestr.
- |  
- |  __set_format__(typestr, fmt, /) from builtins.type
- |      You probably don&#39;t want to use this function.
- |      
- |        typestr
- |          Must be &#39;double&#39; or &#39;float&#39;.
- |        fmt
- |          Must be one of &#39;unknown&#39;, &#39;IEEE, big-endian&#39; or &#39;IEEE, little-endian&#39;,
- |          and in addition can only be one of the latter two if it appears to
- |          match the underlying C reality.
- |      
- |      It exists mainly to be used in Python&#39;s test suite.
- |      
- |      Override the automatic determination of C-level floating point type.
- |      This affects how floats are converted to and from binary strings.
- |  
- |  fromhex(string, /) from builtins.type
- |      Create a floating-point number from a hexadecimal string.
- |      
- |      &gt;&gt;&gt; float.fromhex(&#39;0x1.ffffp10&#39;)
- |      2047.984375
- |      &gt;&gt;&gt; float.fromhex(&#39;-0x1p-1074&#39;)
- |      -5e-324
- |  
- |  ----------------------------------------------------------------------
- |  Static methods defined here:
- |  
- |  __new__(*args, **kwargs) from builtins.type
- |      Create and return a new object.  See help(type) for accurate signature.
- |  
- |  ----------------------------------------------------------------------
- |  Data descriptors defined here:
- |  
- |  imag
- |      the imaginary part of a complex number
- |  
- |  real
- |      the real part of a complex number
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">is_integer</span><span class="p">()</span> <span class="p">)</span> <span class="c1"># Strange eh ?</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">is_integer</span><span class="p">()</span> <span class="p">)</span> <span class="c1"># Strange eh ?</span>
 <span class="nb">print</span> <span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">conjugate</span><span class="p">())</span>
 <span class="nb">print</span> <span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">conjugate</span><span class="p">())</span>
 <span class="nb">print</span> <span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="fm">__truediv__</span><span class="p">(</span><span class="mf">2.0</span><span class="p">)</span> <span class="p">)</span> <span class="c1"># This looks odd, but it is the way that f / 2.0 is implemented underneath</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
-1.0
--1j
-0.5
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mf">1.0</span><span class="o">.</span><span class="fm">__truediv__</span><span class="p">(</span><span class="mf">2.0</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">1.0</span><span class="o">.</span><span class="fm">__truediv__</span><span class="p">(</span><span class="mf">2.0</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1266,7 +1011,7 @@ class float(object)
 <h2>Strings<a class="headerlink" href="#strings" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;hello&#39;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;hello&#39;</span>
 <span class="nb">print</span> <span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>  <span class="p">)</span>
 <span class="nb">print</span> <span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
 <span class="nb">print</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>      <span class="p">)</span>  
@@ -1274,54 +1019,26 @@ class float(object)
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>e
-o
-5
-hello world
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ss</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\t\t</span><span class="s2"> HellO </span><span class="se">\n</span><span class="s2"> </span><span class="se">\t\t</span><span class="s2"> world</span><span class="se">\n</span><span class="s2">  </span><span class="se">\t\t</span><span class="s2"> !!!</span><span class="se">\n\n</span><span class="s2"> &quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ss</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\t\t</span><span class="s2"> HellO </span><span class="se">\n</span><span class="s2"> </span><span class="se">\t\t</span><span class="s2"> world</span><span class="se">\n</span><span class="s2">  </span><span class="se">\t\t</span><span class="s2"> !!!</span><span class="se">\n\n</span><span class="s2"> &quot;</span>
 <span class="nb">print</span> <span class="p">(</span><span class="n">ss</span><span class="p">)</span>
 <span class="nb">print</span> <span class="p">(</span><span class="n">ss</span><span class="o">.</span><span class="n">partition</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>		 HellO 
- 		 world
-  		 !!!
-
- 
-(&#39;\t\t&#39;, &#39; &#39;, &#39;HellO \n \t\t world\n  \t\t !!!\n\n &#39;)
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;Hello World&quot;</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;Hello World&quot;</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;hello world&#39;
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>o   hell
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -1330,17 +1047,7 @@ hello world
 <p>But one of the problems with strings as data structures is that they are immutable. To change anything, we need to make copies of the data</p>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;a&#39;</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">16</span><span class="o">-</span><span class="mi">41</span><span class="n">a2b295b3e4</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;a&#39;</span>
-
-<span class="ne">TypeError</span>: &#39;str&#39; object does not support item assignment
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;a&#39;</span>
 </pre></div>
 </div>
 </div>
@@ -1352,7 +1059,7 @@ hello world
 <p>Tuples are bundles of data in a structured form but they are not vectors … and they are immutable</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
 <span class="n">b</span> <span class="o">=</span> <span class="p">(</span><span class="mf">3.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">)</span>
 
 <span class="nb">print</span> <span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
@@ -1360,85 +1067,39 @@ hello world
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.0
-(1.0, 2.0, 0.0, 3.0, 2.0, 4.0)
+</div>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">a</span><span class="o">-</span><span class="n">b</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">a</span><span class="o">-</span><span class="n">b</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">18</span><span class="o">-</span><span class="mi">8</span><span class="n">d5ae8000596</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span> <span class="p">(</span><span class="n">a</span><span class="o">-</span><span class="n">b</span><span class="p">)</span>
-
-<span class="ne">TypeError</span>: unsupported operand type(s) for -: &#39;tuple&#39; and &#39;tuple&#39;
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell tag_raises-exception docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">b</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">19</span><span class="o">-</span><span class="mi">85</span><span class="n">ed247fbf45</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span> <span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">b</span><span class="p">)</span>
-
-<span class="ne">TypeError</span>: can&#39;t multiply sequence by non-int of type &#39;tuple&#39;
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">b</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1.0, 2.0, 0.0, 1.0, 2.0, 0.0)
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">21</span><span class="o">-</span><span class="mi">94</span><span class="n">c4449d0396</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
-
-<span class="ne">TypeError</span>: &#39;tuple&#39; object does not support item assignment
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">e</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">e</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
 <span class="mi">2</span> <span class="o">*</span> <span class="n">e</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;a&#39;, &#39;b&#39;, 1.0, &#39;a&#39;, &#39;b&#39;, 1.0)
 </pre></div>
 </div>
 </div>
@@ -1447,7 +1108,7 @@ hello world
 <p>Lists are more flexible than tuples, they can be assigned to, have items removed etc</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">l</span>  <span class="o">=</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">l</span>  <span class="o">=</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
 <span class="n">ll</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">]</span>
 <span class="n">lll</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="p">[</span><span class="s1">&#39;f&#39;</span><span class="p">,</span><span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span><span class="p">]]</span>
 
@@ -1461,80 +1122,43 @@ hello world
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1.0, 2.0, 3.0]
-[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]
-3.0 c
-[1.0, 2.0, 3.0, 1.0, 2.0, 3.0]
-[1.0, 2.0, 3.0, 1.0, 2.0, 3.0]
-[1.0, &#39;a&#39;, (1, 2, 3), [&#39;f&#39;, &#39;g&#39;, &#39;h&#39;]]
-[&#39;f&#39;, &#39;g&#39;, &#39;h&#39;]  -- sub item 3 --&gt;  g
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mf">2.0</span><span class="o">*</span><span class="n">l</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">24</span><span class="o">-</span><span class="n">b0b31fe60e81</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="mf">2.0</span><span class="o">*</span><span class="n">l</span>
-
-<span class="ne">TypeError</span>: can&#39;t multiply sequence by non-int of type &#39;float&#39;
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">2.0</span><span class="o">*</span><span class="n">l</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">l</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mf">2.99</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">l</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mf">2.99</span>
 <span class="n">l</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1.0, 2.0, 2.99]
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mf">3.0</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mf">3.0</span><span class="p">)</span>
 <span class="nb">print</span> <span class="p">(</span><span class="n">l</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1.0, 2.0, 2.99, 3.0]
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ll</span> <span class="o">+=</span> <span class="s1">&#39;b&#39;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ll</span> <span class="o">+=</span> <span class="s1">&#39;b&#39;</span>
 <span class="nb">print</span> <span class="p">(</span><span class="n">ll</span><span class="p">)</span>
 <span class="n">ll</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>  <span class="c1"># removes the first one !</span>
 <span class="nb">print</span> <span class="p">(</span><span class="n">ll</span><span class="p">)</span> 
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;b&#39;]
-[&#39;a&#39;, &#39;c&#39;, &#39;b&#39;]
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">+=</span> <span class="p">[</span><span class="mf">5.0</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">+=</span> <span class="p">[</span><span class="mf">5.0</span><span class="p">]</span>
 <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;1 - &quot;</span><span class="p">,</span> <span class="n">l</span><span class="p">)</span>
 <span class="n">l</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mf">5.0</span><span class="p">)</span>
 <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;2 - &quot;</span><span class="p">,</span> <span class="n">l</span><span class="p">)</span>
@@ -1545,30 +1169,12 @@ hello world
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1 -  [1.0, 2.0, 2.99, 3.0, 5.0]
-2 -  [1.0, 2.0, 2.99, 3.0]
-3 -  [1.0, 2.0, 2.99]
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">28</span><span class="o">-</span><span class="n">fa8a3d81d5f2</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">l</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mf">3.0</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;3 - &quot;</span><span class="p">,</span> <span class="n">l</span><span class="p">)</span>
-<span class="ne">----&gt; </span><span class="mi">7</span> <span class="n">l</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mf">4.0</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;4 - &quot;</span><span class="p">,</span> <span class="n">l</span><span class="p">)</span>
-
-<span class="ne">ValueError</span>: list.remove(x): x not in list
-</pre></div>
-</div>
-</div>
 </div>
 <hr class="docutils" />
 <p>Sets are special list-like collections of unique items. NOTE that the elements are not ordered (no such thing as <code class="docutils literal notranslate"><span class="pre">s[1]</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="mi">6</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="mi">6</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
 <span class="nb">print</span> <span class="p">(</span><span class="n">s</span><span class="p">)</span>
 <span class="n">s</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
 <span class="nb">print</span> <span class="p">(</span><span class="n">s</span><span class="p">)</span>
@@ -1581,15 +1187,6 @@ hello world
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1, 2, 3, 4, 5, 6}
-{1, 2, 3, 4, 5, 6, 7}
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}
-</pre></div>
-</div>
-</div>
 </div>
 </div>
 <div class="section" id="dictionaries">
@@ -1597,7 +1194,7 @@ hello world
 <p>These are very useful data collections where the information can be looked up by name instead of a numerical index. This will come in handy as a lightweight database and is commonly something we need to use when using modules to read in data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;item1&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">],</span> <span class="s2">&quot;item2&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;c&#39;</span><span class="p">,</span><span class="s1">&#39;d&#39;</span><span class="p">,</span><span class="s1">&#39;e&#39;</span><span class="p">]}</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;item1&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">],</span> <span class="s2">&quot;item2&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;c&#39;</span><span class="p">,</span><span class="s1">&#39;d&#39;</span><span class="p">,</span><span class="s1">&#39;e&#39;</span><span class="p">]}</span>
 
 <span class="nb">print</span> <span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s2">&quot;item1&quot;</span><span class="p">])</span>
 <span class="nb">print</span> <span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s2">&quot;item1&quot;</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
@@ -1614,23 +1211,11 @@ hello world
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]
-b
-1.00000001
-100000001.0
-dict_keys([&#39;Small Number&#39;, &#39;Tiny Number&#39;, &#39;Big Number&#39;])
-   Small Number  --&gt;  1.0
-    Tiny Number  --&gt;  1e-08
-     Big Number  --&gt;  100000000.0
-</pre></div>
-</div>
-</div>
 </div>
 <p>More useful is the fact that the dictionary can have as a key, anything that can be converted using the <code class="docutils literal notranslate"><span class="pre">hash</span></code> function into a unique number. Strings, obviously, work well but anything immutable can be hashed:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">hashfn</span><span class="p">(</span><span class="n">item</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">hashfn</span><span class="p">(</span><span class="n">item</span><span class="p">):</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="n">h</span> <span class="o">=</span> <span class="nb">hash</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
         <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">item</span><span class="p">)),</span> <span class="s2">&quot; --&gt; &quot;</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span>
@@ -1658,21 +1243,6 @@ dict_keys([&#39;Small Number&#39;, &#39;Tiny Number&#39;, &#39;Big Number&#39;])
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>abc  --&gt;  621361758862169150
-abd  --&gt;  -2285070039398137182
-alphabeta  --&gt;  -8559128752494110343
-abcdefghi  --&gt;  7601245953489339848
-1.0  --&gt;  1
-1.00000000000001  --&gt;  23041
-2.1  --&gt;  230584300921369602
-(&#39;a&#39;, &#39;b&#39;)  --&gt;  8261196151823649175
-(1.0, 2.0)  --&gt;  3713081631934410656
-[1, 2, 3]  --&gt;  unhashable type &lt;class &#39;list&#39;&gt;
-&lt;built-in function sin&gt;  --&gt;  251771
-</pre></div>
-</div>
-</div>
 </div>
 <hr class="docutils" />
 <p><strong>Exercise</strong>: <em>Build a reverse lookup table</em></p>
@@ -1687,7 +1257,7 @@ abcdefghi  --&gt;  7601245953489339848
 <p><strong>Solution:</strong> Here is a possible solution for the simple version of the problem but this could still use some error checking (if you type in a wrong number)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Name: ( area code, number )</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Name: ( area code, number )</span>
 <span class="n">phone_book</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;Achibald&quot;</span><span class="p">:</span>   <span class="p">(</span><span class="s2">&quot;04&quot;</span><span class="p">,</span> <span class="s2">&quot;1234 4321&quot;</span><span class="p">),</span> 
                <span class="s2">&quot;Barrington&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;08&quot;</span><span class="p">,</span> <span class="s2">&quot;1111 4444&quot;</span><span class="p">),</span>
                <span class="s2">&quot;Chaotica&quot;</span> <span class="p">:</span>  <span class="p">(</span><span class="s2">&quot;07&quot;</span><span class="p">,</span> <span class="s2">&quot;5555 1234&quot;</span><span class="p">)</span> <span class="p">}</span>
@@ -1697,84 +1267,55 @@ abcdefghi  --&gt;  7601245953489339848
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">newdict</span> <span class="o">=</span> <span class="p">{}</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">newdict</span> <span class="o">=</span> <span class="p">{}</span>
 <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">phone_book</span><span class="p">:</span>
     <span class="n">newdict</span><span class="p">[</span><span class="n">phone_book</span><span class="p">[</span><span class="n">key</span><span class="p">]]</span> <span class="o">=</span> <span class="n">key</span>
 <span class="n">newdict</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{(&#39;04&#39;, &#39;1234 4321&#39;): &#39;Achibald&#39;,
- (&#39;08&#39;, &#39;1111 4444&#39;): &#39;Barrington&#39;,
- (&#39;07&#39;, &#39;5555 1234&#39;): &#39;Chaotica&#39;}
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">letters_and_numbers</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">]]</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">letters_and_numbers</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">]]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">phone_book</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">phone_book</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_items([(&#39;Achibald&#39;, (&#39;04&#39;, &#39;1234 4321&#39;)), (&#39;Barrington&#39;, (&#39;08&#39;, &#39;1111 4444&#39;)), (&#39;Chaotica&#39;, (&#39;07&#39;, &#39;5555 1234&#39;))])
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>it
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">timeit</span>
 
 <span class="p">{</span><span class="n">val</span><span class="p">:</span><span class="n">key</span> <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">phone_book</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>480 ns ± 1.37 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">letter</span><span class="p">,</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">letters_and_numbers</span><span class="p">:</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">letter</span><span class="p">,</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">letters_and_numbers</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">number</span> <span class="o">*</span> <span class="n">letter</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a
-bb
-ccc
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Name: ( area code, number )</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Name: ( area code, number )</span>
 <span class="n">phone_book</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;Achibald&quot;</span><span class="p">:</span>   <span class="p">(</span><span class="s2">&quot;04&quot;</span><span class="p">,</span> <span class="s2">&quot;1234 4321&quot;</span><span class="p">),</span> 
                <span class="s2">&quot;Barrington&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;08&quot;</span><span class="p">,</span> <span class="s2">&quot;1111 4444&quot;</span><span class="p">),</span>
                <span class="s2">&quot;Chaotica&quot;</span> <span class="p">:</span>  <span class="p">(</span><span class="s2">&quot;07&quot;</span><span class="p">,</span> <span class="s2">&quot;5555 1234&quot;</span><span class="p">)</span> <span class="p">}</span>
@@ -1786,7 +1327,7 @@ ccc
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>it
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">timeit</span>
 
 <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">phone_book</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
     <span class="n">reverse_phone_book</span><span class="p">[</span><span class="n">phone_book</span><span class="p">[</span><span class="n">key</span><span class="p">]]</span> <span class="o">=</span> <span class="n">key</span>
@@ -1795,20 +1336,10 @@ ccc
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>407 ns ± 1.6 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">reverse_phone_book</span><span class="p">[(</span><span class="s1">&#39;07&#39;</span><span class="p">,</span><span class="s1">&#39;5555 1234&#39;</span><span class="p">)])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Chaotica
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">reverse_phone_book</span><span class="p">[(</span><span class="s1">&#39;07&#39;</span><span class="p">,</span><span class="s1">&#39;5555 1234&#39;</span><span class="p">)])</span>
 </pre></div>
 </div>
 </div>

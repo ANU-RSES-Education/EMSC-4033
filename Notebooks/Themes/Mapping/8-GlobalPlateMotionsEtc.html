@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Global Plate Motions &#8212; EMSC 4033 Computing in Geoscience</title>
+    <title>Global Plate Motions &#8212; EMSC 4033 Computational Geoscience</title>
     
   <link rel="stylesheet" href="../../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -77,7 +77,7 @@
   <img src="../../../_static/AuWorldEQ.jpg" class="logo" alt="logo">
   
   
-  <h1 class="site-logo" id="site-title">EMSC 4033 Computing in Geoscience</h1>
+  <h1 class="site-logo" id="site-title">EMSC 4033 Computational Geoscience</h1>
   
 </a>
 </div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
@@ -88,13 +88,25 @@
     <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../../../FrontPage.html">
-   Jupyterbook example
+   Computational Geosciences
   </a>
  </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Modern Approaches to Programming
+  Introduction
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../IntroductoryRemarks.html">
+   Modern approaches to programming
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Literate, Re-usable Programming
  </span>
 </p>
 <ul class="nav sidenav_l1">
@@ -149,7 +161,7 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Step by Step
+  Python, Step by Step
  </span>
 </p>
 <ul class="nav sidenav_l1">
@@ -721,6 +733,18 @@
   </i>
  </li>
 </ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Bibliography
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../Bibliography.html">
+   Bibliography
+  </a>
+ </li>
+</ul>
 
 </nav> <!-- To handle the deprecated key -->
 
@@ -839,7 +863,7 @@
 <p>The image is composed of a background grayscale topography / bathymetry map, plate motion vectors (in a Europe-fixed frame) and contours of the observed strain rate second invariant. These data are available after running <span class="xref myst">Notebook 0</span> to download / install everything.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">pylab</span> inline
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">pylab</span> <span class="n">inline</span>
 
 <span class="kn">from</span> <span class="nn">osgeo</span> <span class="kn">import</span> <span class="n">gdal</span>
 <span class="kn">from</span> <span class="nn">osgeo</span> <span class="kn">import</span> <span class="n">gdal_array</span>
@@ -853,15 +877,10 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Populating the interactive namespace from numpy and matplotlib
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">cloudstor</span> <span class="kn">import</span> <span class="n">cloudstor</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">cloudstor</span> <span class="kn">import</span> <span class="n">cloudstor</span>
 <span class="n">teaching_data</span> <span class="o">=</span> <span class="n">cloudstor</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s2">&quot;L93TxcmtLQzcfbk&quot;</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
 
 <span class="n">teaching_data</span><span class="o">.</span><span class="n">download_file_if_distinct</span><span class="p">(</span><span class="s2">&quot;BlueMarbleNG-TB_2004-12-01_rgb_3600x1800.TIFF&quot;</span><span class="p">,</span> <span class="s2">&quot;Resources/BlueMarbleNG-TB_2004-12-01_rgb_3600x1800.TIFF&quot;</span><span class="p">)</span>
@@ -876,18 +895,10 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;&lt;ipython-input-2-f5bbd584ca2b&gt;&quot;</span><span class="gt">, line </span><span class="mi">8</span>
-    <span class="n">teaching_data</span><span class="o">.</span><span class="n">download_file_if_distinct</span><span class="p">(</span><span class="s2">&quot;etopo1_grayscale_hillshade.tif&quot;</span><span class="p">,</span> <span class="s2">&quot;Resources/etopo1_grayscale_hillshade.tif&quot;</span><span class="p">)</span><span class="n">ETOPO1_Ice_c_geotiff</span><span class="o">.</span><span class="n">tif</span>
-                                                                                                                                            <span class="o">^</span>
-<span class="ne">SyntaxError</span>: invalid syntax
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># The colormap routine creates enormous arrays in intermediary calculations. This is</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># The colormap routine creates enormous arrays in intermediary calculations. This is</span>
 <span class="c1"># a way to avoid memory errors: process to RGB (int8) in advance</span>
 
 <span class="k">def</span> <span class="nf">apply_colormap_to_image</span><span class="p">(</span><span class="n">rawimage</span><span class="p">,</span> <span class="n">colormap</span><span class="p">,</span> <span class="n">norm</span><span class="p">):</span>
@@ -908,7 +919,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">base_projection</span>     <span class="o">=</span> <span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">()</span> 
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">base_projection</span>     <span class="o">=</span> <span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">()</span> 
 <span class="n">global_extent</span>     <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">180.0</span><span class="p">,</span> <span class="mf">180.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">90.0</span><span class="p">,</span> <span class="mf">90.0</span><span class="p">]</span>
 
 <span class="n">strainrate_extent</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">180</span><span class="p">,</span><span class="mi">180</span><span class="p">,</span><span class="o">-</span><span class="mi">68</span><span class="p">,</span><span class="mi">80</span><span class="p">]</span>
@@ -921,7 +932,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Note: we need to manage the memory here</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Note: we need to manage the memory here</span>
 <span class="c1"># memory constraints than the native installation. Be sure to del() unused arrays/images</span>
 
 <span class="c1"># Etopo Height field as geotiff</span>
@@ -950,7 +961,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># How does that look in the Native Projection ?</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># How does that look in the Native Projection ?</span>
 
 <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">facecolor</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">)</span>
 <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">base_projection</span><span class="p">)</span>
@@ -959,21 +970,10 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7f4253723250&gt;
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/cartopy/mpl/geoaxes.py:388: MatplotlibDeprecationWarning: 
-The &#39;inframe&#39; parameter of draw() was deprecated in Matplotlib 3.3 and will be removed two minor releases later. Use Axes.redraw_in_frame() instead. If any parameter follows &#39;inframe&#39;, they should be passed as keyword, not positionally.
-  inframe=inframe)
-</pre></div>
-</div>
-<img alt="../../../_images/8-GlobalPlateMotionsEtc_7_2.png" src="../../../_images/8-GlobalPlateMotionsEtc_7_2.png" />
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Some features we need for the map </span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Some features we need for the map </span>
 
 
 <span class="n">coastline</span> <span class="o">=</span> <span class="n">cfeature</span><span class="o">.</span><span class="n">NaturalEarthFeature</span><span class="p">(</span><span class="s1">&#39;physical&#39;</span><span class="p">,</span> <span class="s1">&#39;coastline&#39;</span><span class="p">,</span> <span class="s1">&#39;50m&#39;</span><span class="p">,</span>
@@ -998,7 +998,7 @@ The &#39;inframe&#39; parameter of draw() was deprecated in Matplotlib 3.3 and w
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Reading the velocity vector data from the EU-fixed dataset</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">## Reading the velocity vector data from the EU-fixed dataset</span>
 
 <span class="n">rootgrp</span> <span class="o">=</span> <span class="n">netcdf</span><span class="o">.</span><span class="n">netcdf_file</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s2">&quot;Resources/velocity_NNR.nc&quot;</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 
@@ -1025,7 +1025,7 @@ The &#39;inframe&#39; parameter of draw() was deprecated in Matplotlib 3.3 and w
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># I used Robinson in the article but it keeps crashing for me now !</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># I used Robinson in the article but it keeps crashing for me now !</span>
 
 <span class="c1">#projection = ccrs.PlateCarree() # For debugging, this one is quick</span>
 <span class="c1">#projection = ccrs.Orthographic(central_longitude=-150.0, central_latitude=60.0, globe=None)</span>
@@ -1061,20 +1061,10 @@ The &#39;inframe&#39; parameter of draw() was deprecated in Matplotlib 3.3 and w
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/share/miniconda3/envs/jupyter/lib/python3.7/site-packages/cartopy/mpl/geoaxes.py:1400: UserWarning: The following kwargs were not used by contour: &#39;linestyle&#39;
-  result = matplotlib.axes.Axes.contourf(self, *args, **kwargs)
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;cartopy.mpl.feature_artist.FeatureArtist at 0x7f4253aa0290&gt;
-</pre></div>
-</div>
-<img alt="../../../_images/8-GlobalPlateMotionsEtc_10_2.png" src="../../../_images/8-GlobalPlateMotionsEtc_10_2.png" />
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#fig.savefig(&quot;PlateMotionsPlateCarree.png&quot;, dpi=300) </span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#fig.savefig(&quot;PlateMotionsPlateCarree.png&quot;, dpi=300) </span>
 <span class="c1">#fig.savefig(&quot;PlateMotionsRobinson.png&quot;, dpi=500)</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;PlateMotionsMollweide.png&quot;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
 </pre></div>
@@ -1083,7 +1073,7 @@ The &#39;inframe&#39; parameter of draw() was deprecated in Matplotlib 3.3 and w
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## This was an alternative to the background image which I thought might look good:</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">## This was an alternative to the background image which I thought might look good:</span>
 
 <span class="n">globalrelief</span>      <span class="o">=</span> <span class="n">gdal</span><span class="o">.</span><span class="n">Open</span><span class="p">(</span><span class="s2">&quot;Resources/HYP_50M_SR_W/HYP_50M_SR_W.tif&quot;</span><span class="p">)</span>
 <span class="n">globalrelief_img</span>  <span class="o">=</span> <span class="n">globalrelief</span><span class="o">.</span><span class="n">ReadAsArray</span><span class="p">()</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
@@ -1111,20 +1101,10 @@ The &#39;inframe&#39; parameter of draw() was deprecated in Matplotlib 3.3 and w
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>etopoH_img -  (5400, 10800)
-globalrelief_img -  (5400, 10800, 3)
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7f424ed9dad0&gt;
-</pre></div>
-</div>
-<img alt="../../../_images/8-GlobalPlateMotionsEtc_12_2.png" src="../../../_images/8-GlobalPlateMotionsEtc_12_2.png" />
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Do this if the relief / bathym sizes don&#39;t match the etopo data (to make the blended image)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Do this if the relief / bathym sizes don&#39;t match the etopo data (to make the blended image)</span>
 <span class="c1"># The datasets we downloaded can be manipulated trivially without the need for this and I have</span>
 <span class="c1"># commented it all out so you can run all cells without reprocessing the data files. </span>
 
@@ -1169,11 +1149,6 @@ globalrelief_img -  (5400, 10800, 3)
 <span class="sd">ds.GetRasterBand(1).WriteArray(globaletopoH)</span>
 <span class="sd">ds = None</span>
 <span class="sd">&quot;&quot;&quot;</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;\nimport scipy.ndimage\nimport scipy.misc\n\n\netopoH = gdal.Open(&quot;Resources/ETOPO1_Ice_g_geotiff.tif&quot;)\netopoH_img = etopoH.ReadAsArray()\n\nprint \n\netopoH_transform = etopoH.GetGeoTransform()\nglobalrelief_transform = globalrelief.GetGeoTransform()\n\n# Resize to match globalrelief ... this resize is int only ??\n\nglobaletopoH = scipy.misc.imresize(etopoH_img, globalrelief_img.shape, mode=\&#39;F\&#39;)\n\n## How to turn this array back into the appropriate geotiff\n\nfrom osgeo import gdal\nfrom osgeo import osr\n\n# data exists in \&#39;ary\&#39; with values range 0 - 255\n# Uncomment the next line if ary[0][0] is upper-left corner\n#ary = numpy.flipup(ary)\n\nNy, Nx = globaletopoH.shape\ndriver = gdal.GetDriverByName(&quot;GTiff&quot;)\n# Final argument is optional but will produce much smaller output file\nds = driver.Create(\&#39;output.tif\&#39;, Nx, Ny, 1, gdal.GDT_Float64, [\&#39;COMPRESS=LZW\&#39;])\n\n# this assumes the projection is Geographic lat/lon WGS 84\nsrs = osr.SpatialReference()\nsrs.ImportFromEPSG(4326)\nds.SetProjection(srs.ExportToWkt())\n\nds.SetGeoTransform( globalrelief_transform  ) # define GeoTransform tuple\nds.GetRasterBand(1).WriteArray(globaletopoH)\nds = None\n&#39;
 </pre></div>
 </div>
 </div>
