@@ -17,7 +17,7 @@ When we looked at python data structures, it was obvious that the only way to de
 
 This is slow and inefficient in both execution and writing code. 
 
-`Numpy` attempts to fix this. 
+`numpy` attempts to fix this. 
 
 ```{code-cell} ipython3
 import numpy as np
