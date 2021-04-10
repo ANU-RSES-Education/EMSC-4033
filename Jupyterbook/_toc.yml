@@ -6,14 +6,20 @@
   chapters:
   - file: IntroductoryRemarks
 
+- part: What is Python like ?
+  chapters:
+  - file: Notebooks/Themes/Introduction2Python/0-CharacteristicsOfPython.md
+    sections:
+    - file: Notebooks/Themes/Introduction2Python/1-LePlumeDeMaTante.md
+    - file: Notebooks/Themes/Introduction2Python/3-PythonDataTypes
+    - file: Notebooks/Themes/Introduction2Python/4-PythonClasses  
+
 - part: Literate, Re-usable Programming 
   chapters:
-
-  - file: Notebooks/Themes/Introduction2Python/1-IntroductionToJupyterNotebooks
+  - file: Notebooks/Themes/Introduction2Jupyter/0-LiterateProgramming.md
     sections:
-    - file: Notebooks/Themes/Introduction2Python/2-IntroductionToIpython
-    - file: Notebooks/Themes/Introduction2Python/3-PythonDataTypes
-    - file: Notebooks/Themes/Introduction2Python/4-PythonClasses
+    - file: Notebooks/Themes/Introduction2Jupyter/1-IntroductionToJupyterNotebooks
+    - file: Notebooks/Themes/Introduction2Jupyter/2-IntroductionToIpython
 
   - file: Notebooks/Themes/Introduction2VersionControl/1-GettingStartedWithGit
     sections:
