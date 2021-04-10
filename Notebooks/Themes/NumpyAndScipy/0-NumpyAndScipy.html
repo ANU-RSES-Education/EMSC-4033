@@ -106,18 +106,18 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Literate, Re-usable Programming
+  What is Python like ?
  </span>
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../Introduction2Python/1-IntroductionToJupyterNotebooks.html">
-   Jupyter Notebooks
+  <a class="reference internal" href="../Introduction2Python/0-CharacteristicsOfPython.html">
+   What kind of Language is Python ?
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="../Introduction2Python/2-IntroductionToIpython.html">
-     ipython
+    <a class="reference internal" href="../Introduction2Python/1-LePlumeDeMaTante.html">
+     Python Phrase Book
     </a>
    </li>
    <li class="toctree-l2">
@@ -133,6 +133,23 @@
   </ul>
   <i class="fas fa-chevron-down">
   </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Literate, Re-usable Programming
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Introduction2Jupyter/1-IntroductionToJupyterNotebooks.html">
+   Jupyter Notebooks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Introduction2Jupyter/2-IntroductionToIpython.html">
+   ipython
+  </a>
  </li>
  <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="../Introduction2VersionControl/1-GettingStartedWithGit.html">
@@ -858,7 +875,20 @@
                 
   <div class="section" id="numpy-and-scipy">
 <h1>Numpy and Scipy<a class="headerlink" href="#numpy-and-scipy" title="Permalink to this headline">¶</a></h1>
-<p>Some words</p>
+<p>In this section we introduce the <code class="docutils literal notranslate"><span class="pre">numpy</span></code> and <code class="docutils literal notranslate"><span class="pre">scipy</span></code> packages that you will certainly use and will need to know for this course.</p>
+<p><code class="docutils literal notranslate"><span class="pre">numpy</span></code> focuses on the efficient manipulation of structured data that in many languages would already be included as some sort of <em>array</em> data type. <code class="docutils literal notranslate"><span class="pre">numpy</span></code> provides routines to do many operations on arrays of data such as sorting, finding the largest or smallest element, transposing data and so on. It also provides many mathematical operations including the expected (element-by-element) functions (trigonometry, exponentials etc).</p>
+<p><code class="docutils literal notranslate"><span class="pre">numpy</span></code> also provides an extensive overloading of the standard operators for manipulating lists of data (etc) that make array operations quite natural and compact in python. It is very important to understand what <code class="docutils literal notranslate"><span class="pre">numpy</span></code> is doing because it is almost impossible to avoid close encounters with these operators in everyday python.</p>
+<p><code class="docutils literal notranslate"><span class="pre">numpy</span></code> has been very carefully optimised and, used correctly, will give you access to very efficient (mostly that means <em>fast</em>) code without having to leave the python environment. This means you should always look to see if there is a <code class="docutils literal notranslate"><span class="pre">numpy</span></code> function to do what you need <em>and never write a python loop if you can help it</em>.</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="1-IntroductionToNumpy.html"><span class="doc std std-doc">Introduction To Numpy</span></a> - This notebook goes into more detail about why we need <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, what the operator overloading looks like, and explores the speed benefits of using <code class="docutils literal notranslate"><span class="pre">numpy</span></code>. The other benefits are readability of your code (as long as you understand the operator overloading) and reliability because you are using pre-built code, not writing your own loops.</p></li>
+<li><p><a class="reference internal" href="2-Application-TheGameOfLife.html"><span class="doc std std-doc">The game of life 1</span></a> - This notebook sets up an exercise: the game of life, to show how <code class="docutils literal notranslate"><span class="pre">numpy</span></code> works in a real problem. We will see how to approach problems of structured data so that we can most of the work efficiently with <code class="docutils literal notranslate"><span class="pre">numpy</span></code>.</p></li>
+<li><p><a class="reference internal" href="3-Discussion-TheGameOfLife.html"><span class="doc std std-doc">The game of life 2</span></a> - Here we have a chance to reflect on the choices we made in the previous notebook and think about how things could be done better (or differently, anyway).</p></li>
+</ul>
+<p>These notebooks are not intended to be comprehensive because you will have lots of opportunity to practice looking at <code class="docutils literal notranslate"><span class="pre">numpy</span></code> code when we look at satellite images and basemaps in the <span class="xref myst"><code class="docutils literal notranslate"><span class="pre">cartopy</span></code> mapping</span> examples, and the <span class="xref myst"><code class="docutils literal notranslate"><span class="pre">stripy</span></code> spherical meshing</span> examples.</p>
+<p><code class="docutils literal notranslate"><span class="pre">scipy</span></code> is a collection of useful algorithms loosely bundled together. If you have ever come across the book “Numerical Recipes” then you will know what <code class="docutils literal notranslate"><span class="pre">scipy</span></code> is trying to do: there is usually some reasonable implementation in <code class="docutils literal notranslate"><span class="pre">scipy</span></code> for whatever problem you are faced with: interpolation, optimisation, meshing, image manipulation. It is neither comprehensive nor definitive but, like a Swiss-Army Knife, more useful in a pinch than most other tools.</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="4-IntroductionToScipy.html"><span class="doc std std-doc">Introduction</span></a> - Really just a list of modules that <code class="docutils literal notranslate"><span class="pre">scipy</span></code> provides. Each of the modules is a collection of related functionality that has a mostly-consistent user interface.</p></li>
+</ul>
 <div class="toctree-wrapper compound">
 </div>
 </div>

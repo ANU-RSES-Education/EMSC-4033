@@ -15,9 +15,9 @@ Other authors have contributed material to this document (thank you !), see {ref
 
 ## Introduction
 
-In the history of computing, the idea of "programming a computer" has evolved in astonishing ways that track the equally remarkable expansion in processing power, storage and communication speed. It is helpful to look back to think about this progression as we work out what it is useful to learn about programming today so we can write programs in the future. 
+In the history of computing, the concept of "programming a computer" has evolved rapidly in conjuction with a rapid expansion in processing power, storage and communication speed. It is helpful to look back and think about this progression as we think about the aspects of computer programming that persist through all of this change.
 
-We take for granted the rapid improvements in computing technology that computing power doubles every year or two by almost every practical measure (This has become known as Moore's Law {cite}`moore_cramming_2006`). This fact, more than anything else, has dictated the path to more and more abstraction in how computer programs are created.
+We take for granted the rapid improvements in computing technology that mean computing power doubles every year or two by almost every practical measure (This has become known as Moore's Law {cite}`moore_cramming_2006`). This fact, more than anything else, has dictated the path to more and more high-level thinking in how computer programs are created.
 
 Early electronic computers were expensive and not especially powerful. They understood a rudimentary set of instructions and it was a very specialised job to write the instructions for any complex task that could solve some useful problem with the limited resources of such machines. Ingenuity was a key requirement for a programmer human effort in careful program design paid off in speedy, mistake-free computation.
 
@@ -45,10 +45,9 @@ name: M1
 Apple's M1 chip has 16 billion transistors etched at a 5nm scale. It runs multiple different threads on the one chip and many of the subsystems that used to be on separate chips are integrated. It is not compatible with the previous generation of chips (it uses a different instruction set at the binary level) but it can emulate those chips when necessary and still has some speed advantage. This abundant power and storage means that you can concentrate on writing robust, flexible codes, not on puzzling over clever algorithms that are specially tuned for one particular architecture. Progress !  _(Image copyright: Apple, 2020)_
 ```
 
-
 If the computer language that our software was written in is not the one we are using, no matter, we can simply write a translator of some kind and let the advancing hardware speeds and storage capacity make up for the extra cost. It is even possible to create software equivalents of the computer hardware (and the basic operating system) itself which makes it possible to create a computing "cloud" where the execution of your program may run anywhere or skip from machine to machine on demand including different hardware from where it started. This is another kind of re-use: making it possible to recreate or clone a running device at any time and receive identical results every single time. 
 
 (section:acknowledgements)=
 ## Acknowledgements
 
-This text and the accompanying examples were written for teaching computer programming to students at the University of Melbourne and the Austalian National University. We include teacing material from Dan Sandiford and Ben Mather as well as examples taken from the gallery / cookbook pages of some of the packages we use. Where we know the source, we try to cite the source correctly but we are happy to be corrected where we have missed something. A good way to let us know is to raise an issue on the [GitHub repository](https://github.com/ANU-RSES-Education/EMSC-4033) associated with this book which can be found [here](https://github.com/ANU-RSES-Education/EMSC-4033/issues).
+This text and the accompanying examples were written for teaching computer programming to students at the University of Melbourne and the Austalian National University. We include teaching material from Dan Sandiford and Ben Mather as well as examples taken from the gallery / cookbook pages of some of the packages we use. Where we know the source, we try to cite the source correctly but we are happy to be corrected where we have missed something. A good way to let us know is to raise an issue on the [GitHub repository](https://github.com/ANU-RSES-Education/EMSC-4033) associated with this book which can be found [here](https://github.com/ANU-RSES-Education/EMSC-4033/issues).

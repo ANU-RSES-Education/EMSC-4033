@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jupyter Notebooks &#8212; EMSC 4033 Computational Geoscience</title>
+    <title>What kind of Language is Python ? &#8212; EMSC 4033 Computational Geoscience</title>
     
   <link rel="stylesheet" href="../../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -52,11 +52,9 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="ipython" href="2-IntroductionToIpython.html" />
+    <link rel="next" title="Python Phrase Book" href="1-LePlumeDeMaTante.html" />
     <link rel="prev" title="Modern approaches to programming" href="../../../IntroductoryRemarks.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -108,18 +106,18 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Literate, Re-usable Programming
+  What is Python like ?
  </span>
 </p>
 <ul class="current nav sidenav_l1">
  <li class="toctree-l1 current active collapsible-parent">
   <a class="current reference internal" href="#">
-   Jupyter Notebooks
+   What kind of Language is Python ?
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="2-IntroductionToIpython.html">
-     ipython
+    <a class="reference internal" href="1-LePlumeDeMaTante.html">
+     Python Phrase Book
     </a>
    </li>
    <li class="toctree-l2">
@@ -135,6 +133,23 @@
   </ul>
   <i class="fas fa-chevron-down">
   </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Literate, Re-usable Programming
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Introduction2Jupyter/1-IntroductionToJupyterNotebooks.html">
+   Jupyter Notebooks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Introduction2Jupyter/2-IntroductionToIpython.html">
+   ipython
+  </a>
  </li>
  <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="../Introduction2VersionControl/1-GettingStartedWithGit.html">
@@ -784,12 +799,9 @@
 
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
-        <a class="dropdown-buttons"
-            href="../../../_sources/Notebooks/Themes/Introduction2Python/1-IntroductionToJupyterNotebooks.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
+        
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../../_sources/Notebooks/Themes/Introduction2Python/1-IntroductionToJupyterNotebooks.md"><button type="button"
+        <a class="dropdown-buttons" href="../../../_sources/Notebooks/Themes/Introduction2Python/0-CharacteristicsOfPython.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -822,29 +834,6 @@
 
             <!-- Launch buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/ANU-RSES-Education/EMSC-4033/master?urlpath=tree/Notebooks/Themes/Introduction2Python/1-IntroductionToJupyterNotebooks.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../../../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        <a class="jupyterhub-button" href="https://emsc4033-2021.rses.underworldcloud.org/hub/user-redirect/git-pull?repo=https://github.com/ANU-RSES-Education/EMSC-4033&urlpath=tree/EMSC-4033/Notebooks/Themes/Introduction2Python/1-IntroductionToJupyterNotebooks.md&branch=master"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
-                data-placement="left"><img class="jupyterhub-button-logo"
-                    src="../../../_static/images/logo_jupyterhub.svg"
-                    alt="Interact on JupyterHub">JupyterHub</button></a>
-        
-        
-        
-    </div>
-</div>
-
         </div>
 
         <!-- Table of contents -->
@@ -857,18 +846,8 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#formatted-text">
-   Formatted text
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#python-code">
-   Python code
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-more-interesting-exercise">
-   A more interesting exercise
+  <a class="reference internal nav-link" href="#background-reading">
+   Background reading
   </a>
  </li>
 </ul>
@@ -883,138 +862,21 @@
         
               <div>
                 
-  <div class="section" id="jupyter-notebooks">
-<h1>Jupyter Notebooks<a class="headerlink" href="#jupyter-notebooks" title="Permalink to this headline">¶</a></h1>
-<p>We are going to be using <code class="docutils literal notranslate"><span class="pre">jupyter</span></code> notebooks in our examples a version of python known as <code class="docutils literal notranslate"><span class="pre">ipython</span></code> in the notebooks.</p>
-<p>The notebook is a <strong>live</strong> document that can contain a number of different types of content,
-including fragments of programs that can actually be run within the text. It requires some form
-of computational substrate to run (otherwise you will just see the preview).</p>
-<p>You can use the notebooks as a scratchpad to process data, for example,
-and the workflow that you develop is recorded and can be revisited.
-It’s like a lab notebook but for data manipulation and programming.
-You can export the document you produce as a pdf to make a lab report (etc).</p>
-<p>A notebook is made up of different <strong>cells</strong> which contain different types of content and which can be <em>executed</em> by selecting the cell and <em>running</em> it (see toolbar).
-The results of running a cell depend on the content of the cell. It may produce an output cell beneath it with results, or it may reformat itself.
-Formatting looks something like this:</p>
-<div class="highlight-myst notranslate"><div class="highlight"><pre><span></span>## Formatted text
-
-This uses an almost-already-formatted version of text known as `markdown` to make content that can be formatted to look similar to a word document, but which also tends to highlight the intended formatting even if not processed. It is quite a useful form to learn for taking notes.
-
-If you look at the raw content you will see how to make
-
-  - bullet points
-    - nested bullet points as well as 
-    - text in __bold__ 
-    - text in _italics_ (or emphasised) 
-  
-``` sh
-echo &quot;Code that can be highlighted for different languages&quot;
-ls -l
-```
-
-```python
-print (&quot;including python, unix shell scripts, fortran&quot;)
-
-for i in range(0,100):
-    print (i)
-```
-</pre></div>
-</div>
-<div class="section" id="formatted-text">
-<h2>Formatted text<a class="headerlink" href="#formatted-text" title="Permalink to this headline">¶</a></h2>
-<p>This uses an almost-already-formatted version of text known as <code class="docutils literal notranslate"><span class="pre">markdown</span></code> to make content that can be formatted to look similar to a word document, but which also tends to highlight the intended formatting even if not processed. It is quite a useful form to learn for taking notes.</p>
-<p>If you look at the raw content you will see how to make</p>
-<ul class="simple">
-<li><p>bullet points</p>
-<ul>
-<li><p>nested bullet points as well as</p></li>
-<li><p>text in <strong>bold</strong></p></li>
-<li><p>text in <em>italics</em> (or emphasised)</p></li>
-</ul>
-</li>
-</ul>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;Code that can be highlighted for different languages&quot;</span>
-ls -l
-</pre></div>
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;including python, unix shell scripts, fortran&quot;</span><span class="p">)</span>
-
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">):</span>
-    <span class="nb">print</span> <span class="p">(</span><span class="n">i</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Mathematical symbols and formulae that can appear in the text like this <em>“the circumference of a circle is <span class="math notranslate nohighlight">\(2\pi r\)</span>”</em> or as equations like this:</p>
-<div class="math notranslate nohighlight">
-\[
-    A = \pi r^2
-\]</div>
-<p>BUT you will need to be able to parse the <span class="math notranslate nohighlight">\(\LaTeX\)</span> language to write mathematics.</p>
-<p>You can add links like this: <a class="reference external" href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">also see the markdown cheatsheet</a></p>
-<p>And images like this:</p>
-<p>Running cells containing formatted code will replace the cell with the formatted version. This allows you to write a well-formatted page with interleaved code which also can be executed.</p>
-</div>
-<div class="section" id="python-code">
-<h2>Python code<a class="headerlink" href="#python-code" title="Permalink to this headline">¶</a></h2>
-<p>Cells which are defined to be code cells contain python statements which will be executed when the cell is run. If multiple cells have code, then they will be run in the order you choose (or if you “run all” or “run all above” they will be run in the order they are listed).</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">## Example of a simple python code cell</span>
-
-<span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;Hello little world&quot;</span><span class="p">)</span>
-<span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
-
-<span class="c1">## The last statement in a cell prints its value </span>
-<span class="n">a</span>
-
-<span class="c1">## (this is sometimes a little confusing - add a pass statement to get rid of this !)</span>
-
-<span class="c1">#pass</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>When you run a code cell, it is just the same as typing all the code into the interpreter. If you run a cell twice it is the same as if you typed everything twice … the notebook remembers ! You can run some of a notebook or all of it, and you can run cells out of order. This is great for experimenting and getting things right, but be careful, this can break things easily.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Run number </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
-        
-<span class="n">a</span> <span class="o">+=</span> <span class="mi">1</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="a-more-interesting-exercise">
-<h2>A more interesting exercise<a class="headerlink" href="#a-more-interesting-exercise" title="Permalink to this headline">¶</a></h2>
-<p>Why does this not work ?</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Run number </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="p">)</span>
-<span class="n">b</span> <span class="o">+=</span> <span class="mi">1</span>
-</pre></div>
-</div>
-<p>and, more importantly, how would you fix this ?</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try it !!</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell tag_hide-cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-<span class="c1">## Because b hasn&#39;t been defined. </span>
-
-<span class="k">try</span><span class="p">:</span>
-    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Run number </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">c</span><span class="p">))</span>
-<span class="k">except</span><span class="p">:</span> 
-    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Run number 1&quot;</span><span class="p">)</span>
-    <span class="n">c</span> <span class="o">=</span> <span class="mi">1</span>
-        
-<span class="n">c</span> <span class="o">+=</span> <span class="mi">1</span>
-</pre></div>
-</div>
-</div>
-</div>
+  <div class="section" id="what-kind-of-language-is-python">
+<h1>What kind of Language is Python ?<a class="headerlink" href="#what-kind-of-language-is-python" title="Permalink to this headline">¶</a></h1>
+<p>There are some things worth knowing about the python language before diving in. Perhaps the most important thing to be aware of is that python is an <em>interpreted</em> language rather than a <em>compiled</em> language so there is no translation to fast, machine-executable, binary code. This firmly places efficient coding ahead of fast execution and says a great deal about the philosophy of python as a language: applicable to a very broad class of problems, easy to read and high-level so that it is straightforward to re-use and build upon existing software.</p>
+<p>Python is supposed to be easy to use: it does not require you to specify (“declare”) the type of your variables or data before using them and it is happy to convert automatically from one type to another when it makes sense to do so. For example, a floating point <code class="docutils literal notranslate"><span class="pre">1.0</span></code> and an integer <code class="docutils literal notranslate"><span class="pre">1</span></code> are mostly interchangeable in python as they are in everyday life. When you have finished using a variable, there is no need to explicitly delete it though you can if you wish.
+Python is generally very permissive: there are usually many different ways to write something in python and the one that is easiest to follow is usually the best option to choose.</p>
+<p>Python has extensive <em>exception handling</em> which simply means that errors can be handled by the running program not always resulting in a crash that is deal with by the operating system. In general, it is a good idea to write code that understands what might go wrong and provides an elegant landing if something does. Exceptions also lead to a <em>try it and see</em> approach to programming. It can be easier to write code to catch an error than to try to write code that accounts for every situation without fail (at some point it will fail anyway !).</p>
+<p>Python is also an object oriented language and it is impossible to read python without understanding how it describes its objects and then refers to them. The principle of object-oriented languages is to encapsulate data and operations on that data into “objects” that can be passed around as a single entity and which you then can use without having to know all the internal structure of the object. This is a key part of our earlier discussion about the importance of being able to create abstractions in programming. In object-oriented languages, we typically describe a class of objects that have certain properties (data, operations, structure) without necessarily knowing the details of how those objects are implemented. We can be handed classes and told how to use them, copy them, extend them and so on without having to pull them apart first.</p>
+<p>Python is based around libraries in the form of modules that we <code class="docutils literal notranslate"><span class="pre">import</span></code> when we need to use them. There are very many modules in the standard python library for doing nearly everything from the operating-system level (make a directory, open a file) to high-level access to internet resources, string manipulations, regular expression parsing, mathematical functions … [links would be helpful]. Once a module is imported, the functions and classes that it defines become available to the program and to make life simpler, the names of all those functions and classes are prefaced by the module name when they are used. That means <code class="docutils literal notranslate"><span class="pre">math.sin</span></code> is not confused with <code class="docutils literal notranslate"><span class="pre">religion.sin</span></code> which might take a bit more typing for a programmer but does improve readability and makes life much, much easier for anyone developing a library.</p>
+<p>If you write some useful code, it is common to bundle it into the form of a <em>module</em> and then to distribute it by uploading a package to a standard location. These packages are then distributed to users via a package manager which is smart enough to make sure that you are installing a version that works on your machine and (more complicated) is consistent with all the other packages you have installed.</p>
+<p>The two main package managers for python are <code class="docutils literal notranslate"><span class="pre">pip</span></code> and <code class="docutils literal notranslate"><span class="pre">conda</span></code>.  <code class="docutils literal notranslate"><span class="pre">pip</span></code> is a little bit more simple and really just worries about installing python packages and their python dependencies. <code class="docutils literal notranslate"><span class="pre">pip</span></code> is usually used in conjunction with other package managers to handle other dependencies that are distributed as binary libraries (things not derived from python - for example visualisation packages, compilers, language parsers, numerical libraries written in fortran).
+<code class="docutils literal notranslate"><span class="pre">conda</span></code> is a great deal more ambitious than <code class="docutils literal notranslate"><span class="pre">pip</span></code>- it manages entire environments that also include non-python libraries that packages might need. <code class="docutils literal notranslate"><span class="pre">conda</span></code> is more powerful than pip and tries to replace many other package managers that exist in the non-python world. If you do opt for conda, you really should go the whole nine-yards and try to use it to manage everything. <code class="docutils literal notranslate"><span class="pre">conda</span></code> creates virtual environments which allow you to have multiple set-ups on a single machine - handy if you have packages that need different versions of python or which have incompatible dependencies.
+<code class="docutils literal notranslate"><span class="pre">conda</span></code> is very handy for cloud computing because it a simple text file is (usually) enough to specify how to set up a cloud machine to run the environment you need.</p>
+<div class="section" id="background-reading">
+<h2>Background reading<a class="headerlink" href="#background-reading" title="Permalink to this headline">¶</a></h2>
+<p>The definitive reference point for python is <a class="reference external" href="https://www.python.org">www.python.org</a>. It might be helpful to browse various articles on wikipedia first, though, starting with the <a class="reference external" href="https://en.wikipedia.org/wiki/Python_(programming_language)">page about the Python language</a></p>
 <div class="toctree-wrapper compound">
 </div>
 </div>
@@ -1046,7 +908,7 @@ ls -l
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="../../../IntroductoryRemarks.html" title="previous page">Modern approaches to programming</a>
-    <a class='right-next' id="next-link" href="2-IntroductionToIpython.html" title="next page">ipython</a>
+    <a class='right-next' id="next-link" href="1-LePlumeDeMaTante.html" title="next page">Python Phrase Book</a>
 
         </div>
         
