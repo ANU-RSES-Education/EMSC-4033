@@ -150,3 +150,6 @@ Notebooks/Themes/SphericalMeshing/CartesianTriangulations/*.png
 Notebooks/Themes/SphericalMeshing/SphericalTriangulations/*.png 
 Notebooks/Themes/SphericalMeshing/Litho1pt0/*.png 
 Notebooks/ScratchPad/*.png 
+
+# Mac OS
+.DS_Store
