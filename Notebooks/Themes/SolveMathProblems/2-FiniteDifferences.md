@@ -15,7 +15,7 @@ kernelspec:
 
 At the end of this notebook, you will have learned how to...
 
-1. Use finite difference approximations to derive equations.
+1. Use finite difference approximations to differentiate equations.
 2. Apply this to the 2D steady-state heat equation and solve a linear system of equations.
 3. Create periodic boundary conditions to simulate lateral variations in surface temperature.
 4. (if we have time...) code your own finite difference approximation to the heat equation for variable diffusivity.
@@ -103,7 +103,7 @@ ax1.legend()
 plt.show()
 ```
 
-The useful part of this is that we can derive an equation without knowing any calculus!
+The useful part of this is that we can differentiate an equation without knowing any calculus!
 (Not that we recommend that!)
 
 Finite difference is just one of many techniques that fall under the umbrella of *numerical modelling*.
