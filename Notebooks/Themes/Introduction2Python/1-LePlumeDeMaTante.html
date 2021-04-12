@@ -54,7 +54,7 @@
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Python data types" href="3-PythonDataTypes.html" />
+    <link rel="next" title="&lt;no title&gt;" href="2-LiterateProgramming.html" />
     <link rel="prev" title="What kind of Language is Python ?" href="0-CharacteristicsOfPython.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -121,49 +121,23 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="3-PythonDataTypes.html">
+    <a class="reference internal" href="3-IntroductionToJupyterNotebooks.html">
+     Jupyter Notebooks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4-IntroductionToIpython.html">
+     ipython
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="5-PythonDataTypes.html">
      Python data types
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="4-PythonClasses.html">
+    <a class="reference internal" href="6-PythonClasses.html">
      Classes and objects
-    </a>
-   </li>
-  </ul>
-  <i class="fas fa-chevron-down">
-  </i>
- </li>
-</ul>
-<p class="caption collapsible-parent">
- <span class="caption-text">
-  Literate, Re-usable Programming
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../Introduction2Jupyter/1-IntroductionToJupyterNotebooks.html">
-   Jupyter Notebooks
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Introduction2Jupyter/2-IntroductionToIpython.html">
-   ipython
-  </a>
- </li>
- <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../Introduction2VersionControl/1-GettingStartedWithGit.html">
-   An introduction to Version Control
-  </a>
-  <ul class="collapse-ul">
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Introduction2VersionControl/2-NextStepsWithGit.html">
-     An introduction to Version Control pt 2
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Introduction2VersionControl/3-YourOwnRepositories.html">
-     How to use git for yourself
     </a>
    </li>
   </ul>
@@ -865,6 +839,48 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#obligatory-hello-world-program">
+   Obligatory Hello world program
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#indentation-and-block-structure">
+   Indentation and block structure
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#loops-and-if-statements">
+     Loops and if statements
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#functions">
+   Functions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#modules">
+   Modules
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#parlez-vous-python">
+   Parlez-vous Python ?
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
         </div>
     </div>
 </div>
@@ -875,10 +891,198 @@
                 
   <div class="section" id="python-phrase-book">
 <h1>Python Phrase Book<a class="headerlink" href="#python-phrase-book" title="Permalink to this headline">¶</a></h1>
-<p>The first thing we should do is become familiar with the shape and feel of python code because we can’t really discuss the features of python without a few examples. So here is a little phrase book.</p>
+<p>The first thing we should do is become familiar with the shape and feel of python code because we can’t really discuss the features of python without a few examples. So here is a little phrase book …</p>
 <div class="admonition-aside admonition">
 <p class="admonition-title">Aside</p>
 <p>The Python name derives from <em>Monty Python’s Flying Circus</em> which means you should be alarmed at the mention of a <a class="reference external" href="https://www.youtube.com/watch?v=C1Sw0PDgHU4">Phrase Book</a></p>
+</div>
+<div class="section" id="obligatory-hello-world-program">
+<h2>Obligatory Hello world program<a class="headerlink" href="#obligatory-hello-world-program" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Print out the &quot;Hello World&quot; message</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello World&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span>
+<span class="go">Hello World</span>
+</pre></div>
+</div>
+<p>There is no set up needed to run this simple example because the <code class="docutils literal notranslate"><span class="pre">print</span></code> command is built into python.
+It is actually implemented as a <em>function</em> that displays its argument to the screen, so now you know what python functions look like ! You can also see how to write a comment.</p>
+<p>Here are a couple of other ways to do the same thing</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="n">hello_world_string</span> <span class="o">=</span> <span class="s2">&quot;Hello World&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">hello_world_string</span><span class="p">)</span>
+
+<span class="c1"># Formatting output is also possible (cf c `printf` formats)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-- </span><span class="si">{:s}</span><span class="s2"> --&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">hello_world_string</span><span class="p">))</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;</span>
+<span class="go">Hello World</span>
+<span class="go">Hello World</span>
+</pre></div>
+</div>
+<p>We can assign the message to a variable and print that directly. The <code class="docutils literal notranslate"><span class="pre">print</span></code> function does not need to be told that <code class="docutils literal notranslate"><span class="pre">hello_world_string</span></code> is a string (and the fact that the name has the word <em>string</em> in it is neither here nor there). Variable names are allowed to have underscore characters in them, letters and numbers (other than the first character, that can’t be a number). underscores at the beginning of a variable are conventionally <em>“hidden”</em> which actually just means they are a bit harder to find in an interactive environment.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In fact, the string is a python object that understands that it may need to be printed and will respond appropriately to the print function’s call. The <code class="docutils literal notranslate"><span class="pre">format</span></code> function is also part of the repertoire of the string object and we will see this <code class="docutils literal notranslate"><span class="pre">object.function</span></code> way of accessing the “methods” of an object very, very often.</p>
+</div>
+</div>
+<div class="section" id="indentation-and-block-structure">
+<h2>Indentation and block structure<a class="headerlink" href="#indentation-and-block-structure" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">python</span></code> uses indentation to define code blocks and will complain when the indentation is broken. This is important for defining functions, conditional statements, loops and so on:</p>
+<div class="section" id="loops-and-if-statements">
+<h3>Loops and if statements<a class="headerlink" href="#loops-and-if-statements" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The value of i is </span><span class="si">{}</span><span class="s2"> &quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">i</span><span class="o">%</span><span class="mi">2</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;which is an odd number&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;which is an even number&quot;</span><span class="p">)</span>        
+</pre></div>
+</div>
+<p>This has the layout of a typical python code - the blocks that make up a loop or the branches of conditions are defined by the indentation. Easy if the code is short, much harder to follow if you cram too much into a block.</p>
+</div>
+</div>
+<div class="section" id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="k">def</span> <span class="nf">my_first_function</span><span class="p">(</span><span class="n">argument1</span><span class="p">,</span> <span class="n">argument2</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;This is the &quot;help&quot; for a function a.k.a. docstring. This particular function returns </span>
+<span class="sd">       its first argument&quot;&quot;&quot;</span>
+    
+    <span class="c1"># indent the function definition</span>
+    
+    <span class="k">return</span><span class="p">(</span><span class="n">argument1</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">my_first_function</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_first_function</span><span class="p">(</span><span class="s2">&quot;Hello world&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="n">help</span><span class="p">(</span><span class="n">my_first_function</span><span class="p">)</span>
+    
+</pre></div>
+</div>
+<hr class="docutils" />
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;</span>
+<span class="go">1</span>
+<span class="go">Hello world</span>
+
+<span class="go">Help on function my_first_function in module __main__:</span>
+
+<span class="go">my_first_function(argument1, argument2)</span>
+<span class="go">    This is the &quot;help&quot; for a function a.k.a. docstring. This particular function returns </span>
+<span class="go">    its first argument</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">my_second_function</span><span class="p">(</span><span class="n">argument1</span><span class="p">,</span> <span class="n">argument2</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Function returns both arguments&quot;&quot;&quot;</span>
+    
+    <span class="c1"># indent the function definition</span>
+    
+    <span class="k">return</span><span class="p">(</span><span class="n">argument1</span><span class="p">,</span> <span class="n">argument2</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">my_second_function</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_second_function</span><span class="p">(</span><span class="s2">&quot;Hello world&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="n">help</span><span class="p">(</span><span class="n">my_second_function</span><span class="p">)</span>
+
+<span class="n">a</span><span class="p">,</span><span class="n">b</span> <span class="o">=</span> <span class="n">my_second_function</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+
+</pre></div>
+</div>
+<hr class="docutils" />
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;</span>
+<span class="go">(1, 2)</span>
+<span class="go">(&#39;Hello world&#39;, 0)</span>
+<span class="go">Help on function my_second_function in module __main__:</span>
+
+<span class="go">my_second_function(argument1, argument2)</span>
+<span class="go">    Function returns both arguments</span>
+<span class="go">    </span>
+<span class="go">1</span>
+<span class="go">2</span>
+</pre></div>
+</div>
+<p>Functions can return many arguments and they come back as a tuple. It is straightforward to <em>unpack</em> the values that are returned (the last example above).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Since <code class="docutils literal notranslate"><span class="pre">python</span></code> is an interpreted language, you must define functions before they are encountered in the code. That inverts the way many people write their code with the <em>subroutines</em> defined after the logic of the code is laid out. Instead, <code class="docutils literal notranslate"><span class="pre">python</span></code> uses <em>modules</em> to organise collections of code that are defined outside the main flow of the code.</p>
+</div>
+</div>
+<div class="section" id="modules">
+<h2>Modules<a class="headerlink" href="#modules" title="Permalink to this headline">¶</a></h2>
+<p>The power of <code class="docutils literal notranslate"><span class="pre">python</span></code> is probably in the way it encourages sharing and builds a community of users. Before we can do much with <code class="docutils literal notranslate"><span class="pre">python</span></code>, we generally need to <code class="docutils literal notranslate"><span class="pre">import</span></code> the <em>modules</em> with the extra functionality we need. The <code class="docutils literal notranslate"><span class="pre">print</span></code> function is unusual in not needing to be imported, nearly everything else we want to do needs an <code class="docutils literal notranslate"><span class="pre">import</span></code> first</p>
+<p>For example, the standard python library comes with modules for basic file system operations, string manipulation, mathematical functions, spawning processes … and so on. The full list is in the <a class="reference external" href="https://docs.python.org/3/py-modindex.html">python documentation</a>. These capabilities are provided (if you have downloaded python, you have these modules) but are not automatically activated.</p>
+<p>Here are a couple of examples:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
+
+</pre></div>
+</div>
+<hr class="docutils" />
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;</span>
+<span class="go">1.0</span>
+<span class="go">6.123233995736766e-17</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p>See how the <code class="docutils literal notranslate"><span class="pre">module.function</span></code> works.
+Sometimes, you just want to import a few bits and pieces and you can save some
+typing by importing those functions at the base level - they can then be used without referencing the module name (if the names do not clash, of course, and provided you remember to import everything you need !)</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sin</span><span class="p">,</span> <span class="n">pi</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">sin</span><span class="p">(</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cos</span><span class="p">(</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;</span>
+<span class="go">1.0</span>
+<span class="go">---------------------------------------------------------------------------</span>
+<span class="go">NameError                                 Traceback (most recent call last)</span>
+<span class="go">&lt;ipython-input-7-2b3c4d0b7471&gt; in &lt;module&gt;</span>
+<span class="go">      4 </span>
+<span class="go">      5 #</span>
+<span class="go">----&gt; 6 print(cos(pi/2))</span>
+
+<span class="go">NameError: name &#39;cos&#39; is not defined</span>
+</pre></div>
+</div>
+<p>You can change the names when you import to avoid clashes. Here is an example using <code class="docutils literal notranslate"><span class="pre">cmath</span></code> which is the complex math library complementary to the standard (real numbers) math library.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sin</span><span class="p">,</span> <span class="n">pi</span>
+<span class="kn">from</span> <span class="nn">cmath</span> <span class="kn">import</span> <span class="n">sin</span> <span class="k">as</span> <span class="n">csin</span> 
+
+<span class="nb">print</span><span class="p">(</span><span class="n">sin</span><span class="p">(</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">csin</span><span class="p">(</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;</span>
+<span class="go">1.0</span>
+<span class="go">(1+0j)</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p>If it makes sense to you, import modules under a different name too</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span> <span class="k">as</span> <span class="nn">real_math</span>
+<span class="kn">import</span> <span class="nn">cmath</span> <span class="k">as</span> <span class="nn">complex_math</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">real_math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">real_math</span><span class="o">.</span><span class="n">pi</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="parlez-vous-python">
+<h2>Parlez-vous Python ?<a class="headerlink" href="#parlez-vous-python" title="Permalink to this headline">¶</a></h2>
+<p>Not yet !</p>
+<p>But now you should have some sense of what a python code looks like and why it will break if you type the wrong number of spaces and how dots are used to denote a hierarchy.</p>
+<p>Next we can take a look at the different types of data in python and then go on to explore how data and functions are bundled together in python objects. All the while, it is fine to dip in to the step-by-step examples.</p>
 </div>
 </div>
 
@@ -908,7 +1112,7 @@
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="0-CharacteristicsOfPython.html" title="previous page">What kind of Language is Python ?</a>
-    <a class='right-next' id="next-link" href="3-PythonDataTypes.html" title="next page">Python data types</a>
+    <a class='right-next' id="next-link" href="2-LiterateProgramming.html" title="next page">&lt;no title&gt;</a>
 
         </div>
         
