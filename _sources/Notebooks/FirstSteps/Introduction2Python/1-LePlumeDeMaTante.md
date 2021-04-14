@@ -226,10 +226,14 @@ print(real_math.sin(real_math.pi))
 
 +++
 
-## Parlez-vous Python ?
+## Parlez-vous Python / Beszélsz pythonban ?
 
 Not yet !
 
-But now you should have some sense of what a python code looks like and why it will break if you type the wrong number of spaces and how dots are used to denote a hierarchy.
+But now you should have some sense of what a python code looks like and why it will break if you type the wrong number of spaces and how dots are used to denote a hierarchy. Next we can take a look at the different types of data in python and then go on to explore how data and functions are bundled together in python objects. All the while, it is fine to dip in to the step-by-step examples.
 
-Next we can take a look at the different types of data in python and then go on to explore how data and functions are bundled together in python objects. All the while, it is fine to dip in to the step-by-step examples.
+But it would be useful for us to be able to try out examples and for that, we will want to use live documents and jupyter notebooks.  
+
+```{code-cell} ipython3
+
+```

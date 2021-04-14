@@ -111,32 +111,37 @@
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../Introduction2Python/0-CharacteristicsOfPython.html">
+  <a class="reference internal" href="../../FirstSteps/Introduction2Python/0-CharacteristicsOfPython.html">
    What kind of Language is Python ?
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="../Introduction2Python/1-LePlumeDeMaTante.html">
+    <a class="reference internal" href="../../FirstSteps/Introduction2Python/1-LePlumeDeMaTante.html">
      Python Phrase Book
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Introduction2Python/3-IntroductionToJupyterNotebooks.html">
+    <a class="reference internal" href="../../FirstSteps/Introduction2Python/2-LiterateProgramming.html">
+     Literate Programming
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../FirstSteps/Introduction2Python/3-IntroductionToJupyterNotebooks.html">
      Jupyter Notebooks
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Introduction2Python/4-IntroductionToIpython.html">
+    <a class="reference internal" href="../../FirstSteps/Introduction2Python/4-IntroductionToIpython.html">
      ipython
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Introduction2Python/5-PythonDataTypes.html">
+    <a class="reference internal" href="../../FirstSteps/Introduction2Python/5-PythonDataTypes.html">
      Python data types
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Introduction2Python/6-PythonClasses.html">
+    <a class="reference internal" href="../../FirstSteps/Introduction2Python/6-PythonClasses.html">
      Classes and objects
     </a>
    </li>
@@ -144,9 +149,16 @@
   <i class="fas fa-chevron-down">
   </i>
  </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Version control
+ </span>
+</p>
+<ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="../Plotting/1-IntroductionToMatplotlib.html">
-   Introduction to matplotlib
+  <a class="reference internal" href="../../FirstSteps/Introduction2VersionControl/1-GettingStartedWithGit.html">
+   An introduction to Version Control
   </a>
  </li>
 </ul>
@@ -169,11 +181,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../../StepByStep/Ex02/Exercise%202%20-%20Variables%20and%20functions.html">
      Exercise 2 - Variables and functions
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../StepByStep/Ex02/Exercise%202%20-%20Variables%20and%20functions.html#functions">
-     Functions
     </a>
    </li>
    <li class="toctree-l2">
@@ -839,6 +846,21 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aside-the-flexibility-of-python-classes">
+   Aside - the flexibility of python classes
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
         </div>
     </div>
 </div>
@@ -921,21 +943,92 @@ The difference between google maps and many of the examples we have looked at so
 <span class="c1">## Satellite Quadtree</span>
 <span class="n">qtree_satellite_plus</span> <span class="o">=</span> <span class="n">cimgt</span><span class="o">.</span><span class="n">QuadtreeTiles</span><span class="p">()</span>
 
+
+<span class="c1">## Ordinance Survey </span>
+<span class="n">ord_survey</span> <span class="o">=</span> <span class="n">cimgt</span><span class="o">.</span><span class="n">OrdnanceSurvey</span><span class="p">(</span><span class="n">apikey</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+
+<span class="c1">## Azure (Not released in cartopy)</span>
+
+
 <span class="c1">## Mapbox Satellite images </span>
 
 <span class="n">mapbox_satellite</span> <span class="o">=</span> <span class="n">cimgt</span><span class="o">.</span><span class="n">MapboxTiles</span><span class="p">(</span><span class="n">map_id</span><span class="o">=</span><span class="s1">&#39;satellite&#39;</span><span class="p">,</span> 
                                      <span class="n">access_token</span><span class="o">=</span><span class="s1">&#39;pk.eyJ1IjoibG91aXNtb3Jlc2kiLCJhIjoiY2pzeG1mZzFqMG5sZDQ0czF5YzY1NmZ4cSJ9.lpsUzmLasydBlS0IOqe5JA&#39;</span><span class="p">)</span>
 
-<span class="c1">## No longer supported</span>
+<span class="c1"># No longer supported / incompatible with cartopy interface</span>
 <span class="c1"># mapbox_streets = cimgt.MapboxTiles(map_id=&#39;streets&#39;, </span>
 <span class="c1">#                                      access_token=&#39;pk.eyJ1IjoibG91aXNtb3Jlc2kiLCJhIjoiY2pzeG1mZzFqMG5sZDQ0czF5YzY1NmZ4cSJ9.lpsUzmLasydBlS0IOqe5JA&#39;)</span>
-
 
 
 <span class="c1">## Google maps image tiles ()</span>
 <span class="n">google_maps_street</span> <span class="o">=</span> <span class="n">cimgt</span><span class="o">.</span><span class="n">GoogleTiles</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s2">&quot;street&quot;</span><span class="p">)</span> 
 <span class="n">google_maps_satellite</span> <span class="o">=</span> <span class="n">cimgt</span><span class="o">.</span><span class="n">GoogleTiles</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s2">&quot;satellite&quot;</span><span class="p">)</span> 
 <span class="n">google_maps_terrain</span> <span class="o">=</span> <span class="n">cimgt</span><span class="o">.</span><span class="n">GoogleTiles</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s2">&quot;terrain&quot;</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="aside-the-flexibility-of-python-classes">
+<h2>Aside - the flexibility of python classes<a class="headerlink" href="#aside-the-flexibility-of-python-classes" title="Permalink to this headline">¶</a></h2>
+<p><strong>Update: April 2021</strong></p>
+<p>You may have noticed the commented-out line of code regarding <em>“Mapbox Streets”</em> which is one of the basemaps that is supported by <code class="docutils literal notranslate"><span class="pre">cartopy</span></code>. Mapbox, the company, recently changed the way you access their maps and <em>they broke Cartopy</em>.</p>
+<p>Although that is rather frustrating when it comes to demonstrating how to make maps, it does give me the opportunity to show you a bit more about how easy it can be modify a python code on-the-fly. We can’t really change the Cartopy code itself, but we can dig out the piece of code that is broken and make a working copy.</p>
+<p>Because we import classes and then use them, all we really need to do is replace the class and use that instead of importing the original. And then we ought to be helpful and contribute the bug fix back to the original authors.</p>
+<p><strong>Note:</strong> It is also possible to override the parts of the class by defining a new subclass and overriding the parts we need to change. We don’t need to do that here because we are fixing a one function class</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">cartopy.io.img_tiles</span> <span class="kn">import</span> <span class="n">GoogleWTS</span>
+
+<span class="k">class</span> <span class="nc">MapboxTiles</span><span class="p">(</span><span class="n">GoogleWTS</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Implement web tile retrieval from Mapbox.</span>
+<span class="sd">    For terms of service, see https://www.mapbox.com/tos/.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">access_token</span><span class="p">,</span> <span class="n">map_id</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set up a new Mapbox tiles instance.</span>
+<span class="sd">        Access to Mapbox web services requires an access token and a map ID.</span>
+<span class="sd">        See https://www.mapbox.com/api-documentation/ for details.</span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        access_token</span>
+<span class="sd">            A valid Mapbox API access token.</span>
+<span class="sd">        map_id</span>
+<span class="sd">            An ID for a publicly accessible map (provided by Mapbox).</span>
+<span class="sd">            This is the map whose tiles will be retrieved through this process.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">access_token</span> <span class="o">=</span> <span class="n">access_token</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">map_id</span> <span class="o">=</span> <span class="n">map_id</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        
+        
+    <span class="c1"># OLD code</span>
+    
+<span class="c1">#     def _image_url(self, tile):</span>
+<span class="c1">#         x, y, z = tile</span>
+<span class="c1">#         url = (&#39;https://api.mapbox.com/v4/mapbox.{id}/{z}/{x}/{y}.png&#39;</span>
+<span class="c1">#                &#39;?access_token={token}&#39;.format(z=z, y=y, x=x,</span>
+<span class="c1">#                                               id=self.map_id,</span>
+<span class="c1">#                                               token=self.access_token))</span>
+
+    <span class="c1"># NEW code</span>
+    <span class="k">def</span> <span class="nf">_image_url</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tile</span><span class="p">):</span>
+        <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">tile</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;https://api.mapbox.com/styles/v1/</span><span class="si">{id}</span><span class="s1">/tiles/</span><span class="si">{z}</span><span class="s1">/</span><span class="si">{x}</span><span class="s1">/</span><span class="si">{y}</span><span class="s1">&#39;</span>
+               <span class="s1">&#39;?access_token=</span><span class="si">{token}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">z</span><span class="o">=</span><span class="n">z</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span>
+                                              <span class="nb">id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">map_id</span><span class="p">,</span>
+                                              <span class="n">token</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">access_token</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">url</span>
+
+
+<span class="c1"># we can use this class definition in place of the old one</span>
+
+<span class="n">mapbox_streets</span> <span class="o">=</span> <span class="n">MapboxTiles</span><span class="p">(</span><span class="n">map_id</span><span class="o">=</span><span class="s1">&#39;mapbox/streets-v11&#39;</span><span class="p">,</span> 
+                                     <span class="n">access_token</span><span class="o">=</span><span class="s1">&#39;pk.eyJ1IjoibG91aXNtb3Jlc2kiLCJhIjoiY2pzeG1mZzFqMG5sZDQ0czF5YzY1NmZ4cSJ9.lpsUzmLasydBlS0IOqe5JA&#39;</span><span class="p">)</span>
+
+
+<span class="n">mapbox_satellite</span> <span class="o">=</span> <span class="n">MapboxTiles</span><span class="p">(</span><span class="n">map_id</span><span class="o">=</span><span class="s1">&#39;mapbox/satellite-v9&#39;</span><span class="p">,</span> 
+                                     <span class="n">access_token</span><span class="o">=</span><span class="s1">&#39;pk.eyJ1IjoibG91aXNtb3Jlc2kiLCJhIjoiY2pzeG1mZzFqMG5sZDQ0czF5YzY1NmZ4cSJ9.lpsUzmLasydBlS0IOqe5JA&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -949,7 +1042,7 @@ The difference between google maps and many of the examples we have looked at so
 
 <span class="n">map_extent</span> <span class="o">=</span> <span class="p">[</span><span class="n">lon0</span><span class="p">,</span> <span class="n">lon1</span><span class="p">,</span> <span class="n">lat0</span><span class="p">,</span> <span class="n">lat1</span><span class="p">]</span>
 
-<span class="n">map_tiles</span> <span class="o">=</span> <span class="n">mapbox_satellite</span>
+<span class="n">map_tiles</span> <span class="o">=</span> <span class="n">mapbox_streets</span>
 
 <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">12</span><span class="p">),</span> <span class="n">facecolor</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">)</span>
 <span class="c1"># ax = plt.axes(projection=ccrs.PlateCarree(), extent=himalaya_extent)</span>
@@ -1036,9 +1129,7 @@ The difference between google maps and many of the examples we have looked at so
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">## Mapquest - Je ne t&#39;aime plus </span>
-
-<span class="n">lat0</span> <span class="o">=</span>   <span class="mi">48</span>  <span class="p">;</span> <span class="n">lat1</span> <span class="o">=</span> <span class="mi">60</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">lat0</span> <span class="o">=</span>   <span class="mi">48</span>  <span class="p">;</span> <span class="n">lat1</span> <span class="o">=</span> <span class="mi">60</span>
 <span class="n">lon0</span> <span class="o">=</span>  <span class="o">-</span><span class="mi">15</span>  <span class="p">;</span> <span class="n">lon1</span> <span class="o">=</span> <span class="mi">5</span>
 
 <span class="n">map_extent</span> <span class="o">=</span> <span class="p">[</span><span class="n">lon0</span><span class="p">,</span> <span class="n">lon1</span><span class="p">,</span> <span class="n">lat0</span><span class="p">,</span> <span class="n">lat1</span><span class="p">]</span>
@@ -1088,7 +1179,7 @@ The difference between google maps and many of the examples we have looked at so
 
 
 <span class="n">maptype1</span> <span class="o">=</span> <span class="n">mapbox_satellite</span>
-<span class="n">maptype2</span> <span class="o">=</span> <span class="n">stamen_TerrainPlus</span>
+<span class="n">maptype2</span> <span class="o">=</span> <span class="n">mapbox_streets</span>
 
 
 <span class="c1">## Could also try these ... </span>
@@ -1144,8 +1235,8 @@ The difference between google maps and many of the examples we have looked at so
 <span class="n">ax1</span><span class="o">.</span><span class="n">set_extent</span><span class="p">(</span><span class="n">map_extent</span><span class="p">)</span>
 <span class="n">ax2</span><span class="o">.</span><span class="n">set_extent</span><span class="p">(</span><span class="n">map_extent</span><span class="p">)</span>
 
-<span class="n">ax1</span><span class="o">.</span><span class="n">add_image</span><span class="p">(</span><span class="n">mapbox_satellite</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span>    <span class="p">)</span>
-<span class="n">ax2</span><span class="o">.</span><span class="n">add_image</span><span class="p">(</span><span class="n">open_street_map</span><span class="p">,</span> <span class="mi">17</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">add_image</span><span class="p">(</span><span class="n">mapbox_satellite</span><span class="p">,</span> <span class="mi">18</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">add_image</span><span class="p">(</span><span class="n">mapbox_streets</span><span class="p">,</span> <span class="mi">18</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1158,6 +1249,7 @@ The difference between google maps and many of the examples we have looked at so
 </div>
 </div>
 <p>Again, open the <span class="xref myst">full-size image</span> to see how well that worked</p>
+</div>
 </div>
 
     <script type="text/x-thebe-config">

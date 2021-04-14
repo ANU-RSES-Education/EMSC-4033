@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>An introduction to Version Control pt 2 &#8212; EMSC 4033 Computational Geoscience</title>
+    <title>How to use git for yourself &#8212; EMSC 4033 Computational Geoscience</title>
     
   <link rel="stylesheet" href="../../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -119,6 +119,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../Introduction2Python/2-LiterateProgramming.html">
+     Literate Programming
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../Introduction2Python/3-IntroductionToJupyterNotebooks.html">
      Jupyter Notebooks
     </a>
@@ -142,9 +147,16 @@
   <i class="fas fa-chevron-down">
   </i>
  </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Version control
+ </span>
+</p>
+<ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="../Plotting/1-IntroductionToMatplotlib.html">
-   Introduction to matplotlib
+  <a class="reference internal" href="1-GettingStartedWithGit.html">
+   An introduction to Version Control
   </a>
  </li>
 </ul>
@@ -167,11 +179,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../../StepByStep/Ex02/Exercise%202%20-%20Variables%20and%20functions.html">
      Exercise 2 - Variables and functions
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../StepByStep/Ex02/Exercise%202%20-%20Variables%20and%20functions.html#functions">
-     Functions
     </a>
    </li>
    <li class="toctree-l2">
@@ -282,37 +289,37 @@
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../NumpyAndScipy/0-NumpyAndScipy.html">
+  <a class="reference internal" href="../../Themes/NumpyAndScipy/0-NumpyAndScipy.html">
    Numpy and Scipy
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="../NumpyAndScipy/1-IntroductionToNumpy.html">
+    <a class="reference internal" href="../../Themes/NumpyAndScipy/1-IntroductionToNumpy.html">
      Numpy data structures
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../NumpyAndScipy/2-Application-TheGameOfLife.html">
+    <a class="reference internal" href="../../Themes/NumpyAndScipy/2-Application-TheGameOfLife.html">
      The game of life
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../NumpyAndScipy/3-Discussion-TheGameOfLife.html">
+    <a class="reference internal" href="../../Themes/NumpyAndScipy/3-Discussion-TheGameOfLife.html">
      The game of life (Advanced)
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../NumpyAndScipy/3-Discussion-TheGameOfLife.html#animation">
+    <a class="reference internal" href="../../Themes/NumpyAndScipy/3-Discussion-TheGameOfLife.html#animation">
      Animation
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../NumpyAndScipy/4-IntroductionToScipy.html">
+    <a class="reference internal" href="../../Themes/NumpyAndScipy/4-IntroductionToScipy.html">
      scipy
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../NumpyAndScipy/5-ScipyInterpolate.html">
+    <a class="reference internal" href="../../Themes/NumpyAndScipy/5-ScipyInterpolate.html">
      <code class="docutils literal notranslate">
       <span class="pre">
        scipy.interpolate
@@ -321,7 +328,7 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../NumpyAndScipy/6-ScipySpatialAndMeshing.html">
+    <a class="reference internal" href="../../Themes/NumpyAndScipy/6-ScipySpatialAndMeshing.html">
      <code class="docutils literal notranslate">
       <span class="pre">
        scipy.spatial
@@ -330,7 +337,7 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../NumpyAndScipy/7-ScipyOptimize.html">
+    <a class="reference internal" href="../../Themes/NumpyAndScipy/7-ScipyOptimize.html">
      <code class="docutils literal notranslate">
       <span class="pre">
        scipy.optimize
@@ -339,7 +346,7 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../NumpyAndScipy/8-Numpy%2BScipyMiscellany.html">
+    <a class="reference internal" href="../../Themes/NumpyAndScipy/8-Numpy%2BScipyMiscellany.html">
      Data storage
     </a>
    </li>
@@ -348,62 +355,62 @@
   </i>
  </li>
  <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../Mapping/0-Maps_with_Cartopy.html">
+  <a class="reference internal" href="../../Themes/Mapping/0-Maps_with_Cartopy.html">
    Maps with the Cartopy Package
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="../Mapping/0-Preliminaries.html">
+    <a class="reference internal" href="../../Themes/Mapping/0-Preliminaries.html">
      Datasets
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Mapping/1-IntroductingCartopy.html">
+    <a class="reference internal" href="../../Themes/Mapping/1-IntroductingCartopy.html">
      Cartopy
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Mapping/2-ImagesAndGeoTIFFs.html">
+    <a class="reference internal" href="../../Themes/Mapping/2-ImagesAndGeoTIFFs.html">
      Handling images
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Mapping/3-WorkingWithRealData.html">
+    <a class="reference internal" href="../../Themes/Mapping/3-WorkingWithRealData.html">
      Australian magnetic intensity
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Mapping/4-ContouringGlobalData.html">
+    <a class="reference internal" href="../../Themes/Mapping/4-ContouringGlobalData.html">
      How to use contours to view global data
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Mapping/5-WorkingWithPointData.html">
+    <a class="reference internal" href="../../Themes/Mapping/5-WorkingWithPointData.html">
      Point Data
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Mapping/6-WorkingWithShuttleRadarTopography.html">
+    <a class="reference internal" href="../../Themes/Mapping/6-WorkingWithShuttleRadarTopography.html">
      Cartopy and the Shuttle Radar Topography Map data
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Mapping/7-WorkingWithOn-DemandMappingServices.html">
+    <a class="reference internal" href="../../Themes/Mapping/7-WorkingWithOn-DemandMappingServices.html">
      On demand mapping services
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Mapping/8-GlobalPlateMotionsEtc.html">
+    <a class="reference internal" href="../../Themes/Mapping/8-GlobalPlateMotionsEtc.html">
      Global Plate Motions
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Mapping/9-HimalayaRegionMapsAndImages.html">
+    <a class="reference internal" href="../../Themes/Mapping/9-HimalayaRegionMapsAndImages.html">
      Himalaya Maps (1)
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Mapping/9a-HimalayaRegionMapsAndImages-Pt2.html">
+    <a class="reference internal" href="../../Themes/Mapping/9a-HimalayaRegionMapsAndImages-Pt2.html">
      Himalaya Maps (2)
     </a>
    </li>
@@ -412,22 +419,22 @@
   </i>
  </li>
  <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../SphericalMeshing/0-Stripy.html">
+  <a class="reference internal" href="../../Themes/SphericalMeshing/0-Stripy.html">
    Triangulations
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2 collapsible-parent">
-    <a class="reference internal" href="../SphericalMeshing/SphericalTriangulations/0-Spherical.html">
+    <a class="reference internal" href="../../Themes/SphericalMeshing/SphericalTriangulations/0-Spherical.html">
      Spherical Meshes
     </a>
     <ul class="collapse-ul">
      <li class="toctree-l3">
-      <a class="reference internal" href="../SphericalMeshing/SphericalTriangulations/Ex1-Spherical-Triangulations.html">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/SphericalTriangulations/Ex1-Spherical-Triangulations.html">
        Example 1 - Triangulation of arbitrary points on the sphere
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../SphericalMeshing/SphericalTriangulations/Ex2-SphericalGrids.html">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/SphericalTriangulations/Ex2-SphericalGrids.html">
        Example 2 -
        <code class="docutils literal notranslate">
         <span class="pre">
@@ -438,7 +445,7 @@
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../SphericalMeshing/SphericalTriangulations/Ex3-Interpolation.html">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/SphericalTriangulations/Ex3-Interpolation.html">
        Example 3 -
        <code class="docutils literal notranslate">
         <span class="pre">
@@ -449,7 +456,7 @@
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../SphericalMeshing/SphericalTriangulations/Ex4-Gradients.html">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/SphericalTriangulations/Ex4-Gradients.html">
        Example 4 -
        <code class="docutils literal notranslate">
         <span class="pre">
@@ -460,7 +467,7 @@
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../SphericalMeshing/SphericalTriangulations/Ex5-Smoothing.html">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/SphericalTriangulations/Ex5-Smoothing.html">
        Example 5 -
        <code class="docutils literal notranslate">
         <span class="pre">
@@ -471,22 +478,22 @@
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../SphericalMeshing/SphericalTriangulations/Ex6-Scattered-Data.html">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/SphericalTriangulations/Ex6-Scattered-Data.html">
        Example 6 - Scattered Data and ‘Heat Maps’
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../SphericalMeshing/SphericalTriangulations/Ex7-Refinement-of-Triangulations.html">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/SphericalTriangulations/Ex7-Refinement-of-Triangulations.html">
        Example 7 - Refining a triangulation
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../SphericalMeshing/SphericalTriangulations/Ex8-Spline-Tension.html">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/SphericalTriangulations/Ex8-Spline-Tension.html">
        Example 8 - Spline Tension
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../SphericalMeshing/SphericalTriangulations/Ex9-Voronoi-Diagram.html">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/SphericalTriangulations/Ex9-Voronoi-Diagram.html">
        Example 9 - Constructing the Voronoi diagram
       </a>
      </li>
@@ -495,17 +502,17 @@
     </i>
    </li>
    <li class="toctree-l2 collapsible-parent">
-    <a class="reference internal" href="../SphericalMeshing/CartesianTriangulations/0-Cartesian.html">
+    <a class="reference internal" href="../../Themes/SphericalMeshing/CartesianTriangulations/0-Cartesian.html">
      Cartesian Meshes
     </a>
     <ul class="collapse-ul">
      <li class="toctree-l3">
-      <a class="reference internal" href="../SphericalMeshing/CartesianTriangulations/Ex1-Cartesian-Triangulations.html">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/CartesianTriangulations/Ex1-Cartesian-Triangulations.html">
        Example 1 - Triangulation of arbitrary points
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../SphericalMeshing/CartesianTriangulations/Ex2-CartesianGrids.html">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/CartesianTriangulations/Ex2-CartesianGrids.html">
        Example 2 -
        <code class="docutils literal notranslate">
         <span class="pre">
@@ -516,7 +523,7 @@
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../SphericalMeshing/CartesianTriangulations/Ex3-Interpolation.html">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/CartesianTriangulations/Ex3-Interpolation.html">
        Example 3 -
        <code class="docutils literal notranslate">
         <span class="pre">
@@ -527,7 +534,7 @@
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../SphericalMeshing/CartesianTriangulations/Ex4-Gradients.html">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/CartesianTriangulations/Ex4-Gradients.html">
        Example 4 -
        <code class="docutils literal notranslate">
         <span class="pre">
@@ -538,7 +545,7 @@
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../SphericalMeshing/CartesianTriangulations/Ex5-Smoothing.html">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/CartesianTriangulations/Ex5-Smoothing.html">
        Example 5 -
        <code class="docutils literal notranslate">
         <span class="pre">
@@ -549,22 +556,22 @@
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../SphericalMeshing/CartesianTriangulations/Ex6-Scattered-Data.html">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/CartesianTriangulations/Ex6-Scattered-Data.html">
        Example 6 - Scattered Data and ‘Heat Maps’
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../SphericalMeshing/CartesianTriangulations/Ex7-Refinement-of-Triangulations.html">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/CartesianTriangulations/Ex7-Refinement-of-Triangulations.html">
        Example 7 - Refining a triangulation
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../SphericalMeshing/CartesianTriangulations/Ex8-Spline-Tension.html">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/CartesianTriangulations/Ex8-Spline-Tension.html">
        Example 8 - Spline Tension
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../SphericalMeshing/CartesianTriangulations/Ex9-Voronoi-Diagram.html">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/CartesianTriangulations/Ex9-Voronoi-Diagram.html">
        Example 9 - Constructing the Voronoi diagram
       </a>
      </li>
@@ -573,52 +580,52 @@
     </i>
    </li>
    <li class="toctree-l2 collapsible-parent">
-    <a class="reference internal" href="../SphericalMeshing/Litho1pt0/Ex1-Litho1Layers.html">
+    <a class="reference internal" href="../../Themes/SphericalMeshing/Litho1pt0/Ex1-Litho1Layers.html">
      Introduction to the stripy wrapper for litho 1.0
     </a>
     <ul class="collapse-ul">
      <li class="toctree-l3">
-      <a class="reference internal" href="../SphericalMeshing/Litho1pt0/Ex2-Litho1Properties.html">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/Litho1pt0/Ex2-Litho1Properties.html">
        Litho 1.0 global sampling
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../SphericalMeshing/Litho1pt0/Ex3-CrustalRegionalisation.html">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/Litho1pt0/Ex3-CrustalRegionalisation.html">
        Crust 1.0 data
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../SphericalMeshing/Litho1pt0/WorkEx1-CratonAverageProperties.html">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/Litho1pt0/WorkEx1-CratonAverageProperties.html">
        Properties of the cratons
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../SphericalMeshing/Litho1pt0/WorkEx2-OceanDepthAge.html">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/Litho1pt0/WorkEx2-OceanDepthAge.html">
        Age of the oceans / depth of the oceans
       </a>
      </li>
      <li class="toctree-l3 collapsible-parent">
-      <a class="reference internal" href="../SphericalMeshing/Litho1pt0/WEx2-Tutorial/Notebook-1.html">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/Litho1pt0/WEx2-Tutorial/Notebook-1.html">
        A quick look at the depth-age relationship for the seafloor.
       </a>
       <ul class="collapse-ul">
        <li class="toctree-l4">
-        <a class="reference internal" href="../SphericalMeshing/Litho1pt0/WEx2-Tutorial/Notebook-2.html">
+        <a class="reference internal" href="../../Themes/SphericalMeshing/Litho1pt0/WEx2-Tutorial/Notebook-2.html">
          A quick look at the depth-age relationship for the seafloor.
         </a>
        </li>
        <li class="toctree-l4">
-        <a class="reference internal" href="../SphericalMeshing/Litho1pt0/WEx2-Tutorial/Notebook-3.html">
+        <a class="reference internal" href="../../Themes/SphericalMeshing/Litho1pt0/WEx2-Tutorial/Notebook-3.html">
          A quick look at the depth-age relationship for the seafloor.
         </a>
        </li>
        <li class="toctree-l4">
-        <a class="reference internal" href="../SphericalMeshing/Litho1pt0/WEx2-Tutorial/Notebook-4.html">
+        <a class="reference internal" href="../../Themes/SphericalMeshing/Litho1pt0/WEx2-Tutorial/Notebook-4.html">
          A quick look at the depth-age relationship for the seafloor.
         </a>
        </li>
        <li class="toctree-l4">
-        <a class="reference internal" href="../SphericalMeshing/Litho1pt0/WEx2-Tutorial/Notebook-5.html">
+        <a class="reference internal" href="../../Themes/SphericalMeshing/Litho1pt0/WEx2-Tutorial/Notebook-5.html">
          A quick look at the depth-age relationship for the seafloor.
         </a>
        </li>
@@ -635,7 +642,7 @@
   </i>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../SympleSympy/StartingWithSympy.html">
+  <a class="reference internal" href="../../Themes/SympleSympy/StartingWithSympy.html">
    Getting started with
    <code class="docutils literal notranslate">
     <span class="pre">
@@ -645,12 +652,12 @@
   </a>
  </li>
  <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../SympleSympy/StartingWithSympy.html#differentiation-integration">
+  <a class="reference internal" href="../../Themes/SympleSympy/StartingWithSympy.html#differentiation-integration">
    Differentiation / Integration
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="../SympleSympy/StartingWithSympy-2.html">
+    <a class="reference internal" href="../../Themes/SympleSympy/StartingWithSympy-2.html">
      Using
      <code class="docutils literal notranslate">
       <span class="pre">
@@ -661,7 +668,7 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../SympleSympy/StartingWithSympy-2.html#use-of-the-sympy-equation-module-eq">
+    <a class="reference internal" href="../../Themes/SympleSympy/StartingWithSympy-2.html#use-of-the-sympy-equation-module-eq">
      Use of the
      <code class="docutils literal notranslate">
       <span class="pre">
@@ -678,7 +685,7 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../SympleSympy/StartingWithSympy-3.html">
+    <a class="reference internal" href="../../Themes/SympleSympy/StartingWithSympy-3.html">
      Using
      <code class="docutils literal notranslate">
       <span class="pre">
@@ -689,7 +696,7 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../SympleSympy/StartingWithSympy-4.html">
+    <a class="reference internal" href="../../Themes/SympleSympy/StartingWithSympy-4.html">
      The biharmonic equation for Stokes flow
     </a>
    </li>
@@ -698,22 +705,22 @@
   </i>
  </li>
  <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../SolveMathProblems/0-IntroductionToNumericalSolutions.html">
+  <a class="reference internal" href="../../Themes/SolveMathProblems/0-IntroductionToNumericalSolutions.html">
    Numerical models
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="../SolveMathProblems/1-GroundwaterFlow-LectureNotes.html">
+    <a class="reference internal" href="../../Themes/SolveMathProblems/1-GroundwaterFlow-LectureNotes.html">
      Partial Differential Equations of Groundwater Flow
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../SolveMathProblems/2-FiniteDifferences.html">
+    <a class="reference internal" href="../../Themes/SolveMathProblems/2-FiniteDifferences.html">
      Finite difference operations
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../SolveMathProblems/3-AdvancedFiniteDifferences.html">
+    <a class="reference internal" href="../../Themes/SolveMathProblems/3-AdvancedFiniteDifferences.html">
      Advanced finite difference
     </a>
    </li>
@@ -772,11 +779,11 @@
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
         <a class="dropdown-buttons"
-            href="../../../_sources/Notebooks/Themes/Introduction2VersionControl/2-NextStepsWithGit.ipynb"><button type="button"
+            href="../../../_sources/Notebooks/FirstSteps/Introduction2VersionControl/3-YourOwnRepositories.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../../_sources/Notebooks/Themes/Introduction2VersionControl/2-NextStepsWithGit.md"><button type="button"
+        <a class="dropdown-buttons" href="../../../_sources/Notebooks/FirstSteps/Introduction2VersionControl/3-YourOwnRepositories.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -814,14 +821,14 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/ANU-RSES-Education/EMSC-4033/master?urlpath=tree/Notebooks/Themes/Introduction2VersionControl/2-NextStepsWithGit.md"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/ANU-RSES-Education/EMSC-4033/master?urlpath=tree/Notebooks/FirstSteps/Introduction2VersionControl/3-YourOwnRepositories.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../../_static/images/logo_binder.svg"
                     alt="Interact on binder">Binder</button></a>
         
         
-        <a class="jupyterhub-button" href="https://emsc4033-2021.rses.underworldcloud.org/hub/user-redirect/git-pull?repo=https://github.com/ANU-RSES-Education/EMSC-4033&urlpath=tree/EMSC-4033/Notebooks/Themes/Introduction2VersionControl/2-NextStepsWithGit.md&branch=master"><button type="button"
+        <a class="jupyterhub-button" href="https://emsc4033-2021.rses.underworldcloud.org/hub/user-redirect/git-pull?repo=https://github.com/ANU-RSES-Education/EMSC-4033&urlpath=tree/EMSC-4033/Notebooks/FirstSteps/Introduction2VersionControl/3-YourOwnRepositories.md&branch=master"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
                 data-placement="left"><img class="jupyterhub-button-logo"
                     src="../../../_static/images/logo_jupyterhub.svg"
@@ -844,23 +851,8 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#some-setup-is-required">
-   Some setup is required
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#how-do-we-get-a-copy-of-the-information-on-github">
-   How do we get a copy of the information on github ?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#example">
-   Example
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise">
-   Exercise
+  <a class="reference internal nav-link" href="#different-file-types-and-text-editing">
+   Different file types and text editing
   </a>
  </li>
 </ul>
@@ -875,146 +867,57 @@
         
               <div>
                 
-  <div class="section" id="an-introduction-to-version-control-pt-2">
-<h1>An introduction to Version Control pt 2<a class="headerlink" href="#an-introduction-to-version-control-pt-2" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="how-to-use-git-for-yourself">
+<h1>How to use git for yourself<a class="headerlink" href="#how-to-use-git-for-yourself" title="Permalink to this headline">¶</a></h1>
 <blockquote>
-<div><p>Version control is good for the soul</p>
+<div><p><em>I recommend this tutorial: <a class="reference external" href="https://www.atlassian.com/git/tutorials/learn-git-with-bitbucket-cloud">https://www.atlassian.com/git/tutorials/learn-git-with-bitbucket-cloud</a> even though it focuses on bitbucket rather than github.</em></p>
 </div></blockquote>
-<div class="section" id="some-setup-is-required">
-<h2>Some setup is required<a class="headerlink" href="#some-setup-is-required" title="Permalink to this headline">¶</a></h2>
-<p>We can run all this from the notebook (though perhaps it is easier in the terminal)</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git config --global credential.helper store
-git config --global user.email <span class="s2">&quot;profdiablo@underworldcode.org&quot;</span>
-git config --global user.name  <span class="s2">&quot;profdiablo&quot;</span>
-</pre></div>
-</div>
-<p>We also need to do one operation (in the terminal) that needs a password.
-The obvious thing is to try to obtain a copy of a private repository from our
-shared space …</p>
-</div>
-<div class="section" id="how-do-we-get-a-copy-of-the-information-on-github">
-<h2>How do we get a copy of the information on github ?<a class="headerlink" href="#how-do-we-get-a-copy-of-the-information-on-github" title="Permalink to this headline">¶</a></h2>
-<p>We can ‘download’ the sandbox repository to a local directory using the following command.
-(Change to the relevant directory as needed)</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> /home/jovyan/VIEPS-PYE/Notebooks/Introduction2VersionControl
-git clone https://github.com/vieps-pye-class-2019/shared-sandbox.git 
-</pre></div>
-</div>
-<p>Use the <strong>GIT &gt; Open Terminal</strong> menu option above to make this work.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sh</span>
-
-<span class="c1"># Type your code in this cell</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Take a look to see if this worked. What files are in the <code class="docutils literal notranslate"><span class="pre">shared-sandbox</span></code> directory.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># check if it worked</span>
-ls -a shared-sandbox
-</pre></div>
-</div>
-<p>There should be a (hidden) directory <code class="docutils literal notranslate"><span class="pre">.git</span></code> that actually contains the database of changes, the original files and all manner of logs that allow you to replay changes and check them.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sh</span>
-
-<span class="c1"># Type your code here</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="example">
-<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
-<p>Here is a typical run through of what we do with git. First we can ask what has been changed / added etc</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git status 
-</pre></div>
-</div>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>bash-3.2$ git status
-
-
-    On branch master
-    Your branch is up to date with &#39;origin/master&#39;.
-
-    Changes not staged for commit:
-      (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
-      (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)
-
-            modified:   README.md
-
-    Untracked files:
-      (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)
-
-            .ipynb_checkpoints/
-            People.txt
-
-    no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)
-</pre></div>
-</div>
-<p>We can ask git to start taking notice of a file that has been added:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git add People.txt --verbose
-</pre></div>
-</div>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>   bash-3.2$ git add People.txt --verbose 
-   # but it is very quiet anyway
-</pre></div>
-</div>
-<p>We can issue lots of git commands such as:</p>
+<p>We saw how git works in collaboration and also how that will cause some interesting things to happen when people work together on a set of files. The rest of this tutorial is a discussion using the team’s github site to add files to our shared repository and create individual repositories.</p>
+<blockquote>
+<div><p><a class="reference external" href="https://github.com/vieps-pye-class-2019">https://github.com/vieps-pye-class-2019</a></p>
+</div></blockquote>
+<p>Here are some of the approaches we will look at to manage shared files for our course:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">rm</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">mv</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">help</span></code></p></li>
+<li><p>We can each have our own directory in the sandbox and keep ourselves to ourselves</p>
+<ul>
+<li><p>What issues might this cause with commit logs</p></li>
+<li><p>Can each person commit when they like ?</p></li>
 </ul>
-<p>but when we are done telling git all about the changes we already made when we edited the files, we now tell it to take a snapshot of the state of our project and <strong>commit</strong> these changes. We must add a message when we make this commit and this tell us what changes we made.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span> git commit -m <span class="s2">&quot;I have added my name to the People.txt list&quot;</span>
-</pre></div>
-</div>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>    bash-3.2$ git commit -m &quot;I have added my name to the People.txt list&quot;
-    [master fdc97b1] I have added my name to the People.txt list
-     1 file changed, 7 insertions(+)
-     create mode 100644 People.txt
-</pre></div>
-</div>
-<p>We can repeat this cycle of edit / commit as much as we like but we have not yet uploaded these changes for anyone else to see. This is done by <strong>pushing</strong> the changes back to the repository. This requires a network connection of course. Even if you are offline, though, it can be helpful to commit changes in little chunks with helpful messages because you can ALWAYS go back and recover <strong>all the files in the state they were in when you made the commit</strong>.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git push
-</pre></div>
-</div>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>    bash-3.2$ git push
-    Enumerating objects: 4, done.
-    Counting objects: 100% (4/4), done.
-    Delta compression using up to 8 threads
-    Compressing objects: 100% (3/3), done.
-    Writing objects: 100% (3/3), 447 bytes | 447.00 KiB/s, done.
-    Total 3 (delta 0), reused 0 (delta 0)
-    To https://github.com/vieps-pye-class-2019/shared-sandbox.git
-       242d062..fdc97b1  master -&gt; master
-</pre></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>!git help 
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="exercise">
-<h2>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">¶</a></h2>
-<p>You can browse the directory in the file browser and you can add your name to the <code class="docutils literal notranslate"><span class="pre">People.txt</span></code> file. Now you should be able to commit your changes by following the pattern above:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">sh</span>
-
-<span class="c1"># git status etc etc </span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Discuss this as a class - does it work ? Do you expect it to work ?</p>
-<p><a class="reference internal" href="3-YourOwnRepositories.html"><span class="doc std std-doc">Pt 3 - Going off on your own</span></a></p>
+</li>
+<li><p>We can all make a repository of our own in the VIEPS-PYE team area</p>
+<ul>
+<li><p>How does this work in terms of collaboration on a project ?</p></li>
+<li><p>Would it be better to do more repositories and use them for a specific task ?</p></li>
+</ul>
+</li>
+<li><p>Because you all signed up for github, you also have personal repositories</p>
+<ul>
+<li><p>At the moment these are all public unless you registered as a student user</p></li>
+<li><p>Even if they are public, other people can only read them … not change things</p></li>
+<li><p>Which is fine unless you want to collaborate. Can you see how to do that ?</p></li>
+</ul>
+</li>
+</ul>
+<p>Think about how these approaches might be useful for you in the following cases:</p>
+<ul class="simple">
+<li><p>Writing a paper or report with coauthors</p></li>
+<li><p>Writing drafts of a thesis with comments from a supervisor</p></li>
+<li><p>Working on some python code in your own project</p></li>
+<li><p>Working on some python code with other people</p></li>
+</ul>
+<p>What are the problems that are likely to come up and how do you think you might approach dealing with them ?</p>
+<div class="section" id="different-file-types-and-text-editing">
+<h2>Different file types and text editing<a class="headerlink" href="#different-file-types-and-text-editing" title="Permalink to this headline">¶</a></h2>
+<p>Our previous exercise in combining files showed how git tries to merge information from different version of files when it can parse the file and understand what it actually is. The tools that it uses are reasonable in the case of text files but largely meaningless in the case of binary files (like images, .docx files, etc). Git can only work out that there is a new version of the file and complain, it cannot try to merge. You can tell git to ignore specific types of files (using a <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file in the project) and if you are planning a project with a lot of image files you might want to read about it <a class="reference external" href="https://www.atlassian.com/git/tutorials/saving-changes/gitignore">here</a>.</p>
+<p>Line-by-line comparison is also not ideal for writing code where <strong>code-blocks</strong> span multiple lines. Git’s merging strategy may have problems if edits are made in the middle of a code block that might, in principle mess up the syntax. For example, imagine if you change a line which has a closing parenthesis for a multi-line function definition.</p>
+<p>These are issues that are avoided by</p>
+<ul class="simple">
+<li><p>Not trying to version inappropriate file types</p></li>
+<li><p>Making regular commits of small changes</p></li>
+<li><p>Anticipating trouble and working around it</p></li>
+<li><p>Using the other tools available in github to communicate with your collaborators and plan changes carefully.</p></li>
+<li><p>Branches (see <a class="reference external" href="https://www.atlassian.com/git/tutorials/using-branches">this page in the tutorial</a></p></li>
+</ul>
 </div>
 </div>
 
@@ -1031,7 +934,7 @@ ls -a shared-sandbox
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./Notebooks/Themes/Introduction2VersionControl"
+            path: "./Notebooks/FirstSteps/Introduction2VersionControl"
         },
         predefinedOutput: true
     }

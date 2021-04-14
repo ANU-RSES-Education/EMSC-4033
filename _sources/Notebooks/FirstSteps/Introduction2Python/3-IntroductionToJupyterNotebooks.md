@@ -15,11 +15,18 @@ kernelspec:
 
 # Jupyter Notebooks 
 
-We are going to be using `jupyter` notebooks in our examples a version of python known as `ipython` in the notebooks. 
+We are going to be using the literate-programming, `jupyter` notebook system in all of our examples and a version of python known as `ipython` in the notebooks themselves
 
 The notebook is a __live__ document that can contain a number of different types of content, 
 including fragments of programs that can actually be run within the text. It requires some form
-of computational substrate to run (otherwise you will just see the preview). 
+of computational substrate to run (otherwise you will just see the preview). The rocket icon in the 
+menu bar will launch this page as a notebook so that you can run the examples.
+
+
+```{image} ../images/rocket-icon.png
+:align: center
+:width: 80%
+```
 
 You can use the notebooks as a scratchpad to process data, for example, 
 and the workflow that you develop is recorded and can be revisited. 

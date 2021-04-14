@@ -113,32 +113,37 @@
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../../Themes/Introduction2Python/0-CharacteristicsOfPython.html">
+  <a class="reference internal" href="../../FirstSteps/Introduction2Python/0-CharacteristicsOfPython.html">
    What kind of Language is Python ?
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="../../Themes/Introduction2Python/1-LePlumeDeMaTante.html">
+    <a class="reference internal" href="../../FirstSteps/Introduction2Python/1-LePlumeDeMaTante.html">
      Python Phrase Book
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../Themes/Introduction2Python/3-IntroductionToJupyterNotebooks.html">
+    <a class="reference internal" href="../../FirstSteps/Introduction2Python/2-LiterateProgramming.html">
+     Literate Programming
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../FirstSteps/Introduction2Python/3-IntroductionToJupyterNotebooks.html">
      Jupyter Notebooks
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../Themes/Introduction2Python/4-IntroductionToIpython.html">
+    <a class="reference internal" href="../../FirstSteps/Introduction2Python/4-IntroductionToIpython.html">
      ipython
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../Themes/Introduction2Python/5-PythonDataTypes.html">
+    <a class="reference internal" href="../../FirstSteps/Introduction2Python/5-PythonDataTypes.html">
      Python data types
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../Themes/Introduction2Python/6-PythonClasses.html">
+    <a class="reference internal" href="../../FirstSteps/Introduction2Python/6-PythonClasses.html">
      Classes and objects
     </a>
    </li>
@@ -146,9 +151,16 @@
   <i class="fas fa-chevron-down">
   </i>
  </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Version control
+ </span>
+</p>
+<ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="../../Themes/Plotting/1-IntroductionToMatplotlib.html">
-   Introduction to matplotlib
+  <a class="reference internal" href="../../FirstSteps/Introduction2VersionControl/1-GettingStartedWithGit.html">
+   An introduction to Version Control
   </a>
  </li>
 </ul>
@@ -171,11 +183,6 @@
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
      Exercise 2 - Variables and functions
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="#functions">
-     Functions
     </a>
    </li>
    <li class="toctree-l2">
@@ -844,36 +851,29 @@
         </div>
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Exercise 2 - Variables and functions
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-variables">
+   Using variables
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#naming-conventions">
+   Naming Conventions
   </a>
   <ul class="nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#using-variables">
-     Using variables
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#naming-conventions">
-     Naming Conventions
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#types">
-       Types
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#salary-calculations">
-     Salary calculations
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#types">
+     Types
     </a>
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#salary-calculations">
+   Salary calculations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#functions">
    Functions
   </a>
@@ -1045,9 +1045,8 @@ cost_after_tax = cost_before_tax * (1 + tax_rate / 100)
 </div>
 </div>
 </div>
-</div>
 <div class="section" id="functions">
-<h1>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h1>
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
 <p>A <strong>function</strong> provides a convenient way to ‘wrap up’ code to accomplish a particular task. Once a function is written, it can (generally) be used without us needing to know anything about <em>how</em> it works. This is a very powerful concept, and complex programs are often made by chaining many functions together.</p>
 <p>In general, a function has a well-defined set of <strong>inputs</strong> (sometimes known as the function’s ‘arguments’) and <strong>outputs</strong> (sometimes called the ‘return value’). In Python, and most other modern programming languages, a ‘function call’ looks like</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">output1</span><span class="p">,</span> <span class="n">output2</span> <span class="o">=</span> <span class="n">function_name</span><span class="p">(</span><span class="n">input1</span><span class="p">,</span> <span class="n">input2</span><span class="p">,</span> <span class="n">input3</span><span class="p">)</span>
@@ -1316,6 +1315,7 @@ cost_after_tax = cost_before_tax * (1 + tax_rate / 100)
 </ul>
 <p>Similarly, any floating-point number, <code class="docutils literal notranslate"><span class="pre">v</span></code>, comes with a <code class="docutils literal notranslate"><span class="pre">v.as_integer_ratio()</span></code> function that reports <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> such that <span class="math notranslate nohighlight">\(v = a/b\)</span>. To see the full list of functions associated with any variable <code class="docutils literal notranslate"><span class="pre">v</span></code>, type <code class="docutils literal notranslate"><span class="pre">help(v)</span></code>. You can also type <code class="docutils literal notranslate"><span class="pre">v.</span></code> and then hit the <kbd>Tab</kbd> key.</p>
 <p>You may notice that some variables have a lot of attached functions that are named with double-underscores, such as <code class="docutils literal notranslate"><span class="pre">x.__add__()</span></code>. These are used by Python internally, and are not intended to be called directly in programs. In fact, the <code class="docutils literal notranslate"><span class="pre">__add__()</span></code> function is called whenever you use <code class="docutils literal notranslate"><span class="pre">+</span></code>: internally, <code class="docutils literal notranslate"><span class="pre">x+y</span></code> gets translated to <code class="docutils literal notranslate"><span class="pre">x.__add__(y)</span></code>. We will discuss this in more detail later in the course, when we talk about ‘object-oriented programming’.</p>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
