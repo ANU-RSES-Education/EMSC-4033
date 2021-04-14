@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Andrew Valentine’s Exercises &#8212; EMSC 4033 Computational Geoscience</title>
+    <title>Exercises &#8212; EMSC 4033 Computational Geoscience</title>
     
   <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -54,7 +54,7 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Index" href="../Themes/0-StartHere.html" />
+    <link rel="next" title="Exercise 1 - Getting started with Jupyter and Python" href="Ex01/Ex1-GettingStarted.html" />
     <link rel="prev" title="An introduction to Version Control" href="../FirstSteps/Introduction2VersionControl/1-GettingStartedWithGit.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -170,9 +170,120 @@
 <ul class="current nav sidenav_l1">
  <li class="toctree-l1 current active collapsible-parent">
   <a class="current reference internal" href="#">
-   Andrew Valentine’s Exercises
+   Exercises
   </a>
-  <ul class="simple collapse-ul">
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="Ex01/Ex1-GettingStarted.html">
+     Exercise 1 - Getting started with Jupyter and Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Ex02/Ex2-Variables%2Bfunctions.html">
+     Exercise 2 - Variables and functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Ex03/Ex3-Loops%2BConditionals.html">
+     Exercise 3 - Loops and conditionals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Ex04/Ex4-GuessingGames.html">
+     Exercise 4 - Guessing Games
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Ex05/Ex5-ListsEtc.html">
+     Exercise 5 - Lists, tuples and dictionaries
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Ex06/Ex6-MoreLoops.html">
+     Exercise 6 - More loops
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Ex07/Ex7-Strings.html">
+     Exercise 7 - Strings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Ex08/Ex8-ReadWriteFiles.html">
+     Exercise 8 - Reading and writing files
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Ex09/Ex9-Modules.html">
+     Exercise 9 - Modules
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Ex10/Ex10-Exceptions.html">
+     Exercise 10 - Exception handling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Ex11/Ex11-numpy.html">
+     Exercise 11 - NumPy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Ex11/Ex11a-Sudoku.html">
+     Exercise 11 - Sudoku
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Ex12/Ex12-Plotting.html">
+     Exercise 12 - Plotting
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Ex13/Ex13-RadioactiveDecay.html">
+     Exercise 13 - Radioactive decay
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Ex14/Ex14-PandasDatabases.html">
+     Exercise 14 - Structured Data in Python (
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       pandas
+      </span>
+     </code>
+     )
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Ex15/Ex15-MorePlotting.html">
+     Exercise 15 - More plotting
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Ex16/Ex16-Maps.html">
+     Exercise 16 - Maps
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Ex17/Ex17-FourierAnalysis.html">
+     Exercise 17 - Fourier analysis and Milankovitch cycles
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Ex18/Ex18-Objects.html">
+     Exercise N - Object-oriented programming
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Ex19/Ex19-DifferentialEqs.html">
+     Exercise N - Differential equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Ex20/Ex20-Sorting.html">
+     Exercise N - Visualising sorting algorithms
+    </a>
+   </li>
   </ul>
   <i class="fas fa-chevron-down">
   </i>
@@ -692,6 +803,41 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#getting-started-with-python-and-jupyter">
+   Getting started with python and jupyter
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#arrays-of-data-and-loops">
+   Arrays of data and loops
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#python-idiosyncrasies">
+   Python idiosyncrasies
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#doing-things-with-python">
+   Doing things with python
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#more-advanced-material">
+   More advanced material
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
         </div>
     </div>
 </div>
@@ -700,32 +846,64 @@
         
               <div>
                 
-  <div class="section" id="andrew-valentines-exercises">
-<h1>Andrew Valentine’s Exercises<a class="headerlink" href="#andrew-valentines-exercises" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="exercises">
+<h1>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h1>
 <p>These notebooks and exercises were prepared by Andrew Valentine as a class that can be followed in roughly numerical order to progress through more complicated features of python and more difficult problems.</p>
+<div class="section" id="getting-started-with-python-and-jupyter">
+<h2>Getting started with python and jupyter<a class="headerlink" href="#getting-started-with-python-and-jupyter" title="Permalink to this headline">¶</a></h2>
+<p>Some simple introductary notebooks to help you learn both notebooks and python at the same time.
+We ran through some of this in our <a class="reference internal" href="../FirstSteps/Introduction2Python/0-CharacteristicsOfPython.html"><span class="doc std std-doc">meet-and-greet</span></a> with python programming</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="Ex01/Ex1-GettingStarted.html"><span class="doc std std-doc">Exercise 1 - Getting started</span></a></p></li>
 <li><p><a class="reference internal" href="Ex02/Ex2-Variables%2Bfunctions.html"><span class="doc std std-doc">Exercise 2 - Variables and functions</span></a></p></li>
 <li><p><a class="reference internal" href="Ex03/Ex3-Loops%2BConditionals.html"><span class="doc std std-doc">Exercise 3 - Loops and conditionals</span></a></p></li>
 <li><p><a class="reference internal" href="Ex04/Ex4-GuessingGames.html"><span class="doc std std-doc">Exercise 4 - Guessing Games</span></a></p></li>
+</ul>
+</div>
+<div class="section" id="arrays-of-data-and-loops">
+<h2>Arrays of data and loops<a class="headerlink" href="#arrays-of-data-and-loops" title="Permalink to this headline">¶</a></h2>
+<p>Moving on to data types that bundle multiple items together, thinking about how address individual
+items in those structures and how to access all of them in turn. This builds upon our <a class="reference internal" href="../FirstSteps/Introduction2Python/5-PythonDataTypes.html"><span class="doc std std-doc">quick introduction to python
+data types</span></a></p>
+<ul class="simple">
 <li><p><a class="reference internal" href="Ex05/Ex5-ListsEtc.html"><span class="doc std std-doc">Exercise 5 - Lists, tuples and dictionaries</span></a></p></li>
 <li><p><a class="reference internal" href="Ex06/Ex6-MoreLoops.html"><span class="doc std std-doc">Exercise 6 - More loops</span></a></p></li>
 <li><p><a class="reference internal" href="Ex07/Ex7-Strings.html"><span class="doc std std-doc">Exercise 7 - Strings</span></a></p></li>
 <li><p><a class="reference internal" href="Ex08/Ex8-ReadWriteFiles.html"><span class="doc std std-doc">Exercise 8 - Reading and writing files</span></a></p></li>
+</ul>
+</div>
+<div class="section" id="python-idiosyncrasies">
+<h2>Python idiosyncrasies<a class="headerlink" href="#python-idiosyncrasies" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
 <li><p><a class="reference internal" href="Ex09/Ex9-Modules.html"><span class="doc std std-doc">Exercise 9 - Modules</span></a></p></li>
 <li><p><a class="reference internal" href="Ex10/Ex10-Exceptions.html"><span class="doc std std-doc">Exercise 10 - Exception handling</span></a></p></li>
-<li><p><a class="reference internal" href="Ex11/Ex11-Sodoku.html"><span class="doc std std-doc">Exercise 11 - Sudoku</span></a></p></li>
+</ul>
+</div>
+<div class="section" id="doing-things-with-python">
+<h2>Doing things with python<a class="headerlink" href="#doing-things-with-python" title="Permalink to this headline">¶</a></h2>
+<p>Here we begin to explore the commonly used packages that are readily available in the python
+ecosystem. These exercises give you an introduction to the topic and you can dig deeper later.</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="Ex11/Ex11-numpy.html"><span class="doc std std-doc">Exercise 11 - Numpy</span></a> - Go deeper into numpy/scipy with <a class="reference internal" href="../Themes/NumpyAndScipy/0-NumpyAndScipy.html"><span class="doc std std-doc">these notebooks</span></a></p></li>
 <li><p><a class="reference internal" href="Ex12/Ex12-Plotting.html"><span class="doc std std-doc">Exercise 12 - Plotting</span></a></p></li>
 <li><p><a class="reference internal" href="Ex13/Ex13-RadioactiveDecay.html"><span class="doc std std-doc">Exercise 13 - Radioactive Decay</span></a></p></li>
 <li><p><a class="reference internal" href="Ex14/Ex14-PandasDatabases.html"><span class="doc std std-doc">Exercise 14 - Pandas</span></a></p></li>
 <li><p><a class="reference internal" href="Ex15/Ex15-MorePlotting.html"><span class="doc std std-doc">Exercise 15 - More plotting</span></a></p></li>
-<li><p><a class="reference internal" href="Ex16/Ex16-Maps.html"><span class="doc std std-doc">Exercise 16 - Maps</span></a></p></li>
+<li><p><a class="reference internal" href="Ex16/Ex16-Maps.html"><span class="doc std std-doc">Exercise 16 - Maps</span></a> - Go deeper into map making with <a class="reference internal" href="../Themes/Mapping/0-Maps_with_Cartopy.html"><span class="doc std std-doc">these notebooks</span></a></p></li>
 <li><p><a class="reference internal" href="Ex17/Ex17-FourierAnalysis.html"><span class="doc std std-doc">Exercise 17 - Fourier analysis and Milankovitch cycles</span></a></p></li>
+</ul>
+</div>
+<div class="section" id="more-advanced-material">
+<h2>More advanced material<a class="headerlink" href="#more-advanced-material" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
 <li><p><a class="reference internal" href="Ex18/Ex18-Objects.html"><span class="doc std std-doc">Exercise 18 - Object-oriented programming</span></a></p></li>
 <li><p><a class="reference internal" href="Ex19/Ex19-DifferentialEqs.html"><span class="doc std std-doc">Exercise 19 - differential equations</span></a></p></li>
 <li><p><a class="reference internal" href="Ex20/Ex20-Sorting.html"><span class="doc std std-doc">Exercise 20 - Sorting</span></a></p></li>
 </ul>
+<p>There are more <a class="reference internal" href="../Themes/0-StartHere.html"><span class="doc std std-doc">in-depth examples</span></a> that you can now start to work through. These will
+assume you understand python and are trying to understand the programming process.</p>
 <div class="toctree-wrapper compound">
+</div>
 </div>
 </div>
 
@@ -755,7 +933,7 @@
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="../FirstSteps/Introduction2VersionControl/1-GettingStartedWithGit.html" title="previous page">An introduction to Version Control</a>
-    <a class='right-next' id="next-link" href="../Themes/0-StartHere.html" title="next page">Index</a>
+    <a class='right-next' id="next-link" href="Ex01/Ex1-GettingStarted.html" title="next page">Exercise 1 - Getting started with Jupyter and Python</a>
 
         </div>
         

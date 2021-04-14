@@ -56,6 +56,8 @@
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Exercise 11 - Sudoku" href="Ex11a-Sudoku.html" />
+    <link rel="prev" title="Exercise 10 - Exception handling" href="../Ex10/Ex10-Exceptions.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -167,12 +169,123 @@
   Python, Step by Step
  </span>
 </p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1 collapsible-parent">
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active collapsible-parent">
   <a class="reference internal" href="../Introduction.html">
-   Andrew Valentine’s Exercises
+   Exercises
   </a>
-  <ul class="simple collapse-ul">
+  <ul class="current collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex01/Ex1-GettingStarted.html">
+     Exercise 1 - Getting started with Jupyter and Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex02/Ex2-Variables%2Bfunctions.html">
+     Exercise 2 - Variables and functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex03/Ex3-Loops%2BConditionals.html">
+     Exercise 3 - Loops and conditionals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex04/Ex4-GuessingGames.html">
+     Exercise 4 - Guessing Games
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex05/Ex5-ListsEtc.html">
+     Exercise 5 - Lists, tuples and dictionaries
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex06/Ex6-MoreLoops.html">
+     Exercise 6 - More loops
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex07/Ex7-Strings.html">
+     Exercise 7 - Strings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex08/Ex8-ReadWriteFiles.html">
+     Exercise 8 - Reading and writing files
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex09/Ex9-Modules.html">
+     Exercise 9 - Modules
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex10/Ex10-Exceptions.html">
+     Exercise 10 - Exception handling
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Exercise 11 - NumPy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Ex11a-Sudoku.html">
+     Exercise 11 - Sudoku
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex12/Ex12-Plotting.html">
+     Exercise 12 - Plotting
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex13/Ex13-RadioactiveDecay.html">
+     Exercise 13 - Radioactive decay
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex14/Ex14-PandasDatabases.html">
+     Exercise 14 - Structured Data in Python (
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       pandas
+      </span>
+     </code>
+     )
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex15/Ex15-MorePlotting.html">
+     Exercise 15 - More plotting
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex16/Ex16-Maps.html">
+     Exercise 16 - Maps
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex17/Ex17-FourierAnalysis.html">
+     Exercise 17 - Fourier analysis and Milankovitch cycles
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex18/Ex18-Objects.html">
+     Exercise N - Object-oriented programming
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex19/Ex19-DifferentialEqs.html">
+     Exercise N - Differential equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex20/Ex20-Sorting.html">
+     Exercise N - Visualising sorting algorithms
+    </a>
+   </li>
   </ul>
   <i class="fas fa-chevron-down">
   </i>
@@ -654,7 +767,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../../_sources/Notebooks/StepByStep/ExNN/Exercise 11 - NumPy.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../../../_sources/Notebooks/StepByStep/Ex11/Ex11-numpy.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -692,14 +805,14 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/ANU-RSES-Education/EMSC-4033/master?urlpath=tree/Notebooks/StepByStep/ExNN/Exercise 11 - NumPy.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/ANU-RSES-Education/EMSC-4033/master?urlpath=tree/Notebooks/StepByStep/Ex11/Ex11-numpy.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../../_static/images/logo_binder.svg"
                     alt="Interact on binder">Binder</button></a>
         
         
-        <a class="jupyterhub-button" href="https://emsc4033-2021.rses.underworldcloud.org/hub/user-redirect/git-pull?repo=https://github.com/ANU-RSES-Education/EMSC-4033&urlpath=tree/EMSC-4033/Notebooks/StepByStep/ExNN/Exercise 11 - NumPy.ipynb&branch=master"><button type="button"
+        <a class="jupyterhub-button" href="https://emsc4033-2021.rses.underworldcloud.org/hub/user-redirect/git-pull?repo=https://github.com/ANU-RSES-Education/EMSC-4033&urlpath=tree/EMSC-4033/Notebooks/StepByStep/Ex11/Ex11-numpy.ipynb&branch=master"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
                 data-placement="left"><img class="jupyterhub-button-logo"
                     src="../../../_static/images/logo_jupyterhub.svg"
@@ -715,6 +828,21 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#test-your-mastery-of-numpy">
+   Test your mastery of numpy !
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
         </div>
     </div>
 </div>
@@ -869,6 +997,11 @@
 </div>
 </div>
 </div>
+<div class="section" id="test-your-mastery-of-numpy">
+<h2>Test your mastery of numpy !<a class="headerlink" href="#test-your-mastery-of-numpy" title="Permalink to this headline">¶</a></h2>
+<p>This exercise might be interesting as it tests your ability to understand loops and arrays. It is a little more challenging than many of the ones we have encountered so far, and you can skip it if you feel your time would be better spent elsewhere. However, if you have been finding the course easy it should be a fun challenge.</p>
+<p>Can you write a <a class="reference internal" href="Ex11a-Sudoku.html"><span class="doc std std-doc"><strong>Sudoku Solver</strong></span></a> ?</p>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -884,7 +1017,7 @@
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./Notebooks/StepByStep/ExNN"
+            path: "./Notebooks/StepByStep/Ex11"
         },
         predefinedOutput: true
     }
@@ -896,6 +1029,8 @@
         
         <div class='prev-next-bottom'>
             
+    <a class='left-prev' id="prev-link" href="../Ex10/Ex10-Exceptions.html" title="previous page">Exercise 10 - Exception handling</a>
+    <a class='right-next' id="next-link" href="Ex11a-Sudoku.html" title="next page">Exercise 11 - Sudoku</a>
 
         </div>
         
