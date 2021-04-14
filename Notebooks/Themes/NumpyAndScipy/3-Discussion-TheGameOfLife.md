@@ -19,7 +19,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 ```
 
-## The game of life (Advanced)
+# The game of life (Advanced)
 
 This is an example of a __cellular automaton__ - a collection of rules that act on the state of a system and determine the updated state. These often have interesting, _emergent_ behaviours that are not obviously inherent in the rules.
 
