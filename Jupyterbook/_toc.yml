@@ -8,25 +8,21 @@
 
 - part: What is Python like ?
   chapters:
-  - file: Notebooks/Themes/Introduction2Python/0-CharacteristicsOfPython.md
+  - file: Notebooks/FirstSteps/Introduction2Python/0-CharacteristicsOfPython.md
     sections:
-    - file: Notebooks/Themes/Introduction2Python/1-LePlumeDeMaTante.md
-    - file: Notebooks/Themes/Introduction2Python/2-LiterateProgramming.md
-    - file: Notebooks/Themes/Introduction2Python/3-IntroductionToJupyterNotebooks.md
-    - file: Notebooks/Themes/Introduction2Python/4-IntroductionToIpython.md
-    - file: Notebooks/Themes/Introduction2Python/5-PythonDataTypes
-    - file: Notebooks/Themes/Introduction2Python/6-PythonClasses  
+    - file: Notebooks/FirstSteps/Introduction2Python/1-LePlumeDeMaTante.md
+    - file: Notebooks/FirstSteps/Introduction2Python/2-LiterateProgramming.md
+    - file: Notebooks/FirstSteps/Introduction2Python/3-IntroductionToJupyterNotebooks.md
+    - file: Notebooks/FirstSteps/Introduction2Python/4-IntroductionToIpython.md
+    - file: Notebooks/FirstSteps/Introduction2Python/5-PythonDataTypes
+    - file: Notebooks/FirstSteps/Introduction2Python/6-PythonClasses  
+
+- part: Version control 
+  chapters:
+  - file: Notebooks/FirstSteps/Introduction2VersionControl/1-GettingStartedWithGit
 
 
-  # - file: Notebooks/Themes/Introduction2VersionControl/1-GettingStartedWithGit
-  #   sections:
-  #    - file: Notebooks/Themes/Introduction2VersionControl/2-NextStepsWithGit
-  #    - file: Notebooks/Themes/Introduction2VersionControl/3-YourOwnRepositories
-
-
-  # Something here about tests
-
-  - file: Notebooks/Themes/Plotting/1-IntroductionToMatplotlib
+  # - file: Notebooks/Themes/Plotting/1-IntroductionToMatplotlib
 
 
 - part: Python, Step by Step

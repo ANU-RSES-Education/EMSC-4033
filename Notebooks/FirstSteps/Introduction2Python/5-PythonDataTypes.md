@@ -3,8 +3,8 @@ jupytext:
   text_representation:
     extension: .md
     format_name: myst
-    format_version: 0.12
-    jupytext_version: 1.6.0
+    format_version: 0.13
+    jupytext_version: 1.10.3
 kernelspec:
   display_name: Python 3
   language: python
@@ -40,7 +40,6 @@ print ("Value of f is {:d}, value of i is {:f}".format(f,i))
 ```
 
 ```{code-cell} ipython3
-
 c = 0.0 + 1.0j
 
 print (c)
@@ -52,7 +51,7 @@ print ("Value of c**2 is {:f}".format(c**2))
 
 ---
 
-Notes: The `math` module needs to be imported before you can use it. 
+Notes: The `math` module needs to be imported before you can use it.
 
 ```{code-cell} ipython3
 import math
@@ -105,9 +104,6 @@ print (f.__truediv__(2.0) ) # This looks odd, but it is the way that f / 2.0 is 
 ```
 
 ## Strings
-
-
-
 
 ```{code-cell} ipython3
 s = 'hello'
@@ -239,7 +235,7 @@ print ("4 - ", l)
 
 ---
 
-Sets are special list-like collections of unique items. NOTE that the elements are not ordered (no such thing as `s[1]` 
+Sets are special list-like collections of unique items. NOTE that the elements are not ordered (no such thing as `s[1]`
 
 ```{code-cell} ipython3
 s = set([6,5,4,3,2,1,1,1,1])
@@ -256,7 +252,7 @@ s.union(s2)
 
 ## Dictionaries
 
-These are very useful data collections where the information can be looked up by name instead of a numerical index. This will come in handy as a lightweight database and is commonly something we need to use when using modules to read in data. 
+These are very useful data collections where the information can be looked up by name instead of a numerical index. This will come in handy as a lightweight database and is commonly something we need to use when using modules to read in data.
 
 ```{code-cell} ipython3
 d = { "item1": ['a','b','c'], "item2": ['c','d','e']}
@@ -321,12 +317,10 @@ phone_book = { "Achibald":   ("04", "1234 4321"),
 ```
 
 Can you construct a reverse phone book to look up who is calling from their phone number ?
-    
-    
 
 +++ {"solution": "shown", "solution_first": true}
 
-__Solution:__ Here is a possible solution for the simple version of the problem but this could still use some error checking (if you type in a wrong number) 
+__Solution:__ Here is a possible solution for the simple version of the problem but this could still use some error checking (if you type in a wrong number)
 
 ```{code-cell} ipython3
 # Name: ( area code, number )

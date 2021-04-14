@@ -7,11 +7,13 @@ name: Someone knows python !
 ---
 ```
 
-- Louis Moresi, Australian National University
-- Andrew Valentine, Durham University
-- Navid Constantinou, Australian National University
+Louis Moresi, Australian National University; Andrew Valentine, Durham University (formerly ANU); Navid Constantinou, Australian National University. Other authors have contributed material to this document (thank you !), see {ref}`section:acknowledgements` for a list.
 
-Other authors have contributed material to this document (thank you !), see {ref}`section:acknowledgements` for a list.
+In this course, we are first going to touch on some basic principles of programming, discuss what it even means to program a computer, and then move on to get a feel for what a program looks like using the `python` programming language for all of our examples. We are going to work mostly online using the `jupyter` literate computing interface to python as our electronic *lab notebook* and we are going to learn by example.
+
+We are also trying to learn good programming habits - like writing a plan for our software before leaping in, using reliable version control (especially when working in teams), writing tests, adopting a helpful, clear programming style. 
+
+There is a [step-by-step guide](Notebooks/StepByStep/Introduction.md) to learning python programming and also a number of [deeper-dives](Notebooks/Themes/0-StartHere.md) into topics of relevance to Earth Science. 
 
 ## Introduction
 

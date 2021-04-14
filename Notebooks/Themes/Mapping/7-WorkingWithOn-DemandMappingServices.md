@@ -81,21 +81,94 @@ open_street_map = cimgt.OSM()
 ## Satellite Quadtree
 qtree_satellite_plus = cimgt.QuadtreeTiles()
 
+
+## Ordinance Survey 
+ord_survey = cimgt.OrdnanceSurvey(apikey="")
+
+## Azure (Not released in cartopy)
+
+
 ## Mapbox Satellite images 
 
 mapbox_satellite = cimgt.MapboxTiles(map_id='satellite', 
                                      access_token='pk.eyJ1IjoibG91aXNtb3Jlc2kiLCJhIjoiY2pzeG1mZzFqMG5sZDQ0czF5YzY1NmZ4cSJ9.lpsUzmLasydBlS0IOqe5JA')
 
-## No longer supported
+# No longer supported / incompatible with cartopy interface
 # mapbox_streets = cimgt.MapboxTiles(map_id='streets', 
 #                                      access_token='pk.eyJ1IjoibG91aXNtb3Jlc2kiLCJhIjoiY2pzeG1mZzFqMG5sZDQ0czF5YzY1NmZ4cSJ9.lpsUzmLasydBlS0IOqe5JA')
-
 
 
 ## Google maps image tiles ()
 google_maps_street = cimgt.GoogleTiles(style="street") 
 google_maps_satellite = cimgt.GoogleTiles(style="satellite") 
 google_maps_terrain = cimgt.GoogleTiles(style="terrain") 
+```
+
+## Aside - the flexibility of python classes
+
+**Update: April 2021**
+
+You may have noticed the commented-out line of code regarding *"Mapbox Streets"* which is one of the basemaps that is supported by `cartopy`. Mapbox, the company, recently changed the way you access their maps and *they broke Cartopy*.  
+
+Although that is rather frustrating when it comes to demonstrating how to make maps, it does give me the opportunity to show you a bit more about how easy it can be modify a python code on-the-fly. We can't really change the Cartopy code itself, but we can dig out the piece of code that is broken and make a working copy.
+
+Because we import classes and then use them, all we really need to do is replace the class and use that instead of importing the original. And then we ought to be helpful and contribute the bug fix back to the original authors. 
+
+**Note:** It is also possible to override the parts of the class by defining a new subclass and overriding the parts we need to change. We don't need to do that here because we are fixing a one function class 
+
+```{code-cell} ipython3
+from cartopy.io.img_tiles import GoogleWTS
+
+class MapboxTiles(GoogleWTS):
+    """
+    Implement web tile retrieval from Mapbox.
+    For terms of service, see https://www.mapbox.com/tos/.
+    """
+    def __init__(self, access_token, map_id):
+        """
+        Set up a new Mapbox tiles instance.
+        Access to Mapbox web services requires an access token and a map ID.
+        See https://www.mapbox.com/api-documentation/ for details.
+        Parameters
+        ----------
+        access_token
+            A valid Mapbox API access token.
+        map_id
+            An ID for a publicly accessible map (provided by Mapbox).
+            This is the map whose tiles will be retrieved through this process.
+        """
+        self.access_token = access_token
+        self.map_id = map_id
+        super().__init__()
+        
+        
+    # OLD code
+    
+#     def _image_url(self, tile):
+#         x, y, z = tile
+#         url = ('https://api.mapbox.com/v4/mapbox.{id}/{z}/{x}/{y}.png'
+#                '?access_token={token}'.format(z=z, y=y, x=x,
+#                                               id=self.map_id,
+#                                               token=self.access_token))
+
+    # NEW code
+    def _image_url(self, tile):
+        x, y, z = tile
+        url = ('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}'
+               '?access_token={token}'.format(z=z, y=y, x=x,
+                                              id=self.map_id,
+                                              token=self.access_token))
+        return url
+
+
+# we can use this class definition in place of the old one
+
+mapbox_streets = MapboxTiles(map_id='mapbox/streets-v11', 
+                                     access_token='pk.eyJ1IjoibG91aXNtb3Jlc2kiLCJhIjoiY2pzeG1mZzFqMG5sZDQ0czF5YzY1NmZ4cSJ9.lpsUzmLasydBlS0IOqe5JA')
+
+
+mapbox_satellite = MapboxTiles(map_id='mapbox/satellite-v9', 
+                                     access_token='pk.eyJ1IjoibG91aXNtb3Jlc2kiLCJhIjoiY2pzeG1mZzFqMG5sZDQ0czF5YzY1NmZ4cSJ9.lpsUzmLasydBlS0IOqe5JA')
 ```
 
 ```{code-cell} ipython3
@@ -106,7 +179,7 @@ lon0 =  -121; lon1 = -116
 
 map_extent = [lon0, lon1, lat0, lat1]
 
-map_tiles = mapbox_satellite
+map_tiles = mapbox_streets
 
 fig = plt.figure(figsize=(12, 12), facecolor="none")
 # ax = plt.axes(projection=ccrs.PlateCarree(), extent=himalaya_extent)
@@ -181,7 +254,6 @@ ax.add_feature(rivers50,    linewidth=1.0,  edgecolor="Blue",  zorder=2)
 ```
 
 ```{code-cell} ipython3
-## Mapquest - Je ne t'aime plus 
 
 lat0 =   48  ; lat1 = 60
 lon0 =  -15  ; lon1 = 5
@@ -227,7 +299,7 @@ map_extent = [lon0, lon1, lat0, lat1]
 
 
 maptype1 = mapbox_satellite
-maptype2 = stamen_TerrainPlus
+maptype2 = mapbox_streets
 
 
 ## Could also try these ... 
@@ -280,8 +352,8 @@ ax2  = plt.subplot(122, projection=google_maps_satellite.crs)
 ax1.set_extent(map_extent)
 ax2.set_extent(map_extent)
 
-ax1.add_image(mapbox_satellite, 17,    )
-ax2.add_image(open_street_map, 17)
+ax1.add_image(mapbox_satellite, 18)
+ax2.add_image(mapbox_streets, 18)
 ```
 
 ```{code-cell} ipython3
