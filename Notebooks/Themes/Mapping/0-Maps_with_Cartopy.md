@@ -13,4 +13,3 @@ kernelspec:
 
 # Maps with the Cartopy Package
 
-Introductory text

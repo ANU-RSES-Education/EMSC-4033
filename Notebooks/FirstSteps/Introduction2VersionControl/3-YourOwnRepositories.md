@@ -13,7 +13,6 @@ kernelspec:
 
 # How to use git for yourself
 
-
   > _I recommend this tutorial: [https://www.atlassian.com/git/tutorials/learn-git-with-bitbucket-cloud](https://www.atlassian.com/git/tutorials/learn-git-with-bitbucket-cloud) even though it focuses on bitbucket rather than github._
 
 
