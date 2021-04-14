@@ -97,7 +97,7 @@ S.subs(X, -8)
 np.sqrt(-8)
 ```
 
-# Differentiation / Integration
+## Differentiation / Integration
 
 ```{code-cell} ipython3
 Ds = S.diff(X)

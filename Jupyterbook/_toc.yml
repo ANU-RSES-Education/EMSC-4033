@@ -54,7 +54,11 @@
 # - file: Notebooks/StepByStep/ExNS/Processing spectral data
 
 - part: "Going deeper - examples from the Earth Sciences"
+
+
   chapters:
+  - file: Notebooks/Themes/0-StartHere.md
+
   - file: Notebooks/Themes/NumpyAndScipy/0-NumpyAndScipy
     sections:
     - file: Notebooks/Themes/NumpyAndScipy/1-IntroductionToNumpy
