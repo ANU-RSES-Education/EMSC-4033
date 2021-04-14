@@ -1,0 +1,1138 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise 7 - Strings &#8212; EMSC 4033 Computational Geoscience</title>
+    
+  <link rel="stylesheet" href="../../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../../index.html">
+  
+  <img src="../../../_static/AuWorldEQ.jpg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">EMSC 4033 Computational Geoscience</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../FrontPage.html">
+   Computational Geosciences
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Introduction
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../IntroductoryRemarks.html">
+   Modern approaches to programming
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  What is Python like ?
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../FirstSteps/Introduction2Python/0-CharacteristicsOfPython.html">
+   What kind of Language is Python ?
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../FirstSteps/Introduction2Python/1-LePlumeDeMaTante.html">
+     Python Phrase Book
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../FirstSteps/Introduction2Python/2-LiterateProgramming.html">
+     Literate Programming
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../FirstSteps/Introduction2Python/3-IntroductionToJupyterNotebooks.html">
+     Jupyter Notebooks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../FirstSteps/Introduction2Python/4-IntroductionToIpython.html">
+     ipython
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../FirstSteps/Introduction2Python/5-PythonDataTypes.html">
+     Python data types
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../FirstSteps/Introduction2Python/6-PythonClasses.html">
+     Classes and objects
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Version control
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../FirstSteps/Introduction2VersionControl/1-GettingStartedWithGit.html">
+   An introduction to Version Control
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Python, Step by Step
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../Introduction.html">
+   Andrew Valentine’s Exercises
+  </a>
+  <ul class="simple collapse-ul">
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Going deeper - examples from the Earth Sciences
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Themes/0-StartHere.html">
+   Index
+  </a>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../Themes/NumpyAndScipy/0-NumpyAndScipy.html">
+   Numpy and Scipy
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/NumpyAndScipy/1-IntroductionToNumpy.html">
+     Numpy data structures
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/NumpyAndScipy/2-Application-TheGameOfLife.html">
+     The game of life
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/NumpyAndScipy/3-Discussion-TheGameOfLife.html">
+     The game of life (Advanced)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/NumpyAndScipy/4-IntroductionToScipy.html">
+     scipy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/NumpyAndScipy/5-ScipyInterpolate.html">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       scipy.interpolate
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/NumpyAndScipy/6-ScipySpatialAndMeshing.html">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       scipy.spatial
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/NumpyAndScipy/7-ScipyOptimize.html">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       scipy.optimize
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/NumpyAndScipy/8-Numpy%2BScipyMiscellany.html">
+     Data storage
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../Themes/Mapping/0-Maps_with_Cartopy.html">
+   Maps with the Cartopy Package
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/Mapping/0-Preliminaries.html">
+     Datasets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/Mapping/1-IntroductingCartopy.html">
+     Cartopy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/Mapping/2-ImagesAndGeoTIFFs.html">
+     Handling images
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/Mapping/3-WorkingWithRealData.html">
+     Australian magnetic intensity
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/Mapping/4-ContouringGlobalData.html">
+     How to use contours to view global data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/Mapping/5-WorkingWithPointData.html">
+     Point Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/Mapping/6-WorkingWithShuttleRadarTopography.html">
+     Cartopy and the Shuttle Radar Topography Map data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/Mapping/7-WorkingWithOn-DemandMappingServices.html">
+     On demand mapping services
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/Mapping/8-GlobalPlateMotionsEtc.html">
+     Global Plate Motions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/Mapping/9-HimalayaRegionMapsAndImages.html">
+     Himalaya Maps (1)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/Mapping/9a-HimalayaRegionMapsAndImages-Pt2.html">
+     Himalaya Maps (2)
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../Themes/SphericalMeshing/0-Stripy.html">
+   Triangulations
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../../Themes/SphericalMeshing/SphericalTriangulations/0-Spherical.html">
+     Spherical Meshes
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/SphericalTriangulations/Ex1-Spherical-Triangulations.html">
+       Example 1 - Triangulation of arbitrary points on the sphere
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/SphericalTriangulations/Ex2-SphericalGrids.html">
+       Example 2 -
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         stripy
+        </span>
+       </code>
+       predefined meshes
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/SphericalTriangulations/Ex3-Interpolation.html">
+       Example 3 -
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         stripy
+        </span>
+       </code>
+       interpolation on the sphere
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/SphericalTriangulations/Ex4-Gradients.html">
+       Example 4 -
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         stripy
+        </span>
+       </code>
+       gradients on the sphere
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/SphericalTriangulations/Ex5-Smoothing.html">
+       Example 5 -
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         stripy
+        </span>
+       </code>
+       smoothing operations
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/SphericalTriangulations/Ex6-Scattered-Data.html">
+       Example 6 - Scattered Data and ‘Heat Maps’
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/SphericalTriangulations/Ex7-Refinement-of-Triangulations.html">
+       Example 7 - Refining a triangulation
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/SphericalTriangulations/Ex8-Spline-Tension.html">
+       Example 8 - Spline Tension
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/SphericalTriangulations/Ex9-Voronoi-Diagram.html">
+       Example 9 - Constructing the Voronoi diagram
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../../Themes/SphericalMeshing/CartesianTriangulations/0-Cartesian.html">
+     Cartesian Meshes
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/CartesianTriangulations/Ex1-Cartesian-Triangulations.html">
+       Example 1 - Triangulation of arbitrary points
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/CartesianTriangulations/Ex2-CartesianGrids.html">
+       Example 2 -
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         stripy
+        </span>
+       </code>
+       predefined meshes
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/CartesianTriangulations/Ex3-Interpolation.html">
+       Example 3 -
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         stripy
+        </span>
+       </code>
+       interpolation
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/CartesianTriangulations/Ex4-Gradients.html">
+       Example 4 -
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         stripy
+        </span>
+       </code>
+       gradients
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/CartesianTriangulations/Ex5-Smoothing.html">
+       Example 5 -
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         stripy
+        </span>
+       </code>
+       smoothing operations
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/CartesianTriangulations/Ex6-Scattered-Data.html">
+       Example 6 - Scattered Data and ‘Heat Maps’
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/CartesianTriangulations/Ex7-Refinement-of-Triangulations.html">
+       Example 7 - Refining a triangulation
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/CartesianTriangulations/Ex8-Spline-Tension.html">
+       Example 8 - Spline Tension
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/CartesianTriangulations/Ex9-Voronoi-Diagram.html">
+       Example 9 - Constructing the Voronoi diagram
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../../Themes/SphericalMeshing/Litho1pt0/Ex1-Litho1Layers.html">
+     Introduction to the stripy wrapper for litho 1.0
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/Litho1pt0/Ex2-Litho1Properties.html">
+       Litho 1.0 global sampling
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/Litho1pt0/Ex3-CrustalRegionalisation.html">
+       Crust 1.0 data
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/Litho1pt0/WorkEx1-CratonAverageProperties.html">
+       Properties of the cratons
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/Litho1pt0/WorkEx2-OceanDepthAge.html">
+       Age of the oceans / depth of the oceans
+      </a>
+     </li>
+     <li class="toctree-l3 collapsible-parent">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/Litho1pt0/WEx2-Tutorial/Notebook-1.html">
+       A quick look at the depth-age relationship for the seafloor.
+      </a>
+      <ul class="collapse-ul">
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../Themes/SphericalMeshing/Litho1pt0/WEx2-Tutorial/Notebook-2.html">
+         A quick look at the depth-age relationship for the seafloor.
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../Themes/SphericalMeshing/Litho1pt0/WEx2-Tutorial/Notebook-3.html">
+         A quick look at the depth-age relationship for the seafloor.
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../Themes/SphericalMeshing/Litho1pt0/WEx2-Tutorial/Notebook-4.html">
+         A quick look at the depth-age relationship for the seafloor.
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../Themes/SphericalMeshing/Litho1pt0/WEx2-Tutorial/Notebook-5.html">
+         A quick look at the depth-age relationship for the seafloor.
+        </a>
+       </li>
+      </ul>
+      <i class="fas fa-chevron-down">
+      </i>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../Themes/SympleSympy/StartingWithSympy.html">
+   Getting started with
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     sympy
+    </span>
+   </code>
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/SympleSympy/StartingWithSympy-2.html">
+     Using
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       sympy
+      </span>
+     </code>
+     for ODEs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/SympleSympy/StartingWithSympy-3.html">
+     Using
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       sympy
+      </span>
+     </code>
+     for a PDE
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/SympleSympy/StartingWithSympy-4.html">
+     The biharmonic equation for Stokes flow
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../Themes/SolveMathProblems/0-IntroductionToNumericalSolutions.html">
+   Numerical models
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/SolveMathProblems/1-GroundwaterFlow-LectureNotes.html">
+     Partial Differential Equations of Groundwater Flow
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/SolveMathProblems/2-FiniteDifferences.html">
+     Finite difference operations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/SolveMathProblems/3-AdvancedFiniteDifferences.html">
+     Advanced finite difference
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Bibliography
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../Bibliography.html">
+   Bibliography
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../_sources/Notebooks/StepByStep/Ex07/Ex7-Strings.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/ANU-RSES-Education/EMSC-4033"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/ANU-RSES-Education/EMSC-4033/master?urlpath=tree/Notebooks/StepByStep/Ex07/Ex7-Strings.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        <a class="jupyterhub-button" href="https://emsc4033-2021.rses.underworldcloud.org/hub/user-redirect/git-pull?repo=https://github.com/ANU-RSES-Education/EMSC-4033&urlpath=tree/EMSC-4033/Notebooks/StepByStep/Ex07/Ex7-Strings.ipynb&branch=master"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
+                data-placement="left"><img class="jupyterhub-button-logo"
+                    src="../../../_static/images/logo_jupyterhub.svg"
+                    alt="Interact on JupyterHub">JupyterHub</button></a>
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-caesar-cipher">
+   The ‘Caesar’ cipher
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="exercise-7-strings">
+<h1>Exercise 7 - Strings<a class="headerlink" href="#exercise-7-strings" title="Permalink to this headline">¶</a></h1>
+<p>Until now, we have mainly been dealing with numeric data (numbers). However, it is often necessary to process text sequences, referred to as ‘character strings’. In this exercise, we will see some of the mechanisms Python provides for text processing.</p>
+<p>As we have already seen, any literal text sequence can be entered between a pair of inverted commas (” ” or ’ ‘), and stored to a variable. Python allows both single and double quotes to be used (not all languages do, so be careful if translating this sort of thinking to another language in the future).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Hamlet&quot;</span>
+<span class="n">quote</span> <span class="o">=</span> <span class="s1">&#39;To be or not to be: that is the question.&#39;</span>
+</pre></div>
+</div>
+<p>If we look at <code class="docutils literal notranslate"><span class="pre">type(name)</span></code>, we see that Python has a <code class="docutils literal notranslate"><span class="pre">str</span></code> type to represent strings.</p>
+<p>To join two strings together, we can simply combine them using the <code class="docutils literal notranslate"><span class="pre">+</span></code> operator:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">name</span><span class="o">+</span><span class="s2">&quot; says &quot;</span><span class="o">+</span><span class="n">quote</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>We can enter quotation marks in a string literal by using the <em>other</em> kind of quotation mark as the string delimiter: either</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">name</span><span class="o">+</span><span class="s2">&quot; says &#39;&quot;</span><span class="o">+</span><span class="n">quote</span><span class="o">+</span><span class="s2">&quot;&#39;&quot;</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">name</span><span class="o">+</span><span class="s1">&#39; says &quot;&#39;</span><span class="o">+</span><span class="n">quote</span><span class="o">+</span><span class="s1">&#39;&quot;&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>We can also ‘escape’ the quotation mark, by placing a <code class="docutils literal notranslate"><span class="pre">\</span></code> in front of it. This forces Python to treat it as a literal character, without any special meaning:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">name</span><span class="o">+</span><span class="s2">&quot; says </span><span class="se">\&quot;</span><span class="s2">&quot;</span><span class="o">+</span><span class="n">quote</span><span class="o">+</span><span class="s2">&quot;</span><span class="se">\&quot;</span><span class="s2">&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Finally, we can use triple-quotes (“”” “””) to mark the beginning and end of the string, which allows ’ and ” to appear within the string without difficulties:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">difficult</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot; Apparently &quot;we can&#39;t just use single quotes&quot; around this string &quot;&quot;&quot;</span>
+</pre></div>
+</div>
+<p>We already encountered triple-quoted strings, in the context of docstrings at the start of a function.</p>
+<p>We can also use the multiplication operator to repeat a string multiple times:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="mi">3</span><span class="o">*</span><span class="n">name</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>However, most other ‘mathematical’ operators (such as subtraction and division) have no meaning with strings.</p>
+<p><strong>➤ Try it out!</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try it here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that string variables containing numbers are not the same as integer or float variables containing the same numbers:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;6&#39;</span>
+<span class="n">y</span> <span class="o">=</span> <span class="s1">&#39;3&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="p">)</span> <span class="c1"># prints &#39;63&#39;</span>
+</pre></div>
+</div>
+<p>However, we can obtain an integer or float variable by using the <code class="docutils literal notranslate"><span class="pre">int</span></code> and <code class="docutils literal notranslate"><span class="pre">float</span></code> functions:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="nb">int</span><span class="p">(</span><span class="n">y</span><span class="p">))</span> <span class="c1"># prints &#39;9&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="nb">float</span><span class="p">(</span><span class="n">y</span><span class="p">))</span> <span class="c1"># prints &#39;9.0&#39;</span>
+</pre></div>
+</div>
+<p>This does not work for strings containing two or more numbers separated by whitespace: <code class="docutils literal notranslate"><span class="pre">int('3</span> <span class="pre">6')</span></code> is assumed to correspond to two distinct numbers, and so they cannot be converted to a single integer. Similarly, while numbers containing a decimal point can be converted to floating-point form, they cannot be interpreted as an integer.</p>
+<p><strong>➤ Try it out!</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try it here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If we want to extract a ‘substring’ - a letter, or sequence of letters, from the middle of the string - we can use syntax similar to that for extracting a subset of a list:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">quote</span> <span class="o">=</span> <span class="s1">&#39;To be or not to be: that is the question.&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">quote</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">35</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>This will print every 3rd character, starting from the character at position 2. Remember, Python counts from 0:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>0123456789...
+To be or n...
+</pre></div>
+</div>
+<p>We therefore see that the character at position 2 is a space, ’ ‘. In general, a substring specification takes the form</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">variable</span><span class="p">[</span><span class="n">istart</span><span class="p">:</span><span class="n">istop</span><span class="p">:</span><span class="n">istep</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Omitting <code class="docutils literal notranslate"><span class="pre">istart</span></code> means the substring should begin from the start of <code class="docutils literal notranslate"><span class="pre">variable</span></code>; omitting <code class="docutils literal notranslate"><span class="pre">istep</span></code> means it should go to the end of <code class="docutils literal notranslate"><span class="pre">variable</span></code>; and omitting <code class="docutils literal notranslate"><span class="pre">istep</span></code> implies that all intervening characters should be printed:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">quote</span><span class="p">[:</span><span class="mi">35</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">quote</span><span class="p">[</span><span class="mi">2</span><span class="p">::</span><span class="mi">3</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">quote</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">35</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>If we wish to extract only a single character, we simply provide its index:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">quote</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>We can also iterate over the letters in a string:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">quote</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">letter</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>➤ Try it out!</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try it here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>A new-line (carriage return) can be represented within a string by entering <code class="docutils literal notranslate"><span class="pre">'\n'</span></code>, for example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">multiline</span> <span class="o">=</span> <span class="s1">&#39;This</span><span class="se">\n</span><span class="s1">string</span><span class="se">\n</span><span class="s1">occupies</span><span class="se">\n</span><span class="s1">five</span><span class="se">\n</span><span class="s1">lines.&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">multiline</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Similarly, <code class="docutils literal notranslate"><span class="pre">\t</span></code> can be used to enter a Tab character. Spaces and tab characters are collectively known as ‘whitespace’.</p>
+<p><strong>➤ Try it out!</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try it here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>As with other data types, Python provides a number of functions to work with a string, <code class="docutils literal notranslate"><span class="pre">s</span></code>. Some of the more important ones are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">len(s)</span></code> - Return the number of characters in <code class="docutils literal notranslate"><span class="pre">s</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">s.count(x)</span></code> - Count the number of occurrences of string <code class="docutils literal notranslate"><span class="pre">x</span></code> within string <code class="docutils literal notranslate"><span class="pre">s</span></code>. Again, this is case-sensitive.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">s.join(x)</span></code> - Here, <code class="docutils literal notranslate"><span class="pre">x</span></code> is assumed to be an iterable (typically a list or tuple) of strings. This function returns a single string, containing all the strings from <code class="docutils literal notranslate"><span class="pre">x</span></code> with a copy of <code class="docutils literal notranslate"><span class="pre">s</span></code> between each. For example, <code class="docutils literal notranslate"><span class="pre">':'.join(['a','b','c'])</span></code> will return <code class="docutils literal notranslate"><span class="pre">'a:b:c'</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">s.split()</span></code> - Return a list of all of the ‘words’ (substrings separated by whitespace) within <code class="docutils literal notranslate"><span class="pre">s</span></code>. Optionally, provide a character to be regarded as the word separator. For example, <code class="docutils literal notranslate"><span class="pre">'a,b,c'.split(',')</span></code> will return <code class="docutils literal notranslate"><span class="pre">['a','b','c']</span></code>. It is also possible to specify the maximum number of words to be returned; once this limit is reached, no further splitting is performed. A variant <code class="docutils literal notranslate"><span class="pre">s.rsplit()</span></code> works backwards from the end of the string.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">s.replace(x,y)</span></code> - Return a version of <code class="docutils literal notranslate"><span class="pre">s</span></code> where every occurrence of string <code class="docutils literal notranslate"><span class="pre">x</span></code> is replaced by string <code class="docutils literal notranslate"><span class="pre">y</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">s.find(x)</span></code> - Return the index of the start of the <em>first</em> occurrence of string <code class="docutils literal notranslate"><span class="pre">x</span></code> in string <code class="docutils literal notranslate"><span class="pre">s</span></code>. Note that this is case-sensitive: compare <code class="docutils literal notranslate"><span class="pre">quote.find('to')</span></code> with <code class="docutils literal notranslate"><span class="pre">quote.find('To')</span></code>. A variant <code class="docutils literal notranslate"><span class="pre">s.rfind(x)</span></code> finds the <em>last</em> occurrence of <code class="docutils literal notranslate"><span class="pre">x</span></code>. Variants <code class="docutils literal notranslate"><span class="pre">s.index()</span></code> and <code class="docutils literal notranslate"><span class="pre">s.rindex()</span></code> are almost identical, except that they have different behaviour if <code class="docutils literal notranslate"><span class="pre">x</span></code> cannot be found within <code class="docutils literal notranslate"><span class="pre">s</span></code>: whereas <code class="docutils literal notranslate"><span class="pre">s.find()</span></code> raises an error, <code class="docutils literal notranslate"><span class="pre">s.index()</span></code> returns <code class="docutils literal notranslate"><span class="pre">-1</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">s.upper()</span></code>, <code class="docutils literal notranslate"><span class="pre">s.lower()</span></code> and <code class="docutils literal notranslate"><span class="pre">s.title()</span></code> - Return a copy of the string <code class="docutils literal notranslate"><span class="pre">s</span></code> converted to be entirely in UPPER CASE/lower case/Title Case respectively.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">s.isupper()</span></code>, <code class="docutils literal notranslate"><span class="pre">s.islower()</span></code>, <code class="docutils literal notranslate"><span class="pre">s.istitle()</span></code> - Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">s</span></code> is entirely in UPPER CASE/lower case/Title Case respectively, otherwise <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">s.capitalize()</span></code> - Return a version of <code class="docutils literal notranslate"><span class="pre">s</span></code> where the first character is in UPPER CASE and the remainder in lower case.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">s.swapcase()</span></code> - Return a version of <code class="docutils literal notranslate"><span class="pre">s</span></code> where all UPPER CASE characters are converted to lower case and vice versa.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">s.center(n)</span></code> - Create a string of length <code class="docutils literal notranslate"><span class="pre">n</span></code> containing a copy of <code class="docutils literal notranslate"><span class="pre">s</span></code> centered within this. By default, this is achived by padding with spaces (’ ‘) before and after <code class="docutils literal notranslate"><span class="pre">s</span></code>; optionally, you can specify a different charater. For example, <code class="docutils literal notranslate"><span class="pre">'hello'.center(11,'_')</span></code> returns <code class="docutils literal notranslate"><span class="pre">'___hello___'</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">s.ljust(n)</span></code> - Create a string of length <code class="docutils literal notranslate"><span class="pre">n</span></code> containing a copy of <code class="docutils literal notranslate"><span class="pre">s</span></code> at its left. Optionally, specify a character to use for padding. Similarly, <code class="docutils literal notranslate"><span class="pre">s.rjust(n)</span></code> places <code class="docutils literal notranslate"><span class="pre">s</span></code> at the right of the <code class="docutils literal notranslate"><span class="pre">n</span></code>-character string.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">s.strip()</span></code> - Return a copy of <code class="docutils literal notranslate"><span class="pre">s</span></code> with all whitespace removed. <code class="docutils literal notranslate"><span class="pre">s.lstrip()</span></code> and <code class="docutils literal notranslate"><span class="pre">s.rstrip()</span></code> are variants removing whitespace only at the start or end of the string, respectively. For example, <code class="docutils literal notranslate"><span class="pre">'elephant'.strip('e')</span></code> returns <code class="docutils literal notranslate"><span class="pre">'lephant'</span></code>.</p></li>
+</ul>
+<p><strong>➤ Try out all of these functions, and satisfy yourself that you understand how they work.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try it here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>➤Write a function which takes in strings like <code class="docutils literal notranslate"><span class="pre">'apples:3;pears:17;bananas:21'</span></code> and produces a nicely-formatted table:</strong></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>+-----------+-----+
+| Apples    |   3 |
+| Pears     |  17 |
+| Bananas   |  21 |
++-----------+-----+
+|     TOTAL |  41 |
++-----------+-----+
+</pre></div>
+</div>
+<p>Here are some additional input strings it should be able to cope with:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>cheese:0;BREAD:5;milk:1;Bacon:2
+Ham:15000;     salami:36030;  corned beef:1836;
+triangles:3;squares:4;pentagons:5;hexagons:6;heptagons:7;octagons:8;nonagons:9
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try it here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>As you may have noticed, Python’s <code class="docutils literal notranslate"><span class="pre">print</span></code> function often displays information to a large number of decimal places, and it does not generally produce nicely-formatted output. To achieve this, we must make use of Python’s string-formatting facilities. These provide a mechanism for converting numbers into strings, and controlling the exact form this takes.</p>
+<p>Python 3 provides two different frameworks for string formatting. In each, you create a string containing placeholders for the contents of each variable you want to output, then insert the data into these.</p>
+<p>This is best illustrated by an example, using the first (older) formatting framework:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">11</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;One eleventh is approximately </span><span class="si">%.3f</span><span class="s2">&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">%</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Here, the string <code class="docutils literal notranslate"><span class="pre">s</span></code> contains the text we wish to produce, and the entry <code class="docutils literal notranslate"><span class="pre">%.3f</span></code> is a placeholder representing a floating point number with three decimal places. <code class="docutils literal notranslate"><span class="pre">x</span></code> is a floating point variable, calculated to many decimal places. The code <code class="docutils literal notranslate"><span class="pre">s%x</span></code> combines the two, resulting in the contents of <code class="docutils literal notranslate"><span class="pre">x</span></code> being inserted into the string <code class="docutils literal notranslate"><span class="pre">s</span></code>, formatted as required.</p>
+<p>All placeholders begin with the ‘%’ symbol. Integer placeholders end with the letter ‘i’, floating-point placeholders end with the letter ‘f’, and string placeholders end with the letter ‘s’. Between the ‘%’ and the letter, one can specify various options controlling the exact form of output:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Placeholder</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Example</p></th>
+<th class="head"><p>Output</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">%i</span></code></p></td>
+<td><p>General integer (no further formatting specified)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">'%i'%3</span></code></p></td>
+<td><p>‘3’</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">%3i</span></code></p></td>
+<td><p>Integer, at least 3 characters wide</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">'%3i'%3</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">'</span>&#160; <span class="pre">3'</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">%03i</span></code></p></td>
+<td><p>Integer, at least 3 characters wide, zero-padded</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">'%03i'%3</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">'003'</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">%f</span></code></p></td>
+<td><p>General floating-point number (no format specified)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">'%f'%2.9</span></code></p></td>
+<td><p>‘2.900000’</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">%12f</span></code></p></td>
+<td><p>Floating-point number, occupying at least 12 characters</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">'%12f'%2.9</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">'</span>&#160;&#160;&#160; <span class="pre">2.900000'</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">%012f</span></code></p></td>
+<td><p>Floating-point number, occupying at least 12 characters, zero-padded</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">'%012f'%2.9</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">'00002.900000'</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">%8.2f</span></code></p></td>
+<td><p>Floating-point number, occupying at least 8 characters, rounded to two decimal places</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">'%8.2f'%2.9</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">'</span>&#160;&#160;&#160; <span class="pre">2.90'</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">%s</span></code></p></td>
+<td><p>General string (no format specified)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">'%s'%'test'</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">'test'</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">%10s</span></code></p></td>
+<td><p>String, occupying at least 10 characters</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">'%10s'%'test'</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">'</span>&#160;&#160;&#160;&#160;&#160; <span class="pre">test'</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">%%</span></code></p></td>
+<td><p>Literal ‘%’ character</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">'%6.2f%%'%2.9</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">'</span>&#160; <span class="pre">2.90%'</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>Where a string contains more than one placeholder, we can pass the required information as a tuple:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">phrase</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">%i</span><span class="s1"> litres of </span><span class="si">%s</span><span class="s1"> at $</span><span class="si">%.2f</span><span class="s1">/L costs a total of $</span><span class="si">%.2f</span><span class="s1">&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">phrase</span><span class="o">%</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;milk&#39;</span><span class="p">,</span><span class="mf">1.29</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="mf">1.29</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">phrase</span><span class="o">%</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span><span class="s1">&#39;petrol&#39;</span><span class="p">,</span><span class="mf">1.53</span><span class="p">,</span><span class="mi">40</span><span class="o">*</span><span class="mf">1.53</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">phrase</span><span class="o">%</span><span class="p">(</span><span class="mf">7.5</span><span class="p">,</span><span class="s1">&#39;water&#39;</span><span class="p">,</span><span class="mf">0.17</span><span class="p">,</span><span class="mf">7.5</span><span class="o">*</span><span class="mf">0.17</span><span class="p">))</span>
+</pre></div>
+</div>
+<p><strong>➤ Try it out!</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try it here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Sometimes, it may be necessary to use string formatting to write the placeholders, allowing the style of output to be set at runtime:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_result</span><span class="p">(</span><span class="n">result</span><span class="p">,</span><span class="n">number_of_decimal_places</span><span class="p">):</span>
+    <span class="n">fmt</span> <span class="o">=</span> <span class="s2">&quot;The result is </span><span class="si">%%</span><span class="s2">.</span><span class="si">%i</span><span class="s2">f&quot;</span>
+    <span class="nb">print</span><span class="p">((</span><span class="n">fmt</span><span class="o">%</span><span class="n">number_of_decimal_places</span><span class="p">)</span><span class="o">%</span><span class="n">result</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>However, this is best avoided if possible.</p>
+<p>The second, newer approach to formatting uses braces <code class="docutils literal notranslate"><span class="pre">{}</span></code> instead of <code class="docutils literal notranslate"><span class="pre">%...</span></code> to represent a placeholder, and a <code class="docutils literal notranslate"><span class="pre">.format()</span></code> function that can act on any string. The syntax of the format specifiers is also different. Our example would become:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">11</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;One eleventh is approximately </span><span class="si">{:.2f}</span><span class="s2">&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Similarly,</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">phrase</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> litres of </span><span class="si">{}</span><span class="s1"> at $</span><span class="si">{:.2f}</span><span class="s1">/L costs a total of $</span><span class="si">{:.2f}</span><span class="s1">&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">phrase</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;milk&#39;</span><span class="p">,</span><span class="mf">1.29</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="mf">1.29</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">phrase</span><span class="p">,</span><span class="nb">format</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span><span class="s1">&#39;petrol&#39;</span><span class="p">,</span><span class="mf">1.53</span><span class="p">,</span><span class="mi">40</span><span class="o">*</span><span class="mf">1.53</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">phrase</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mf">7.5</span><span class="p">,</span><span class="s1">&#39;water&#39;</span><span class="p">,</span><span class="mf">0.17</span><span class="p">,</span><span class="mf">7.5</span><span class="o">*</span><span class="mf">0.17</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>The new approach provides a much richer set of formatting options, described in full <a class="reference external" href="https://docs.python.org/3.4/library/string.html#format-string-syntax">in the online documentation</a>. One benefit of the new style is that it is no longer necessary to pass information to format in the same order as it is used: we can number the placeholders. For example,</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">phrase</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{3}</span><span class="s1"> litres of </span><span class="si">{0}</span><span class="s1"> at $</span><span class="si">{1:.2f}</span><span class="s1">/L costs a total of $</span><span class="si">{2:.2f}</span><span class="s1">&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">phrase</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;milk&#39;</span><span class="p">,</span><span class="mf">1.29</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="mf">1.29</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">phrase</span><span class="p">,</span><span class="nb">format</span><span class="p">(</span><span class="s1">&#39;petrol&#39;</span><span class="p">,</span><span class="mf">1.53</span><span class="p">,</span><span class="mi">40</span><span class="o">*</span><span class="mf">1.53</span><span class="p">,</span><span class="mi">40</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">phrase</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;water&#39;</span><span class="p">,</span><span class="mf">0.17</span><span class="p">,</span><span class="mf">7.5</span><span class="o">*</span><span class="mf">0.17</span><span class="p">,</span><span class="mf">7.5</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>This is particularly useful if you need to repeat the same information several times in a string:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">phrase</span> <span class="o">=</span> <span class="s2">&quot;This sentence has the word </span><span class="si">{0}</span><span class="s2"> </span><span class="si">{0}</span><span class="s2"> </span><span class="si">{0}</span><span class="s2"> repeated three times and the word </span><span class="si">{1}</span><span class="s2"> </span><span class="si">{1}</span><span class="s2"> repeated twice.&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">phrase</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span><span class="s1">&#39;dog&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p><strong>➤ Try it out!</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try it here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>➤ Repeat the table-formatting example, making use of the string formatting capabilities</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try it here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We will encounter many more text-formatting examples in later exercises.</p>
+<div class="section" id="the-caesar-cipher">
+<h2>The ‘Caesar’ cipher<a class="headerlink" href="#the-caesar-cipher" title="Permalink to this headline">¶</a></h2>
+<p>As we have already discussed, every piece of information within a computer must be organised and represented in binary form. This implies that the sequence of letters in the alphabet can be mapped onto the set of integers, and this is usually done via the ‘ASCII’ code sequence.</p>
+<p>Python provides the function <code class="docutils literal notranslate"><span class="pre">chr(integer)</span></code> to convert integers into their ASCII alphanumeric equivalent.</p>
+<p><strong>➤ Write a loop to print the integers from 33 up to 128, and their ASCII equivalents.</strong> (The first 32 ASCII codes are special control characters, and do not have alphanumeric equivalents).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try it here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>A ‘Caesar cipher’ is a very simple way to hide a message making it difficult for someone to read. To encode a piece of text with a Caesar cipher, we simply shift each letter <span class="math notranslate nohighlight">\(N\)</span> places up (or down) the alphabet. For example, choosing <span class="math notranslate nohighlight">\(N=1\)</span>, the message</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>I like Python
+</pre></div>
+</div>
+<p>would become</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>J mjlf Qzuipm
+</pre></div>
+</div>
+<p>because ‘J’ is one letter after ‘I’, ‘m’ is one after ‘l’, and so on.</p>
+<p><strong>➤ Write a function to encode messages using Caesar ciphers (for any choice of <span class="math notranslate nohighlight">\(N\)</span>).</strong> Note that the ‘decoder’ is simply the ‘encoder’, but instead using <span class="math notranslate nohighlight">\(-N\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try it here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here is a message encoded using a Caesar cipher:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Pfl yrmv wzezjyvu kyzj vovitzjv
+</pre></div>
+</div>
+<p><strong>➤ By looping through all possible values of <span class="math notranslate nohighlight">\(N\)</span>, find the <span class="math notranslate nohighlight">\(N\)</span> used to encode this message and decode it.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try it here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Notebooks/StepByStep/Ex07"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Louis Moresi<br/>
+        
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

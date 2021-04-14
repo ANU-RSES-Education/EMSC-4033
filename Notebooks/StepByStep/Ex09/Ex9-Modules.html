@@ -1,0 +1,970 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise 9 - Modules &#8212; EMSC 4033 Computational Geoscience</title>
+    
+  <link rel="stylesheet" href="../../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../../index.html">
+  
+  <img src="../../../_static/AuWorldEQ.jpg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">EMSC 4033 Computational Geoscience</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../FrontPage.html">
+   Computational Geosciences
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Introduction
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../IntroductoryRemarks.html">
+   Modern approaches to programming
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  What is Python like ?
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../FirstSteps/Introduction2Python/0-CharacteristicsOfPython.html">
+   What kind of Language is Python ?
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../FirstSteps/Introduction2Python/1-LePlumeDeMaTante.html">
+     Python Phrase Book
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../FirstSteps/Introduction2Python/2-LiterateProgramming.html">
+     Literate Programming
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../FirstSteps/Introduction2Python/3-IntroductionToJupyterNotebooks.html">
+     Jupyter Notebooks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../FirstSteps/Introduction2Python/4-IntroductionToIpython.html">
+     ipython
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../FirstSteps/Introduction2Python/5-PythonDataTypes.html">
+     Python data types
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../FirstSteps/Introduction2Python/6-PythonClasses.html">
+     Classes and objects
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Version control
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../FirstSteps/Introduction2VersionControl/1-GettingStartedWithGit.html">
+   An introduction to Version Control
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Python, Step by Step
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../Introduction.html">
+   Andrew Valentine’s Exercises
+  </a>
+  <ul class="simple collapse-ul">
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Going deeper - examples from the Earth Sciences
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Themes/0-StartHere.html">
+   Index
+  </a>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../Themes/NumpyAndScipy/0-NumpyAndScipy.html">
+   Numpy and Scipy
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/NumpyAndScipy/1-IntroductionToNumpy.html">
+     Numpy data structures
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/NumpyAndScipy/2-Application-TheGameOfLife.html">
+     The game of life
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/NumpyAndScipy/3-Discussion-TheGameOfLife.html">
+     The game of life (Advanced)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/NumpyAndScipy/4-IntroductionToScipy.html">
+     scipy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/NumpyAndScipy/5-ScipyInterpolate.html">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       scipy.interpolate
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/NumpyAndScipy/6-ScipySpatialAndMeshing.html">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       scipy.spatial
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/NumpyAndScipy/7-ScipyOptimize.html">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       scipy.optimize
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/NumpyAndScipy/8-Numpy%2BScipyMiscellany.html">
+     Data storage
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../Themes/Mapping/0-Maps_with_Cartopy.html">
+   Maps with the Cartopy Package
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/Mapping/0-Preliminaries.html">
+     Datasets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/Mapping/1-IntroductingCartopy.html">
+     Cartopy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/Mapping/2-ImagesAndGeoTIFFs.html">
+     Handling images
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/Mapping/3-WorkingWithRealData.html">
+     Australian magnetic intensity
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/Mapping/4-ContouringGlobalData.html">
+     How to use contours to view global data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/Mapping/5-WorkingWithPointData.html">
+     Point Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/Mapping/6-WorkingWithShuttleRadarTopography.html">
+     Cartopy and the Shuttle Radar Topography Map data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/Mapping/7-WorkingWithOn-DemandMappingServices.html">
+     On demand mapping services
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/Mapping/8-GlobalPlateMotionsEtc.html">
+     Global Plate Motions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/Mapping/9-HimalayaRegionMapsAndImages.html">
+     Himalaya Maps (1)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/Mapping/9a-HimalayaRegionMapsAndImages-Pt2.html">
+     Himalaya Maps (2)
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../Themes/SphericalMeshing/0-Stripy.html">
+   Triangulations
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../../Themes/SphericalMeshing/SphericalTriangulations/0-Spherical.html">
+     Spherical Meshes
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/SphericalTriangulations/Ex1-Spherical-Triangulations.html">
+       Example 1 - Triangulation of arbitrary points on the sphere
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/SphericalTriangulations/Ex2-SphericalGrids.html">
+       Example 2 -
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         stripy
+        </span>
+       </code>
+       predefined meshes
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/SphericalTriangulations/Ex3-Interpolation.html">
+       Example 3 -
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         stripy
+        </span>
+       </code>
+       interpolation on the sphere
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/SphericalTriangulations/Ex4-Gradients.html">
+       Example 4 -
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         stripy
+        </span>
+       </code>
+       gradients on the sphere
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/SphericalTriangulations/Ex5-Smoothing.html">
+       Example 5 -
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         stripy
+        </span>
+       </code>
+       smoothing operations
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/SphericalTriangulations/Ex6-Scattered-Data.html">
+       Example 6 - Scattered Data and ‘Heat Maps’
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/SphericalTriangulations/Ex7-Refinement-of-Triangulations.html">
+       Example 7 - Refining a triangulation
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/SphericalTriangulations/Ex8-Spline-Tension.html">
+       Example 8 - Spline Tension
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/SphericalTriangulations/Ex9-Voronoi-Diagram.html">
+       Example 9 - Constructing the Voronoi diagram
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../../Themes/SphericalMeshing/CartesianTriangulations/0-Cartesian.html">
+     Cartesian Meshes
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/CartesianTriangulations/Ex1-Cartesian-Triangulations.html">
+       Example 1 - Triangulation of arbitrary points
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/CartesianTriangulations/Ex2-CartesianGrids.html">
+       Example 2 -
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         stripy
+        </span>
+       </code>
+       predefined meshes
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/CartesianTriangulations/Ex3-Interpolation.html">
+       Example 3 -
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         stripy
+        </span>
+       </code>
+       interpolation
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/CartesianTriangulations/Ex4-Gradients.html">
+       Example 4 -
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         stripy
+        </span>
+       </code>
+       gradients
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/CartesianTriangulations/Ex5-Smoothing.html">
+       Example 5 -
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         stripy
+        </span>
+       </code>
+       smoothing operations
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/CartesianTriangulations/Ex6-Scattered-Data.html">
+       Example 6 - Scattered Data and ‘Heat Maps’
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/CartesianTriangulations/Ex7-Refinement-of-Triangulations.html">
+       Example 7 - Refining a triangulation
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/CartesianTriangulations/Ex8-Spline-Tension.html">
+       Example 8 - Spline Tension
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/CartesianTriangulations/Ex9-Voronoi-Diagram.html">
+       Example 9 - Constructing the Voronoi diagram
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../../Themes/SphericalMeshing/Litho1pt0/Ex1-Litho1Layers.html">
+     Introduction to the stripy wrapper for litho 1.0
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/Litho1pt0/Ex2-Litho1Properties.html">
+       Litho 1.0 global sampling
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/Litho1pt0/Ex3-CrustalRegionalisation.html">
+       Crust 1.0 data
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/Litho1pt0/WorkEx1-CratonAverageProperties.html">
+       Properties of the cratons
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/Litho1pt0/WorkEx2-OceanDepthAge.html">
+       Age of the oceans / depth of the oceans
+      </a>
+     </li>
+     <li class="toctree-l3 collapsible-parent">
+      <a class="reference internal" href="../../Themes/SphericalMeshing/Litho1pt0/WEx2-Tutorial/Notebook-1.html">
+       A quick look at the depth-age relationship for the seafloor.
+      </a>
+      <ul class="collapse-ul">
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../Themes/SphericalMeshing/Litho1pt0/WEx2-Tutorial/Notebook-2.html">
+         A quick look at the depth-age relationship for the seafloor.
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../Themes/SphericalMeshing/Litho1pt0/WEx2-Tutorial/Notebook-3.html">
+         A quick look at the depth-age relationship for the seafloor.
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../Themes/SphericalMeshing/Litho1pt0/WEx2-Tutorial/Notebook-4.html">
+         A quick look at the depth-age relationship for the seafloor.
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../Themes/SphericalMeshing/Litho1pt0/WEx2-Tutorial/Notebook-5.html">
+         A quick look at the depth-age relationship for the seafloor.
+        </a>
+       </li>
+      </ul>
+      <i class="fas fa-chevron-down">
+      </i>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../Themes/SympleSympy/StartingWithSympy.html">
+   Getting started with
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     sympy
+    </span>
+   </code>
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/SympleSympy/StartingWithSympy-2.html">
+     Using
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       sympy
+      </span>
+     </code>
+     for ODEs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/SympleSympy/StartingWithSympy-3.html">
+     Using
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       sympy
+      </span>
+     </code>
+     for a PDE
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/SympleSympy/StartingWithSympy-4.html">
+     The biharmonic equation for Stokes flow
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../Themes/SolveMathProblems/0-IntroductionToNumericalSolutions.html">
+   Numerical models
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/SolveMathProblems/1-GroundwaterFlow-LectureNotes.html">
+     Partial Differential Equations of Groundwater Flow
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/SolveMathProblems/2-FiniteDifferences.html">
+     Finite difference operations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Themes/SolveMathProblems/3-AdvancedFiniteDifferences.html">
+     Advanced finite difference
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Bibliography
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../Bibliography.html">
+   Bibliography
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../_sources/Notebooks/StepByStep/Ex09/Ex9-Modules.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/ANU-RSES-Education/EMSC-4033"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/ANU-RSES-Education/EMSC-4033/master?urlpath=tree/Notebooks/StepByStep/Ex09/Ex9-Modules.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        <a class="jupyterhub-button" href="https://emsc4033-2021.rses.underworldcloud.org/hub/user-redirect/git-pull?repo=https://github.com/ANU-RSES-Education/EMSC-4033&urlpath=tree/EMSC-4033/Notebooks/StepByStep/Ex09/Ex9-Modules.ipynb&branch=master"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
+                data-placement="left"><img class="jupyterhub-button-logo"
+                    src="../../../_static/images/logo_jupyterhub.svg"
+                    alt="Interact on JupyterHub">JupyterHub</button></a>
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#getting-to-grips-with-datetime">
+   Getting to grips with
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     datetime
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#numpy">
+   NumPy
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creating-new-modules">
+   Creating new modules
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="exercise-9-modules">
+<h1>Exercise 9 - Modules<a class="headerlink" href="#exercise-9-modules" title="Permalink to this headline">¶</a></h1>
+<p>So far, almost everything we have used or encountered has been a core element of the Python language. By now, we know enough to be able to accomplish almost any computational task. However, writing all the code from scratch can be a time-consuming affair. One of the great attractions of Python as a programming language for scientific development is the ready availability of a large number of ‘modules’ - ready-to-use collections of functions - which provide good-quality code for most common tasks.</p>
+<p>To use code from a module, you need to import it. This is conventionally done at the start of your Python file, although in principle it can be done at any point before you need to use functions from the module. There are several variant forms of import statement, but the simplest is</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="o">&lt;</span><span class="n">modulename</span><span class="o">&gt;</span> 
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">&lt;modulename&gt;</span></code> is the name of the module you wish to use. Once you have done this, you can access functions within the module by typing <code class="docutils literal notranslate"><span class="pre">&lt;modulename&gt;.&lt;function&gt;()</span></code>. For example, the <code class="docutils literal notranslate"><span class="pre">datetime</span></code> module provides a range of functions to work with date and/or time information. To calculate the amount of time elapsed between 10am on 24 September 2018 (when this course started) and its conclusion at 4pm on 5 October, we can do the following:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2018</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">24</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># Year/Month/Day/Hour/Min/Sec</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2018</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="o">-</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Here, we are using a <code class="docutils literal notranslate"><span class="pre">datetime()</span></code> function within the <code class="docutils literal notranslate"><span class="pre">datetime</span></code> module.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try it here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Sometimes, modules have long names and we expect to make heavy use of the module’s functions. In this case, we might find having to preface each function name with the full module name rather tedious. Python therefore allows us to assign a shorthand name to any module when we import it, by adding <code class="docutils literal notranslate"><span class="pre">as</span> <span class="pre">&lt;shortname&gt;</span></code> after the <code class="docutils literal notranslate"><span class="pre">import</span></code> statement. For example, in a later exercise we will use the module <code class="docutils literal notranslate"><span class="pre">matplotlib.animation</span></code> to generate animations. We will import this as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.animation</span> <span class="k">as</span> <span class="nn">anim</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">anim</span><span class="o">.</span><span class="n">FuncAnimation</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If we did not use <code class="docutils literal notranslate"><span class="pre">as</span> <span class="pre">anim</span></code> when we imported the module, we would have to type <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">matplotlib.animation.FuncAnimation(...)</span></code> - which gets tedious rather quickly.</p>
+<p>Sometimes, we know we only wish to use one or two functions from a module. In this case, we may prefer not to import the entire module, but instead use</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span> <span class="kn">import</span> <span class="o">&lt;</span><span class="n">function1</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">function2</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>This makes <code class="docutils literal notranslate"><span class="pre">&lt;function1&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">&lt;function2&gt;</span></code> available in our program, and we do not need to preface them by any module name. For example, the <code class="docutils literal notranslate"><span class="pre">math</span></code> module provides a number of functions for mathematical operations. If we just want to be able to compute exponentials and sines, we could do</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">exp</span><span class="p">,</span> <span class="n">sin</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">exp</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="mf">1.6</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>but we would not have access to anything else within the <code class="docutils literal notranslate"><span class="pre">math</span></code> library.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try it here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The reason Python requires you to preface function calls with the module name, or import specific functions, is to avoid ‘namespace clashes’, where two functions with the same name are loaded. For example, many modules might provide a function called <code class="docutils literal notranslate"><span class="pre">save</span></code>, which does something appropriate to that module’s purpose. By encouraging you to specify <code class="docutils literal notranslate"><span class="pre">&lt;module&gt;.save()</span></code>, or specifically import a <code class="docutils literal notranslate"><span class="pre">save</span></code> routine from one particular module, Python tries to avoid the bugs and confusion that could otherwise occur.</p>
+<p>However, if you really want to expose all the functions in a module, Python allows you to use an import statement of the form</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span> <span class="kn">import</span> <span class="o">*</span>
+</pre></div>
+</div>
+<p>This works in exactly the same way as <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">&lt;module&gt;</span> <span class="pre">import</span> <span class="pre">&lt;function&gt;</span></code>, except that it uses the ‘wild-card’ character <code class="docutils literal notranslate"><span class="pre">*</span></code> to indicate that <em>everything</em> in the module should be made available. A few modules are intended to be used in this way, but in general, it is best avoided unless you have a reason to need it.</p>
+<div class="section" id="getting-to-grips-with-datetime">
+<h2>Getting to grips with <code class="docutils literal notranslate"><span class="pre">datetime</span></code><a class="headerlink" href="#getting-to-grips-with-datetime" title="Permalink to this headline">¶</a></h2>
+<p>An important skill is to be able to work out what a particular module does, and how to use it, without being taught about it.</p>
+<p><strong>➤ Write a program that asks the user to enter their birth date, and then calculates how long it will be until their next birthday.</strong></p>
+<p>You will need to use the <a class="reference external" href="https://docs.python.org/3.6/library/datetime.html">official documentation</a> for the <code class="docutils literal notranslate"><span class="pre">datetime</span></code> module, as well as <a class="reference external" href="http://www.google.com.au">other resources</a>. You will find the <code class="docutils literal notranslate"><span class="pre">datetime.datetime.strptime()</span></code> and <code class="docutils literal notranslate"><span class="pre">datetime.datetime.now()</span></code> functions useful.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try it here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="numpy">
+<h2>NumPy<a class="headerlink" href="#numpy" title="Permalink to this headline">¶</a></h2>
+<p>An important module (or, really, collection of modules) for scientists is NumPy (‘Numerical Python’). This provides a wide range of tools and data structures for working with numerical data, and for implementing matrix-vector calculations.</p>
+<p>It is conventional to use <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">numpy</span> <span class="pre">as</span> <span class="pre">np</span></code> when importing NumPy. NumPy then provides a fairly comprehensive set of mathematical functions, including</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">np.sin()</span></code>, <code class="docutils literal notranslate"><span class="pre">np.cos()</span></code>, <code class="docutils literal notranslate"><span class="pre">np.tan()</span></code> - Trigonometric functions</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">np.arcsin()</span></code>, <code class="docutils literal notranslate"><span class="pre">np.arccos()</span></code>, <code class="docutils literal notranslate"><span class="pre">np.arctan()</span></code> - Inverse trigonometric functions</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">np.arctan2()</span></code> - <a class="reference external" href="https://en.wikipedia.org/wiki/Atan2">Two-argument version of the inverse tangent function</a> that returns value in the correct quadrant</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">np.sinh()</span></code>, <code class="docutils literal notranslate"><span class="pre">np.cosh()</span></code>, <code class="docutils literal notranslate"><span class="pre">np.tanh()</span></code>, <code class="docutils literal notranslate"><span class="pre">np.arcsinh()</span></code>, <code class="docutils literal notranslate"><span class="pre">np.arccosh()</span></code>, <code class="docutils literal notranslate"><span class="pre">np.arctanh()</span></code> - Hyperbolic functions and their inverses</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">np.exp()</span></code>, <code class="docutils literal notranslate"><span class="pre">np.log()</span></code> - Exponentiation and its inverse, the natural logarithm</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">np.log10()</span></code> - Logarithm to base-10</p></li>
+</ul>
+<p>NumPy also provides some mathematical constants, including <code class="docutils literal notranslate"><span class="pre">np.pi</span></code> and <code class="docutils literal notranslate"><span class="pre">np.e</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try it here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>However, the core feature of NumPy is the array data type. This allows us to create structured grids containing data, which can then be accessed, transformed and used efficiently. Where numerical data is to be stored or processed, a NumPy array is likely to be the most effective mechanism to use. There are two main ways to create an array. First, we can use the <code class="docutils literal notranslate"><span class="pre">np.array()</span></code> function, to build an array from a list (or similar):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">],[</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Second, we can use various functions that create ‘standard’ arrays:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">np.ones(dims)</span></code> - Array filled with elements equal to <code class="docutils literal notranslate"><span class="pre">1</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">np.zeros(dims)</span></code> - Array filled with elements equal to <code class="docutils literal notranslate"><span class="pre">0</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">np.eye(N)</span></code> - <span class="math notranslate nohighlight">\(N \times N\)</span> identity matrix (ones on diagonal, zero otherwise)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">np.arange(start,stop,step)</span></code> - Create ascending sequence of numbers from <code class="docutils literal notranslate"><span class="pre">start</span></code>, in intervals of <code class="docutils literal notranslate"><span class="pre">step</span></code>, finishing before <code class="docutils literal notranslate"><span class="pre">stop</span></code>. If only two (unlabelled) arguments are given, it is assumed that <code class="docutils literal notranslate"><span class="pre">step=1</span></code>. If only one argument is given, it is additionally assumed that <code class="docutils literal notranslate"><span class="pre">start=0</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">np.linspace(start,stop,N)</span></code> - Create an array containing <span class="math notranslate nohighlight">\(N\)</span> equally-spaced points, with the first one being at <code class="docutils literal notranslate"><span class="pre">start</span></code>, and the last being at <code class="docutils literal notranslate"><span class="pre">stop</span></code>.</p></li>
+</ul>
+<p>Here, <code class="docutils literal notranslate"><span class="pre">dims</span></code> is a list or tuple specifying the number of elements in each dimension of the array: for example,
+<code class="docutils literal notranslate"><span class="pre">np.ones([3])</span></code> creates a one-dimensional array, identical to <code class="docutils literal notranslate"><span class="pre">np.array([1,1,1])</span></code>, whereas <code class="docutils literal notranslate"><span class="pre">np.zeros([3,6,2,2,3])</span></code> creates a five-dimensional array filled with zeros.</p>
+<p>Many of the array-creation routines take an optional argument, <code class="docutils literal notranslate"><span class="pre">dtype=type</span></code>, where <code class="docutils literal notranslate"><span class="pre">type</span></code> is a string. This specifies the data type which can be stored in the array. For example, <code class="docutils literal notranslate"><span class="pre">np.ones([3,3],dtype='int')</span></code> creates an array of integer type, while <code class="docutils literal notranslate"><span class="pre">np.zeros([3,3],dtype='bool')</span></code> creates an array of Boolean (True/False) values, initialised to <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<p><strong>➤ Try each of these ways of building an array, and make sure you understand how they work.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try it here! </span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Array elements can be accessed using <code class="docutils literal notranslate"><span class="pre">[...]</span></code> and a (zero-based) index for each dimension, or <code class="docutils literal notranslate"><span class="pre">:</span></code> to denote all elements within that dimension: we can thus obtain arrays that are a subset of a larger array.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="c1"># Prints 5</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">[:,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,:,</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># Prints a 3 x 2 matrix of zeros</span>
+<span class="n">b</span><span class="p">[:,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,:,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">[:,:,</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># Prints 3 x 4 matrix with column of zeros</span>
+</pre></div>
+</div>
+<p>As we have already seen with lists, it is possible to specify a limited range of any index by using syntax of the form <code class="docutils literal notranslate"><span class="pre">start:stop:step</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try it here! </span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>NumPy also provides tools for linear algebra - for example, if <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code> are 1-D arrays that represent vectors, we can compute the dot product using <code class="docutils literal notranslate"><span class="pre">a.dot(b)</span></code>. We will not discuss linear algebra here; for more details, there are many resources <a class="reference external" href="http://people.duke.edu/~ccc14/pcfb/numpympl/LinearAlgebra.html">such as this one</a> online.</p>
+<p>One very useful feature of NumPy is that it has various functions to help read and write data from files without the hassle of doing it yourself. If you have a plain text file that contains a dataset as columns, you can call <code class="docutils literal notranslate"><span class="pre">np.loadtxt(filename)</span></code>. This will automatically open the file, read it, and return its contents in a NumPy array. If your file has a ‘header’ containing information in a different format from the main data table, you may need to tell NumPy to ignore some rows: this is done by passing the argument <code class="docutils literal notranslate"><span class="pre">skiprows</span> <span class="pre">=</span> <span class="pre">&lt;number</span> <span class="pre">to</span> <span class="pre">skip&gt;</span></code> to <code class="docutils literal notranslate"><span class="pre">np.loadtxt()</span></code>. Similarly, there is an <code class="docutils literal notranslate"><span class="pre">np.savetxt()</span></code> function which will write the contents of an array to a plain text file.</p>
+<p><strong>➤ Use <code class="docutils literal notranslate"><span class="pre">np.loadtxt()</span></code> and <code class="docutils literal notranslate"><span class="pre">np.savetxt()</span></code> to repeat Exercise 8.</strong> Notice how much easier it is!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try it here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>There are many other useful modules. Some key ones include:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">scipy</span></code> - a large collection of tools for accomplishing a wide range of mathematical and scientific tasks</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> - Plotting figures</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">stats</span></code> - statistical calculations</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pandas</span></code> - working with datasets</p></li>
+</ul>
+<p>We will meet some of these in later exercises.</p>
+</div>
+<div class="section" id="creating-new-modules">
+<h2>Creating new modules<a class="headerlink" href="#creating-new-modules" title="Permalink to this headline">¶</a></h2>
+<p>You can also create your own modules. This allows you to ‘package up’ functions that you use regularly, and re-use them in different programs. This is much better than routinely copying and pasting functions from one file to another, which usually ends up leading to confusion: one inevitably ends up with multiple versions of the function that all work in slightly different ways. By using a module, you guarantee that all programs that use it ‘see’ the same function. Note that Python’s ability to have ‘optional’ function arguments, with default values (<code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">function(...,var1=default1,</span> <span class="pre">var2=default2...)</span></code>) is often very useful for adding enhancements to a function without breaking any existing programs.</p>
+<p>To create a module, you simply create a plain text file (using a text editor, or by selecting <code class="docutils literal notranslate"><span class="pre">New</span> <span class="pre">&gt;</span> <span class="pre">Text</span> <span class="pre">File</span></code> within Jupyter’s file browser window), and name it <code class="docutils literal notranslate"><span class="pre">&lt;desired</span> <span class="pre">module</span> <span class="pre">name&gt;.py</span></code>. Place whatever functions you wish to include within the module in this file, and save it. Then, you will be able to <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">&lt;module</span> <span class="pre">name&gt;</span></code> and access the functions, as with any other module.</p>
+<p><strong>➤ Package your birthday calculator into a module, and test it.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try it here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Further information on Python modules is available in the <a class="reference external" href="https://docs.python.org/3/tutorial/modules.html">Python documentation</a>. At a later stage, if you create a significant module that is not available, you can contribute to the community by providing the module online through PyPi. Python is based on a free, open source framework with many libraries developped by people like you. So contributions are welcomed and important!</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Notebooks/StepByStep/Ex09"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Louis Moresi<br/>
+        
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>
