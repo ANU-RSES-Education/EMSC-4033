@@ -29,26 +29,32 @@
   chapters:
   - file: Notebooks/StepByStep/Introduction.md
     sections:
-    - file: Notebooks/StepByStep/Ex01/Exercise 1 - Getting started
-    - file: Notebooks/StepByStep/Ex02/Exercise 2 - Variables and functions
-    - file: Notebooks/StepByStep/Ex03/Exercise 3 - Loops and conditionals
-    - file: Notebooks/StepByStep/Ex04/Guessing Games
-    - file: Notebooks/StepByStep/Ex05/Exercise 5 - Lists, tuples and dictionaries
-    - file: Notebooks/StepByStep/Ex06/Exercise 6 - More loops
-    - file: Notebooks/StepByStep/Ex07/Exercise 7 - Strings
-    - file: Notebooks/StepByStep/Ex08/Exercise 8 - Reading and writing files
-    - file: Notebooks/StepByStep/Ex09/Exercise 9 - Modules
-    - file: Notebooks/StepByStep/Ex10/Exercise 10 - Exception handling
-    - file: Notebooks/StepByStep/Ex11/Exercise 11 - Sudoku
-    - file: Notebooks/StepByStep/Ex12/Exercise 12 - Plotting
-    - file: Notebooks/StepByStep/Ex13/Exercise 13 - Radioactive Decay
-    - file: Notebooks/StepByStep/Ex14/Exercise 14 - Pandas
-    - file: Notebooks/StepByStep/Ex15/Exercise 15 - More plotting
-    - file: Notebooks/StepByStep/Ex16/Exercise 16 - Maps
-    - file: Notebooks/StepByStep/Ex17/Exercise 17 - Fourier analysis and Milankovitch cycles
-    - file: Notebooks/StepByStep/Ex18/Exercise 18 - Object-oriented programming
-    - file: Notebooks/StepByStep/Ex19/Exercise N - differential equations
-    - file: Notebooks/StepByStep/Ex20/Exercise N - Sorting
+    - file: Notebooks/StepByStep/Ex01/Ex1-GettingStarted.ipynb
+    - file: Notebooks/StepByStep/Ex02/Ex2-Variables+functions.ipynb
+    - file: Notebooks/StepByStep/Ex03/Ex3-Loops+Conditionals.ipynb
+    - file: Notebooks/StepByStep/Ex04/Ex4-GuessingGames.ipynb
+    - file: Notebooks/StepByStep/Ex05/Ex5-ListsEtc.ipynb
+    - file: Notebooks/StepByStep/Ex06/Ex6-MoreLoops.ipynb
+    - file: Notebooks/StepByStep/Ex07/Ex7-Strings.ipynb
+    - file: Notebooks/StepByStep/Ex08/Charles other methods._ipynb
+    - file: Notebooks/StepByStep/Ex08/Ex8-ReadWriteFiles.ipynb
+    - file: Notebooks/StepByStep/Ex09/Ex9-Modules.ipynb
+    - file: Notebooks/StepByStep/Ex10/Ex10-Exceptions.ipynb
+    - file: Notebooks/StepByStep/Ex11/Ex11-numpy.ipynb
+    - file: Notebooks/StepByStep/Ex11/Ex11a-Sudoku.ipynb
+    - file: Notebooks/StepByStep/Ex12/Ex12-Plotting.ipynb
+    - file: Notebooks/StepByStep/Ex13/Ex13-RadioactiveDecay.ipynb
+    - file: Notebooks/StepByStep/Ex13/Untitled.ipynb
+    - file: Notebooks/StepByStep/Ex14/Ex14-PandasDatabases.ipynb
+    - file: Notebooks/StepByStep/Ex15/Ex15-MorePlotting.ipynb
+    - file: Notebooks/StepByStep/Ex15/original_ex_15._ipynb
+    - file: Notebooks/StepByStep/Ex16/Ex16-Maps.ipynb
+    - file: Notebooks/StepByStep/Ex17/Ex17-FourierAnalysis.ipynb
+    - file: Notebooks/StepByStep/Ex18/Ex18-Objects.ipynb
+    - file: Notebooks/StepByStep/Ex19/Ex19-DifferentialEqs.ipynb
+    - file: Notebooks/StepByStep/Ex20/Ex20-Sorting.ipynb
+
+
 
 # - file: Notebooks/StepByStep/ExNN/Exercise 11 - NumPy
 # - file: Notebooks/StepByStep/ExNS/Processing spectral data
