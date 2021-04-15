@@ -138,44 +138,44 @@ plot(time_values, theta_values, linewidth=3.0, color="red")
 First we try fitting the local expansion for \\(\theta\\) through an
 additional point.	 
 This time we assume that the variation in \\(\theta(t)\\) is quadratic, i.e.
-$$
+\\[
     \theta(t') = \theta_{n-1} + \beta t' + \gamma {t'}^2
-$$
+\\]
 
 The local time coordinate is $t' = t - (n-1)\Delta t$, and when we differentiate
 
-$$       
+\\[
     \frac{d \theta}{dt} = \beta + 2 \gamma t'
-$$  
+\\]
 
 To solve for \\(\beta\\) and \\(\gamma\\) we fit the curve through the sample points:
-$$
+\\[
     \begin{split}
             \theta_n &= \theta_{n-1} + \beta \Delta t + \gamma (\Delta t)^2 \\
             \theta_{n+1} &= \theta_{n-1} + 2 \beta \Delta t + 4 \gamma (\Delta t)^2
      \end{split}
-$$
+\\]
 
 Which solve to give
-$$
+\\[
      \begin{split}
      \beta &= \left( 4 \theta_n - \theta_{n+1} - 3\theta_{n-1} \right) \frac{1}{2\Delta t} \\
      \gamma &= \left( \theta_{n+1} + \theta_{n-1} -2 \theta_n \right) \frac{1}{2\Delta t^2} 
      \end{split}
-$$
+\\]
 
 We can subsitute this back into the equation above and then into the original differential equation and we obtain the following
 
-$$	 	
+\\[
      \left. \frac{d\theta}{dt} \right|_{t=n\Delta t} = \beta + 2\gamma \Delta t =
      \frac{1}{2\Delta t} \left( \theta_{n+1} - \theta_{n-1} \right)  = -k \theta_n 
-$$
+\\]
 
 The difference approximation to the derivative turns out to be the average of the expressions for the previous derivative and the new derivative. We have now included information about the current timestep and the previous timestep in our expression for the value of \\(\theta\\) at the forthcoming timestep:	
 
-$$
+\\[
      \theta_{n+1} = \theta_{n-1} -2k \theta_n \Delta t
-$$
+\\]
 
 ```{code-cell} ipython3
 steps = 100
@@ -228,31 +228,31 @@ estimate for the gradient at this time. The revised gradient is
 then used to update the original \\(\theta(t)\\) by an entire timestep.
 	
 The first order step is
-$$
+\\[
 		\begin{split}
 		\hat{\theta}(t+\Delta t /2) & = \theta(t) + \left.  \frac{d \theta}{d t} \right|_t \frac{\Delta t}{2} \\
          &= \theta(t) \left[ 1-\frac{k\Delta t}{2} \right]
 		\end{split}
-$$
+\\]
 
 Substitute to estimate the gradient at the mid-point
-$$
+\\[
 	\left. \frac{d \theta}{d t} \right|_{t+\Delta t /2} \approx -k \theta(t)  \left[ 1-\frac{k\Delta t}{2} \right]
-$$
+\\]
 
 Use this value as the average gradient over the interval \\( t\rightarrow t+\Delta t\\) to update \\(\theta\\)
 
-$$
+\\[
     \begin{split}
         \theta(t+\Delta t) & \approx \theta(t) + \delta t \left(  -k \theta(t)  \left[ 1-\frac{k\Delta t}{2} \right]  \right) \\
             & \approx \theta(t) \left( 1 - k \Delta t + k^2 \frac{\Delta t^2}{2} \right)
     \end{split}
-$$
+\\]
 
-It's worth noting that the Taylor expansion of the solution should look like
-$$        
+It's worth noting that the Taylor expansion of the solution should looks like
+\\[
     e^{-kt} = 1 - kt + \frac{k^2 t^2}{2!} - \frac{k^3 t^3}{3!} + \ldots
-$$
+\\]
 	
 The Runge Kutta method can be extended by repeating the estimates on smaller regions of the interval. The usual choice is fourth order RK. This is largely because, obviously, it's accurate to fourth order, but also because the number of operations to go higher than fourth order is disproportionately large. See Numerical Recipes for a discussion on this and better methods for ODE's.
 	
