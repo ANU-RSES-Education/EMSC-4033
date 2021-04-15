@@ -153,22 +153,23 @@ To solve for \\(\beta\\) and \\(\gamma\\) we fit the curve through the sample po
     \begin{split}
             \theta_n &= \theta_{n-1} + \beta \Delta t + \gamma (\Delta t)^2 \\
             \theta_{n+1} &= \theta_{n-1} + 2 \beta \Delta t + 4 \gamma (\Delta t)^2
-     \end{split}
+    \end{split}
 \\]
 
-Which solve to give
+which solve to give
 \\[
-     \begin{split}
-     \beta &= \left( 4 \theta_n - \theta_{n+1} - 3\theta_{n-1} \right) \frac{1}{2\Delta t} \\
-     \gamma &= \left( \theta_{n+1} + \theta_{n-1} -2 \theta_n \right) \frac{1}{2\Delta t^2} 
-     \end{split}
+     \beta = \left( 4 \theta_n - \theta_{n+1} - 3\theta_{n-1} \right) \frac{1}{2\Delta t} \quad \textrm{and} \quad 
+     \gamma = \left( \theta_{n+1} + \theta_{n-1} -2 \theta_n \right) \frac{1}{2\Delta t^2} 
 \\]
 
-We can subsitute this back into the equation above and then into the original differential equation and we obtain the following
+Now we can use the above to approximate
+\\[
+     \left . \frac{d\theta}{dt} \right|_{t=n \Delta t} = \beta + 2\gamma \Delta t
+\\]
+and using the original differential equation equate this with \\( - k \theta_n \\) to get
 
 \\[
-     \left. \frac{d\theta}{dt} \right|_{t=n\Delta t} = \beta + 2\gamma \Delta t =
-     \frac{1}{2\Delta t} \left( \theta_{n+1} - \theta_{n-1} \right)  = -k \theta_n 
+     \frac{1}{2\Delta t} (\theta_{n+1} - \theta_{n-1} ) = -k \theta_n 
 \\]
 
 The difference approximation to the derivative turns out to be the average of the expressions for the previous derivative and the new derivative. We have now included information about the current timestep and the previous timestep in our expression for the value of \\(\theta\\) at the forthcoming timestep:	
