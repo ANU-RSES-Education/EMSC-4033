@@ -63,7 +63,7 @@ theta.diff(t,2) / theta
 So, yes, this satisfies the equation subject to additional information needed to determine
 $\phi$. The value of $\omega$ is $\sqrt{k}$.
 
-# Use of the `sympy` equation module (`Eq`)
+## Use of the `sympy` equation module (`Eq`)
 
 If we tell sympy that we have an equation, there are tools we can use to solve it
 
