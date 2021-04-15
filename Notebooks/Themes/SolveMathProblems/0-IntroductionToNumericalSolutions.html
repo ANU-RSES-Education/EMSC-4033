@@ -980,39 +980,37 @@ approximation by doing a bit more work.</p>
 <p>First we try fitting the local expansion for \(\theta\) through an
 additional point.	
 This time we assume that the variation in \(\theta(t)\) is quadratic, i.e.
-$<span class="math notranslate nohighlight">\(
-    \theta(t') = \theta_{n-1} + \beta t' + \gamma {t'}^2
-\)</span>$</p>
-<p>The local time coordinate is <span class="math notranslate nohighlight">\(t' = t - (n-1)\Delta t\)</span>, and when we differentiate</p>
-<div class="math notranslate nohighlight">
-\[       
-    \frac{d \theta}{dt} = \beta + 2 \gamma t'
-\]</div>
-<p>To solve for \(\beta\) and \(\gamma\) we fit the curve through the sample points:
-$<span class="math notranslate nohighlight">\(
-    \begin{split}
-            \theta_n &amp;= \theta_{n-1} + \beta \Delta t + \gamma (\Delta t)^2 \\
-            \theta_{n+1} &amp;= \theta_{n-1} + 2 \beta \Delta t + 4 \gamma (\Delta t)^2
-     \end{split}
-\)</span>$</p>
-<p>Which solve to give
-$<span class="math notranslate nohighlight">\(
-     \begin{split}
-     \beta &amp;= \left( 4 \theta_n - \theta_{n+1} - 3\theta_{n-1} \right) \frac{1}{2\Delta t} \\
-     \gamma &amp;= \left( \theta_{n+1} + \theta_{n-1} -2 \theta_n \right) \frac{1}{2\Delta t^2} 
-     \end{split}
-\)</span>$</p>
-<p>We can subsitute this back into the equation above and then into the original differential equation and we obtain the following</p>
-<div class="math notranslate nohighlight">
-\[	 	
-     \left. \frac{d\theta}{dt} \right|_{t=n\Delta t} = \beta + 2\gamma \Delta t =
-     \frac{1}{2\Delta t} \left( \theta_{n+1} - \theta_{n-1} \right)  = -k \theta_n 
-\]</div>
-<p>The difference approximation to the derivative turns out to be the average of the expressions for the previous derivative and the new derivative. We have now included information about the current timestep and the previous timestep in our expression for the value of \(\theta\) at the forthcoming timestep:</p>
-<div class="math notranslate nohighlight">
 \[
-     \theta_{n+1} = \theta_{n-1} -2k \theta_n \Delta t
-\]</div>
+\theta(t’) = \theta_{n-1} + \beta t’ + \gamma {t’}^2
+\]</p>
+<p>The local time coordinate is <span class="math notranslate nohighlight">\(t' = t - (n-1)\Delta t\)</span>, and when we differentiate</p>
+<p>\[
+\frac{d \theta}{dt} = \beta + 2 \gamma t’
+\]</p>
+<p>To solve for \(\beta\) and \(\gamma\) we fit the curve through the sample points:
+\[
+\begin{split}
+\theta_n &amp;= \theta_{n-1} + \beta \Delta t + \gamma (\Delta t)^2 \
+\theta_{n+1} &amp;= \theta_{n-1} + 2 \beta \Delta t + 4 \gamma (\Delta t)^2
+\end{split}
+\]</p>
+<p>which solve to give
+\[
+\beta = \left( 4 \theta_n - \theta_{n+1} - 3\theta_{n-1} \right) \frac{1}{2\Delta t} \quad \textrm{and} \quad
+\gamma = \left( \theta_{n+1} + \theta_{n-1} -2 \theta_n \right) \frac{1}{2\Delta t^2}
+\]</p>
+<p>Now we can use the above to approximate
+\[
+\left . \frac{d\theta}{dt} \right|_{t=n \Delta t} = \beta + 2\gamma \Delta t
+\]
+and using the original differential equation equate this with \( - k \theta_n \) to get</p>
+<p>\[
+\frac{1}{2\Delta t} (\theta_{n+1} - \theta_{n-1} ) = -k \theta_n
+\]</p>
+<p>The difference approximation to the derivative turns out to be the average of the expressions for the previous derivative and the new derivative. We have now included information about the current timestep and the previous timestep in our expression for the value of \(\theta\) at the forthcoming timestep:</p>
+<p>\[
+\theta_{n+1} = \theta_{n-1} -2k \theta_n \Delta t
+\]</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">steps</span> <span class="o">=</span> <span class="mi">100</span>
@@ -1062,28 +1060,27 @@ subsituted into the differential equation to obtain the
 estimate for the gradient at this time. The revised gradient is
 then used to update the original \(\theta(t)\) by an entire timestep.</p>
 <p>The first order step is
-$<span class="math notranslate nohighlight">\(
-		\begin{split}
-		\hat{\theta}(t+\Delta t /2) &amp; = \theta(t) + \left.  \frac{d \theta}{d t} \right|_t \frac{\Delta t}{2} \\
-         &amp;= \theta(t) \left[ 1-\frac{k\Delta t}{2} \right]
-		\end{split}
-\)</span>$</p>
+\[
+\begin{split}
+\hat{\theta}(t+\Delta t /2) &amp; = \theta(t) + \left.  \frac{d \theta}{d t} \right|_t \frac{\Delta t}{2} \
+&amp;= \theta(t) \left[ 1-\frac{k\Delta t}{2} \right]
+\end{split}
+\]</p>
 <p>Substitute to estimate the gradient at the mid-point
-$<span class="math notranslate nohighlight">\(
-	\left. \frac{d \theta}{d t} \right|_{t+\Delta t /2} \approx -k \theta(t)  \left[ 1-\frac{k\Delta t}{2} \right]
-\)</span>$</p>
+\[
+\left. \frac{d \theta}{d t} \right|_{t+\Delta t /2} \approx -k \theta(t)  \left[ 1-\frac{k\Delta t}{2} \right]
+\]</p>
 <p>Use this value as the average gradient over the interval \( t\rightarrow t+\Delta t\) to update \(\theta\)</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-    \begin{split}
-        \theta(t+\Delta t) &amp; \approx \theta(t) + \delta t \left(  -k \theta(t)  \left[ 1-\frac{k\Delta t}{2} \right]  \right) \\
-            &amp; \approx \theta(t) \left( 1 - k \Delta t + k^2 \frac{\Delta t^2}{2} \right)
-    \end{split}
-\end{split}\]</div>
+<p>\[
+\begin{split}
+\theta(t+\Delta t) &amp; \approx \theta(t) + \delta t \left(  -k \theta(t)  \left[ 1-\frac{k\Delta t}{2} \right]  \right) \
+&amp; \approx \theta(t) \left( 1 - k \Delta t + k^2 \frac{\Delta t^2}{2} \right)
+\end{split}
+\]</p>
 <p>It’s worth noting that the Taylor expansion of the solution should look like
-$<span class="math notranslate nohighlight">\(        
-    e^{-kt} = 1 - kt + \frac{k^2 t^2}{2!} - \frac{k^3 t^3}{3!} + \ldots
-\)</span>$</p>
+\[
+e^{-kt} = 1 - kt + \frac{k^2 t^2}{2!} - \frac{k^3 t^3}{3!} + \ldots
+\]</p>
 <p>The Runge Kutta method can be extended by repeating the estimates on smaller regions of the interval. The usual choice is fourth order RK. This is largely because, obviously, it’s accurate to fourth order, but also because the number of operations to go higher than fourth order is disproportionately large. See Numerical Recipes for a discussion on this and better methods for ODE’s.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
