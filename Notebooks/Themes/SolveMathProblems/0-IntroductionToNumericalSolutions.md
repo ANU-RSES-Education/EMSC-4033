@@ -250,7 +250,7 @@ Use this value as the average gradient over the interval \\( t\rightarrow t+\Del
     \end{split}
 \\]
 
-It's worth noting that the Taylor expansion of the solution should looks like
+It's worth noting that the Taylor expansion of the solution should look like
 \\[
     e^{-kt} = 1 - kt + \frac{k^2 t^2}{2!} - \frac{k^3 t^3}{3!} + \ldots
 \\]
