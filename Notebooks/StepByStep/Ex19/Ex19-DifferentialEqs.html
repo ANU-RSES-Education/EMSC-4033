@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Exercise N - Differential equations &#8212; EMSC 4033 Computational Geoscience</title>
+    <title>Exercise 19 - Differential equations &#8212; EMSC 4033 Computational Geoscience</title>
     
   <link rel="stylesheet" href="../../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -57,7 +57,7 @@
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Exercise N - Visualising sorting algorithms" href="../Ex20/Ex20-Sorting.html" />
-    <link rel="prev" title="Exercise N - Object-oriented programming" href="../Ex18/Ex18-Objects.html" />
+    <link rel="prev" title="Exercise 18 - Object-oriented programming" href="../Ex18/Ex18-Objects.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -273,12 +273,12 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Ex18/Ex18-Objects.html">
-     Exercise N - Object-oriented programming
+     Exercise 18 - Object-oriented programming
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Exercise N - Differential equations
+     Exercise 19 - Differential equations
     </a>
    </li>
    <li class="toctree-l2">
@@ -851,16 +851,20 @@
         
               <div>
                 
-  <div class="section" id="exercise-n-differential-equations">
-<h1>Exercise N - Differential equations<a class="headerlink" href="#exercise-n-differential-equations" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="exercise-19-differential-equations">
+<h1>Exercise 19 - Differential equations<a class="headerlink" href="#exercise-19-differential-equations" title="Permalink to this headline">¶</a></h1>
 <p>Many physical, chemical and biological systems can be modelled using differential equations. Often, these do not have analytical solutions, but they can be solved numerically. There are many techniques for achieving this, and in this practical we will look only at a couple of simple examples.</p>
 <div class="section" id="the-simple-pendulum">
 <h2>The simple pendulum<a class="headerlink" href="#the-simple-pendulum" title="Permalink to this headline">¶</a></h2>
-<p>A simple pendulum of mass <span class="math notranslate nohighlight">\(m\)</span>, suspended from a string of length <span class="math notranslate nohighlight">\(l\)</span>, obeys the differential equation $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}^2\theta}{\mathrm{d}t^2} + \frac{g}{l}\sin\theta = 0\)</span><span class="math notranslate nohighlight">\(
+<p>A simple pendulum of mass <span class="math notranslate nohighlight">\(m\)</span>, suspended from a string of length <span class="math notranslate nohighlight">\(l\)</span>, obeys the differential equation
+$<span class="math notranslate nohighlight">\(\frac{\mathrm{d}^2\theta}{\mathrm{d}t^2} + \frac{g}{l}\sin\theta = 0,\)</span><span class="math notranslate nohighlight">\(
 where \)</span>\theta$ is the angle the string makes with a vertical line.</p>
-<p>In this exercise, we will use the function <code class="docutils literal notranslate"><span class="pre">scipy.integrate.odeint()</span></code>. This solves differential equations of the form $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}\mathbf{y}(t)}{\mathrm{d}t} = f(\mathbf{y},t)\)</span><span class="math notranslate nohighlight">\( We therefore first need to work out how to write the pendulum equation in this form. Fortunately, there is a standard approach we can follow. We define \)</span><span class="math notranslate nohighlight">\(\mathbf{y}(t) = \left(\begin{array}{c}\theta(t)\\\dot\theta(t)\end{array}\right)\)</span><span class="math notranslate nohighlight">\( where \)</span><span class="math notranslate nohighlight">\(\dot{\theta}  = \frac{\mathrm{d}\theta}{\mathrm{d}t}\)</span><span class="math notranslate nohighlight">\(
+<p>In this exercise, we will use the function <code class="docutils literal notranslate"><span class="pre">scipy.integrate.odeint()</span></code>. This solves differential equations of the form
+$<span class="math notranslate nohighlight">\(\frac{\mathrm{d}\mathbf{y}(t)}{\mathrm{d}t} = f(\mathbf{y},t).\)</span><span class="math notranslate nohighlight">\(
+We therefore first need to work out how to write the pendulum equation in this form. Fortunately, there is a standard approach we can follow. We define \)</span><span class="math notranslate nohighlight">\(\mathbf{y}(t) = \left(\begin{array}{c}\theta(t)\\\dot\theta(t)\end{array}\right),\)</span><span class="math notranslate nohighlight">\(
+where \)</span><span class="math notranslate nohighlight">\(\dot{\theta}  = \frac{\mathrm{d}\theta}{\mathrm{d}t}\)</span><span class="math notranslate nohighlight">\(
 Now,
-\)</span><span class="math notranslate nohighlight">\(\frac{\mathrm{d}\mathbf{y}}{\mathrm{d}t} = \left(\begin{array}{c}\dot\theta\\\ddot\theta\end{array}\right) = \left(\begin{array}{c}y_2(t)\\-\frac{g}{l}\sin y_1(t)\end{array}\right)\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(\frac{\mathrm{d}\mathbf{y}}{\mathrm{d}t} = \left(\begin{array}{c}\dot\theta\\\ddot\theta\end{array}\right) = \left(\begin{array}{c}y_2(t)\\-\frac{g}{l}\sin y_1(t)\end{array}\right).\)</span><span class="math notranslate nohighlight">\(
 Thus, given any vector \)</span>\mathbf{y}$, we can compute its time derivative.</p>
 <p><strong>➤ Write and test a function to compute <span class="math notranslate nohighlight">\(\mathrm{d}\mathbf{y}/\mathrm{d}t\)</span>.</strong> Its call signature should be
 <code class="docutils literal notranslate"><span class="pre">func(y,t,...)</span></code> even though the variable <code class="docutils literal notranslate"><span class="pre">t</span></code> is not required within the calculation.</p>
@@ -962,7 +966,7 @@ where \)</span>\alpha$ is a small, positive constant.</p>
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="../Ex18/Ex18-Objects.html" title="previous page">Exercise N - Object-oriented programming</a>
+    <a class='left-prev' id="prev-link" href="../Ex18/Ex18-Objects.html" title="previous page">Exercise 18 - Object-oriented programming</a>
     <a class='right-next' id="next-link" href="../Ex20/Ex20-Sorting.html" title="next page">Exercise N - Visualising sorting algorithms</a>
 
         </div>
