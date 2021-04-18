@@ -1,7 +1,11 @@
 # EMSC 4033 
 
-
 ![Health check](https://github.com/ANU-RSES-Education/EMSC-4033/workflows/Health%20check/badge.svg)
+
+[![https://img.shields.io/badge/<LABEL>-<MESSAGE>-<COLOR>](https://img.shields.io/badge/EMSC4033-Course Notes-Red)](https://ANU-RSES-Education.github.io/EMSC-4033)
+
+
+
 
 ## Using Jupyterbook
 
