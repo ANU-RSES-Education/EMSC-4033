@@ -2,7 +2,7 @@
 
 ![Health check](https://github.com/ANU-RSES-Education/EMSC-4033/workflows/Health%20check/badge.svg)
 
-[![https://img.shields.io/badge/<LABEL>-<MESSAGE>-<COLOR>](https://img.shields.io/badge/EMSC4033-Course Notes-Red)](https://ANU-RSES-Education.github.io/EMSC-4033)
+[![https://img.shields.io/badge/<LABEL>-<MESSAGE>-<COLOR>](https://img.shields.io/badge/EMSC4033-Course_Notes-Blue)](https://ANU-RSES-Education.github.io/EMSC-4033)
 
 
 
@@ -25,7 +25,7 @@ To make a "binder-like" link to a repository on a droplet that you have set up, 
 
 You can launch this example particular example to try it out by clicking on this link. Your work is persistent. 
 
-[![https://img.shields.io/badge/<LABEL>-<MESSAGE>-<COLOR>](https://img.shields.io/badge/Launch-Demo-blue)](https://emsc4033-2021.rses.underworldcloud.org/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2FANU-RSES-Education%2FEMSC-4033&urlpath=tree%2FEMSC-4033%2FStartHere.ipynb&branch=master)
+[![https://img.shields.io/badge/<LABEL>-<MESSAGE>-<COLOR>](https://img.shields.io/badge/EMSC4033-Notebooks-blue)](https://emsc4033-2021.rses.underworldcloud.org/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2FANU-RSES-Education%2FEMSC-4033&urlpath=tree%2FEMSC-4033%2FStartHere.ipynb&branch=master)
     
 ## Administration tasks
 
