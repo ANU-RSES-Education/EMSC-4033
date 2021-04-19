@@ -1091,7 +1091,7 @@
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">l</span>  <span class="o">=</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
 <span class="n">ll</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">]</span>
-<span class="n">lll</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="p">[</span><span class="s1">&#39;f&#39;</span><span class="p">,</span><span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span><span class="p">]]</span>
+<span class="n">lll</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">[</span><span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span><span class="p">]]</span>
 
 <span class="nb">print</span> <span class="p">(</span><span class="n">l</span><span class="p">)</span>
 <span class="nb">print</span> <span class="p">(</span><span class="n">ll</span><span class="p">)</span>
@@ -1155,13 +1155,13 @@
 <p>Sets are special list-like collections of unique items. NOTE that the elements are not ordered (no such thing as <code class="docutils literal notranslate"><span class="pre">s[1]</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="mi">6</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
 <span class="nb">print</span> <span class="p">(</span><span class="n">s</span><span class="p">)</span>
 <span class="n">s</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
 <span class="nb">print</span> <span class="p">(</span><span class="n">s</span><span class="p">)</span>
 <span class="n">s</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 
-<span class="n">s2</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">])</span>
+<span class="n">s2</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">])</span>
 
 <span class="n">s</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">s2</span><span class="p">)</span>
 <span class="n">s</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">s2</span><span class="p">)</span>
@@ -1175,7 +1175,7 @@
 <p>These are very useful data collections where the information can be looked up by name instead of a numerical index. This will come in handy as a lightweight database and is commonly something we need to use when using modules to read in data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;item1&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">],</span> <span class="s2">&quot;item2&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;c&#39;</span><span class="p">,</span><span class="s1">&#39;d&#39;</span><span class="p">,</span><span class="s1">&#39;e&#39;</span><span class="p">]}</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;item1&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">],</span> <span class="s2">&quot;item2&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">]}</span>
 
 <span class="nb">print</span> <span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s2">&quot;item1&quot;</span><span class="p">])</span>
 <span class="nb">print</span> <span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s2">&quot;item1&quot;</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
@@ -1188,7 +1188,7 @@
 <span class="nb">print</span> <span class="p">(</span><span class="n">d1</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
 
 <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">d1</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
-    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;</span><span class="si">{:&gt;15s}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">k</span><span class="p">),</span><span class="s2">&quot; --&gt; &quot;</span><span class="p">,</span> <span class="n">d1</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;</span><span class="si">{:&gt;15s}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">k</span><span class="p">),</span> <span class="s2">&quot; --&gt; &quot;</span><span class="p">,</span> <span class="n">d1</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -1214,10 +1214,10 @@
 <span class="n">hashfn</span><span class="p">(</span><span class="mf">1.00000000000001</span><span class="p">)</span>
 <span class="n">hashfn</span><span class="p">(</span><span class="mf">2.1</span><span class="p">)</span>
 
-<span class="n">hashfn</span><span class="p">((</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">))</span>
-<span class="n">hashfn</span><span class="p">((</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">2.0</span><span class="p">))</span>
+<span class="n">hashfn</span><span class="p">((</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">))</span>
+<span class="n">hashfn</span><span class="p">((</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">))</span>
 
-<span class="n">hashfn</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">hashfn</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
 
 <span class="kn">import</span> <span class="nn">math</span>
 <span class="n">hashfn</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">)</span>  <span class="c1"># weird ones !! </span>
@@ -1320,7 +1320,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">reverse_phone_book</span><span class="p">[(</span><span class="s1">&#39;07&#39;</span><span class="p">,</span><span class="s1">&#39;5555 1234&#39;</span><span class="p">)])</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">reverse_phone_book</span><span class="p">[(</span><span class="s1">&#39;07&#39;</span><span class="p">,</span> <span class="s1">&#39;5555 1234&#39;</span><span class="p">)])</span>
 </pre></div>
 </div>
 </div>

@@ -862,7 +862,7 @@
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">colour</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     
-    <span class="n">rgb</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">)</span>
+    <span class="n">rgb</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
     <span class="n">description</span> <span class="o">=</span> <span class="s2">&quot;Black&quot;</span>
     
     
@@ -891,7 +891,7 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">d</span><span class="o">.</span><span class="n">description</span> <span class="o">=</span> <span class="s1">&#39;Blue&#39;</span>
-<span class="n">d</span><span class="o">.</span><span class="n">rgb</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">)</span>
+<span class="n">d</span><span class="o">.</span><span class="n">rgb</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -909,7 +909,7 @@
 <p><code class="docutils literal notranslate"><span class="pre">colour</span></code> is a data container that standardises how we refer to colours. By default it is “Black” but we can always change the values. The only thing is, we can also do this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">d</span><span class="o">.</span><span class="n">complement</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">d</span><span class="o">.</span><span class="n">complement</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
 <span class="nb">print</span> <span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">complement</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -928,9 +928,9 @@
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">colour</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     
-    <span class="n">rgb</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">)</span>
+    <span class="n">rgb</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
     <span class="n">description</span> <span class="o">=</span> <span class="s2">&quot;Black&quot;</span>
-    <span class="n">complement</span>  <span class="o">=</span> <span class="p">(</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">)</span>
+    <span class="n">complement</span>  <span class="o">=</span> <span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
     
 <span class="n">e</span> <span class="o">=</span> <span class="n">colour</span><span class="p">()</span>
 <span class="nb">print</span> <span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">complement</span><span class="p">)</span>
@@ -963,7 +963,7 @@
 <span class="sd">    An rgb colour object with a description of the colour </span>
 <span class="sd">    &quot;&quot;&quot;</span>
     
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rgb</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">),</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Black&quot;</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rgb</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Black&quot;</span><span class="p">):</span>
         
         <span class="bp">self</span><span class="o">.</span><span class="n">rgb</span> <span class="o">=</span> <span class="n">rgb</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">description</span> <span class="o">=</span> <span class="n">description</span>
@@ -971,8 +971,8 @@
         
         <span class="k">return</span>
 
-<span class="n">new_c</span> <span class="o">=</span> <span class="n">colour2</span><span class="p">(</span><span class="n">rgb</span><span class="o">=</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">),</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Red&quot;</span><span class="p">)</span>
-<span class="n">new_d</span> <span class="o">=</span> <span class="n">colour2</span><span class="p">(</span><span class="n">rgb</span><span class="o">=</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">),</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Green&quot;</span><span class="p">)</span>
+<span class="n">new_c</span> <span class="o">=</span> <span class="n">colour2</span><span class="p">(</span><span class="n">rgb</span><span class="o">=</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Red&quot;</span><span class="p">)</span>
+<span class="n">new_d</span> <span class="o">=</span> <span class="n">colour2</span><span class="p">(</span><span class="n">rgb</span><span class="o">=</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Green&quot;</span><span class="p">)</span>
 
 <span class="nb">print</span> <span class="p">(</span><span class="n">new_c</span><span class="o">.</span><span class="n">rgb</span><span class="p">)</span>
 <span class="nb">print</span> <span class="p">(</span><span class="n">new_c</span><span class="o">.</span><span class="n">complement</span><span class="p">)</span>
@@ -994,7 +994,7 @@
 <span class="sd">    An rgb colour object with a description of the colour </span>
 <span class="sd">    &quot;&quot;&quot;</span>
     
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rgb</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">),</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Black&quot;</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rgb</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Black&quot;</span><span class="p">):</span>
         
         <span class="bp">self</span><span class="o">.</span><span class="n">rgb</span> <span class="o">=</span> <span class="n">rgb</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">description</span> <span class="o">=</span> <span class="n">description</span>
@@ -1016,17 +1016,17 @@
             <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Cannot mix apples and oranges&quot;</span><span class="p">)</span>
             <span class="k">return</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="p">(</span> <span class="nb">min</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rgb</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="n">other</span><span class="o">.</span><span class="n">rgb</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="mf">1.0</span><span class="p">),</span>
-                     <span class="nb">min</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rgb</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">other</span><span class="o">.</span><span class="n">rgb</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="mf">1.0</span><span class="p">),</span>
-                     <span class="nb">min</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rgb</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">+</span><span class="n">other</span><span class="o">.</span><span class="n">rgb</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="mf">1.0</span><span class="p">)</span> <span class="p">)</span>
+            <span class="k">return</span> <span class="p">(</span> <span class="nb">min</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rgb</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="n">other</span><span class="o">.</span><span class="n">rgb</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mf">1.0</span><span class="p">),</span>
+                     <span class="nb">min</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rgb</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">other</span><span class="o">.</span><span class="n">rgb</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="mf">1.0</span><span class="p">),</span>
+                     <span class="nb">min</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rgb</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">+</span><span class="n">other</span><span class="o">.</span><span class="n">rgb</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="mf">1.0</span><span class="p">)</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">new_c</span> <span class="o">=</span> <span class="n">colour2</span><span class="p">(</span><span class="n">rgb</span><span class="o">=</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">),</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Red&quot;</span><span class="p">)</span>
-<span class="n">new_d</span> <span class="o">=</span> <span class="n">colour2</span><span class="p">(</span><span class="n">rgb</span><span class="o">=</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">),</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Green&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">new_c</span> <span class="o">=</span> <span class="n">colour2</span><span class="p">(</span><span class="n">rgb</span><span class="o">=</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Red&quot;</span><span class="p">)</span>
+<span class="n">new_d</span> <span class="o">=</span> <span class="n">colour2</span><span class="p">(</span><span class="n">rgb</span><span class="o">=</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Green&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1050,7 +1050,7 @@
 <span class="sd">    An rgb colour object with a description of the colour </span>
 <span class="sd">    &quot;&quot;&quot;</span>
     
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rgb</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">),</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Black&quot;</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rgb</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Black&quot;</span><span class="p">):</span>
         
         <span class="bp">self</span><span class="o">.</span><span class="n">rgb</span> <span class="o">=</span> <span class="n">rgb</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">description</span> <span class="o">=</span> <span class="n">description</span>
@@ -1072,9 +1072,9 @@
             <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Cannot mix apples and oranges&quot;</span><span class="p">)</span>
             <span class="k">return</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="p">(</span> <span class="nb">min</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rgb</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="n">other</span><span class="o">.</span><span class="n">rgb</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="mf">1.0</span><span class="p">),</span>
-                     <span class="nb">min</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rgb</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">other</span><span class="o">.</span><span class="n">rgb</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="mf">1.0</span><span class="p">),</span>
-                     <span class="nb">min</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rgb</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">+</span><span class="n">other</span><span class="o">.</span><span class="n">rgb</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="mf">1.0</span><span class="p">)</span> <span class="p">)</span>
+            <span class="k">return</span> <span class="p">(</span> <span class="nb">min</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rgb</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="n">other</span><span class="o">.</span><span class="n">rgb</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mf">1.0</span><span class="p">),</span>
+                     <span class="nb">min</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rgb</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">other</span><span class="o">.</span><span class="n">rgb</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="mf">1.0</span><span class="p">),</span>
+                     <span class="nb">min</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rgb</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">+</span><span class="n">other</span><span class="o">.</span><span class="n">rgb</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="mf">1.0</span><span class="p">)</span> <span class="p">)</span>
 
         
     <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
@@ -1089,8 +1089,8 @@
 
 
     
-<span class="n">new_c</span> <span class="o">=</span> <span class="n">colour3</span><span class="p">(</span><span class="n">rgb</span><span class="o">=</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">),</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Red&quot;</span><span class="p">)</span>
-<span class="n">new_d</span> <span class="o">=</span> <span class="n">colour3</span><span class="p">(</span><span class="n">rgb</span><span class="o">=</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">),</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Green&quot;</span><span class="p">)</span>
+<span class="n">new_c</span> <span class="o">=</span> <span class="n">colour3</span><span class="p">(</span><span class="n">rgb</span><span class="o">=</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Red&quot;</span><span class="p">)</span>
+<span class="n">new_d</span> <span class="o">=</span> <span class="n">colour3</span><span class="p">(</span><span class="n">rgb</span><span class="o">=</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Green&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
