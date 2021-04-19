@@ -25,7 +25,7 @@ Let's just look at a couple of examples - ways to bundle up some data easily
 ```{code-cell} ipython3
 class colour(object):
     
-    rgb = (0.0,0.0,0.0)
+    rgb = (0.0, 0.0, 0.0)
     description = "Black"
     
     
@@ -45,7 +45,7 @@ print (d.rgb)
 
 ```{code-cell} ipython3
 d.description = 'Blue'
-d.rgb = (0.0,0.0,1.0)
+d.rgb = (0.0, 0.0, 1.0)
 ```
 
 ```{code-cell} ipython3
@@ -58,7 +58,7 @@ print (d.rgb)
 `colour` is a data container that standardises how we refer to colours. By default it is "Black" but we can always change the values. The only thing is, we can also do this:
 
 ```{code-cell} ipython3
-d.complement = (1.0,1.0,0.0)
+d.complement = (1.0, 1.0, 0.0)
 print (d.complement)
 ```
 
@@ -75,9 +75,9 @@ The `colour` class defines how objects will look once defined, but each 'instanc
 ```{code-cell} ipython3
 class colour(object):
     
-    rgb = (0.0,0.0,0.0)
+    rgb = (0.0, 0.0, 0.0)
     description = "Black"
-    complement  = (1.0,1.0,1.0)
+    complement  = (1.0, 1.0, 1.0)
     
 e = colour()
 print (e.complement)
@@ -107,7 +107,7 @@ class colour2(object):
     An rgb colour object with a description of the colour 
     """
     
-    def __init__(self, rgb = (0.0,0.0,0.0), description="Black"):
+    def __init__(self, rgb = (0.0, 0.0, 0.0), description="Black"):
         
         self.rgb = rgb
         self.description = description
@@ -115,8 +115,8 @@ class colour2(object):
         
         return
 
-new_c = colour2(rgb=(1.0,0.0,0.0), description="Red")
-new_d = colour2(rgb=(0.0,1.0,0.0), description="Green")
+new_c = colour2(rgb=(1.0, 0.0, 0.0), description="Red")
+new_d = colour2(rgb=(0.0, 1.0, 0.0), description="Green")
 
 print (new_c.rgb)
 print (new_c.complement)
@@ -133,7 +133,7 @@ class colour2(object):
     An rgb colour object with a description of the colour 
     """
     
-    def __init__(self, rgb = (0.0,0.0,0.0), description="Black"):
+    def __init__(self, rgb = (0.0, 0.0, 0.0), description="Black"):
         
         self.rgb = rgb
         self.description = description
@@ -155,15 +155,15 @@ class colour2(object):
             print ("Cannot mix apples and oranges")
             return
         else:
-            return ( min(self.rgb[0]+other.rgb[0],1.0),
-                     min(self.rgb[1]+other.rgb[1],1.0),
-                     min(self.rgb[2]+other.rgb[2],1.0) )
+            return ( min(self.rgb[0]+other.rgb[0], 1.0),
+                     min(self.rgb[1]+other.rgb[1], 1.0),
+                     min(self.rgb[2]+other.rgb[2], 1.0) )
 
 ```
 
 ```{code-cell} ipython3
-new_c = colour2(rgb=(1.0,0.0,0.0), description="Red")
-new_d = colour2(rgb=(0.0,1.0,0.0), description="Green")
+new_c = colour2(rgb=(1.0, 0.0, 0.0), description="Red")
+new_d = colour2(rgb=(0.0, 1.0, 0.0), description="Green")
 ```
 
 ```{code-cell} ipython3
@@ -183,7 +183,7 @@ class colour3(object):
     An rgb colour object with a description of the colour 
     """
     
-    def __init__(self, rgb = (0.0,0.0,0.0), description="Black"):
+    def __init__(self, rgb = (0.0, 0.0, 0.0), description="Black"):
         
         self.rgb = rgb
         self.description = description
@@ -205,9 +205,9 @@ class colour3(object):
             print ("Cannot mix apples and oranges")
             return
         else:
-            return ( min(self.rgb[0]+other.rgb[0],1.0),
-                     min(self.rgb[1]+other.rgb[1],1.0),
-                     min(self.rgb[2]+other.rgb[2],1.0) )
+            return ( min(self.rgb[0]+other.rgb[0], 1.0),
+                     min(self.rgb[1]+other.rgb[1], 1.0),
+                     min(self.rgb[2]+other.rgb[2], 1.0) )
 
         
     def __add__(self, other):
@@ -222,8 +222,8 @@ class colour3(object):
 
 
     
-new_c = colour3(rgb=(1.0,0.0,0.0), description="Red")
-new_d = colour3(rgb=(0.0,1.0,0.0), description="Green")
+new_c = colour3(rgb=(1.0, 0.0, 0.0), description="Red")
+new_d = colour3(rgb=(0.0, 1.0, 0.0), description="Green")
 ```
 
 ```{code-cell} ipython3

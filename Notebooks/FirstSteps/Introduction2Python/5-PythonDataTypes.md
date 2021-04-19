@@ -185,7 +185,7 @@ Lists are more flexible than tuples, they can be assigned to, have items removed
 ```{code-cell} ipython3
 l  = [1.0, 2.0, 3.0]
 ll = ['a', 'b', 'c']
-lll = [1.0, 'a', (1,2,3), ['f','g', 'h']]
+lll = [1.0, 'a', (1, 2, 3), ['f', 'g', 'h']]
 
 print (l)
 print (ll)
@@ -238,13 +238,13 @@ print ("4 - ", l)
 Sets are special list-like collections of unique items. NOTE that the elements are not ordered (no such thing as `s[1]`
 
 ```{code-cell} ipython3
-s = set([6,5,4,3,2,1,1,1,1])
+s = set([6, 5, 4, 3, 2, 1, 1, 1, 1])
 print (s)
 s.add(7)
 print (s)
 s.add(1)
 
-s2 = set([5,6,7,8,9,10,11])
+s2 = set([5, 6, 7, 8, 9, 10, 11])
 
 s.intersection(s2)
 s.union(s2)
@@ -255,7 +255,7 @@ s.union(s2)
 These are very useful data collections where the information can be looked up by name instead of a numerical index. This will come in handy as a lightweight database and is commonly something we need to use when using modules to read in data.
 
 ```{code-cell} ipython3
-d = { "item1": ['a','b','c'], "item2": ['c','d','e']}
+d = { "item1": ['a', 'b', 'c'], "item2": ['c', 'd', 'e']}
 
 print (d["item1"])
 print (d["item1"][1])
@@ -268,7 +268,7 @@ print (d1["Small Number"] + d1["Big Number"])
 print (d1.keys())
 
 for k in d1.keys():
-    print ("{:>15s}".format(k)," --> ", d1[k])
+    print ("{:>15s}".format(k), " --> ", d1[k])
 ```
 
 More useful is the fact that the dictionary can have as a key, anything that can be converted using the `hash` function into a unique number. Strings, obviously, work well but anything immutable can be hashed:
@@ -292,10 +292,10 @@ hashfn(1.0)
 hashfn(1.00000000000001)
 hashfn(2.1)
 
-hashfn(('a','b'))
-hashfn((1.0,2.0))
+hashfn(('a', 'b'))
+hashfn((1.0, 2.0))
 
-hashfn([1,2,3])
+hashfn([1, 2, 3])
 
 import math
 hashfn(math.sin)  # weird ones !! 
@@ -382,7 +382,7 @@ for key in phone_book.keys():
 ```
 
 ```{code-cell} ipython3
-print (reverse_phone_book[('07','5555 1234')])
+print (reverse_phone_book[('07', '5555 1234')])
 ```
 
 ```{code-cell} ipython3
