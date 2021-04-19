@@ -1009,6 +1009,8 @@ The difference between google maps and many of the examples we have looked at so
 <span class="n">mapbox_streets</span> <span class="o">=</span> <span class="n">MapboxTiles</span><span class="p">(</span><span class="n">map_id</span><span class="o">=</span><span class="s1">&#39;mapbox/streets-v11&#39;</span><span class="p">,</span> 
                                      <span class="n">access_token</span><span class="o">=</span><span class="s1">&#39;pk.eyJ1IjoibG91aXNtb3Jlc2kiLCJhIjoiY2pzeG1mZzFqMG5sZDQ0czF5YzY1NmZ4cSJ9.lpsUzmLasydBlS0IOqe5JA&#39;</span><span class="p">)</span>
 
+<span class="n">mapbox_outdoors</span> <span class="o">=</span> <span class="n">MapboxTiles</span><span class="p">(</span><span class="n">map_id</span><span class="o">=</span><span class="s1">&#39;mapbox/outdoors-v11&#39;</span><span class="p">,</span> 
+                                     <span class="n">access_token</span><span class="o">=</span><span class="s1">&#39;pk.eyJ1IjoibG91aXNtb3Jlc2kiLCJhIjoiY2pzeG1mZzFqMG5sZDQ0czF5YzY1NmZ4cSJ9.lpsUzmLasydBlS0IOqe5JA&#39;</span><span class="p">)</span>
 
 <span class="n">mapbox_satellite</span> <span class="o">=</span> <span class="n">MapboxTiles</span><span class="p">(</span><span class="n">map_id</span><span class="o">=</span><span class="s1">&#39;mapbox/satellite-v9&#39;</span><span class="p">,</span> 
                                      <span class="n">access_token</span><span class="o">=</span><span class="s1">&#39;pk.eyJ1IjoibG91aXNtb3Jlc2kiLCJhIjoiY2pzeG1mZzFqMG5sZDQ0czF5YzY1NmZ4cSJ9.lpsUzmLasydBlS0IOqe5JA&#39;</span><span class="p">)</span>
@@ -1025,7 +1027,7 @@ The difference between google maps and many of the examples we have looked at so
 
 <span class="n">map_extent</span> <span class="o">=</span> <span class="p">[</span><span class="n">lon0</span><span class="p">,</span> <span class="n">lon1</span><span class="p">,</span> <span class="n">lat0</span><span class="p">,</span> <span class="n">lat1</span><span class="p">]</span>
 
-<span class="n">map_tiles</span> <span class="o">=</span> <span class="n">mapbox_streets</span>
+<span class="n">map_tiles</span> <span class="o">=</span> <span class="n">mapbox_outdoors</span>
 
 <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">12</span><span class="p">),</span> <span class="n">facecolor</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">)</span>
 <span class="c1"># ax = plt.axes(projection=ccrs.PlateCarree(), extent=himalaya_extent)</span>
@@ -1038,7 +1040,7 @@ The difference between google maps and many of the examples we have looked at so
 <span class="c1"># Add the on-demand image - the second argument is the resolution and needs to be balanced with the </span>
 <span class="c1"># size of the area the map covers. </span>
 
-<span class="n">ax</span><span class="o">.</span><span class="n">add_image</span><span class="p">(</span><span class="n">map_tiles</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">add_image</span><span class="p">(</span><span class="n">map_tiles</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">coastline</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span>  <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;Black&quot;</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">rivers</span><span class="p">,</span>    <span class="n">linewidth</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>  <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;Blue&quot;</span><span class="p">,</span>  <span class="n">zorder</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
 </pre></div>
