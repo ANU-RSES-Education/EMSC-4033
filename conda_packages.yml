@@ -8,8 +8,9 @@ dependencies:
     - stripy
     - litho1pt0
     - proj=7.*.        # errors with cartopy when 6.2.* is used
-    - cartopy=0.17.*
+    - cartopy=0.18.*   # 0.17.?
     - gdal
+    - libgdal  # ?
     - obspy
     - pandas
     - pip 
