@@ -1,9 +1,9 @@
 def caesar(msg,N):
     alphabetU = []
     alphabetL = []
-    for i in range(65,65+26):
+    for i in range(65, 65+26):
         alphabetU+=[chr(i)]
-    for i in range(65+32,65+32+26):
+    for i in range(65+32, 65+32+26):
         alphabetL+=[chr(i)]
 
     out=''
