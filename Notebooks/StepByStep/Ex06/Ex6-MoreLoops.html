@@ -860,12 +860,12 @@
 </pre></div>
 </div>
 <p>As with the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop, everything within the indented block is executed multiple times, with the <code class="docutils literal notranslate"><span class="pre">&lt;variable&gt;</span></code> getting set equal to a different element of <code class="docutils literal notranslate"><span class="pre">&lt;collection&gt;</span></code> on each pass. <code class="docutils literal notranslate"><span class="pre">&lt;collection&gt;</span></code> may be any ‘iterable’, such as a list. For example, the following code would calculate the sum of all the entries in <code class="docutils literal notranslate"><span class="pre">a</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">9</span><span class="p">]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
 <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">a</span><span class="p">:</span>
     <span class="n">s</span> <span class="o">+=</span> <span class="n">x</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">s</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Total is:&quot;</span><span class="p">,</span><span class="n">s</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Total is:&quot;</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>It is possible to use <code class="docutils literal notranslate"><span class="pre">continue</span></code> and <code class="docutils literal notranslate"><span class="pre">break</span></code> statements within a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop, just as in a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop.</p>
@@ -910,11 +910,11 @@
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">istart</span> <span class="o">=</span> <span class="mi">3</span>
 <span class="n">istop</span> <span class="o">=</span> <span class="mi">15</span>
 <span class="n">istep</span> <span class="o">=</span> <span class="mi">4</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">istart</span><span class="p">,</span><span class="n">istop</span><span class="p">,</span><span class="n">istep</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">istart</span><span class="p">,</span> <span class="n">istop</span><span class="p">,</span> <span class="n">istep</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>This will print <code class="docutils literal notranslate"><span class="pre">istart</span></code>, <code class="docutils literal notranslate"><span class="pre">istart+istep</span></code>, <code class="docutils literal notranslate"><span class="pre">istart+2*istep</span></code> etc, but not any value equal to or greater than <code class="docutils literal notranslate"><span class="pre">istep</span></code>.
+<p>This will print <code class="docutils literal notranslate"><span class="pre">istart</span></code>, <code class="docutils literal notranslate"><span class="pre">istart</span> <span class="pre">+</span> <span class="pre">istep</span></code>, <code class="docutils literal notranslate"><span class="pre">istart</span> <span class="pre">+</span> <span class="pre">2*istep</span></code> etc, but not any value equal to or greater than <code class="docutils literal notranslate"><span class="pre">istep</span></code>.
 <strong>➤ Try it out!</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -924,9 +924,9 @@
 </div>
 </div>
 <p>The value of <span class="math notranslate nohighlight">\(\pi\)</span> can be found via an infinite sum
-$<span class="math notranslate nohighlight">\(\pi = 2\sum_{k=0}^\infty \frac{2^k k!^2}{(2k+1)!}\)</span><span class="math notranslate nohighlight">\(
-where \)</span>n!<span class="math notranslate nohighlight">\( denotes the factorial of \)</span>n<span class="math notranslate nohighlight">\(, \)</span>n! = n(n-1)(n-2)\ldots 1$. This can be computed by initialising a variable to contain the value <code class="docutils literal notranslate"><span class="pre">1</span></code>, and then looping through the integers up to <code class="docutils literal notranslate"><span class="pre">n</span></code> multiplying the variable by each.</p>
-<p><strong>➤ By summing the first <span class="math notranslate nohighlight">\(N\)</span> terms in the series, compute an approximation to <span class="math notranslate nohighlight">\(\pi\)</span> and explore how the accuracy of the approximation changes with <span class="math notranslate nohighlight">\(N\)</span>.</strong> A good starting point is <span class="math notranslate nohighlight">\(N=20\)</span>.</p>
+<span class="math notranslate nohighlight">\(\pi = 2 \sum_{k=0}^\infty 2^k (k!)^2 / (2k+1)!\)</span>,
+where <span class="math notranslate nohighlight">\(n!\)</span> denotes the factorial of <span class="math notranslate nohighlight">\(n\)</span>, i.e., <span class="math notranslate nohighlight">\(n! = n(n-1)(n-2)\ldots 1\)</span>. This can be computed by initialising a variable to contain the value <code class="docutils literal notranslate"><span class="pre">1</span></code>, and then looping through the integers up to <code class="docutils literal notranslate"><span class="pre">n</span></code> multiplying the variable by each.</p>
+<p><strong>➤ By summing the first <span class="math notranslate nohighlight">\(N\)</span> terms in the series, compute an approximation to <span class="math notranslate nohighlight">\(\pi\)</span> and explore how the accuracy of the approximation changes with <span class="math notranslate nohighlight">\(N\)</span>.</strong> A good starting point is <span class="math notranslate nohighlight">\(N = 20\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try it here!</span>
@@ -935,13 +935,13 @@ where \)</span>n!<span class="math notranslate nohighlight">\( denotes the facto
 </div>
 </div>
 <p>Often, we may need to iterate through a collection of objects (such as a list), but also keep a count of how many objects we have dealt with. There are various ways this could be done - one might be:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Object number&quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="s2">&quot; is &quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
 </pre></div>
 </div>
 <p>However, Python provides the <code class="docutils literal notranslate"><span class="pre">enumerate</span></code> function for precisely this purpose:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">ai</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Object number&quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="s2">&quot; is &quot;</span><span class="p">,</span> <span class="n">ai</span><span class="p">)</span>
 </pre></div>
@@ -956,17 +956,17 @@ where \)</span>n!<span class="math notranslate nohighlight">\( denotes the facto
 </div>
 </div>
 <p>Another common circumstance is that we have two (or more) collections, and we want to access the <span class="math notranslate nohighlight">\(i\)</span>th element of each simultaneously. Again, this could be achieved using something like:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">]</span>
-<span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+<span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">]</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The letter associated with &quot;</span><span class="p">,</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="s2">&quot; is &quot;</span><span class="p">,</span><span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The letter associated with &quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s2">&quot; is &quot;</span><span class="p">,</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
 </pre></div>
 </div>
 <p>but Python also provides the <code class="docutils literal notranslate"><span class="pre">zip</span></code> function for this purpose:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">]</span>
-<span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">]</span>
-<span class="k">for</span> <span class="n">ai</span><span class="p">,</span> <span class="n">bi</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The letter associated with &quot;</span><span class="p">,</span><span class="n">ai</span><span class="p">,</span><span class="s2">&quot; is &quot;</span><span class="p">,</span><span class="n">bi</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+<span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">ai</span><span class="p">,</span> <span class="n">bi</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The letter associated with &quot;</span><span class="p">,</span> <span class="n">ai</span><span class="p">,</span> <span class="s2">&quot; is &quot;</span><span class="p">,</span> <span class="n">bi</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>This creates an iterator which returns a tuple on each iteration, containing the <span class="math notranslate nohighlight">\(i\)</span>th element of each of the collections passed to <code class="docutils literal notranslate"><span class="pre">zip</span></code>. The elements of this tuple can be assigned to variables (here, <code class="docutils literal notranslate"><span class="pre">ai</span></code> and <code class="docutils literal notranslate"><span class="pre">bi</span></code>).</p>
@@ -983,15 +983,15 @@ where \)</span>n!<span class="math notranslate nohighlight">\( denotes the facto
 </pre></div>
 </div>
 <p>e.g.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">2</span><span class="p">)]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">2</span><span class="p">)]</span>
 </pre></div>
 </div>
 <p>This is sometimes known as a <code class="docutils literal notranslate"><span class="pre">list</span> <span class="pre">comprehension</span></code>. A tuple can be built similarly</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
 </pre></div>
 </div>
 <p>and</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="p">:</span><span class="n">y</span> <span class="k">for</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">([</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])}</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="p">:</span><span class="n">y</span> <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">([</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])}</span>
 </pre></div>
 </div>
 <p>can be used to construct a dictionary.</p>
@@ -1004,8 +1004,8 @@ where \)</span>n!<span class="math notranslate nohighlight">\( denotes the facto
 </div>
 </div>
 <p>Another infinite series generating <span class="math notranslate nohighlight">\(\pi\)</span> is given by Madhava of Sangamagrama:
-$<span class="math notranslate nohighlight">\(\pi = \sqrt{12}\sum_{k=0}^\infty \frac{(-3)^{-k}}{2k+1}\)</span><span class="math notranslate nohighlight">\( 
-**&amp;#10148; By computing the first \)</span>N<span class="math notranslate nohighlight">\( terms of this expression, and comparing them to the first \)</span>N<span class="math notranslate nohighlight">\( terms of the expression given earlier, determine which series converges faster (i.e., which gives better results for small \)</span>N$?).**</p>
+<span class="math notranslate nohighlight">\(\pi = \sqrt{12}\sum_{k=0}^\infty (-3)^{-k} / (2k+1)\)</span>.</p>
+<p><strong>➤ By computing the first <span class="math notranslate nohighlight">\(N\)</span> terms of this expression, and comparing them to the first <span class="math notranslate nohighlight">\(N\)</span> terms of the expression given earlier, determine which series converges faster (i.e., which gives better results for small <span class="math notranslate nohighlight">\(N\)</span>?).</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try it here!</span>

@@ -871,39 +871,39 @@
 <p>So far, all our variables have been single numbers. However, many types of data may consist of more than one piece of information. For example, an experiment might generate measurements of pressure and temperature, each recorded at a number of different times. While it would be possible to define new variables for each number separately, it quickly becomes difficult to keep track of them all. Ideally, we would like to have a structured way of storing related information. Lists, tuples and dictionaries are some of the tools that Python provides for doing this.</p>
 <div class="section" id="lists">
 <h2>Lists<a class="headerlink" href="#lists" title="Permalink to this headline">¶</a></h2>
-<p>A <strong>list</strong> is defined by using <em>square</em> brackets, and consists of some set of entries separated by commas:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+<p>A <strong>list</strong> is defined by using <em>square</em> brackets, <code class="docutils literal notranslate"><span class="pre">[</span></code> and <code class="docutils literal notranslate"><span class="pre">]</span></code>, and consists of some set of entries separated by commas, e.g.,</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>The individual entries do not need to have the same type, and we can have lists inside lists</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mf">3.2</span><span class="p">,</span><span class="s1">&#39;hello&#39;</span><span class="p">,[</span><span class="mi">4</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mf">17.1</span><span class="p">]</span> <span class="p">]</span> 
+<p>The individual entries do not need to have the same type. Also, we can have lists inside lists, e.g.,</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mf">3.2</span><span class="p">,</span> <span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mf">17.1</span><span class="p">]]</span> 
 </pre></div>
 </div>
-<p>although in practice, lists tend to be more homogenous than this.</p>
+<p>although in practice, list elements tend to be more homogenous than the example above.</p>
 <p>We can access individual <em>entries</em> in the list by adding an <em>index</em> to the variable name. In Python, we have to remember a quirk: when counting objects, we start from 0 rather than from 1; this is because Python is a 0-based programming language. Thus, to access the first entry in the list <code class="docutils literal notranslate"><span class="pre">a</span></code>, we use <code class="docutils literal notranslate"><span class="pre">a[0]</span></code>; the second entry is <code class="docutils literal notranslate"><span class="pre">a[1]</span></code>. We can use these entries in calculations. Thus:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mf">3.2</span><span class="p">,</span><span class="s1">&#39;hello&#39;</span><span class="p">,[</span><span class="mi">4</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mf">17.1</span><span class="p">]</span> <span class="p">]</span> 
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mf">3.2</span><span class="p">,</span> <span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mf">17.1</span><span class="p">]]</span> 
 <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># Prints &#39;3.2&#39;</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># Prints &#39;hello&#39;</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="c1"># Prints &#39;[4,8,17.1]&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="c1"># Prints &#39;[4, 8, 17.1]&#39;</span>
 <span class="nb">print</span><span class="p">(</span><span class="mi">2</span><span class="o">+</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># Prints &#39;5.2&#39;</span>
 </pre></div>
 </div>
 <p>Where an entry in a list is itself a list, we can use a second index to access the elements of this:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mf">3.2</span><span class="p">,</span><span class="s1">&#39;hello&#39;</span><span class="p">,[</span><span class="mi">4</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mf">17.1</span><span class="p">]</span> <span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="c1"># Prints &#39;[4,8,17.1]&#39;</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mf">3.2</span><span class="p">,</span> <span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mf">17.1</span><span class="p">]]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="c1"># Prints &#39;[4, 8, 17.1]&#39;</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># Prints &#39;4&#39;</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">2</span><span class="p">])</span> <span class="c1"># Prints &#39;46.9&#39;</span>
 </pre></div>
 </div>
 <p>Negative indices count from the <em>last</em> element in the array, which is accessible as <code class="docutils literal notranslate"><span class="pre">a[-1]</span></code>.</p>
 <p>We can also ask for a <em>range</em> of entries. To do this, we specify the index of the <em>first</em> entry we want, and an index one larger than that of the <em>last</em> entry we want, separated by a colon:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span> <span class="c1"># Prints [6,7]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span> <span class="c1"># Prints [6, 7]</span>
 </pre></div>
 </div>
-<p>Again, this is somewhat quirky. However, it does mean that if we want to extract <code class="docutils literal notranslate"><span class="pre">n</span></code> entries starting at index <code class="docutils literal notranslate"><span class="pre">i0</span></code>, we simply need to ask for <code class="docutils literal notranslate"><span class="pre">a[i0:i0+n]</span></code>. By default, we get every element in the requested range. However, if we only want every <span class="math notranslate nohighlight">\(k\)</span>-th element, we can specify <span class="math notranslate nohighlight">\(k\)</span> after a second colon:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">12</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">6</span><span class="p">:</span><span class="mi">2</span><span class="p">])</span> <span class="c1"># Prints &#39;[6,8,10]&#39;</span>
+<p>Again, this is somewhat quirky. However, it does mean that if we want to extract <code class="docutils literal notranslate"><span class="pre">n</span></code> entries starting at index <code class="docutils literal notranslate"><span class="pre">i0</span></code>, we simply need to ask for <code class="docutils literal notranslate"><span class="pre">a[i0:i0+n]</span></code>. By default, we get every element in the requested range. However, if we only want every <span class="math notranslate nohighlight">\(k\)</span>-th element, we can specify <code class="docutils literal notranslate"><span class="pre">k</span></code> after a second colon, .e.g,</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">6</span><span class="p">:</span><span class="mi">2</span><span class="p">])</span> <span class="c1"># Prints &#39;[6, 8, 10]&#39;</span>
 </pre></div>
 </div>
 <p>Finally, we can use shorthands such as <code class="docutils literal notranslate"><span class="pre">a[:4]</span></code> (everything from the start up to element <code class="docutils literal notranslate"><span class="pre">a[3]</span></code>, inclusive), <code class="docutils literal notranslate"><span class="pre">a[3:]</span></code> (everything from <code class="docutils literal notranslate"><span class="pre">a[3]</span></code> to the end) and <code class="docutils literal notranslate"><span class="pre">a[::2]</span></code> (every second element, starting with <code class="docutils literal notranslate"><span class="pre">a[0]</span></code>.</p>
@@ -916,18 +916,18 @@
 </div>
 </div>
 <p>We can change the values stored within an element of a list:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># Prints &#39;2&#39;</span>
 <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">17</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="c1"># Prints &#39;[1,17,3]&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="c1"># Prints &#39;[1, 17, 3]&#39;</span>
 </pre></div>
 </div>
 <p>Lists are therefore said to be ‘mutable’. However, note that we need to explicitly change the list entry:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">3</span>
-<span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">x</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="c1"># Prints &#39;[1,2,3]&#39;</span>
+<span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="c1"># Prints &#39;[1, 2, 3]&#39;</span>
 <span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="c1"># Still prints &#39;[1,2,3]&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="c1"># Still prints &#39;[1, 2, 3]&#39;</span>
 </pre></div>
 </div>
 <p><strong>➤ Try it out!</strong></p>
@@ -939,47 +939,47 @@
 </div>
 </div>
 <p>Unlike most other variables in Python, a list variable  stores a <em>pointer</em> to the list, rather than the list itself. This means that two <em>different</em> variable names can refer to the same memory address, and is a common (and counter-intuitive) source of errors. For example</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 <span class="n">b</span> <span class="o">=</span> <span class="n">a</span> <span class="c1"># &#39;a&#39; and &#39;b&#39; both refer to the same object</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>  <span class="c1"># Prints &#39;[1,2,3]&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>  <span class="c1"># Prints &#39;[1, 2, 3]&#39;</span>
 <span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">17</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="c1"># Prints &#39;[1,17,3]&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="c1"># Prints &#39;[1, 17, 3]&#39;</span>
 </pre></div>
 </div>
 <p>Notice that the list referred to by <code class="docutils literal notranslate"><span class="pre">a</span></code> has changed, even though we have not explicitly altered it! This behaviour is different from ‘normal’ variables. If you wish to create a copy of a list, you will need to use the ‘copy’ function:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 <span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 <span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">17</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="c1"># Prints &#39;[1,2,3]&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="c1"># Prints &#39;[1, 2, 3]&#39;</span>
 </pre></div>
 </div>
 <p>If we ‘add’ two lists together, we create a new list containing the elements from each:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
-<span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">)</span> <span class="c1"># Prints &#39;[1,2,3,4,5,6]&#39;</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span> <span class="c1"># Prints &#39;[1, 2, 3, 4, 5, 6]&#39;</span>
 </pre></div>
 </div>
 <p>Thus, one can ‘grow’ a list:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
-<span class="n">a</span><span class="o">+=</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="c1"># Prints &#39;[1,2,3,4]&#39;</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">a</span> <span class="o">+=</span> <span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="c1"># Prints &#39;[1, 2, 3, 4]&#39;</span>
 </pre></div>
 </div>
-<p>However, if you need to build a large list, this is a very inefficient way of doing it, and your program will probably be very slow.</p>
+<p>However, if you need to build a large list, this is a  <em>very inefficient</em> way of doing it, and your program will probably end up being very slow.</p>
 <p>Python provides a number of standard functions for working with lists. A few of the more important ones are detailed below, where we suppose <code class="docutils literal notranslate"><span class="pre">a</span></code> is a list:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">len(a)</span></code> will return the <em>length</em> of <code class="docutils literal notranslate"><span class="pre">a</span></code>, i.e. the number of elements it contains</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">max(a)</span></code> will return the largest element of <code class="docutils literal notranslate"><span class="pre">a</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">min(a)</span></code> will return the smallest element of <code class="docutils literal notranslate"><span class="pre">a</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">sum(a)</span></code> will return the sum of the elements of <code class="docutils literal notranslate"><span class="pre">a</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">a.sort()</span></code> will sort the elements of <code class="docutils literal notranslate"><span class="pre">a</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">a.append(x)</span></code> will add a new element at the end of the list, containing the contents of <code class="docutils literal notranslate"><span class="pre">x</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">a.insert(i,x)</span></code> will add a new element containing <code class="docutils literal notranslate"><span class="pre">x</span></code> at location a[i], shifting later elements ‘backwards’ by one.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">a.remove(x)</span></code> will find the first occurrence of <code class="docutils literal notranslate"><span class="pre">x</span></code> in the list and remove it.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">a.count(x)</span></code> will count the number of occurrences of <code class="docutils literal notranslate"><span class="pre">x</span></code> in the list.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">a.index(x)</span></code> will return the index of the first occurrence of <code class="docutils literal notranslate"><span class="pre">x</span></code> in the list.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">a.reverse()</span></code> will flip the order of elements in a list</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">a.pop(i)</span></code> will remove <em>and return</em> the element at index <code class="docutils literal notranslate"><span class="pre">i</span></code> in the list (or if no argument is provided, the last element in the list).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">len(a)</span></code> returns the <em>length</em> of <code class="docutils literal notranslate"><span class="pre">a</span></code>, i.e. the number of elements it contains,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">max(a)</span></code> returns the largest element of <code class="docutils literal notranslate"><span class="pre">a</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">min(a)</span></code> returns the smallest element of <code class="docutils literal notranslate"><span class="pre">a</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sum(a)</span></code> returns the sum of the elements of <code class="docutils literal notranslate"><span class="pre">a</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">a.sort()</span></code> sorts the elements of <code class="docutils literal notranslate"><span class="pre">a</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">a.append(x)</span></code> adds a new element at the end of the listw, containing the contents of <code class="docutils literal notranslate"><span class="pre">x</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">a.insert(i,</span> <span class="pre">x)</span></code> adds a new element containing <code class="docutils literal notranslate"><span class="pre">x</span></code> at location `a[i]``, shifting later elements ‘backwards’ by one,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">a.remove(x)</span></code> finds the first occurrence of <code class="docutils literal notranslate"><span class="pre">x</span></code> in the list and removes it,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">a.count(x)</span></code> counts the number of occurrences of <code class="docutils literal notranslate"><span class="pre">x</span></code> in the list,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">a.index(x)</span></code> returns the index of the first occurrence of <code class="docutils literal notranslate"><span class="pre">x</span></code> in the list,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">a.reverse()</span></code> flips the order of elements in a list, and</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">a.pop(i)</span></code> removes <em>and return</em> the element at index <code class="docutils literal notranslate"><span class="pre">i</span></code> in the list (or if no argument is provided, the last element in the list).</p></li>
 </ul>
 <p><strong>➤ Try these out!</strong> Explore how each of the functions works. Remember, you can get information about any function by typing <code class="docutils literal notranslate"><span class="pre">&lt;function-name&gt;?</span></code> and hitting shift-enter, e.g. <code class="docutils literal notranslate"><span class="pre">a.pop?</span></code>.</p>
 <div class="cell docutils container">
@@ -1000,12 +1000,12 @@
 </div>
 <div class="section" id="tuples">
 <h2>Tuples<a class="headerlink" href="#tuples" title="Permalink to this headline">¶</a></h2>
-<p>A <strong>tuple</strong> is rather similar to a list, but is defined using <em>round</em> brackets,</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="s1">&#39;x&#39;</span><span class="p">,(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<p>A <strong>tuple</strong> is rather similar to a list, but is defined using <em>round</em> brackets, <code class="docutils literal notranslate"><span class="pre">(</span></code> and <code class="docutils literal notranslate"><span class="pre">)</span></code>, e.g.,</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
 </pre></div>
 </div>
 <p>Again, tuples can contain multiple elements, and the elements may not all share the same type. The key difference is that tuples are <em>immutable</em>, so that once a tuple is created it cannot subsequently be changed. (It can be extended – but this is effectively the creation of a new, larger tuple!) As with lists, the individual elements of a tuple can be accessed using <code class="docutils literal notranslate"><span class="pre">[index]</span></code> after the tuple name, e.g.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># Prints `4`</span>
 </pre></div>
 </div>
@@ -1027,18 +1027,18 @@
 </div>
 </div>
 <p>A tuple can be converted into a list, and vice versa:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
-<span class="n">b</span> <span class="o">=</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">b</span> <span class="o">=</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
 <span class="n">ta</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 <span class="n">lb</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>When should you use a tuple, and when should you use a list? To some extent, this is a matter of style and preference. In general, the advice is that all the entries in a list should be ‘the same kind of data’, whereas the entries in a tuple are likely to represent different entitites. For example, if we have an experimental dataset that consists of observations of pressure and temperature at a sequence of time points, it might be appropriate to represent each observation as a tuple of <code class="docutils literal notranslate"><span class="pre">(pressure,</span> <span class="pre">temperature)</span></code>, and then the sequence of observations as a list of these tuples <code class="docutils literal notranslate"><span class="pre">[(p1,T1),</span> <span class="pre">(p2,T2),</span> <span class="pre">(p3,T3),...]</span></code>.</p>
+<p>When should you use a tuple, and when should you use a list? To some extent, this is a matter of style and preference. In general, the advice is that all the entries in a list should be ‘the same kind of data’, whereas the entries in a tuple are likely to represent different entitites. For example, if we have an experimental dataset that consists of observations of pressure and temperature at a sequence of time points, it might be appropriate to represent each observation as a tuple of <code class="docutils literal notranslate"><span class="pre">(pressure,</span> <span class="pre">temperature)</span></code>, and then the sequence of observations as a list of these tuples <code class="docutils literal notranslate"><span class="pre">[(p1,</span> <span class="pre">T1),</span> <span class="pre">(p2,</span> <span class="pre">T2),</span> <span class="pre">(p3,</span> <span class="pre">T3),...]</span></code>.</p>
 </div>
 <div class="section" id="dictionaries">
 <h2>Dictionaries<a class="headerlink" href="#dictionaries" title="Permalink to this headline">¶</a></h2>
 <p>Dictionaries provide a mechanism for storing data labelled with a keyword or other information. To create a dictionary, we use curly brackets, and associate each piece of data with a label:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">{</span><span class="o">&lt;</span><span class="n">label1</span><span class="o">&gt;</span><span class="p">:</span><span class="o">&lt;</span><span class="n">data1</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">label2</span><span class="o">&gt;</span><span class="p">:</span><span class="o">&lt;</span><span class="n">data2</span><span class="o">&gt;</span><span class="p">}</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">{</span><span class="o">&lt;</span><span class="n">label1</span><span class="o">&gt;</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">data1</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">label2</span><span class="o">&gt;</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">data2</span><span class="o">&gt;</span><span class="p">}</span>
 </pre></div>
 </div>
 <p>Another syntax to create dictionaries is:</p>
@@ -1046,30 +1046,30 @@
 </pre></div>
 </div>
 <p>For example, if we wished to store an object’s mass, location and length, we might create a dictionary as follows:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;mass&#39;</span><span class="p">:</span><span class="mf">17.3</span><span class="p">,</span><span class="s1">&#39;length&#39;</span><span class="p">:</span><span class="mf">0.7</span><span class="p">,</span><span class="s1">&#39;location&#39;</span><span class="p">:(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">8</span><span class="p">)}</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;mass&#39;</span><span class="p">:</span> <span class="mf">17.3</span><span class="p">,</span> <span class="s1">&#39;length&#39;</span><span class="p">:</span> <span class="mf">0.7</span><span class="p">,</span> <span class="s1">&#39;location&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">)}</span>
 </pre></div>
 </div>
 <p>or</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">mass</span><span class="o">=</span><span class="mf">17.3</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">location</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">mass</span><span class="o">=</span><span class="mf">17.3</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">location</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
 </pre></div>
 </div>
 <p>Note that in this example, the <code class="docutils literal notranslate"><span class="pre">location</span></code> key is storing a tuple. This illustrates that you can store many things in dictionaries, including arrays, list, tuples or objects for instance.</p>
 <p>Now, we can use the keywords as an index:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="s1">&#39;mass&#39;</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="s1">&#39;length&#39;</span><span class="p">])</span>
-<span class="n">inertia</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">a</span><span class="p">[</span><span class="s1">&#39;mass&#39;</span><span class="p">]</span><span class="o">*</span><span class="n">a</span><span class="p">[</span><span class="s1">&#39;length&#39;</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">inertia</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">a</span><span class="p">[</span><span class="s1">&#39;mass&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">a</span><span class="p">[</span><span class="s1">&#39;length&#39;</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">inertia</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Often keywords will be text strings, but they do not need to be:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
-<span class="n">a</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2</span><span class="p">:</span><span class="s1">&#39;13.5&#39;</span><span class="p">,</span><span class="n">y</span><span class="p">:[</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">]}</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2</span><span class="p">:</span> <span class="s1">&#39;13.5&#39;</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]}</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">y</span><span class="p">])</span>
 </pre></div>
 </div>
 <p>You can add new entries to a dictionary by simply assigning to the indexed entry you wish to create:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span><span class="s1">&#39;Bob&#39;</span><span class="p">}</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Bob&#39;</span><span class="p">}</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">])</span> <span class="c1"># Prints &#39;Bob&#39;</span>
 <span class="c1"># print(a[&#39;age&#39;]) would not work at this point</span>
 <span class="n">a</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">28</span>
@@ -1094,9 +1094,9 @@
 </ul>
 <p>Some methods particular to dictionaries are:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">a.keys()</span></code> - Returns a list-like object containing all the ‘labels’ within the dictionary <code class="docutils literal notranslate"><span class="pre">a</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">a.values()</span></code> - Returns a list-like object containing all the ‘values’ within the dictionary <code class="docutils literal notranslate"><span class="pre">a</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">a.items()</span></code> - Returns a list-like object containing <code class="docutils literal notranslate"><span class="pre">(label,</span> <span class="pre">data)</span></code> tuples for each of the entries in the dictionary.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">a.keys()</span></code> - returns a list-like object containing all the ‘labels’ within the dictionary <code class="docutils literal notranslate"><span class="pre">a</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">a.values()</span></code> - returns a list-like object containing all the ‘values’ within the dictionary <code class="docutils literal notranslate"><span class="pre">a</span></code>, and</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">a.items()</span></code> - returns a list-like object containing <code class="docutils literal notranslate"><span class="pre">(label,</span> <span class="pre">data)</span></code> tuples for each of the entries in the dictionary.</p></li>
 </ul>
 <p><strong>➤ Try them all out!</strong></p>
 <div class="cell docutils container">
@@ -1227,37 +1227,37 @@
 <div class="section" id="sets">
 <h2>Sets<a class="headerlink" href="#sets" title="Permalink to this headline">¶</a></h2>
 <p>Finally, we briefly mention the <strong>set</strong> data type. This is not commonly encountered, but can be very useful. It implements the <a class="reference external" href="https://en.wikipedia.org/wiki/Set_%28mathematics%29">mathematical concept of a set</a>, an unordered collection of unique objects. A set can be created from a tuple or list:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
 <span class="n">s</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="c1"># prints {3,4,5}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="c1"># prints {3, 4, 5}</span>
 </pre></div>
 </div>
 <p>Duplicates are ignored:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
 <span class="n">s</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="c1"># prints {3,5}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="c1"># prints {3, 5}</span>
 </pre></div>
 </div>
 <p>We can test whether one set is a subset of another set (that is, whether every element of the first set is also in the second) using the <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>,<code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code> and <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code> operators:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">set</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span> <span class="o">&lt;</span> <span class="nb">set</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span> <span class="c1"># True</span>
-<span class="nb">set</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span> <span class="o">&lt;</span> <span class="nb">set</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span> <span class="c1"># False</span>
-<span class="nb">set</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span> <span class="o">&lt;=</span> <span class="nb">set</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span> <span class="c1"># True</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">set</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span> <span class="o">&lt;</span> <span class="nb">set</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span> <span class="c1"># True</span>
+<span class="nb">set</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span> <span class="o">&lt;</span> <span class="nb">set</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span> <span class="c1"># False</span>
+<span class="nb">set</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span> <span class="o">&lt;=</span> <span class="nb">set</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span> <span class="c1"># True</span>
 </pre></div>
 </div>
 <p>We can find the union of two sets - the set of all elements in either set - using the <code class="docutils literal notranslate"><span class="pre">|</span></code> operator, and the intersection - all elements shared between the sets - using the <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> operator:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span> 
-<span class="n">b</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">])</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span> 
+<span class="n">b</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
 
-<span class="nb">print</span><span class="p">(</span> <span class="n">a</span><span class="o">|</span><span class="n">b</span> <span class="p">)</span> <span class="c1"># prints {3,4,5,6}</span>
-<span class="nb">print</span><span class="p">(</span> <span class="n">a</span><span class="o">&amp;</span><span class="n">b</span> <span class="p">)</span> <span class="c1"># prints {4}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">|</span> <span class="n">b</span><span class="p">)</span> <span class="c1"># prints {3, 4, 5, 6}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">&amp;</span> <span class="n">b</span><span class="p">)</span> <span class="c1"># prints {4}</span>
 </pre></div>
 </div>
 <p>We can also use the operator <code class="docutils literal notranslate"><span class="pre">-</span></code> to remove the elements of one set from another set.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span> 
-<span class="n">b</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">])</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span> 
+<span class="n">b</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
 
-<span class="nb">print</span><span class="p">(</span> <span class="n">b</span> <span class="o">-</span> <span class="n">a</span> <span class="p">)</span> <span class="c1"># prints {5,6}</span>
-<span class="nb">print</span><span class="p">(</span> <span class="n">b</span><span class="o">^</span><span class="n">a</span> <span class="p">)</span> <span class="c1"># prints {3,5,6}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span> <span class="c1"># prints {5, 6}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="o">^</span><span class="n">a</span><span class="p">)</span> <span class="c1"># prints {3, 5, 6}</span>
 </pre></div>
 </div>
 <p>There is also a <code class="docutils literal notranslate"><span class="pre">^</span></code> operator, which is defined such that <code class="docutils literal notranslate"><span class="pre">a^b</span></code> is equivalent to <code class="docutils literal notranslate"><span class="pre">(a|b)</span> <span class="pre">-</span> <span class="pre">(a&amp;b)</span></code>.</p>
