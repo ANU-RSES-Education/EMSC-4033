@@ -67,12 +67,12 @@ We have a shared space on `github` which is a centralised web site that coordina
   - All of the material for these notes is available at [https://github.com/ANU-RSES-Education/EMSC-4033](https://github.com/ANU-RSES-Education/EMSC-4033)
 
   - When you ask for one of the live pages to be executed, you are directed to a server which does this;
-    1. authenticates you (or uses saved credentials)
-    2. synchronises the changes you have made with any changes that have been made in the original repository
-      - If we add an exercise or some new material, it will be copied into your account
-      - If we find a bug and change an existing notebook, the changes will be merged
-      - If our changes clash with yours, yours are kept
-    3. The page is then displayed and the code is available for you to try. 
+    - authenticates you (or uses saved credentials)
+    - synchronises the changes you have made with any changes that have been made in the original repository
+      * If we add an exercise or some new material, it will be copied into your account
+      * If we find a bug and change an existing notebook, the changes will be merged
+      * If our changes clash with yours, yours are kept
+    - The page is then displayed and the code is available for you to try. 
 
   - To be able to do this complicated merge, the revision control is made to work overtime. The package doing this is called [`nbgitpuller`](https://jupyterhub.github.io/nbgitpuller/). 
 
