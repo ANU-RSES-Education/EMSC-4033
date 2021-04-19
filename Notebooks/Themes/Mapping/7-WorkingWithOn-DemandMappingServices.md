@@ -4,7 +4,7 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.10.3
+    jupytext_version: 1.11.1
 kernelspec:
   display_name: Python 3
   language: python
@@ -114,7 +114,7 @@ Although that is rather frustrating when it comes to demonstrating how to make m
 
 Because we import classes and then use them, all we really need to do is replace the class and use that instead of importing the original. And then we ought to be helpful and contribute the bug fix back to the original authors. 
 
-**Note:** It is also possible to override the parts of the class by defining a new subclass and overriding the parts we need to change. We don't need to do that here because we are fixing a one function class 
+**Note:** It is also possible to override the parts of the class by defining a new subclass and overriding the parts we need to change. We don't need to do that here because we are fixing a one function class
 
 ```{code-cell} ipython3
 from cartopy.io.img_tiles import GoogleWTS
@@ -166,6 +166,8 @@ class MapboxTiles(GoogleWTS):
 mapbox_streets = MapboxTiles(map_id='mapbox/streets-v11', 
                                      access_token='pk.eyJ1IjoibG91aXNtb3Jlc2kiLCJhIjoiY2pzeG1mZzFqMG5sZDQ0czF5YzY1NmZ4cSJ9.lpsUzmLasydBlS0IOqe5JA')
 
+mapbox_outdoors = MapboxTiles(map_id='mapbox/outdoors-v11', 
+                                     access_token='pk.eyJ1IjoibG91aXNtb3Jlc2kiLCJhIjoiY2pzeG1mZzFqMG5sZDQ0czF5YzY1NmZ4cSJ9.lpsUzmLasydBlS0IOqe5JA')
 
 mapbox_satellite = MapboxTiles(map_id='mapbox/satellite-v9', 
                                      access_token='pk.eyJ1IjoibG91aXNtb3Jlc2kiLCJhIjoiY2pzeG1mZzFqMG5sZDQ0czF5YzY1NmZ4cSJ9.lpsUzmLasydBlS0IOqe5JA')
@@ -179,7 +181,7 @@ lon0 =  -121; lon1 = -116
 
 map_extent = [lon0, lon1, lat0, lat1]
 
-map_tiles = mapbox_streets
+map_tiles = mapbox_outdoors
 
 fig = plt.figure(figsize=(12, 12), facecolor="none")
 # ax = plt.axes(projection=ccrs.PlateCarree(), extent=himalaya_extent)
@@ -192,7 +194,7 @@ ax.set_extent(map_extent)
 # Add the on-demand image - the second argument is the resolution and needs to be balanced with the 
 # size of the area the map covers. 
 
-ax.add_image(map_tiles, 8)
+ax.add_image(map_tiles, 10)
 ax.add_feature(coastline, linewidth=1.5,  edgecolor="Black", zorder=1, alpha=0.5)
 ax.add_feature(rivers,    linewidth=1.0,  edgecolor="Blue",  zorder=2, alpha=0.5)
 ```
@@ -254,7 +256,6 @@ ax.add_feature(rivers50,    linewidth=1.0,  edgecolor="Blue",  zorder=2)
 ```
 
 ```{code-cell} ipython3
-
 lat0 =   48  ; lat1 = 60
 lon0 =  -15  ; lon1 = 5
 
@@ -361,7 +362,3 @@ figE18.savefig("LondonE18.png", dpi=900)
 ```
 
 Again, open the [full-size image](./LondonE18.png) to see how well that worked
-
-```{code-cell} ipython3
-
-```
