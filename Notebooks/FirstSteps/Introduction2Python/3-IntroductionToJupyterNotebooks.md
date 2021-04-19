@@ -23,7 +23,7 @@ of computational substrate to run (otherwise you will just see the preview). The
 menu bar will launch this page as a notebook so that you can run the examples.
 
 
-```{image} ../images/rocket-icon.png
+```{image} ../Images/rocket-icon.png
 :align: center
 :width: 80%
 ```
