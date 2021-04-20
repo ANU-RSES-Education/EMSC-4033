@@ -30,8 +30,8 @@
   - file: Notebooks/StepByStep/Introduction.md
     sections:
     - file: Notebooks/StepByStep/Ex01/Ex1-GettingStarted.ipynb
-    - file: Notebooks/StepByStep/Ex02/Ex2-Variables+functions.ipynb
-    - file: Notebooks/StepByStep/Ex03/Ex3-Loops+Conditionals.ipynb
+    - file: Notebooks/StepByStep/Ex02/Ex2-VariablesAndFunctions.ipynb
+    - file: Notebooks/StepByStep/Ex03/Ex3-LoopsAndConditionals.ipynb
     - file: Notebooks/StepByStep/Ex04/Ex4-GuessingGames.ipynb
     - file: Notebooks/StepByStep/Ex05/Ex5-ListsEtc.ipynb
     - file: Notebooks/StepByStep/Ex06/Ex6-MoreLoops.ipynb
