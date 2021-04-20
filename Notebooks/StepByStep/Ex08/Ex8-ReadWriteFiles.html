@@ -848,7 +848,7 @@
 </ol>
 <p>We assume that the file is already saved on your computer, and you know the ‘path’ to the file. To open the file, we use the <code class="docutils literal notranslate"><span class="pre">open()</span></code> function, which returns a <code class="docutils literal notranslate"><span class="pre">file</span></code> object. It is important to assign this to a variable (here, <code class="docutils literal notranslate"><span class="pre">fp</span></code>) so that we can continue to access the open file.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;sample.dat&#39;</span>
-<span class="n">fp</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">fp</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Here, <code class="docutils literal notranslate"><span class="pre">filename</span></code> is a variable holding the file name (or file path and name, if it is not in our current working directory), and the second argument, <code class="docutils literal notranslate"><span class="pre">'r'</span></code>, specifies that we want to open the file for reading only.</p>
@@ -897,7 +897,7 @@
 </div>
 <p>To write data to file, we need to first open the file for writing. This can be done by using <code class="docutils literal notranslate"><span class="pre">'w'</span></code> instead of <code class="docutils literal notranslate"><span class="pre">'r'</span></code> when opening the file. Note that if a file already exists with the specified name, it will be immediately overwritten and lost. To avoid this, you can instead use <code class="docutils literal notranslate"><span class="pre">'x'</span></code> when opening the file. This will throw an error if there is an existing file, rather than overwrite it. Again, when opening the file it is important to assign the result of <code class="docutils literal notranslate"><span class="pre">open()</span></code> to a variable, so we can write to it.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">outputfile</span> <span class="o">=</span> <span class="s1">&#39;processed_samples.dat&#39;</span>
-<span class="n">fp</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">outputfile</span><span class="p">,</span><span class="s1">&#39;w&#39;</span><span class="p">)</span>
+<span class="n">fp</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">outputfile</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Once the file is open, we can write any text strings to it by calling the <code class="docutils literal notranslate"><span class="pre">write()</span></code> function. Remember, to insert a new line, you use the symbol <code class="docutils literal notranslate"><span class="pre">'\n'</span></code>, otherwise everything will be on a single line:</p>

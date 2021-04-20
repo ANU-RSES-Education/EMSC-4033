@@ -837,7 +837,7 @@
   <div class="section" id="exercise-10-exception-handling">
 <h1>Exercise 10 - Exception handling<a class="headerlink" href="#exercise-10-exception-handling" title="Permalink to this headline">¶</a></h1>
 <p>By now, you will almost certainly have encountered ‘exceptions’ - the error messages that appear when you ask Python to do something that it doesn’t like. For example, the following code will raise an exception:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span>
 </pre></div>
 </div>
@@ -845,7 +845,7 @@
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>---------------------------------------------------------------------------
 IndexError                                Traceback (most recent call last)
 &lt;ipython-input-1-ba5ce40e4136&gt; in &lt;module&gt;()
-      1 a = [1,2,3]
+      1 a = [1, 2, 3]
 ----&gt; 2 print(a[4])
 
 IndexError: list index out of range
@@ -860,7 +860,7 @@ IndexError: list index out of range
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>---------------------------------------------------------------------------
 TypeError                                 Traceback (most recent call last)
 &lt;ipython-input-2-41d1b959c123&gt; in &lt;module&gt;()
-----&gt; 1 1+&#39;hello&#39;
+----&gt; 1 1 + &#39;hello&#39;
 
 TypeError: unsupported operand type(s) for +: &#39;int&#39; and &#39;str&#39;
 </pre></div>
@@ -956,20 +956,20 @@ TypeError: unsupported operand type(s) for +: &#39;int&#39; and &#39;str&#39;
 </div>
 </div>
 <p>Exception handling can sometimes be a central part of your code design. Suppose you need to write a piece of code to sum up the entries in a list (and you have forgotten that Python’s <code class="docutils literal notranslate"><span class="pre">sum()</span></code> function exists to do this). One solution (the cleanest, and so the best) would be to loop over the entries in the array:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
 <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">a</span><span class="p">:</span>
-    <span class="n">s</span><span class="o">+=</span><span class="n">x</span>
+    <span class="n">s</span> <span class="o">+=</span> <span class="n">x</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>However, you could also write something like:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
 <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
     <span class="k">try</span><span class="p">:</span>
-        <span class="n">s</span><span class="o">+=</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">s</span> <span class="o">+=</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
     <span class="k">except</span> <span class="ne">IndexError</span><span class="p">:</span>
         <span class="k">break</span>
     <span class="n">i</span><span class="o">+=</span><span class="mi">1</span>
@@ -1002,7 +1002,7 @@ TypeError: unsupported operand type(s) for +: &#39;int&#39; and &#39;str&#39;
 </div>
 <p>As an example,</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="o">+</span><span class="s1">&#39;hello&#39;</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="s1">&#39;hello&#39;</span>
 <span class="k">except</span> <span class="ne">TypeError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;There is an error&quot;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
@@ -1027,7 +1027,7 @@ TypeError: unsupported operand type(s) for +: &#39;int&#39; and &#39;str&#39;
 <p>The code within the <code class="docutils literal notranslate"><span class="pre">finally</span></code> block is <em>always</em> executed, either after everything in <code class="docutils literal notranslate"><span class="pre">try</span></code> has been successfully completed, or <em>before</em> an error is propagated. For example:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
     <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="s1">&#39;x&#39;</span><span class="p">]:</span>
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">]:</span>
         <span class="n">s</span> <span class="o">+=</span> <span class="n">x</span>
 <span class="k">finally</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This line is printed *before* the error is raised...&quot;</span><span class="p">)</span>
