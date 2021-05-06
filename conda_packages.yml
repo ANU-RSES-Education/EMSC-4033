@@ -18,6 +18,8 @@ dependencies:
     - xarray
     - jupytext
     - h5netcdf
+    - xlrd
+    - openpyxl
     - pip:
       - lavavu<1.7
       - xvfbwrapper 
