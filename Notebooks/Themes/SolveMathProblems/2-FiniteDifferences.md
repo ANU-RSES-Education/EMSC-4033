@@ -68,7 +68,7 @@ number_of_points = 150
 # Data
 
 x = np.linspace(0,2*np.pi,number_of_points)
-xh = np.linspace(0,2*np.pi,1000) # 1000 is more than enough to plot
+xh = np.linspace(0, 2*np.pi, 1000) # 1000 is more than enough to plot
 
 f = np.sin(x)
 fh = np.sin(xh)

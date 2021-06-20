@@ -8,8 +8,8 @@ Some simple introductary notebooks to help you learn both notebooks and python a
 We ran through some of this in our [meet-and-greet](../FirstSteps/Introduction2Python/0-CharacteristicsOfPython) with python programming 
 
  - [Exercise 1 - Getting started](Ex01/Ex1-GettingStarted)
- - [Exercise 2 - Variables and functions](Ex02/Ex2-Variables+functions)
- - [Exercise 3 - Loops and conditionals](Ex03/Ex3-Loops+Conditionals)
+ - [Exercise 2 - Variables and functions](Ex02/Ex2-VariablesAndFunctions)
+ - [Exercise 3 - Loops and conditionals](Ex03/Ex3-LoopsAndConditionals)
  - [Exercise 4 - Guessing Games](Ex04/Ex4-GuessingGames)
 
 ## Arrays of data and loops
