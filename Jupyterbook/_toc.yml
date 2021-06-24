@@ -1,12 +1,12 @@
+format: jb-book
+root: FrontPage
+parts:
 
-
-- file: FrontPage.md
-
-- part: Introduction
+- caption: Introduction
   chapters:
   - file: IntroductoryRemarks
 
-- part: What is Python like ?
+- caption: What is Python like ?
   chapters:
   - file: Notebooks/FirstSteps/Introduction2Python/0-CharacteristicsOfPython.md
     sections:
@@ -17,7 +17,7 @@
     - file: Notebooks/FirstSteps/Introduction2Python/5-PythonDataTypes
     - file: Notebooks/FirstSteps/Introduction2Python/6-PythonClasses  
 
-- part: Version control 
+- caption: Version control 
   chapters:
   - file: Notebooks/FirstSteps/Introduction2VersionControl/1-GettingStartedWithGit
 
@@ -25,7 +25,7 @@
   # - file: Notebooks/Themes/Plotting/1-IntroductionToMatplotlib
 
 
-- part: Python, Step by Step
+- caption: Python, Step by Step
   chapters:
   - file: Notebooks/StepByStep/Introduction.md
     sections:
@@ -59,7 +59,7 @@
 # - file: Notebooks/StepByStep/ExNN/Exercise 11 - NumPy
 # - file: Notebooks/StepByStep/ExNS/Processing spectral data
 
-- part: "Going deeper - examples from the Earth Sciences"
+- caption: "Going deeper - examples from the Earth Sciences"
 
 
   chapters:
@@ -146,7 +146,7 @@
 
 
 
-- part: Bibliography
+- caption: Bibliography
   chapters:
   - file: Bibliography
 
