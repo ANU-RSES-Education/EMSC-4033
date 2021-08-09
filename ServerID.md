@@ -6,14 +6,14 @@ upgraded (that needs to be managed from the console).
 
 There will be errors if the github secrets have not been set up 
 
- - **IP Address:** http://68.183.229.36
- - **Hostname:** https://emsc4033-2021.rses.underworldcloud.org 
+ - **IP Address:** 
+ - **Hostname:** 
  - **Release ID:** 1.0.0
  - **Droplet Name:** 
  
  ## Comments
-   
- - Updated conda_packages.yml
+
+ - 2021.08.09 - deactivating jupyterhub, activating binder instead
   
   
   
