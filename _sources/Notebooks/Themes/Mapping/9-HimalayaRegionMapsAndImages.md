@@ -14,11 +14,9 @@ kernelspec:
 # Himalaya Maps (1)
 
 
-Figures 2a from my SIAM News publication in 2015: http://www.moresi.info/posts/Computational-Challenges-SIAM-NEWS/
+![](Images/HimalayaS.png)
 
-This figure requires the plate motion file and no enormous raster data !
-
-Caption, Figure 2 - _One of the most dramatic departures from plate-like deformation on Earth occurs where the Indian subcontinent is colliding with the Eurasian continent. The map on the left is a satellite image with the flow lines from the plate motion vector field drawn in red. On the right is the same region showing 50 years of earthquake data for events larger than magnitude 4.5, colored by depth and superimposed on the strain rate._
+Caption, Figure 2 - _One of the most dramatic departures from plate-like deformation on Earth occurs where the Indian subcontinent is colliding with the Eurasian continent. The map on the left is a satellite image with the flow lines from the plate motion vector field drawn in red. On the right is the same region showing 50 years of earthquake data for events larger than magnitude 4.5, colored by depth and superimposed on the strain rate. [Original](http://www.moresi.info/posts/Computational-Challenges-SIAM-NEWS/)_
 
 ```{code-cell} ipython3
 :hide_input: false
