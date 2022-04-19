@@ -619,7 +619,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2 current active has-children">
     <a class="reference internal" href="../Ex1-Litho1Layers.html">
-     Introduction to the stripy wrapper for litho 1.0
+     Introduction to the stripy/python wrapper for litho 1.0
     </a>
     <input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
     <label for="toctree-checkbox-8">
@@ -805,14 +805,11 @@ const thebe_selector_output = ".output, .cell_output"
 
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
-        <a class="dropdown-buttons"
-            href="../../../../../_sources/Notebooks/Themes/SphericalMeshing/Litho1pt0/WEx2-Tutorial/Notebook-3.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
+        
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../../../../_sources/Notebooks/Themes/SphericalMeshing/Litho1pt0/WEx2-Tutorial/Notebook-3.md"><button type="button"
+        <a class="dropdown-buttons" href="../../../../../_sources/Notebooks/Themes/SphericalMeshing/Litho1pt0/WEx2-Tutorial/Notebook-3.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
                 onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -848,14 +845,14 @@ const thebe_selector_output = ".output, .cell_output"
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/ANU-RSES-Education/EMSC-4033/master?urlpath=tree/Notebooks/Themes/SphericalMeshing/Litho1pt0/WEx2-Tutorial/Notebook-3.md"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/ANU-RSES-Education/EMSC-4033/master?urlpath=tree/Notebooks/Themes/SphericalMeshing/Litho1pt0/WEx2-Tutorial/Notebook-3.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../../../../_static/images/logo_binder.svg"
                     alt="Interact on binder">Binder</button></a>
         
         
-        <a class="jupyterhub-button" href="https://emsc4033.rses.underworldcloud.org/hub/user-redirect/git-pull?repo=https://github.com/ANU-RSES-Education/EMSC-4033&urlpath=tree/EMSC-4033/Notebooks/Themes/SphericalMeshing/Litho1pt0/WEx2-Tutorial/Notebook-3.md&branch=master"><button type="button"
+        <a class="jupyterhub-button" href="https://emsc4033.rses.underworldcloud.org/hub/user-redirect/git-pull?repo=https://github.com/ANU-RSES-Education/EMSC-4033&urlpath=tree/EMSC-4033/Notebooks/Themes/SphericalMeshing/Litho1pt0/WEx2-Tutorial/Notebook-3.ipynb&branch=master"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
                 data-placement="left"><img class="jupyterhub-button-logo"
                     src="../../../../../_static/images/logo_jupyterhub.svg"
@@ -937,9 +934,9 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="a-quick-look-at-the-depth-age-relationship-for-the-seafloor">
 <h1>A quick look at the depth-age relationship for the seafloor.<a class="headerlink" href="#a-quick-look-at-the-depth-age-relationship-for-the-seafloor" title="Permalink to this headline">¶</a></h1>
-<p>We can obtain the global (ocean) age grid from the University of Sydney Earthbyte Group (<a class="reference external" href="https://www.earthbyte.org/Resources/agegrid2008.html">https://www.earthbyte.org/Resources/agegrid2008.html</a>).
+<p>We can obtain the global (ocean) age grid from the University of Sydney Earthbyte Group (<a class="reference external" href="https://www.earthbyte.org/age-and-bathymetry-of-the-worlds-ocean-crust-for-the-last-140-million-years/">https://www.earthbyte.org/age-and-bathymetry-of-the-worlds-ocean-crust-for-the-last-140-million-years/</a>).
 The data should look like this when plotted on a map.</p>
-<p><img alt="ocean_age_molleweide_180.png" src="Notebooks/Themes/SphericalMeshing/Litho1pt0/WEx2-Tutorial/Images/ocean_age_molleweide_180.png" /></p>
+<p><img alt="" src="https://www.earthbyte.org/wp-content/uploads/2015/03/Muller_etal_Figure1-300x188.png" /></p>
 <p>Note: I downloaded this file: <a class="reference external" href="http://age.3.6.nc">age.3.6.nc</a> which is “A short integer netCDF formatted file.
 The age units are in millions of years, multiplied by 100 (to enable storage as short  The file spans longitudes from 0 E to
 360 E and latitudes from 90 N to -90 N. 6 minute resolution, gridline-registered.”</p>
@@ -955,7 +952,7 @@ Geochemistry, Geophysics, Geosystems, 9, Q04006, doi:10.1029/2007GC001743</p>
 We will need to import <code class="docutils literal notranslate"><span class="pre">xarray</span></code> to read the compressed file.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">xarray</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">xarray</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="n">age_dataset</span> <span class="o">=</span> <span class="s2">&quot;../Data/age.3.6.nc&quot;</span>
@@ -974,8 +971,8 @@ We will need to import <code class="docutils literal notranslate"><span class="p
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
 
 <span class="kn">import</span> <span class="nn">cartopy.crs</span> <span class="k">as</span> <span class="nn">ccrs</span>
 <span class="kn">import</span> <span class="nn">cartopy.feature</span> <span class="k">as</span> <span class="nn">cfeature</span>
@@ -996,6 +993,12 @@ We will need to import <code class="docutils literal notranslate"><span class="p
            <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;RdYlBu&#39;</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;lower&#39;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mf">180.0</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x1568dc5e0&gt;
+</pre></div>
+</div>
+<img alt="../../../../../_images/Notebook-3_2_1.png" src="../../../../../_images/Notebook-3_2_1.png" />
 </div>
 </div>
 <p>Is this correct ?</p>

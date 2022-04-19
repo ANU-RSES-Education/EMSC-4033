@@ -619,7 +619,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2 has-children">
     <a class="reference internal" href="../Litho1pt0/Ex1-Litho1Layers.html">
-     Introduction to the stripy wrapper for litho 1.0
+     Introduction to the stripy/python wrapper for litho 1.0
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
     <label for="toctree-checkbox-8">
@@ -805,14 +805,11 @@ const thebe_selector_output = ".output, .cell_output"
 
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
-        <a class="dropdown-buttons"
-            href="../../../../_sources/Notebooks/Themes/SphericalMeshing/SphericalTriangulations/Ex1-Spherical-Triangulations.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
+        
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../../../_sources/Notebooks/Themes/SphericalMeshing/SphericalTriangulations/Ex1-Spherical-Triangulations.md"><button type="button"
+        <a class="dropdown-buttons" href="../../../../_sources/Notebooks/Themes/SphericalMeshing/SphericalTriangulations/Ex1-Spherical-Triangulations.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
                 onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -848,14 +845,14 @@ const thebe_selector_output = ".output, .cell_output"
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/ANU-RSES-Education/EMSC-4033/master?urlpath=tree/Notebooks/Themes/SphericalMeshing/SphericalTriangulations/Ex1-Spherical-Triangulations.md"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/ANU-RSES-Education/EMSC-4033/master?urlpath=tree/Notebooks/Themes/SphericalMeshing/SphericalTriangulations/Ex1-Spherical-Triangulations.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../../../_static/images/logo_binder.svg"
                     alt="Interact on binder">Binder</button></a>
         
         
-        <a class="jupyterhub-button" href="https://emsc4033.rses.underworldcloud.org/hub/user-redirect/git-pull?repo=https://github.com/ANU-RSES-Education/EMSC-4033&urlpath=tree/EMSC-4033/Notebooks/Themes/SphericalMeshing/SphericalTriangulations/Ex1-Spherical-Triangulations.md&branch=master"><button type="button"
+        <a class="jupyterhub-button" href="https://emsc4033.rses.underworldcloud.org/hub/user-redirect/git-pull?repo=https://github.com/ANU-RSES-Education/EMSC-4033&urlpath=tree/EMSC-4033/Notebooks/Themes/SphericalMeshing/SphericalTriangulations/Ex1-Spherical-Triangulations.ipynb&branch=master"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
                 data-placement="left"><img class="jupyterhub-button-logo"
                     src="../../../../_static/images/logo_jupyterhub.svg"
@@ -1013,7 +1010,7 @@ const thebe_selector_output = ".output, .cell_output"
 <h2>Triangulate the vertices of an icosahedron<a class="headerlink" href="#triangulate-the-vertices-of-an-icosahedron" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">stripy</span> <span class="k">as</span> <span class="nn">stripy</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">stripy</span> <span class="k">as</span> <span class="nn">stripy</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="c1"># Vertices of an icosahedron as Lat / Lon in degrees</span>
@@ -1049,7 +1046,7 @@ useful methods and attached data which can be listed with</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">spherical_triangulation</span><span class="o">.</span><span class="n">areas</span><span class="p">())</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">spherical_triangulation</span><span class="o">.</span><span class="n">areas</span><span class="p">())</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">spherical_triangulation</span><span class="o">.</span><span class="n">npoints</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1057,7 +1054,7 @@ useful methods and attached data which can be listed with</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">refined_spherical_triangulation</span> <span class="o">=</span> <span class="n">stripy</span><span class="o">.</span><span class="n">sTriangulation</span><span class="p">(</span><span class="n">lons</span><span class="o">=</span><span class="n">vertices_lon</span><span class="p">,</span> <span class="n">lats</span><span class="o">=</span><span class="n">vertices_lat</span><span class="p">,</span> <span class="n">refinement_levels</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">refined_spherical_triangulation</span> <span class="o">=</span> <span class="n">stripy</span><span class="o">.</span><span class="n">sTriangulation</span><span class="p">(</span><span class="n">lons</span><span class="o">=</span><span class="n">vertices_lon</span><span class="p">,</span> <span class="n">lats</span><span class="o">=</span><span class="n">vertices_lat</span><span class="p">,</span> <span class="n">refinement_levels</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">refined_spherical_triangulation</span><span class="o">.</span><span class="n">npoints</span><span class="p">)</span>
 </pre></div>
@@ -1073,9 +1070,8 @@ is through a standard map projection of the sphere to the plane.</p>
 Other projections to try include <code class="docutils literal notranslate"><span class="pre">Robinson</span></code>, <code class="docutils literal notranslate"><span class="pre">Orthographic</span></code>, <code class="docutils literal notranslate"><span class="pre">PlateCarree</span></code>)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
 
-<span class="kn">import</span> <span class="nn">gdal</span>
 <span class="kn">import</span> <span class="nn">cartopy</span>
 <span class="kn">import</span> <span class="nn">cartopy.crs</span> <span class="k">as</span> <span class="nn">ccrs</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -1122,6 +1118,8 @@ Other projections to try include <code class="docutils literal notranslate"><spa
     <span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span> <span class="p">[</span><span class="n">lons</span><span class="p">[</span><span class="n">s1</span><span class="p">],</span> <span class="n">lons</span><span class="p">[</span><span class="n">s2</span><span class="p">]],</span>
               <span class="p">[</span><span class="n">lats</span><span class="p">[</span><span class="n">s1</span><span class="p">],</span> <span class="n">lats</span><span class="p">[</span><span class="n">s2</span><span class="p">]],</span> 
               <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">Geodetic</span><span class="p">())</span>
+    
+<span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;icosohedron_map.png&quot;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">150</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1130,65 +1128,43 @@ Other projections to try include <code class="docutils literal notranslate"><spa
 <h3><code class="docutils literal notranslate"><span class="pre">Lavavu</span></code> to view spherical information<a class="headerlink" href="#lavavu-to-view-spherical-information" title="Permalink to this headline">¶</a></h3>
 <p>We can view the same triangulation in an interactive form using the <code class="docutils literal notranslate"><span class="pre">lavavu</span></code> package (<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">lavavu</span></code>).
 The list of simplices of the triangulation (<code class="docutils literal notranslate"><span class="pre">spherical_triangulation.simplices</span></code>) is compatible with the format expected by Lavavu.</p>
-<div class="cell tag_hide-cell docutils container">
+<div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">## This can be an issue on jupyterhub</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">k3d</span>
+<span class="n">plot</span> <span class="o">=</span> <span class="n">k3d</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">camera_auto_fit</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">grid_visible</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> 
+                <span class="n">menu_visibility</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">axes_helper</span><span class="o">=</span><span class="kc">False</span> <span class="p">)</span>
 
-<span class="kn">from</span> <span class="nn">xvfbwrapper</span> <span class="kn">import</span> <span class="n">Xvfb</span>
-<span class="n">vdisplay</span> <span class="o">=</span> <span class="n">Xvfb</span><span class="p">()</span>
-<span class="k">try</span><span class="p">:</span>
-    <span class="n">vdisplay</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
-    <span class="n">xvfb</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">indices</span> <span class="o">=</span> <span class="n">refined_spherical_triangulation</span><span class="o">.</span><span class="n">simplices</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint32</span><span class="p">)</span>
+<span class="n">points</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">(</span><span class="n">refined_spherical_triangulation</span><span class="o">.</span><span class="n">points</span><span class="o">.</span><span class="n">T</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+<span class="n">pcoarse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">(</span><span class="n">spherical_triangulation</span><span class="o">.</span><span class="n">points</span><span class="o">.</span><span class="n">T</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
 
-<span class="k">except</span><span class="p">:</span>
-    <span class="n">xvfb</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">plot</span>   <span class="o">+=</span> <span class="n">k3d</span><span class="o">.</span><span class="n">mesh</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">indices</span><span class="p">,</span> <span class="n">wireframe</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="mh">0x8888FF</span><span class="p">,</span>
+                   <span class="n">flat_shading</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">0.5</span>  <span class="p">)</span>
+
+<span class="n">plot</span>   <span class="o">+=</span> <span class="n">k3d</span><span class="o">.</span><span class="n">mesh</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">indices</span><span class="p">,</span> <span class="n">wireframe</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="mh">0x3333BB</span><span class="p">,</span>
+                   <span class="n">flat_shading</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">1.0</span>  <span class="p">)</span>
+
+<span class="c1">## This helps to manage the wireframe / transparency</span>
+<span class="n">plot</span>   <span class="o">+=</span> <span class="n">k3d</span><span class="o">.</span><span class="n">mesh</span><span class="p">(</span><span class="n">points</span><span class="o">*</span><span class="mf">0.98</span><span class="p">,</span> <span class="n">indices</span><span class="p">,</span> <span class="n">wireframe</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> 
+                   <span class="n">color</span><span class="o">=</span><span class="mh">0xBBBBBB</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">flat_shading</span><span class="o">=</span><span class="kc">False</span>  <span class="p">)</span>
+
+
+<span class="n">plot</span>   <span class="o">+=</span> <span class="n">k3d</span><span class="o">.</span><span class="n">points</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">point_size</span><span class="o">=</span><span class="mf">0.025</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="mh">0xFF0000</span><span class="p">)</span>
+
+<span class="n">plot</span>   <span class="o">+=</span> <span class="n">k3d</span><span class="o">.</span><span class="n">points</span><span class="p">(</span><span class="n">pcoarse</span><span class="p">,</span> <span class="n">point_size</span><span class="o">=</span><span class="mf">0.04</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="mh">0x00FF00</span><span class="p">)</span>
+
+<span class="n">plot</span><span class="o">.</span><span class="n">display</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">lavavu</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Save this model as an interactive html file</span>
 
-
-
-<span class="n">lv</span> <span class="o">=</span> <span class="n">lavavu</span><span class="o">.</span><span class="n">Viewer</span><span class="p">(</span><span class="n">border</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">resolution</span><span class="o">=</span><span class="p">[</span><span class="mi">666</span><span class="p">,</span><span class="mi">666</span><span class="p">],</span> <span class="n">background</span><span class="o">=</span><span class="s2">&quot;#FFFFFF&quot;</span><span class="p">)</span>
-<span class="n">lv</span><span class="p">[</span><span class="s2">&quot;axis&quot;</span><span class="p">]</span><span class="o">=</span><span class="kc">False</span>
-<span class="n">lv</span><span class="p">[</span><span class="s1">&#39;specular&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.5</span>
-
-<span class="n">ghost</span> <span class="o">=</span> <span class="n">lv</span><span class="o">.</span><span class="n">triangles</span><span class="p">(</span><span class="s2">&quot;ghost&quot;</span><span class="p">,</span>  <span class="n">wireframe</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">colour</span><span class="o">=</span><span class="s2">&quot;#777777&quot;</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
-<span class="n">ghost</span><span class="o">.</span><span class="n">vertices</span><span class="p">(</span><span class="n">refined_spherical_triangulation</span><span class="o">.</span><span class="n">points</span><span class="o">*</span><span class="mf">0.99</span><span class="p">)</span>
-<span class="n">ghost</span><span class="o">.</span><span class="n">indices</span><span class="p">(</span><span class="n">refined_spherical_triangulation</span><span class="o">.</span><span class="n">simplices</span><span class="p">)</span>
-
-<span class="n">tris</span> <span class="o">=</span> <span class="n">lv</span><span class="o">.</span><span class="n">triangles</span><span class="p">(</span><span class="s2">&quot;coarse&quot;</span><span class="p">,</span>  <span class="n">wireframe</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">colour</span><span class="o">=</span><span class="s2">&quot;#4444FF&quot;</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
-<span class="n">tris</span><span class="o">.</span><span class="n">vertices</span><span class="p">(</span><span class="n">spherical_triangulation</span><span class="o">.</span><span class="n">points</span><span class="p">)</span>
-<span class="n">tris</span><span class="o">.</span><span class="n">indices</span><span class="p">(</span><span class="n">spherical_triangulation</span><span class="o">.</span><span class="n">simplices</span><span class="p">)</span>
-
-<span class="n">trisw</span> <span class="o">=</span> <span class="n">lv</span><span class="o">.</span><span class="n">triangles</span><span class="p">(</span><span class="s2">&quot;coarsew&quot;</span><span class="p">,</span>  <span class="n">wireframe</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">colour</span><span class="o">=</span><span class="s2">&quot;#000000&quot;</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">3.0</span><span class="p">)</span>
-<span class="n">trisw</span><span class="o">.</span><span class="n">vertices</span><span class="p">(</span><span class="n">spherical_triangulation</span><span class="o">.</span><span class="n">points</span><span class="p">)</span>
-<span class="n">trisw</span><span class="o">.</span><span class="n">indices</span><span class="p">(</span><span class="n">spherical_triangulation</span><span class="o">.</span><span class="n">simplices</span><span class="p">)</span>
-
-<span class="n">nodes</span> <span class="o">=</span> <span class="n">lv</span><span class="o">.</span><span class="n">points</span><span class="p">(</span><span class="s2">&quot;coarse_nodes&quot;</span><span class="p">,</span> <span class="n">pointsize</span><span class="o">=</span><span class="mf">10.0</span><span class="p">,</span> <span class="n">pointtype</span><span class="o">=</span><span class="s2">&quot;shiny&quot;</span><span class="p">,</span> <span class="n">colour</span><span class="o">=</span><span class="s2">&quot;#4444FF&quot;</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">0.95</span><span class="p">)</span>
-<span class="n">nodes</span><span class="o">.</span><span class="n">vertices</span><span class="p">(</span><span class="n">spherical_triangulation</span><span class="o">.</span><span class="n">points</span><span class="p">)</span>
-
-<span class="n">tris2</span> <span class="o">=</span> <span class="n">lv</span><span class="o">.</span><span class="n">triangles</span><span class="p">(</span><span class="s2">&quot;fine&quot;</span><span class="p">,</span>  <span class="n">wireframe</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">colour</span><span class="o">=</span><span class="s2">&quot;#007f00&quot;</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">0.25</span><span class="p">)</span>
-<span class="n">tris2</span><span class="o">.</span><span class="n">vertices</span><span class="p">(</span><span class="n">refined_spherical_triangulation</span><span class="o">.</span><span class="n">points</span><span class="p">)</span>
-<span class="n">tris2</span><span class="o">.</span><span class="n">indices</span><span class="p">(</span><span class="n">refined_spherical_triangulation</span><span class="o">.</span><span class="n">simplices</span><span class="p">)</span>
-
-<span class="n">tris2w</span> <span class="o">=</span> <span class="n">lv</span><span class="o">.</span><span class="n">triangles</span><span class="p">(</span><span class="s2">&quot;finew&quot;</span><span class="p">,</span>  <span class="n">wireframe</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">colour</span><span class="o">=</span><span class="s2">&quot;#444444&quot;</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
-<span class="n">tris2w</span><span class="o">.</span><span class="n">vertices</span><span class="p">(</span><span class="n">refined_spherical_triangulation</span><span class="o">.</span><span class="n">points</span><span class="p">)</span>
-<span class="n">tris2w</span><span class="o">.</span><span class="n">indices</span><span class="p">(</span><span class="n">refined_spherical_triangulation</span><span class="o">.</span><span class="n">simplices</span><span class="p">)</span>
-
-<span class="n">nodes2</span> <span class="o">=</span> <span class="n">lv</span><span class="o">.</span><span class="n">points</span><span class="p">(</span><span class="s2">&quot;fine_nodes&quot;</span><span class="p">,</span> <span class="n">pointsize</span><span class="o">=</span><span class="mf">3.0</span><span class="p">,</span> <span class="n">pointtype</span><span class="o">=</span><span class="s2">&quot;shiny&quot;</span><span class="p">,</span> <span class="n">colour</span><span class="o">=</span><span class="s2">&quot;FF0000&quot;</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">0.95</span><span class="p">)</span>
-<span class="n">nodes2</span><span class="o">.</span><span class="n">vertices</span><span class="p">(</span><span class="n">refined_spherical_triangulation</span><span class="o">.</span><span class="n">points</span><span class="p">)</span>
-
-<span class="n">lv</span><span class="o">.</span><span class="n">hide</span><span class="p">(</span><span class="s2">&quot;fine&quot;</span><span class="p">)</span>
-<span class="n">lv</span><span class="o">.</span><span class="n">hide</span><span class="p">(</span><span class="s2">&quot;finew&quot;</span><span class="p">)</span>
-<span class="n">lv</span><span class="o">.</span><span class="n">control</span><span class="o">.</span><span class="n">Panel</span><span class="p">()</span>
-<span class="n">lv</span><span class="o">.</span><span class="n">control</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">command</span><span class="o">=</span><span class="s2">&quot;hide triangles; hide points; show ghost; show fine_nodes; show coarse; show coarsew; show coarse_nodes; redraw&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Coarse&quot;</span><span class="p">)</span>
-<span class="n">lv</span><span class="o">.</span><span class="n">control</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">command</span><span class="o">=</span><span class="s2">&quot;hide triangles; hide points; show ghost; show coarse_nodes; show fine; show finew; show fine_nodes; redraw&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Fine&quot;</span><span class="p">)</span>
-
-<span class="n">lv</span><span class="o">.</span><span class="n">control</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">html</span> <span class="o">=</span> <span class="n">plot</span><span class="o">.</span><span class="n">get_snapshot</span><span class="p">()</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;icosohedron_example.html&#39;</span><span class="p">,</span><span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
+    <span class="n">fp</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1204,13 +1180,6 @@ The list of simplices of the triangulation (<code class="docutils literal notran
 </pre></div>
 </div>
 <p>This capability is shown in a companion notebook <a class="reference internal" href="Ex2-SphericalGrids.html"><span class="doc std std-doc">Ex2-SphericalGrids</span></a></p>
-<div class="cell tag_hide-cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">vdisplay</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
 </div>
 </div>
 

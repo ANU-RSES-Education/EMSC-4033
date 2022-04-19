@@ -619,7 +619,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2 has-children">
     <a class="reference internal" href="../Litho1pt0/Ex1-Litho1Layers.html">
-     Introduction to the stripy wrapper for litho 1.0
+     Introduction to the stripy/python wrapper for litho 1.0
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
     <label for="toctree-checkbox-8">
@@ -805,14 +805,11 @@ const thebe_selector_output = ".output, .cell_output"
 
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
-        <a class="dropdown-buttons"
-            href="../../../../_sources/Notebooks/Themes/SphericalMeshing/SphericalTriangulations/Ex8-Spline-Tension.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
+        
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../../../_sources/Notebooks/Themes/SphericalMeshing/SphericalTriangulations/Ex8-Spline-Tension.md"><button type="button"
+        <a class="dropdown-buttons" href="../../../../_sources/Notebooks/Themes/SphericalMeshing/SphericalTriangulations/Ex8-Spline-Tension.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
                 onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -848,14 +845,14 @@ const thebe_selector_output = ".output, .cell_output"
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/ANU-RSES-Education/EMSC-4033/master?urlpath=tree/Notebooks/Themes/SphericalMeshing/SphericalTriangulations/Ex8-Spline-Tension.md"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/ANU-RSES-Education/EMSC-4033/master?urlpath=tree/Notebooks/Themes/SphericalMeshing/SphericalTriangulations/Ex8-Spline-Tension.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../../../_static/images/logo_binder.svg"
                     alt="Interact on binder">Binder</button></a>
         
         
-        <a class="jupyterhub-button" href="https://emsc4033.rses.underworldcloud.org/hub/user-redirect/git-pull?repo=https://github.com/ANU-RSES-Education/EMSC-4033&urlpath=tree/EMSC-4033/Notebooks/Themes/SphericalMeshing/SphericalTriangulations/Ex8-Spline-Tension.md&branch=master"><button type="button"
+        <a class="jupyterhub-button" href="https://emsc4033.rses.underworldcloud.org/hub/user-redirect/git-pull?repo=https://github.com/ANU-RSES-Education/EMSC-4033&urlpath=tree/EMSC-4033/Notebooks/Themes/SphericalMeshing/SphericalTriangulations/Ex8-Spline-Tension.ipynb&branch=master"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
                 data-placement="left"><img class="jupyterhub-button-logo"
                     src="../../../../_static/images/logo_jupyterhub.svg"
@@ -959,25 +956,25 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">stripy</span> <span class="k">as</span> <span class="nn">stripy</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">stripy</span> <span class="k">as</span> <span class="nn">stripy</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">cartopy.crs</span> <span class="k">as</span> <span class="nn">ccrs</span>
-<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mesh</span> <span class="o">=</span> <span class="n">stripy</span><span class="o">.</span><span class="n">spherical_meshes</span><span class="o">.</span><span class="n">icosahedral_mesh</span><span class="p">(</span><span class="n">refinement_levels</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mesh</span> <span class="o">=</span> <span class="n">stripy</span><span class="o">.</span><span class="n">spherical_meshes</span><span class="o">.</span><span class="n">icosahedral_mesh</span><span class="p">(</span><span class="n">refinement_levels</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">analytic</span><span class="p">(</span><span class="n">lons</span><span class="p">,</span> <span class="n">lats</span><span class="p">,</span> <span class="n">k1</span><span class="p">,</span> <span class="n">k2</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">analytic</span><span class="p">(</span><span class="n">lons</span><span class="p">,</span> <span class="n">lats</span><span class="p">,</span> <span class="n">k1</span><span class="p">,</span> <span class="n">k2</span><span class="p">):</span>
      <span class="k">return</span>  <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">k1</span><span class="o">*</span><span class="n">lons</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">k2</span><span class="o">*</span><span class="n">lats</span><span class="p">)</span> 
 
 <span class="k">def</span> <span class="nf">analytic_noisy</span><span class="p">(</span><span class="n">lons</span><span class="p">,</span> <span class="n">lats</span><span class="p">,</span> <span class="n">k1</span><span class="p">,</span> <span class="n">k2</span><span class="p">,</span> <span class="n">noise</span><span class="p">,</span> <span class="n">short</span><span class="p">):</span>
@@ -991,7 +988,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># get tension factors from the data</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># get tension factors from the data</span>
 <span class="n">sigma</span>   <span class="o">=</span> <span class="n">mesh</span><span class="o">.</span><span class="n">get_spline_tension_factors</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">)</span>
 <span class="n">sigma_n</span> <span class="o">=</span> <span class="n">mesh</span><span class="o">.</span><span class="n">get_spline_tension_factors</span><span class="p">(</span><span class="n">data_n</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">)</span>
 </pre></div>
@@ -1004,7 +1001,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Tension is applied simply by supplying <code class="docutils literal notranslate"><span class="pre">sigma</span></code>. It’s effect is most noticible near the poles where there are edge artefacts in the solution.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">stripy_smoothed</span><span class="p">,</span>  <span class="n">dds</span><span class="p">,</span> <span class="n">err</span> <span class="o">=</span> <span class="n">mesh</span><span class="o">.</span><span class="n">smoothing</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">data_n</span><span class="p">),</span> <span class="mf">10.0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stripy_smoothed</span><span class="p">,</span>  <span class="n">dds</span><span class="p">,</span> <span class="n">err</span> <span class="o">=</span> <span class="n">mesh</span><span class="o">.</span><span class="n">smoothing</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">data_n</span><span class="p">),</span> <span class="mf">10.0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span>
 <span class="n">stripy_smoothed2</span><span class="p">,</span> <span class="n">dds</span><span class="p">,</span> <span class="n">err</span> <span class="o">=</span> <span class="n">mesh</span><span class="o">.</span><span class="n">smoothing</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">data_n</span><span class="p">),</span> <span class="mf">10.0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="n">sigma</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1012,46 +1009,39 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">lavavu</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">k3d</span>
 
-<span class="kn">from</span> <span class="nn">xvfbwrapper</span> <span class="kn">import</span> <span class="n">Xvfb</span>
-<span class="n">vdisplay</span> <span class="o">=</span> <span class="n">Xvfb</span><span class="p">()</span>
-<span class="k">try</span><span class="p">:</span>
-    <span class="n">vdisplay</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
-    <span class="n">xvfb</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">plot</span> <span class="o">=</span> <span class="n">k3d</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">camera_auto_fit</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">grid_visible</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> 
+                <span class="n">menu_visibility</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">axes_helper</span><span class="o">=</span><span class="kc">False</span> <span class="p">)</span>
 
-<span class="k">except</span><span class="p">:</span>
-    <span class="n">xvfb</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">indices</span> <span class="o">=</span> <span class="n">mesh</span><span class="o">.</span><span class="n">simplices</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint32</span><span class="p">)</span>
+<span class="n">points</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">(</span><span class="n">mesh</span><span class="o">.</span><span class="n">points</span><span class="o">.</span><span class="n">T</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
 
-<span class="n">lv</span> <span class="o">=</span> <span class="n">lavavu</span><span class="o">.</span><span class="n">Viewer</span><span class="p">(</span><span class="n">border</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">background</span><span class="o">=</span><span class="s2">&quot;#FFFFFF&quot;</span><span class="p">,</span> <span class="n">resolution</span><span class="o">=</span><span class="p">[</span><span class="mi">666</span><span class="p">,</span><span class="mi">666</span><span class="p">],</span> <span class="n">near</span><span class="o">=-</span><span class="mf">10.0</span><span class="p">)</span>
-
-<span class="n">nodes</span> <span class="o">=</span> <span class="n">lv</span><span class="o">.</span><span class="n">points</span><span class="p">(</span><span class="s2">&quot;nodes&quot;</span><span class="p">,</span> <span class="n">pointsize</span><span class="o">=</span><span class="mf">3.0</span><span class="p">,</span> <span class="n">pointtype</span><span class="o">=</span><span class="s2">&quot;shiny&quot;</span><span class="p">,</span> <span class="n">colour</span><span class="o">=</span><span class="s2">&quot;#448080&quot;</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">0.75</span><span class="p">)</span>
-<span class="n">nodes</span><span class="o">.</span><span class="n">vertices</span><span class="p">(</span><span class="n">mesh</span><span class="o">.</span><span class="n">points</span><span class="p">)</span>
-
-<span class="n">tris</span> <span class="o">=</span> <span class="n">lv</span><span class="o">.</span><span class="n">triangles</span><span class="p">(</span><span class="s2">&quot;triangles&quot;</span><span class="p">,</span>  <span class="n">wireframe</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">colour</span><span class="o">=</span><span class="s2">&quot;#77ff88&quot;</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
-<span class="n">tris</span><span class="o">.</span><span class="n">vertices</span><span class="p">(</span><span class="n">mesh</span><span class="o">.</span><span class="n">points</span><span class="p">)</span>
-<span class="n">tris</span><span class="o">.</span><span class="n">indices</span><span class="p">(</span><span class="n">mesh</span><span class="o">.</span><span class="n">simplices</span><span class="p">)</span>
-<span class="n">tris</span><span class="o">.</span><span class="n">values</span><span class="p">(</span><span class="n">stripy_smoothed</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;smoothed&quot;</span><span class="p">)</span>
-<span class="n">tris</span><span class="o">.</span><span class="n">values</span><span class="p">(</span><span class="n">stripy_smoothed2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;smoothed_tension&quot;</span><span class="p">)</span>
-<span class="n">tris</span><span class="o">.</span><span class="n">values</span><span class="p">(</span><span class="n">stripy_smoothed</span> <span class="o">-</span> <span class="n">stripy_smoothed2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;delta&quot;</span><span class="p">)</span>
-
-<span class="n">tris</span><span class="o">.</span><span class="n">colourmap</span><span class="p">(</span><span class="s2">&quot;#990000 #FFFFFF #000099&quot;</span><span class="p">)</span>
-<span class="n">cb</span> <span class="o">=</span> <span class="n">tris</span><span class="o">.</span><span class="n">colourbar</span><span class="p">()</span>
-
-<span class="c1"># view the pole</span>
-
-<span class="n">lv</span><span class="o">.</span><span class="n">translation</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">3.0</span><span class="p">)</span>
-<span class="n">lv</span><span class="o">.</span><span class="n">rotation</span><span class="p">(</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+<span class="n">mesh_viewer</span> <span class="o">=</span> <span class="n">k3d</span><span class="o">.</span><span class="n">mesh</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">indices</span><span class="p">,</span> <span class="n">wireframe</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">attribute</span><span class="o">=</span><span class="n">data_n</span><span class="p">,</span>
+                   <span class="n">color_map</span><span class="o">=</span><span class="n">k3d</span><span class="o">.</span><span class="n">colormaps</span><span class="o">.</span><span class="n">paraview_color_maps</span><span class="o">.</span><span class="n">Cool_to_Warm</span><span class="p">,</span> 
+                   <span class="n">name</span><span class="o">=</span><span class="s2">&quot;splines&quot;</span><span class="p">,</span>
+                   <span class="n">flat_shading</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">1.0</span>  <span class="p">)</span>
 
 
+<span class="n">plot</span>   <span class="o">+=</span> <span class="n">mesh_viewer</span>
+<span class="n">plot</span><span class="o">.</span><span class="n">display</span><span class="p">()</span>
 
-<span class="n">lv</span><span class="o">.</span><span class="n">control</span><span class="o">.</span><span class="n">Panel</span><span class="p">()</span>
-<span class="n">lv</span><span class="o">.</span><span class="n">control</span><span class="o">.</span><span class="n">Range</span><span class="p">(</span><span class="s1">&#39;specular&#39;</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="n">step</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
-<span class="n">lv</span><span class="o">.</span><span class="n">control</span><span class="o">.</span><span class="n">Checkbox</span><span class="p">(</span><span class="nb">property</span><span class="o">=</span><span class="s1">&#39;axis&#39;</span><span class="p">)</span>
-<span class="n">lv</span><span class="o">.</span><span class="n">control</span><span class="o">.</span><span class="n">ObjectList</span><span class="p">()</span>
-<span class="n">tris</span><span class="o">.</span><span class="n">control</span><span class="o">.</span><span class="n">List</span><span class="p">(</span><span class="n">options</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;original&quot;</span><span class="p">,</span> <span class="s2">&quot;smoothed&quot;</span><span class="p">,</span> <span class="s2">&quot;smoothed_tension&quot;</span><span class="p">,</span> <span class="s2">&quot;delta&quot;</span><span class="p">],</span>
-                  <span class="nb">property</span><span class="o">=</span><span class="s2">&quot;colourby&quot;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;original&quot;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="s2">&quot;redraw&quot;</span><span class="p">)</span>
-<span class="n">lv</span><span class="o">.</span><span class="n">control</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="c1">## ## ## </span>
+
+<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interact</span><span class="p">,</span> <span class="n">interactive</span>
+<span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
+
+<span class="n">choices</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;original&quot;</span><span class="p">:</span> <span class="n">data_n</span><span class="p">,</span>
+             <span class="s2">&quot;smoothed&quot;</span><span class="p">:</span> <span class="n">stripy_smoothed</span><span class="p">,</span> 
+             <span class="s2">&quot;smooth with tension&quot;</span><span class="p">:</span> <span class="n">stripy_smoothed2</span><span class="p">,</span> 
+             <span class="s2">&quot;delta&quot;</span><span class="p">:</span> <span class="n">stripy_smoothed</span> <span class="o">-</span> <span class="n">stripy_smoothed2</span>  <span class="p">}</span>
+
+<span class="nd">@interact</span><span class="p">(</span><span class="n">choice</span><span class="o">=</span><span class="n">choices</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+<span class="k">def</span> <span class="nf">chooser</span><span class="p">(</span><span class="n">choice</span><span class="p">):</span>
+    <span class="n">mesh_viewer</span><span class="o">.</span><span class="n">attribute</span> <span class="o">=</span> <span class="n">choices</span><span class="p">[</span><span class="n">choice</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+    <span class="nb">range</span> <span class="o">=</span> <span class="n">choices</span><span class="p">[</span><span class="n">choice</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">*</span> <span class="mf">0.2</span>
+    <span class="n">mesh_viewer</span><span class="o">.</span><span class="n">color_range</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="nb">range</span><span class="p">]</span>
+    <span class="k">return</span> 
 </pre></div>
 </div>
 </div>
@@ -1062,7 +1052,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Only applies to cubic interpolation. The effect of supplying a non-negative <code class="docutils literal notranslate"><span class="pre">sigma</span></code> is to produce a <em>more linear</em> interpolation. For regions that lie outside the hull, cubic extrapolation produces wild oscillations in the solution which can be mitigated with spline tension.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># set up a discontinuous mesh</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># set up a discontinuous mesh</span>
 
 <span class="n">mask_points</span> <span class="o">=</span> <span class="n">mesh</span><span class="o">.</span><span class="n">lats</span> <span class="o">&lt;</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">3</span>
 <span class="n">cmesh</span> <span class="o">=</span> <span class="n">stripy</span><span class="o">.</span><span class="n">sTriangulation</span><span class="p">(</span><span class="n">mesh</span><span class="o">.</span><span class="n">lons</span><span class="p">[</span><span class="n">mask_points</span><span class="p">],</span> <span class="n">mesh</span><span class="o">.</span><span class="n">lats</span><span class="p">[</span><span class="n">mask_points</span><span class="p">])</span>
@@ -1075,7 +1065,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">grid_z1</span><span class="p">,</span> <span class="n">ierr</span> <span class="o">=</span> <span class="n">cmesh</span><span class="o">.</span><span class="n">interpolate_cubic</span><span class="p">(</span><span class="n">mesh</span><span class="o">.</span><span class="n">lons</span><span class="p">,</span> <span class="n">mesh</span><span class="o">.</span><span class="n">lats</span><span class="p">,</span> <span class="n">cdata</span><span class="p">)</span> <span class="c1"># no tension</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grid_z1</span><span class="p">,</span> <span class="n">ierr</span> <span class="o">=</span> <span class="n">cmesh</span><span class="o">.</span><span class="n">interpolate_cubic</span><span class="p">(</span><span class="n">mesh</span><span class="o">.</span><span class="n">lons</span><span class="p">,</span> <span class="n">mesh</span><span class="o">.</span><span class="n">lats</span><span class="p">,</span> <span class="n">cdata</span><span class="p">)</span> <span class="c1"># no tension</span>
 <span class="n">grid_z2</span><span class="p">,</span> <span class="n">ierr</span> <span class="o">=</span> <span class="n">cmesh</span><span class="o">.</span><span class="n">interpolate_cubic</span><span class="p">(</span><span class="n">mesh</span><span class="o">.</span><span class="n">lons</span><span class="p">,</span> <span class="n">mesh</span><span class="o">.</span><span class="n">lats</span><span class="p">,</span> <span class="n">cdata</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="n">csigma</span><span class="p">)</span> <span class="c1"># tension</span>
 </pre></div>
 </div>
@@ -1083,35 +1073,40 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">lv</span> <span class="o">=</span> <span class="n">lavavu</span><span class="o">.</span><span class="n">Viewer</span><span class="p">(</span><span class="n">border</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">background</span><span class="o">=</span><span class="s2">&quot;#FFFFFF&quot;</span><span class="p">,</span> <span class="n">resolution</span><span class="o">=</span><span class="p">[</span><span class="mi">666</span><span class="p">,</span><span class="mi">666</span><span class="p">],</span> <span class="n">near</span><span class="o">=-</span><span class="mf">10.0</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">k3d</span>
 
-<span class="n">nodes</span> <span class="o">=</span> <span class="n">lv</span><span class="o">.</span><span class="n">points</span><span class="p">(</span><span class="s2">&quot;nodes&quot;</span><span class="p">,</span> <span class="n">pointsize</span><span class="o">=</span><span class="mf">3.0</span><span class="p">,</span> <span class="n">pointtype</span><span class="o">=</span><span class="s2">&quot;shiny&quot;</span><span class="p">,</span> <span class="n">colour</span><span class="o">=</span><span class="s2">&quot;#448080&quot;</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">0.75</span><span class="p">)</span>
-<span class="n">nodes</span><span class="o">.</span><span class="n">vertices</span><span class="p">(</span><span class="n">mesh</span><span class="o">.</span><span class="n">points</span><span class="p">)</span>
+<span class="n">plot</span> <span class="o">=</span> <span class="n">k3d</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">camera_auto_fit</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">grid_visible</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> 
+                <span class="n">menu_visibility</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">axes_helper</span><span class="o">=</span><span class="kc">False</span> <span class="p">)</span>
 
-<span class="n">tris</span> <span class="o">=</span> <span class="n">lv</span><span class="o">.</span><span class="n">triangles</span><span class="p">(</span><span class="s2">&quot;triangles&quot;</span><span class="p">,</span>  <span class="n">wireframe</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">colour</span><span class="o">=</span><span class="s2">&quot;#77ff88&quot;</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
-<span class="n">tris</span><span class="o">.</span><span class="n">vertices</span><span class="p">(</span><span class="n">mesh</span><span class="o">.</span><span class="n">points</span><span class="p">)</span>
-<span class="n">tris</span><span class="o">.</span><span class="n">indices</span><span class="p">(</span><span class="n">mesh</span><span class="o">.</span><span class="n">simplices</span><span class="p">)</span>
-<span class="n">tris</span><span class="o">.</span><span class="n">values</span><span class="p">(</span><span class="n">grid_z1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;cubic&quot;</span><span class="p">)</span>
-<span class="n">tris</span><span class="o">.</span><span class="n">values</span><span class="p">(</span><span class="n">grid_z2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;cubic_tension&quot;</span><span class="p">)</span>
-<span class="n">tris</span><span class="o">.</span><span class="n">values</span><span class="p">(</span><span class="n">grid_z1</span> <span class="o">-</span> <span class="n">grid_z2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;delta&quot;</span><span class="p">)</span>
+<span class="n">indices</span> <span class="o">=</span> <span class="n">mesh</span><span class="o">.</span><span class="n">simplices</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint32</span><span class="p">)</span>
+<span class="n">points</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">(</span><span class="n">mesh</span><span class="o">.</span><span class="n">points</span><span class="o">.</span><span class="n">T</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
 
-<span class="n">tris</span><span class="o">.</span><span class="n">colourmap</span><span class="p">(</span><span class="s2">&quot;#990000 #FFFFFF #000099&quot;</span><span class="p">)</span>
-<span class="n">cb</span> <span class="o">=</span> <span class="n">tris</span><span class="o">.</span><span class="n">colourbar</span><span class="p">()</span>
-
-<span class="c1"># view the pole</span>
-
-<span class="n">lv</span><span class="o">.</span><span class="n">translation</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">3.0</span><span class="p">)</span>
-<span class="n">lv</span><span class="o">.</span><span class="n">rotation</span><span class="p">(</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+<span class="n">mesh_viewer</span> <span class="o">=</span> <span class="n">k3d</span><span class="o">.</span><span class="n">mesh</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">indices</span><span class="p">,</span> <span class="n">wireframe</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">attribute</span><span class="o">=</span><span class="n">data_n</span><span class="p">,</span>
+                   <span class="n">color_map</span><span class="o">=</span><span class="n">k3d</span><span class="o">.</span><span class="n">colormaps</span><span class="o">.</span><span class="n">paraview_color_maps</span><span class="o">.</span><span class="n">Cool_to_Warm</span><span class="p">,</span> 
+                   <span class="n">name</span><span class="o">=</span><span class="s2">&quot;splines&quot;</span><span class="p">,</span>
+                   <span class="n">flat_shading</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">1.0</span>  <span class="p">)</span>
 
 
+<span class="n">plot</span> <span class="o">+=</span> <span class="n">mesh_viewer</span>
+<span class="c1">#plot += background</span>
+<span class="n">plot</span><span class="o">.</span><span class="n">display</span><span class="p">()</span>
 
-<span class="n">lv</span><span class="o">.</span><span class="n">control</span><span class="o">.</span><span class="n">Panel</span><span class="p">()</span>
-<span class="n">lv</span><span class="o">.</span><span class="n">control</span><span class="o">.</span><span class="n">Range</span><span class="p">(</span><span class="s1">&#39;specular&#39;</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="n">step</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
-<span class="n">lv</span><span class="o">.</span><span class="n">control</span><span class="o">.</span><span class="n">Checkbox</span><span class="p">(</span><span class="nb">property</span><span class="o">=</span><span class="s1">&#39;axis&#39;</span><span class="p">)</span>
-<span class="n">lv</span><span class="o">.</span><span class="n">control</span><span class="o">.</span><span class="n">ObjectList</span><span class="p">()</span>
-<span class="n">tris</span><span class="o">.</span><span class="n">control</span><span class="o">.</span><span class="n">List</span><span class="p">(</span><span class="n">options</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;original&quot;</span><span class="p">,</span> <span class="s2">&quot;cubic&quot;</span><span class="p">,</span> <span class="s2">&quot;cubic_tension&quot;</span><span class="p">,</span> <span class="s2">&quot;delta&quot;</span><span class="p">],</span>
-                  <span class="nb">property</span><span class="o">=</span><span class="s2">&quot;colourby&quot;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;original&quot;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="s2">&quot;redraw&quot;</span><span class="p">)</span>
-<span class="n">lv</span><span class="o">.</span><span class="n">control</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="c1">## ## ## </span>
+
+<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interact</span><span class="p">,</span> <span class="n">interactive</span>
+<span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
+
+<span class="n">choices</span> <span class="o">=</span> <span class="p">{</span>  
+             <span class="s2">&quot;cubic&quot;</span><span class="p">:</span> <span class="n">grid_z1</span><span class="p">,</span> 
+             <span class="s2">&quot;cubic with tension&quot;</span><span class="p">:</span> <span class="n">grid_z2</span><span class="p">,</span> 
+             <span class="s2">&quot;delta&quot;</span><span class="p">:</span> <span class="n">grid_z1</span> <span class="o">-</span> <span class="n">grid_z2</span>  <span class="p">}</span>
+
+<span class="nd">@interact</span><span class="p">(</span><span class="n">choice</span><span class="o">=</span><span class="n">choices</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+<span class="k">def</span> <span class="nf">chooser</span><span class="p">(</span><span class="n">choice</span><span class="p">):</span>
+    <span class="n">mesh_viewer</span><span class="o">.</span><span class="n">attribute</span> <span class="o">=</span> <span class="n">choices</span><span class="p">[</span><span class="n">choice</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+    <span class="nb">range</span> <span class="o">=</span> <span class="n">choices</span><span class="p">[</span><span class="n">choice</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">*</span> <span class="mf">0.2</span>
+    <span class="n">mesh_viewer</span><span class="o">.</span><span class="n">color_range</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="nb">range</span><span class="p">,</span> <span class="nb">range</span><span class="p">]</span>
+    <span class="k">return</span> 
 </pre></div>
 </div>
 </div>
@@ -1128,7 +1123,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Again, the largest difference is visible at the poles.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dlon1</span><span class="p">,</span> <span class="n">dlat1</span> <span class="o">=</span> <span class="n">mesh</span><span class="o">.</span><span class="n">gradient_lonlat</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">nit</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">)</span> <span class="c1"># no tension</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dlon1</span><span class="p">,</span> <span class="n">dlat1</span> <span class="o">=</span> <span class="n">mesh</span><span class="o">.</span><span class="n">gradient_lonlat</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">nit</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">)</span> <span class="c1"># no tension</span>
 <span class="n">dlon2</span><span class="p">,</span> <span class="n">dlat2</span> <span class="o">=</span> <span class="n">mesh</span><span class="o">.</span><span class="n">gradient_lonlat</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">nit</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="n">sigma</span><span class="p">)</span> <span class="c1"># tension</span>
 </pre></div>
 </div>
@@ -1136,50 +1131,47 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">lv</span> <span class="o">=</span> <span class="n">lavavu</span><span class="o">.</span><span class="n">Viewer</span><span class="p">(</span><span class="n">border</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">background</span><span class="o">=</span><span class="s2">&quot;#FFFFFF&quot;</span><span class="p">,</span> <span class="n">resolution</span><span class="o">=</span><span class="p">[</span><span class="mi">666</span><span class="p">,</span><span class="mi">666</span><span class="p">],</span> <span class="n">near</span><span class="o">=-</span><span class="mf">10.0</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">k3d</span>
 
-<span class="n">nodes</span> <span class="o">=</span> <span class="n">lv</span><span class="o">.</span><span class="n">points</span><span class="p">(</span><span class="s2">&quot;nodes&quot;</span><span class="p">,</span> <span class="n">pointsize</span><span class="o">=</span><span class="mf">3.0</span><span class="p">,</span> <span class="n">pointtype</span><span class="o">=</span><span class="s2">&quot;shiny&quot;</span><span class="p">,</span> <span class="n">colour</span><span class="o">=</span><span class="s2">&quot;#448080&quot;</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">0.75</span><span class="p">)</span>
-<span class="n">nodes</span><span class="o">.</span><span class="n">vertices</span><span class="p">(</span><span class="n">mesh</span><span class="o">.</span><span class="n">points</span><span class="p">)</span>
+<span class="n">plot</span> <span class="o">=</span> <span class="n">k3d</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">camera_auto_fit</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">grid_visible</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> 
+                <span class="n">menu_visibility</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">axes_helper</span><span class="o">=</span><span class="kc">False</span> <span class="p">)</span>
 
-<span class="n">tris</span> <span class="o">=</span> <span class="n">lv</span><span class="o">.</span><span class="n">triangles</span><span class="p">(</span><span class="s2">&quot;triangles&quot;</span><span class="p">,</span>  <span class="n">wireframe</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">colour</span><span class="o">=</span><span class="s2">&quot;#77ff88&quot;</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
-<span class="n">tris</span><span class="o">.</span><span class="n">vertices</span><span class="p">(</span><span class="n">mesh</span><span class="o">.</span><span class="n">points</span><span class="p">)</span>
-<span class="n">tris</span><span class="o">.</span><span class="n">indices</span><span class="p">(</span><span class="n">mesh</span><span class="o">.</span><span class="n">simplices</span><span class="p">)</span>
-<span class="n">tris</span><span class="o">.</span><span class="n">values</span><span class="p">(</span><span class="n">dlon1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;dlon&quot;</span><span class="p">)</span>
-<span class="n">tris</span><span class="o">.</span><span class="n">values</span><span class="p">(</span><span class="n">dlat1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;dlat&quot;</span><span class="p">)</span>
-<span class="n">tris</span><span class="o">.</span><span class="n">values</span><span class="p">(</span><span class="n">dlon2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;dlon_tension&quot;</span><span class="p">)</span>
-<span class="n">tris</span><span class="o">.</span><span class="n">values</span><span class="p">(</span><span class="n">dlat2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;dlat_tension&quot;</span><span class="p">)</span>
-<span class="n">tris</span><span class="o">.</span><span class="n">values</span><span class="p">(</span><span class="n">dlon1</span> <span class="o">-</span> <span class="n">dlon2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;dlon_err&quot;</span><span class="p">)</span>
-<span class="n">tris</span><span class="o">.</span><span class="n">values</span><span class="p">(</span><span class="n">dlat1</span> <span class="o">-</span> <span class="n">dlat2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;dlat_err&quot;</span><span class="p">)</span>
+<span class="n">indices</span> <span class="o">=</span> <span class="n">mesh</span><span class="o">.</span><span class="n">simplices</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint32</span><span class="p">)</span>
+<span class="n">points</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">(</span><span class="n">mesh</span><span class="o">.</span><span class="n">points</span><span class="o">.</span><span class="n">T</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
 
-<span class="n">tris</span><span class="o">.</span><span class="n">colourmap</span><span class="p">(</span><span class="s2">&quot;#990000 #FFFFFF #000099&quot;</span><span class="p">)</span>
-<span class="n">cb</span> <span class="o">=</span> <span class="n">tris</span><span class="o">.</span><span class="n">colourbar</span><span class="p">()</span>
-
-<span class="c1"># view the pole</span>
-
-<span class="n">lv</span><span class="o">.</span><span class="n">translation</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">3.0</span><span class="p">)</span>
-<span class="n">lv</span><span class="o">.</span><span class="n">rotation</span><span class="p">(</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+<span class="n">mesh_viewer</span> <span class="o">=</span> <span class="n">k3d</span><span class="o">.</span><span class="n">mesh</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">indices</span><span class="p">,</span> <span class="n">wireframe</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">attribute</span><span class="o">=</span><span class="n">data_n</span><span class="p">,</span>
+                   <span class="n">color_map</span><span class="o">=</span><span class="n">k3d</span><span class="o">.</span><span class="n">colormaps</span><span class="o">.</span><span class="n">paraview_color_maps</span><span class="o">.</span><span class="n">Cool_to_Warm</span><span class="p">,</span> 
+                   <span class="n">name</span><span class="o">=</span><span class="s2">&quot;splines&quot;</span><span class="p">,</span>
+                   <span class="n">flat_shading</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">1.0</span>  <span class="p">)</span>
 
 
+<span class="n">plot</span> <span class="o">+=</span> <span class="n">mesh_viewer</span>
+<span class="n">plot</span><span class="o">.</span><span class="n">display</span><span class="p">()</span>
 
-<span class="n">lv</span><span class="o">.</span><span class="n">control</span><span class="o">.</span><span class="n">Panel</span><span class="p">()</span>
-<span class="n">lv</span><span class="o">.</span><span class="n">control</span><span class="o">.</span><span class="n">Range</span><span class="p">(</span><span class="s1">&#39;specular&#39;</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="n">step</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
-<span class="n">lv</span><span class="o">.</span><span class="n">control</span><span class="o">.</span><span class="n">Checkbox</span><span class="p">(</span><span class="nb">property</span><span class="o">=</span><span class="s1">&#39;axis&#39;</span><span class="p">)</span>
-<span class="n">lv</span><span class="o">.</span><span class="n">control</span><span class="o">.</span><span class="n">ObjectList</span><span class="p">()</span>
-<span class="n">tris</span><span class="o">.</span><span class="n">control</span><span class="o">.</span><span class="n">List</span><span class="p">(</span><span class="n">options</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;original&quot;</span><span class="p">,</span> <span class="s2">&quot;dlon&quot;</span><span class="p">,</span> <span class="s2">&quot;dlat&quot;</span><span class="p">,</span> <span class="s2">&quot;dlon_tension&quot;</span><span class="p">,</span> <span class="s2">&quot;dlat_tension&quot;</span><span class="p">,</span> <span class="s2">&quot;dlon_err&quot;</span><span class="p">,</span> <span class="s2">&quot;dlat_err&quot;</span><span class="p">],</span>
-                  <span class="nb">property</span><span class="o">=</span><span class="s2">&quot;colourby&quot;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;original&quot;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="s2">&quot;redraw&quot;</span><span class="p">)</span>
-<span class="n">lv</span><span class="o">.</span><span class="n">control</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="c1">## ## ## </span>
+
+<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interact</span><span class="p">,</span> <span class="n">interactive</span>
+<span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
+
+<span class="n">choices</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;dlon&quot;</span><span class="p">:</span> <span class="n">dlon1</span><span class="p">,</span>
+            <span class="s2">&quot;dlat&quot;</span><span class="p">:</span> <span class="n">dlat1</span><span class="p">,</span>
+            <span class="s2">&quot;dlon + tension&quot;</span><span class="p">:</span> <span class="n">dlon2</span><span class="p">,</span>
+            <span class="s2">&quot;dlat + tension&quot;</span><span class="p">:</span> <span class="n">dlat2</span><span class="p">,</span>
+            <span class="s2">&quot;dlon delta&quot;</span><span class="p">:</span> <span class="n">dlon1</span> <span class="o">-</span> <span class="n">dlon2</span><span class="p">,</span>
+            <span class="s2">&quot;dlat delta&quot;</span><span class="p">:</span> <span class="n">dlat1</span> <span class="o">-</span> <span class="n">dlat2</span> <span class="p">}</span>
+
+
+<span class="nd">@interact</span><span class="p">(</span><span class="n">choice</span><span class="o">=</span><span class="n">choices</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+<span class="k">def</span> <span class="nf">chooser</span><span class="p">(</span><span class="n">choice</span><span class="p">):</span>
+    <span class="n">mesh_viewer</span><span class="o">.</span><span class="n">attribute</span> <span class="o">=</span> <span class="n">choices</span><span class="p">[</span><span class="n">choice</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+    <span class="nb">range</span> <span class="o">=</span> <span class="n">choices</span><span class="p">[</span><span class="n">choice</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">*</span> <span class="mf">0.2</span>
+    <span class="n">mesh_viewer</span><span class="o">.</span><span class="n">color_range</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="nb">range</span><span class="p">,</span> <span class="nb">range</span><span class="p">]</span>
+    <span class="k">return</span> 
 </pre></div>
 </div>
 </div>
 </div>
 <p>The next notebook is <a class="reference internal" href="Ex9-Voronoi-Diagram.html"><span class="doc std std-doc">Ex9-Voronoi-Diagram</span></a></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">vdisplay</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
 </div>
 </div>
 

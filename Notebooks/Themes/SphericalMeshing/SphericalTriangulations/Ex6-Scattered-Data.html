@@ -621,7 +621,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2 has-children">
     <a class="reference internal" href="../Litho1pt0/Ex1-Litho1Layers.html">
-     Introduction to the stripy wrapper for litho 1.0
+     Introduction to the stripy/python wrapper for litho 1.0
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
     <label for="toctree-checkbox-8">
@@ -807,14 +807,11 @@ const thebe_selector_output = ".output, .cell_output"
 
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
-        <a class="dropdown-buttons"
-            href="../../../../_sources/Notebooks/Themes/SphericalMeshing/SphericalTriangulations/Ex6-Scattered-Data.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
+        
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../../../_sources/Notebooks/Themes/SphericalMeshing/SphericalTriangulations/Ex6-Scattered-Data.md"><button type="button"
+        <a class="dropdown-buttons" href="../../../../_sources/Notebooks/Themes/SphericalMeshing/SphericalTriangulations/Ex6-Scattered-Data.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
                 onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -850,14 +847,14 @@ const thebe_selector_output = ".output, .cell_output"
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/ANU-RSES-Education/EMSC-4033/master?urlpath=tree/Notebooks/Themes/SphericalMeshing/SphericalTriangulations/Ex6-Scattered-Data.md"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/ANU-RSES-Education/EMSC-4033/master?urlpath=tree/Notebooks/Themes/SphericalMeshing/SphericalTriangulations/Ex6-Scattered-Data.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../../../_static/images/logo_binder.svg"
                     alt="Interact on binder">Binder</button></a>
         
         
-        <a class="jupyterhub-button" href="https://emsc4033.rses.underworldcloud.org/hub/user-redirect/git-pull?repo=https://github.com/ANU-RSES-Education/EMSC-4033&urlpath=tree/EMSC-4033/Notebooks/Themes/SphericalMeshing/SphericalTriangulations/Ex6-Scattered-Data.md&branch=master"><button type="button"
+        <a class="jupyterhub-button" href="https://emsc4033.rses.underworldcloud.org/hub/user-redirect/git-pull?repo=https://github.com/ANU-RSES-Education/EMSC-4033&urlpath=tree/EMSC-4033/Notebooks/Themes/SphericalMeshing/SphericalTriangulations/Ex6-Scattered-Data.ipynb&branch=master"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
                 data-placement="left"><img class="jupyterhub-button-logo"
                     src="../../../../_static/images/logo_jupyterhub.svg"
@@ -1007,7 +1004,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Use the (usual) icosahedron with face points included.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">stripy</span> <span class="k">as</span> <span class="nn">stripy</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">stripy</span> <span class="k">as</span> <span class="nn">stripy</span>
 
 <span class="n">mesh</span> <span class="o">=</span> <span class="n">stripy</span><span class="o">.</span><span class="n">spherical_meshes</span><span class="o">.</span><span class="n">icosahedral_mesh</span><span class="p">(</span><span class="n">refinement_levels</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">include_face_points</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">tree</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
@@ -1022,7 +1019,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Define a relatively smooth function that we can interpolate from the coarse mesh to the fine mesh and analyse. As it is a familiar pattern, we use the seismic event catalogue for M5.5+ (dawn of time to 2017-12-31) from IRIS</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="c1"># Note - these data have some places where depth is unknown (appears as NaN in the depth )</span>
 <span class="c1"># The IRIS data has  lat, lon, depth, mag  ... date/time in col 2, 3, 4, 10 (starting from zero)</span>
@@ -1040,7 +1037,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
 
 <span class="kn">import</span> <span class="nn">cartopy</span>
 <span class="kn">import</span> <span class="nn">cartopy.crs</span> <span class="k">as</span> <span class="nn">ccrs</span>
@@ -1069,14 +1066,14 @@ const thebe_selector_output = ".output, .cell_output"
 <p>This is a numpy wrapper around the <code class="docutils literal notranslate"><span class="pre">STRIPACK</span></code> routine which operates by retriangulation and is therefore not particularly fast.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">triangles</span> <span class="o">=</span> <span class="n">mesh</span><span class="o">.</span><span class="n">containing_triangle</span><span class="p">(</span><span class="n">lons</span><span class="p">,</span> <span class="n">lats</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">triangles</span> <span class="o">=</span> <span class="n">mesh</span><span class="o">.</span><span class="n">containing_triangle</span><span class="p">(</span><span class="n">lons</span><span class="p">,</span> <span class="n">lats</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">## The return_counts argument is quite new in numpy and your version may not have it</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## The return_counts argument is quite new in numpy and your version may not have it</span>
 
 <span class="k">try</span><span class="p">:</span>
     <span class="n">tris</span><span class="p">,</span> <span class="n">counts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">triangles</span><span class="p">,</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -1095,14 +1092,14 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tris</span><span class="o">.</span><span class="n">shape</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tris</span><span class="o">.</span><span class="n">shape</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">## map to nodes so we can plot this</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## map to nodes so we can plot this</span>
 
 <span class="n">hit_count</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">mesh</span><span class="o">.</span><span class="n">lons</span><span class="p">)</span>
 
@@ -1118,7 +1115,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">facecolor</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">facecolor</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">)</span>
 <span class="n">ax</span>  <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">Mollweide</span><span class="p">())</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">coastlines</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;lightgrey&quot;</span><span class="p">,</span> <span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_global</span><span class="p">()</span>
@@ -1140,7 +1137,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>The <code class="docutils literal notranslate"><span class="pre">sTriangulation.nearest_vertices</span></code> method uses a k-d tree to find the nearest vertices to a set of longitude / latitude points. It returns the great circle distance. This requires the k-d tree to have been built when the mesh was initialised (<code class="docutils literal notranslate"><span class="pre">tree=True</span></code>)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">distances</span><span class="p">,</span> <span class="n">vertices</span> <span class="o">=</span> <span class="n">mesh</span><span class="o">.</span><span class="n">nearest_vertices</span><span class="p">(</span><span class="n">lons</span><span class="p">,</span> <span class="n">lats</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">distances</span><span class="p">,</span> <span class="n">vertices</span> <span class="o">=</span> <span class="n">mesh</span><span class="o">.</span><span class="n">nearest_vertices</span><span class="p">(</span><span class="n">lons</span><span class="p">,</span> <span class="n">lats</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">nodes</span><span class="p">,</span> <span class="n">ncounts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">vertices</span><span class="p">,</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <span class="n">hit_countn</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">mesh</span><span class="o">.</span><span class="n">lons</span><span class="p">)</span>
@@ -1151,7 +1148,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">facecolor</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">facecolor</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">)</span>
 <span class="n">ax</span>  <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">Mollweide</span><span class="p">())</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">coastlines</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;lightgrey&quot;</span><span class="p">,</span> <span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_global</span><span class="p">()</span>
@@ -1177,7 +1174,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Alternatively, we might map information to the vertices by applying a radially symmetric kernel to the point data without normalising.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">distances</span><span class="p">,</span> <span class="n">vertices</span> <span class="o">=</span> <span class="n">mesh</span><span class="o">.</span><span class="n">nearest_vertices</span><span class="p">(</span><span class="n">lons</span><span class="p">,</span> <span class="n">lats</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">distances</span><span class="p">,</span> <span class="n">vertices</span> <span class="o">=</span> <span class="n">mesh</span><span class="o">.</span><span class="n">nearest_vertices</span><span class="p">(</span><span class="n">lons</span><span class="p">,</span> <span class="n">lats</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 <span class="n">norm</span> <span class="o">=</span> <span class="n">distances</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
 <span class="c1"># distances, vertices are arrays of shape (data_size, 10)</span>
@@ -1202,7 +1199,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">facecolor</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">facecolor</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">)</span>
 <span class="n">ax</span>  <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">Mollweide</span><span class="p">())</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">coastlines</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;lightgrey&quot;</span><span class="p">,</span> <span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_global</span><span class="p">()</span>
@@ -1224,7 +1221,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Here we show how to map point data to the regular mesh - produce a representation of the depth of the events instead of just their frequency. When plotting, we need to distinguish between zero information and zero (shallow) depth. This is done by using the weight function to determine the opacity of the symbol or field that we plot. This has the effect of washing out the regions with few, large events compared to those with many small ones (which in this case means washed out regions where earthquakes are deep).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">depth_idr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">mesh</span><span class="o">.</span><span class="n">lons</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">depth_idr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">mesh</span><span class="o">.</span><span class="n">lons</span><span class="p">)</span>
 
 <span class="c1">## numpy shouldn&#39;t try to vectorise this reduction operation</span>
 
@@ -1238,7 +1235,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">facecolor</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">facecolor</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">)</span>
 <span class="n">ax</span>  <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">Mollweide</span><span class="p">())</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">coastlines</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;lightgrey&quot;</span><span class="p">,</span> <span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_global</span><span class="p">()</span>
@@ -1260,70 +1257,45 @@ const thebe_selector_output = ".output, .cell_output"
 <h2>Visualisation<a class="headerlink" href="#visualisation" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">lavavu</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">k3d</span>
 
-<span class="kn">from</span> <span class="nn">xvfbwrapper</span> <span class="kn">import</span> <span class="n">Xvfb</span>
-<span class="n">vdisplay</span> <span class="o">=</span> <span class="n">Xvfb</span><span class="p">()</span>
-<span class="k">try</span><span class="p">:</span>
-    <span class="n">vdisplay</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
-    <span class="n">xvfb</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">plot</span> <span class="o">=</span> <span class="n">k3d</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">camera_auto_fit</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">grid_visible</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> 
+                <span class="n">menu_visibility</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">axes_helper</span><span class="o">=</span><span class="kc">False</span> <span class="p">)</span>
 
-<span class="k">except</span><span class="p">:</span>
-    <span class="n">xvfb</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">indices</span> <span class="o">=</span> <span class="n">mesh</span><span class="o">.</span><span class="n">simplices</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint32</span><span class="p">)</span>
+<span class="n">points</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">(</span><span class="n">mesh</span><span class="o">.</span><span class="n">points</span><span class="o">.</span><span class="n">T</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
 
+<span class="n">mesh_viewer</span> <span class="o">=</span> <span class="n">k3d</span><span class="o">.</span><span class="n">mesh</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">indices</span><span class="p">,</span> <span class="n">wireframe</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">attribute</span><span class="o">=</span><span class="n">hit_count</span><span class="p">,</span>
+                   <span class="n">color_map</span><span class="o">=</span><span class="n">k3d</span><span class="o">.</span><span class="n">colormaps</span><span class="o">.</span><span class="n">paraview_color_maps</span><span class="o">.</span><span class="n">Cool_to_Warm</span><span class="p">,</span> 
+                   <span class="n">name</span><span class="o">=</span><span class="s2">&quot;heat map&quot;</span><span class="p">,</span>
+                   <span class="n">flat_shading</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">1.0</span>  <span class="p">)</span>
 
-<span class="n">depth_range</span> <span class="o">=</span> <span class="n">depths</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
-
-<span class="n">lv</span> <span class="o">=</span> <span class="n">lavavu</span><span class="o">.</span><span class="n">Viewer</span><span class="p">(</span><span class="n">border</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">background</span><span class="o">=</span><span class="s2">&quot;#FFFFFF&quot;</span><span class="p">,</span> <span class="n">resolution</span><span class="o">=</span><span class="p">[</span><span class="mi">666</span><span class="p">,</span><span class="mi">666</span><span class="p">],</span> <span class="n">near</span><span class="o">=-</span><span class="mf">10.0</span><span class="p">)</span>
-
-
-<span class="n">tris</span> <span class="o">=</span> <span class="n">lv</span><span class="o">.</span><span class="n">triangles</span><span class="p">(</span><span class="s2">&quot;triangles&quot;</span><span class="p">,</span>  <span class="n">wireframe</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">colour</span><span class="o">=</span><span class="s2">&quot;#77ff88&quot;</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
-<span class="n">tris</span><span class="o">.</span><span class="n">vertices</span><span class="p">(</span><span class="n">mesh</span><span class="o">.</span><span class="n">points</span><span class="p">)</span>
-<span class="n">tris</span><span class="o">.</span><span class="n">indices</span><span class="p">(</span><span class="n">mesh</span><span class="o">.</span><span class="n">simplices</span><span class="p">)</span>
-
-<span class="n">tris</span><span class="o">.</span><span class="n">values</span><span class="p">(</span><span class="n">hit_count</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;hit_count&quot;</span><span class="p">)</span>
-<span class="n">tris</span><span class="o">.</span><span class="n">values</span><span class="p">(</span><span class="n">hit_countn</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;hit_countn&quot;</span><span class="p">)</span>
-<span class="n">tris</span><span class="o">.</span><span class="n">values</span><span class="p">(</span><span class="n">hit_countid</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;hit_countid&quot;</span><span class="p">)</span>
-<span class="n">tris</span><span class="o">.</span><span class="n">values</span><span class="p">(</span><span class="n">hit_countidr</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;hit_countidr&quot;</span><span class="p">)</span>
-<span class="n">tris</span><span class="o">.</span><span class="n">colourmap</span><span class="p">(</span><span class="s2">&quot;#FFFFFF:0.0 (1.0)#FF0000:0.2 (50.0)#550044:0.5&quot;</span><span class="p">)</span>
+<span class="c1">## This helps to manage the wireframe / transparency</span>
+<span class="n">background</span> <span class="o">=</span> <span class="n">k3d</span><span class="o">.</span><span class="n">mesh</span><span class="p">(</span><span class="n">points</span><span class="o">*</span><span class="mf">0.95</span><span class="p">,</span> <span class="n">indices</span><span class="p">,</span> <span class="n">wireframe</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> 
+                   <span class="n">color</span><span class="o">=</span><span class="mh">0xBBBBBB</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">flat_shading</span><span class="o">=</span><span class="kc">False</span>  <span class="p">)</span>
 
 
-<span class="n">depth</span> <span class="o">=</span> <span class="n">lv</span><span class="o">.</span><span class="n">triangles</span><span class="p">(</span><span class="s2">&quot;depth_field&quot;</span><span class="p">,</span>  <span class="n">wireframe</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">colour</span><span class="o">=</span><span class="s2">&quot;#FFFFFF&quot;</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">0.999</span><span class="p">)</span>
-<span class="n">depth</span><span class="o">.</span><span class="n">vertices</span><span class="p">(</span><span class="n">mesh</span><span class="o">.</span><span class="n">points</span><span class="o">*</span><span class="p">(</span><span class="mi">6370</span><span class="o">-</span><span class="n">depth_range</span><span class="o">*</span><span class="mf">0.99</span><span class="p">)</span> <span class="o">/</span> <span class="mi">6370</span><span class="p">)</span>
-<span class="n">depth</span><span class="o">.</span><span class="n">indices</span><span class="p">(</span><span class="n">mesh</span><span class="o">.</span><span class="n">simplices</span><span class="p">)</span>
-<span class="n">depth</span><span class="o">.</span><span class="n">values</span><span class="p">(</span><span class="n">depth_idr</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;depths&quot;</span><span class="p">)</span>
-<span class="n">depth</span><span class="o">.</span><span class="n">values</span><span class="p">(</span><span class="n">hit_countidr</span><span class="o">/</span><span class="n">hit_countidr</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;weights&quot;</span><span class="p">)</span>
-<span class="n">depth</span><span class="o">.</span><span class="n">colourmap</span><span class="p">(</span><span class="s2">&quot;#550000 #0099FF #000055&quot;</span><span class="p">)</span>
+<span class="n">plot</span>   <span class="o">+=</span> <span class="n">mesh_viewer</span>
+<span class="n">plot</span> <span class="o">+=</span> <span class="n">background</span>
+<span class="n">plot</span><span class="o">.</span><span class="n">display</span><span class="p">()</span>
 
-<span class="n">depth</span><span class="p">[</span><span class="s2">&quot;opacitymap&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;#000000:0.0 (0.1)#000000:0.9 #000000:0.9&quot;</span>
-<span class="n">depth</span><span class="p">[</span><span class="s2">&quot;opacityby&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;weights&quot;</span>
-<span class="n">depth</span><span class="p">[</span><span class="s2">&quot;colourby&quot;</span><span class="p">]</span>  <span class="o">=</span> <span class="s2">&quot;depths&quot;</span>
- 
-<span class="n">bg</span> <span class="o">=</span> <span class="n">lv</span><span class="o">.</span><span class="n">triangles</span><span class="p">(</span><span class="s2">&quot;background&quot;</span><span class="p">,</span>  <span class="n">wireframe</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">colour</span><span class="o">=</span><span class="s2">&quot;#FFFFFF&quot;</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
-<span class="n">bg</span><span class="o">.</span><span class="n">vertices</span><span class="p">(</span><span class="n">mesh</span><span class="o">.</span><span class="n">points</span><span class="o">*</span><span class="p">(</span><span class="mi">6370</span><span class="o">-</span><span class="n">depth_range</span><span class="p">)</span> <span class="o">/</span> <span class="mi">6370</span><span class="p">)</span>
-<span class="n">bg</span><span class="o">.</span><span class="n">indices</span><span class="p">(</span><span class="n">mesh</span><span class="o">.</span><span class="n">simplices</span><span class="p">)</span>
+<span class="c1">## ## ## </span>
 
-<span class="n">ll</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">stripy</span><span class="o">.</span><span class="n">spherical</span><span class="o">.</span><span class="n">lonlat2xyz</span><span class="p">(</span><span class="n">lons</span><span class="p">,</span> <span class="n">lats</span><span class="p">))</span><span class="o">.</span><span class="n">T</span>
+<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interact</span><span class="p">,</span> <span class="n">interactive</span>
+<span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
 
-<span class="n">nodes</span> <span class="o">=</span> <span class="n">lv</span><span class="o">.</span><span class="n">points</span><span class="p">(</span><span class="s2">&quot;events&quot;</span><span class="p">,</span> <span class="n">pointsize</span><span class="o">=</span><span class="mf">3.0</span><span class="p">,</span> <span class="n">pointtype</span><span class="o">=</span><span class="s2">&quot;shiny&quot;</span><span class="p">,</span> <span class="n">colour</span><span class="o">=</span><span class="s2">&quot;#448080&quot;</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">0.75</span><span class="p">)</span>
-<span class="n">nodes</span><span class="o">.</span><span class="n">vertices</span><span class="p">(</span><span class="n">ll</span> <span class="o">*</span> <span class="p">(</span><span class="mf">6370.0</span> <span class="o">-</span> <span class="n">depths</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span> <span class="o">/</span> <span class="mf">6370.0</span> <span class="p">)</span>
-<span class="n">nodes</span><span class="o">.</span><span class="n">values</span><span class="p">(</span><span class="n">depths</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;depths&quot;</span><span class="p">)</span>
-<span class="n">nodes</span><span class="o">.</span><span class="n">colourmap</span><span class="p">(</span><span class="s2">&quot;#550000 #0099FF #000055&quot;</span><span class="p">)</span>
+<span class="n">choices</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;hit_count&quot;</span><span class="p">:</span> <span class="n">hit_count</span><span class="p">,</span>
+             <span class="s2">&quot;hit_countn&quot;</span><span class="p">:</span> <span class="n">hit_countn</span><span class="p">,</span> 
+             <span class="s2">&quot;hit_countid&quot;</span><span class="p">:</span> <span class="n">hit_countid</span><span class="p">,</span> 
+             <span class="s2">&quot;hit_countidr&quot;</span><span class="p">:</span> <span class="n">hit_countidr</span><span class="p">,</span>
+             <span class="s2">&quot;depth_idr&quot;</span><span class="p">:</span> <span class="n">depth_idr</span>  <span class="p">}</span>
 
-<span class="c1"># View from the pacific hemisphere </span>
-<span class="n">lv</span><span class="o">.</span><span class="n">translation</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">3.0</span><span class="p">)</span>
-<span class="n">lv</span><span class="o">.</span><span class="n">rotation</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">90.0</span><span class="p">,</span> <span class="mf">90.0</span><span class="p">)</span>
-
-
-<span class="n">lv</span><span class="o">.</span><span class="n">control</span><span class="o">.</span><span class="n">Panel</span><span class="p">()</span>
-<span class="n">lv</span><span class="o">.</span><span class="n">control</span><span class="o">.</span><span class="n">Range</span><span class="p">(</span><span class="s1">&#39;specular&#39;</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="n">step</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
-<span class="n">lv</span><span class="o">.</span><span class="n">control</span><span class="o">.</span><span class="n">Checkbox</span><span class="p">(</span><span class="nb">property</span><span class="o">=</span><span class="s1">&#39;axis&#39;</span><span class="p">)</span>
-<span class="n">lv</span><span class="o">.</span><span class="n">control</span><span class="o">.</span><span class="n">ObjectList</span><span class="p">()</span>
-<span class="n">tris</span><span class="o">.</span><span class="n">control</span><span class="o">.</span><span class="n">List</span><span class="p">(</span><span class="nb">property</span><span class="o">=</span><span class="s2">&quot;colourby&quot;</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;hit_count&quot;</span><span class="p">,</span> <span class="s2">&quot;hit_countn&quot;</span><span class="p">,</span> <span class="s2">&quot;hit_countid&quot;</span><span class="p">,</span> <span class="s2">&quot;hit_countidr&quot;</span><span class="p">],</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;hit_count&quot;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="s2">&quot;redraw&quot;</span><span class="p">)</span>
-
-
-<span class="n">lv</span><span class="o">.</span><span class="n">control</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-<span class="n">vdisplay</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+<span class="nd">@interact</span><span class="p">(</span><span class="n">choice</span><span class="o">=</span><span class="n">choices</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+<span class="k">def</span> <span class="nf">chooser</span><span class="p">(</span><span class="n">choice</span><span class="p">):</span>
+    <span class="n">mesh_viewer</span><span class="o">.</span><span class="n">attribute</span> <span class="o">=</span> <span class="n">choices</span><span class="p">[</span><span class="n">choice</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+    <span class="nb">range</span> <span class="o">=</span> <span class="n">choices</span><span class="p">[</span><span class="n">choice</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">*</span> <span class="mf">0.2</span>
+    <span class="n">mesh_viewer</span><span class="o">.</span><span class="n">color_range</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="nb">range</span><span class="p">]</span>
+    <span class="k">return</span> 
 </pre></div>
 </div>
 </div>

@@ -619,7 +619,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2 has-children">
     <a class="reference internal" href="../Litho1pt0/Ex1-Litho1Layers.html">
-     Introduction to the stripy wrapper for litho 1.0
+     Introduction to the stripy/python wrapper for litho 1.0
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
     <label for="toctree-checkbox-8">
@@ -805,14 +805,11 @@ const thebe_selector_output = ".output, .cell_output"
 
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
-        <a class="dropdown-buttons"
-            href="../../../../_sources/Notebooks/Themes/SphericalMeshing/SphericalTriangulations/Ex9-Voronoi-Diagram.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
+        
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../../../_sources/Notebooks/Themes/SphericalMeshing/SphericalTriangulations/Ex9-Voronoi-Diagram.md"><button type="button"
+        <a class="dropdown-buttons" href="../../../../_sources/Notebooks/Themes/SphericalMeshing/SphericalTriangulations/Ex9-Voronoi-Diagram.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
                 onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -848,14 +845,14 @@ const thebe_selector_output = ".output, .cell_output"
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/ANU-RSES-Education/EMSC-4033/master?urlpath=tree/Notebooks/Themes/SphericalMeshing/SphericalTriangulations/Ex9-Voronoi-Diagram.md"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/ANU-RSES-Education/EMSC-4033/master?urlpath=tree/Notebooks/Themes/SphericalMeshing/SphericalTriangulations/Ex9-Voronoi-Diagram.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../../../_static/images/logo_binder.svg"
                     alt="Interact on binder">Binder</button></a>
         
         
-        <a class="jupyterhub-button" href="https://emsc4033.rses.underworldcloud.org/hub/user-redirect/git-pull?repo=https://github.com/ANU-RSES-Education/EMSC-4033&urlpath=tree/EMSC-4033/Notebooks/Themes/SphericalMeshing/SphericalTriangulations/Ex9-Voronoi-Diagram.md&branch=master"><button type="button"
+        <a class="jupyterhub-button" href="https://emsc4033.rses.underworldcloud.org/hub/user-redirect/git-pull?repo=https://github.com/ANU-RSES-Education/EMSC-4033&urlpath=tree/EMSC-4033/Notebooks/Themes/SphericalMeshing/SphericalTriangulations/Ex9-Voronoi-Diagram.ipynb&branch=master"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
                 data-placement="left"><img class="jupyterhub-button-logo"
                     src="../../../../_static/images/logo_jupyterhub.svg"
@@ -946,19 +943,19 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">stripy</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">cartopy.crs</span> <span class="k">as</span> <span class="nn">ccrs</span>
 
-<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">## Set up a coarse mesh for visual clarity</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Set up a coarse mesh for visual clarity</span>
 
 <span class="n">mesh</span> <span class="o">=</span> <span class="n">stripy</span><span class="o">.</span><span class="n">spherical_meshes</span><span class="o">.</span><span class="n">icosahedral_mesh</span><span class="p">(</span><span class="n">refinement_levels</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
@@ -967,7 +964,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">proj_map</span> <span class="o">=</span> <span class="n">ccrs</span><span class="o">.</span><span class="n">Orthographic</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">proj_map</span> <span class="o">=</span> <span class="n">ccrs</span><span class="o">.</span><span class="n">Orthographic</span><span class="p">()</span>
 <span class="n">proj_flat</span> <span class="o">=</span> <span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">()</span>
 
 
@@ -985,6 +982,9 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../../../../_images/Ex9-Voronoi-Diagram_3_0.png" src="../../../../_images/Ex9-Voronoi-Diagram_3_0.png" />
+</div>
 </div>
 </div>
 <div class="section" id="voronoi-points">
@@ -993,7 +993,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>To calculate the Voronoi points from the mesh, use the <code class="docutils literal notranslate"><span class="pre">voronoi_points</span></code> method. This method may optionally return the circumradius, signed triangle area, or aspect ratio for each voronoi point.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">vor_lons</span><span class="p">,</span> <span class="n">vor_lats</span> <span class="o">=</span> <span class="n">mesh</span><span class="o">.</span><span class="n">voronoi_points</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vor_lons</span><span class="p">,</span> <span class="n">vor_lats</span> <span class="o">=</span> <span class="n">mesh</span><span class="o">.</span><span class="n">voronoi_points</span><span class="p">()</span>
 <span class="n">vlons</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">degrees</span><span class="p">(</span><span class="n">vor_lons</span><span class="p">)</span>
 <span class="n">vlats</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">degrees</span><span class="p">(</span><span class="n">vor_lats</span><span class="p">)</span>
 
@@ -1010,6 +1010,9 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../../../../_images/Ex9-Voronoi-Diagram_5_0.png" src="../../../../_images/Ex9-Voronoi-Diagram_5_0.png" />
+</div>
 </div>
 </div>
 <div class="section" id="voronoi-regions">
@@ -1017,7 +1020,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Often it is desirable to obtain the corresponding region enclosed by voronoi points. We can easily find the line segments connecting each voronoi point by retrieving the neighbour simplices.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">neighbours</span> <span class="o">=</span> <span class="n">mesh</span><span class="o">.</span><span class="n">neighbour_simplices</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">neighbours</span> <span class="o">=</span> <span class="n">mesh</span><span class="o">.</span><span class="n">neighbour_simplices</span><span class="p">()</span>
 
 <span class="n">circumcentres</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">([</span><span class="n">vlons</span><span class="p">,</span> <span class="n">vlats</span><span class="p">])</span>
 <span class="n">voronoi_edges</span> <span class="o">=</span> <span class="n">circumcentres</span><span class="p">[</span><span class="n">neighbours</span><span class="p">]</span>
@@ -1034,7 +1037,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot it</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot it</span>
 <span class="kn">from</span> <span class="nn">matplotlib.collections</span> <span class="kn">import</span> <span class="n">LineCollection</span>
 
 <span class="n">linesC</span> <span class="o">=</span> <span class="n">LineCollection</span><span class="p">(</span><span class="n">lines</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">proj_flat</span><span class="p">)</span>
@@ -1050,11 +1053,14 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../../../../_images/Ex9-Voronoi-Diagram_8_0.png" src="../../../../_images/Ex9-Voronoi-Diagram_8_0.png" />
+</div>
 </div>
 <p>Looks good! But in order to find which voronoi points belong to a region, we need to iterate through all of the triangles. Since each vertex in the Delaunay represents a voronoi “site”, we can accumulate all of the circumcentres into a list and sort them using <code class="docutils literal notranslate"><span class="pre">voronoi_points_and_regions</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">vor_lons</span><span class="p">,</span> <span class="n">vor_lats</span><span class="p">,</span> <span class="n">regions</span> <span class="o">=</span> <span class="n">mesh</span><span class="o">.</span><span class="n">voronoi_points_and_regions</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vor_lons</span><span class="p">,</span> <span class="n">vor_lats</span><span class="p">,</span> <span class="n">regions</span> <span class="o">=</span> <span class="n">mesh</span><span class="o">.</span><span class="n">voronoi_points_and_regions</span><span class="p">()</span>
 
 <span class="n">linesC</span> <span class="o">=</span> <span class="n">LineCollection</span><span class="p">(</span><span class="n">lines</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">proj_flat</span><span class="p">)</span>
 
@@ -1079,6 +1085,9 @@ const thebe_selector_output = ".output, .cell_output"
     <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ilon</span><span class="p">,</span> <span class="n">ilat</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">proj_flat</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../../_images/Ex9-Voronoi-Diagram_10_0.png" src="../../../../_images/Ex9-Voronoi-Diagram_10_0.png" />
 </div>
 </div>
 </div>

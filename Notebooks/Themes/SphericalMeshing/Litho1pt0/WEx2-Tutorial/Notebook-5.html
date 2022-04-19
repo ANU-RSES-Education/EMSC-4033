@@ -619,7 +619,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2 current active has-children">
     <a class="reference internal" href="../Ex1-Litho1Layers.html">
-     Introduction to the stripy wrapper for litho 1.0
+     Introduction to the stripy/python wrapper for litho 1.0
     </a>
     <input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
     <label for="toctree-checkbox-8">
@@ -805,14 +805,11 @@ const thebe_selector_output = ".output, .cell_output"
 
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
-        <a class="dropdown-buttons"
-            href="../../../../../_sources/Notebooks/Themes/SphericalMeshing/Litho1pt0/WEx2-Tutorial/Notebook-5.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
+        
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../../../../_sources/Notebooks/Themes/SphericalMeshing/Litho1pt0/WEx2-Tutorial/Notebook-5.md"><button type="button"
+        <a class="dropdown-buttons" href="../../../../../_sources/Notebooks/Themes/SphericalMeshing/Litho1pt0/WEx2-Tutorial/Notebook-5.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
                 onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -848,14 +845,14 @@ const thebe_selector_output = ".output, .cell_output"
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/ANU-RSES-Education/EMSC-4033/master?urlpath=tree/Notebooks/Themes/SphericalMeshing/Litho1pt0/WEx2-Tutorial/Notebook-5.md"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/ANU-RSES-Education/EMSC-4033/master?urlpath=tree/Notebooks/Themes/SphericalMeshing/Litho1pt0/WEx2-Tutorial/Notebook-5.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../../../../_static/images/logo_binder.svg"
                     alt="Interact on binder">Binder</button></a>
         
         
-        <a class="jupyterhub-button" href="https://emsc4033.rses.underworldcloud.org/hub/user-redirect/git-pull?repo=https://github.com/ANU-RSES-Education/EMSC-4033&urlpath=tree/EMSC-4033/Notebooks/Themes/SphericalMeshing/Litho1pt0/WEx2-Tutorial/Notebook-5.md&branch=master"><button type="button"
+        <a class="jupyterhub-button" href="https://emsc4033.rses.underworldcloud.org/hub/user-redirect/git-pull?repo=https://github.com/ANU-RSES-Education/EMSC-4033&urlpath=tree/EMSC-4033/Notebooks/Themes/SphericalMeshing/Litho1pt0/WEx2-Tutorial/Notebook-5.ipynb&branch=master"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
                 data-placement="left"><img class="jupyterhub-button-logo"
                     src="../../../../../_static/images/logo_jupyterhub.svg"
@@ -982,7 +979,7 @@ const thebe_selector_output = ".output, .cell_output"
 <h2>First a grid at fine resolution<a class="headerlink" href="#first-a-grid-at-fine-resolution" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">stripy</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">stripy</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="n">even_mesh</span> <span class="o">=</span> <span class="n">stripy</span><span class="o">.</span><span class="n">spherical_meshes</span><span class="o">.</span><span class="n">icosahedral_mesh</span><span class="p">(</span><span class="n">include_face_points</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">tree</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">refinement_levels</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
@@ -992,7 +989,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="n">latitudes_in_degrees</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">degrees</span><span class="p">(</span><span class="n">latitudes_in_radians</span><span class="p">)</span> 
 
 <span class="n">longitudes_in_radians</span> <span class="o">=</span> <span class="n">even_mesh</span><span class="o">.</span><span class="n">lons</span> 
-<span class="n">longitudes_in_degrees</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">degrees</span><span class="p">(</span><span class="n">longitudes_in_radians</span><span class="p">)</span><span class="o">%</span><span class="mf">360.0</span> <span class="o">-</span> <span class="mf">180.0</span>
+<span class="n">longitudes_in_degrees</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">degrees</span><span class="p">(</span><span class="n">longitudes_in_radians</span><span class="p">)</span><span class="o">%</span><span class="k">360</span>.0 - 180.0
 </pre></div>
 </div>
 </div>
@@ -1003,8 +1000,8 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Here we plot the points on the globe to demonstrate that the points are evenly spaced and sufficiently well resolved</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
 
 <span class="kn">import</span> <span class="nn">cartopy.crs</span> <span class="k">as</span> <span class="nn">ccrs</span>
 <span class="kn">import</span> <span class="nn">cartopy.feature</span> <span class="k">as</span> <span class="nn">cfeature</span>
@@ -1023,6 +1020,12 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x1502dc2b0&gt;
+</pre></div>
+</div>
+<img alt="../../../../../_images/Notebook-5_3_1.png" src="../../../../../_images/Notebook-5_3_1.png" />
+</div>
 </div>
 </div>
 <div class="section" id="find-the-age-and-depth-values-on-these-points">
@@ -1031,14 +1034,14 @@ const thebe_selector_output = ".output, .cell_output"
 to define the interpolation routine again.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">map_raster_to_mesh</span><span class="p">(</span><span class="n">mesh</span><span class="p">,</span> <span class="n">latlongrid</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">map_raster_to_mesh</span><span class="p">(</span><span class="n">mesh</span><span class="p">,</span> <span class="n">latlongrid</span><span class="p">):</span>
     
     <span class="n">raster</span> <span class="o">=</span> <span class="n">latlongrid</span><span class="o">.</span><span class="n">T</span>
 
     <span class="n">latitudes_in_radians</span>  <span class="o">=</span> <span class="n">mesh</span><span class="o">.</span><span class="n">lats</span>
     <span class="n">longitudes_in_radians</span> <span class="o">=</span> <span class="n">mesh</span><span class="o">.</span><span class="n">lons</span> 
     <span class="n">latitudes_in_degrees</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">degrees</span><span class="p">(</span><span class="n">latitudes_in_radians</span><span class="p">)</span> 
-    <span class="n">longitudes_in_degrees</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">degrees</span><span class="p">(</span><span class="n">longitudes_in_radians</span><span class="p">)</span><span class="o">%</span><span class="mf">360.0</span> <span class="o">-</span> <span class="mf">180.0</span>
+    <span class="n">longitudes_in_degrees</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">degrees</span><span class="p">(</span><span class="n">longitudes_in_radians</span><span class="p">)</span><span class="o">%</span><span class="k">360</span>.0 - 180.0
 
     <span class="n">dlons</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mod</span><span class="p">(</span><span class="n">longitudes_in_degrees</span><span class="o">+</span><span class="mf">180.0</span><span class="p">,</span> <span class="mf">360.0</span><span class="p">)</span>
     <span class="n">dlats</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mod</span><span class="p">(</span><span class="n">latitudes_in_degrees</span><span class="o">+</span><span class="mi">90</span><span class="p">,</span> <span class="mf">180.0</span><span class="p">)</span>
@@ -1073,7 +1076,7 @@ to define the interpolation routine again.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">xarray</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">xarray</span>
 
 <span class="n">age_dataset</span> <span class="o">=</span> <span class="s2">&quot;../Data/age.3.6.nc&quot;</span>
 <span class="n">age_data</span> <span class="o">=</span> <span class="n">xarray</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="n">age_dataset</span><span class="p">)</span>
@@ -1088,6 +1091,13 @@ to define the interpolation routine again.</p>
 <span class="n">age</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">age</span><span class="p">)]</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.0</span>
 
 <span class="n">meshages</span> <span class="o">=</span> <span class="n">map_raster_to_mesh</span><span class="p">(</span><span class="n">even_mesh</span><span class="p">,</span> <span class="n">age</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/g3/zs57lnv5087f66fcky707_ww0000gp/T/ipykernel_18842/1013484211.py:20: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  mvals = ndimage.map_coordinates(raster, icoords , order=3, mode=&#39;nearest&#39;).astype(np.float)
 </pre></div>
 </div>
 </div>
@@ -1109,7 +1119,7 @@ to define the interpolation routine again.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">bottom</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">top</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">180</span><span class="p">,</span> <span class="o">-</span><span class="mi">90</span><span class="p">,</span> <span class="mi">180</span><span class="p">,</span> <span class="mi">90</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">bottom</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">top</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">180</span><span class="p">,</span> <span class="o">-</span><span class="mi">90</span><span class="p">,</span> <span class="mi">180</span><span class="p">,</span> <span class="mi">90</span><span class="p">)</span>
 <span class="n">map_extent</span> <span class="o">=</span> <span class="p">(</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">bottom</span><span class="p">,</span> <span class="n">top</span><span class="p">)</span>
 
 <span class="n">etopo_dataset</span> <span class="o">=</span> <span class="s2">&quot;http://thredds.socib.es/thredds/dodsC/ancillary_data/bathymetry/ETOPO1_Bed_g_gmt4.nc&quot;</span>
@@ -1127,18 +1137,28 @@ to define the interpolation routine again.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/g3/zs57lnv5087f66fcky707_ww0000gp/T/ipykernel_18842/1013484211.py:20: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  mvals = ndimage.map_coordinates(raster, icoords , order=3, mode=&#39;nearest&#39;).astype(np.float)
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
 <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">150</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">7000</span><span class="p">,</span><span class="o">-</span><span class="mi">2000</span><span class="p">)</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span> <span class="n">meshages</span><span class="p">[</span><span class="n">meshheights</span><span class="o">&lt;-</span><span class="mi">2000</span><span class="p">],</span> <span class="n">meshheights</span><span class="p">[</span><span class="n">meshheights</span><span class="o">&lt;-</span><span class="mi">2000</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span> <span class="n">meshages</span><span class="p">[</span><span class="n">meshheights</span><span class="o">&lt;-</span><span class="mi">2000</span><span class="p">],</span> <span class="n">meshheights</span><span class="p">[</span><span class="n">meshheights</span><span class="o">&lt;-</span><span class="mi">2000</span><span class="p">],</span> <span class="n">s</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;MyAwesomePlot.png&quot;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">250</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../../../_images/Notebook-5_10_0.png" src="../../../../../_images/Notebook-5_10_0.png" />
 </div>
 </div>
 </div>

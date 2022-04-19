@@ -619,7 +619,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2 has-children">
     <a class="reference internal" href="../Litho1pt0/Ex1-Litho1Layers.html">
-     Introduction to the stripy wrapper for litho 1.0
+     Introduction to the stripy/python wrapper for litho 1.0
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
     <label for="toctree-checkbox-8">
@@ -805,14 +805,11 @@ const thebe_selector_output = ".output, .cell_output"
 
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
-        <a class="dropdown-buttons"
-            href="../../../../_sources/Notebooks/Themes/SphericalMeshing/CartesianTriangulations/Ex1-Cartesian-Triangulations.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
+        
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../../../_sources/Notebooks/Themes/SphericalMeshing/CartesianTriangulations/Ex1-Cartesian-Triangulations.md"><button type="button"
+        <a class="dropdown-buttons" href="../../../../_sources/Notebooks/Themes/SphericalMeshing/CartesianTriangulations/Ex1-Cartesian-Triangulations.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
                 onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -848,14 +845,14 @@ const thebe_selector_output = ".output, .cell_output"
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/ANU-RSES-Education/EMSC-4033/master?urlpath=tree/Notebooks/Themes/SphericalMeshing/CartesianTriangulations/Ex1-Cartesian-Triangulations.md"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/ANU-RSES-Education/EMSC-4033/master?urlpath=tree/Notebooks/Themes/SphericalMeshing/CartesianTriangulations/Ex1-Cartesian-Triangulations.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../../../_static/images/logo_binder.svg"
                     alt="Interact on binder">Binder</button></a>
         
         
-        <a class="jupyterhub-button" href="https://emsc4033.rses.underworldcloud.org/hub/user-redirect/git-pull?repo=https://github.com/ANU-RSES-Education/EMSC-4033&urlpath=tree/EMSC-4033/Notebooks/Themes/SphericalMeshing/CartesianTriangulations/Ex1-Cartesian-Triangulations.md&branch=master"><button type="button"
+        <a class="jupyterhub-button" href="https://emsc4033.rses.underworldcloud.org/hub/user-redirect/git-pull?repo=https://github.com/ANU-RSES-Education/EMSC-4033&urlpath=tree/EMSC-4033/Notebooks/Themes/SphericalMeshing/CartesianTriangulations/Ex1-Cartesian-Triangulations.ipynb&branch=master"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
                 data-placement="left"><img class="jupyterhub-button-logo"
                     src="../../../../_static/images/logo_jupyterhub.svg"
@@ -989,7 +986,7 @@ const thebe_selector_output = ".output, .cell_output"
 <h2>Triangulate the vertices of a square mesh<a class="headerlink" href="#triangulate-the-vertices-of-a-square-mesh" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">stripy</span> <span class="k">as</span> <span class="nn">stripy</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">stripy</span> <span class="k">as</span> <span class="nn">stripy</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="c1"># Vertices of a square mesh</span>
@@ -1011,7 +1008,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">triangulation</span><span class="o">.</span><span class="n">areas</span><span class="p">())</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">triangulation</span><span class="o">.</span><span class="n">areas</span><span class="p">())</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">triangulation</span><span class="o">.</span><span class="n">npoints</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1025,7 +1022,7 @@ useful methods and attached data which can be listed with</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">refined_triangulation</span> <span class="o">=</span> <span class="n">stripy</span><span class="o">.</span><span class="n">Triangulation</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">vertices_x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">vertices_y</span><span class="p">,</span> <span class="n">refinement_levels</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">permute</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">refined_triangulation</span> <span class="o">=</span> <span class="n">stripy</span><span class="o">.</span><span class="n">Triangulation</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">vertices_x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">vertices_y</span><span class="p">,</span> <span class="n">refinement_levels</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">permute</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">refined_triangulation</span><span class="o">.</span><span class="n">npoints</span><span class="p">)</span>
 </pre></div>
@@ -1041,7 +1038,7 @@ is through a standard map projection of the sphere to the plane.</p>
 Other projections to try include <code class="docutils literal notranslate"><span class="pre">Robinson</span></code>, <code class="docutils literal notranslate"><span class="pre">Orthographic</span></code>, <code class="docutils literal notranslate"><span class="pre">PlateCarree</span></code>)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
 
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 

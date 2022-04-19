@@ -619,7 +619,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2 has-children">
     <a class="reference internal" href="../Litho1pt0/Ex1-Litho1Layers.html">
-     Introduction to the stripy wrapper for litho 1.0
+     Introduction to the stripy/python wrapper for litho 1.0
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
     <label for="toctree-checkbox-8">
@@ -805,14 +805,11 @@ const thebe_selector_output = ".output, .cell_output"
 
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
-        <a class="dropdown-buttons"
-            href="../../../../_sources/Notebooks/Themes/SphericalMeshing/SphericalTriangulations/Ex7-Refinement-of-Triangulations.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
+        
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../../../_sources/Notebooks/Themes/SphericalMeshing/SphericalTriangulations/Ex7-Refinement-of-Triangulations.md"><button type="button"
+        <a class="dropdown-buttons" href="../../../../_sources/Notebooks/Themes/SphericalMeshing/SphericalTriangulations/Ex7-Refinement-of-Triangulations.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
                 onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -848,14 +845,14 @@ const thebe_selector_output = ".output, .cell_output"
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/ANU-RSES-Education/EMSC-4033/master?urlpath=tree/Notebooks/Themes/SphericalMeshing/SphericalTriangulations/Ex7-Refinement-of-Triangulations.md"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/ANU-RSES-Education/EMSC-4033/master?urlpath=tree/Notebooks/Themes/SphericalMeshing/SphericalTriangulations/Ex7-Refinement-of-Triangulations.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../../../_static/images/logo_binder.svg"
                     alt="Interact on binder">Binder</button></a>
         
         
-        <a class="jupyterhub-button" href="https://emsc4033.rses.underworldcloud.org/hub/user-redirect/git-pull?repo=https://github.com/ANU-RSES-Education/EMSC-4033&urlpath=tree/EMSC-4033/Notebooks/Themes/SphericalMeshing/SphericalTriangulations/Ex7-Refinement-of-Triangulations.md&branch=master"><button type="button"
+        <a class="jupyterhub-button" href="https://emsc4033.rses.underworldcloud.org/hub/user-redirect/git-pull?repo=https://github.com/ANU-RSES-Education/EMSC-4033&urlpath=tree/EMSC-4033/Notebooks/Themes/SphericalMeshing/SphericalTriangulations/Ex7-Refinement-of-Triangulations.ipynb&branch=master"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
                 data-placement="left"><img class="jupyterhub-button-logo"
                     src="../../../../_static/images/logo_jupyterhub.svg"
@@ -979,7 +976,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">stripy</span> <span class="k">as</span> <span class="nn">stripy</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">stripy</span> <span class="k">as</span> <span class="nn">stripy</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 </pre></div>
 </div>
@@ -991,7 +988,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>The <code class="docutils literal notranslate"><span class="pre">refinement_level</span></code> parameter of the <code class="docutils literal notranslate"><span class="pre">stripy</span></code> meshes makes repeated loops determining the bisection points of all the existing edges in the triangulation and then creating a new triangulation that includes these points and the original ones. These refinement operations can also be used for non-uniform refinement.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ico0</span> <span class="o">=</span> <span class="n">stripy</span><span class="o">.</span><span class="n">spherical_meshes</span><span class="o">.</span><span class="n">icosahedral_mesh</span><span class="p">(</span><span class="n">refinement_levels</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ico0</span> <span class="o">=</span> <span class="n">stripy</span><span class="o">.</span><span class="n">spherical_meshes</span><span class="o">.</span><span class="n">icosahedral_mesh</span><span class="p">(</span><span class="n">refinement_levels</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">ico1</span> <span class="o">=</span> <span class="n">stripy</span><span class="o">.</span><span class="n">spherical_meshes</span><span class="o">.</span><span class="n">icosahedral_mesh</span><span class="p">(</span><span class="n">refinement_levels</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">ico2</span> <span class="o">=</span> <span class="n">stripy</span><span class="o">.</span><span class="n">spherical_meshes</span><span class="o">.</span><span class="n">icosahedral_mesh</span><span class="p">(</span><span class="n">refinement_levels</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">ico3</span> <span class="o">=</span> <span class="n">stripy</span><span class="o">.</span><span class="n">spherical_meshes</span><span class="o">.</span><span class="n">icosahedral_mesh</span><span class="p">(</span><span class="n">refinement_levels</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
@@ -1023,7 +1020,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>These are provided as follows:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mlons</span><span class="p">,</span> <span class="n">mlats</span> <span class="o">=</span> <span class="n">ico3</span><span class="o">.</span><span class="n">midpoint_refine_triangulation_by_vertices</span><span class="p">(</span><span class="n">vertices</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mlons</span><span class="p">,</span> <span class="n">mlats</span> <span class="o">=</span> <span class="n">ico3</span><span class="o">.</span><span class="n">midpoint_refine_triangulation_by_vertices</span><span class="p">(</span><span class="n">vertices</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">])</span>
 <span class="n">ico3mv</span> <span class="o">=</span> <span class="n">stripy</span><span class="o">.</span><span class="n">sTriangulation</span><span class="p">(</span><span class="n">mlons</span><span class="p">,</span> <span class="n">mlats</span><span class="p">)</span>
 
 <span class="n">mlons</span><span class="p">,</span> <span class="n">mlats</span> <span class="o">=</span> <span class="n">ico3</span><span class="o">.</span><span class="n">edge_refine_triangulation_by_vertices</span><span class="p">(</span><span class="n">vertices</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">])</span>
@@ -1053,9 +1050,9 @@ const thebe_selector_output = ".output, .cell_output"
 <h2>Visualisation of refinement strategies<a class="headerlink" href="#visualisation-of-refinement-strategies" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
-<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
 
 <span class="kn">import</span> <span class="nn">cartopy</span>
 <span class="kn">import</span> <span class="nn">cartopy.crs</span> <span class="k">as</span> <span class="nn">ccrs</span>
@@ -1114,14 +1111,14 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Here we refine a triangulation to a specific criterion - resolving two points in distinct triangles or with distinct nearest neighbour vertices.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">points</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span> <span class="mf">0.03</span><span class="p">,</span> <span class="mf">0.035</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.055</span><span class="p">]])</span><span class="o">.</span><span class="n">T</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">points</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span> <span class="mf">0.03</span><span class="p">,</span> <span class="mf">0.035</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.055</span><span class="p">]])</span><span class="o">.</span><span class="n">T</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">triangulations</span> <span class="o">=</span> <span class="p">[</span><span class="n">ico1</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">triangulations</span> <span class="o">=</span> <span class="p">[</span><span class="n">ico1</span><span class="p">]</span>
 <span class="n">nearest</span><span class="p">,</span> <span class="n">distances</span> <span class="o">=</span> <span class="n">triangulations</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">nearest_vertex</span><span class="p">(</span><span class="n">points</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">points</span><span class="p">[:,</span><span class="mi">1</span><span class="p">])</span>
 
 <span class="n">max_depth</span> <span class="o">=</span> <span class="mi">15</span>
@@ -1144,7 +1141,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">triangulations</span> <span class="o">=</span> <span class="p">[</span><span class="n">ico1</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">triangulations</span> <span class="o">=</span> <span class="p">[</span><span class="n">ico1</span><span class="p">]</span>
 <span class="n">nearest</span><span class="p">,</span> <span class="n">distances</span> <span class="o">=</span> <span class="n">triangulations</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">nearest_vertex</span><span class="p">(</span><span class="n">points</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">points</span><span class="p">[:,</span><span class="mi">1</span><span class="p">])</span>
 
 <span class="n">max_depth</span> <span class="o">=</span> <span class="mi">15</span>
@@ -1167,7 +1164,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">triangulations</span> <span class="o">=</span> <span class="p">[</span><span class="n">ico1</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">triangulations</span> <span class="o">=</span> <span class="p">[</span><span class="n">ico1</span><span class="p">]</span>
 
 <span class="n">in_triangle</span> <span class="o">=</span> <span class="n">triangulations</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">containing_triangle</span><span class="p">(</span><span class="n">points</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">points</span><span class="p">[:,</span><span class="mi">1</span><span class="p">])</span>
 
@@ -1198,7 +1195,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">triangulations</span> <span class="o">=</span> <span class="p">[</span><span class="n">ico1</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">triangulations</span> <span class="o">=</span> <span class="p">[</span><span class="n">ico1</span><span class="p">]</span>
 
 <span class="n">in_triangle</span> <span class="o">=</span> <span class="n">triangulations</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">containing_triangle</span><span class="p">(</span><span class="n">points</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">points</span><span class="p">[:,</span><span class="mi">1</span><span class="p">])</span>
 
@@ -1230,96 +1227,88 @@ const thebe_selector_output = ".output, .cell_output"
 <h2>Visualisation of targetted refinement<a class="headerlink" href="#visualisation-of-targetted-refinement" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">lavavu</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">k3d</span>
 
-<span class="kn">from</span> <span class="nn">xvfbwrapper</span> <span class="kn">import</span> <span class="n">Xvfb</span>
-<span class="n">vdisplay</span> <span class="o">=</span> <span class="n">Xvfb</span><span class="p">()</span>
-<span class="k">try</span><span class="p">:</span>
-    <span class="n">vdisplay</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
-    <span class="n">xvfb</span> <span class="o">=</span> <span class="kc">True</span>
-
-<span class="k">except</span><span class="p">:</span>
-    <span class="n">xvfb</span> <span class="o">=</span> <span class="kc">False</span>
 
 <span class="c1">## The four different triangulation strategies</span>
 
-<span class="n">t1</span> <span class="o">=</span> <span class="n">edge_triangulations</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-<span class="n">t2</span> <span class="o">=</span> <span class="n">edge_t_triangulations</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-<span class="n">t3</span> <span class="o">=</span> <span class="n">centroid_triangulations</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-<span class="n">t4</span> <span class="o">=</span> <span class="n">centroid_t_triangulations</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">t</span> <span class="o">=</span> <span class="p">[</span> <span class="n">edge_triangulations</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span>
+      <span class="n">edge_t_triangulations</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span>
+      <span class="n">centroid_triangulations</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span>
+      <span class="n">centroid_t_triangulations</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="p">]</span>
 
-<span class="c1">## Fire up the viewer </span>
+<span class="n">plot</span> <span class="o">=</span> <span class="n">k3d</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">camera_auto_fit</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">grid_visible</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> 
+                <span class="n">menu_visibility</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">axes_helper</span><span class="o">=</span><span class="kc">False</span> <span class="p">)</span>
 
-<span class="n">lv</span> <span class="o">=</span> <span class="n">lavavu</span><span class="o">.</span><span class="n">Viewer</span><span class="p">(</span><span class="n">border</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">background</span><span class="o">=</span><span class="s2">&quot;#FFFFFF&quot;</span><span class="p">,</span> <span class="n">resolution</span><span class="o">=</span><span class="p">[</span><span class="mi">1000</span><span class="p">,</span><span class="mi">600</span><span class="p">],</span> <span class="n">near</span><span class="o">=-</span><span class="mf">10.0</span><span class="p">)</span>
 
-<span class="c1">## Add the nodes to mark the original triangulation</span>
+<span class="n">mesh_viewer</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">wire_viewer</span> <span class="o">=</span> <span class="p">[]</span>
 
-<span class="n">nodes</span> <span class="o">=</span> <span class="n">lv</span><span class="o">.</span><span class="n">points</span><span class="p">(</span><span class="s2">&quot;nodes&quot;</span><span class="p">,</span> <span class="n">pointsize</span><span class="o">=</span><span class="mf">10.0</span><span class="p">,</span> <span class="n">pointtype</span><span class="o">=</span><span class="s2">&quot;shiny&quot;</span><span class="p">,</span> <span class="n">colour</span><span class="o">=</span><span class="s2">&quot;#448080&quot;</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">0.75</span><span class="p">)</span>
-<span class="n">nodes</span><span class="o">.</span><span class="n">vertices</span><span class="p">(</span><span class="n">ico1</span><span class="o">.</span><span class="n">points</span><span class="o">*</span><span class="mf">1.01</span><span class="p">)</span>
-<span class="n">nodes2</span> <span class="o">=</span> <span class="n">lv</span><span class="o">.</span><span class="n">points</span><span class="p">(</span><span class="s2">&quot;SplitPoints&quot;</span><span class="p">,</span> <span class="n">pointsize</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">pointtype</span><span class="o">=</span><span class="s2">&quot;shiny&quot;</span><span class="p">,</span> <span class="n">colour</span><span class="o">=</span><span class="s2">&quot;#FF3300&quot;</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span> 
-<span class="n">nodes2</span><span class="o">.</span><span class="n">vertices</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">stripy</span><span class="o">.</span><span class="n">spherical</span><span class="o">.</span><span class="n">lonlat2xyz</span><span class="p">(</span><span class="n">points</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">points</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]))</span><span class="o">.</span><span class="n">T</span> <span class="o">*</span> <span class="mf">1.01</span><span class="p">)</span>
 
-<span class="c1">## </span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="p">):</span>
+    
+    
+    <span class="n">indices</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">simplices</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint32</span><span class="p">)</span>
+    <span class="n">points</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">points</span><span class="o">.</span><span class="n">T</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
 
-<span class="n">tris1w</span> <span class="o">=</span> <span class="n">lv</span><span class="o">.</span><span class="n">triangles</span><span class="p">(</span><span class="s2">&quot;t1w&quot;</span><span class="p">,</span>  <span class="n">wireframe</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">colour</span><span class="o">=</span><span class="s2">&quot;#444444&quot;</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
-<span class="n">tris1w</span><span class="o">.</span><span class="n">vertices</span><span class="p">(</span><span class="n">t1</span><span class="o">.</span><span class="n">points</span><span class="p">)</span>
-<span class="n">tris1w</span><span class="o">.</span><span class="n">indices</span><span class="p">(</span><span class="n">t1</span><span class="o">.</span><span class="n">simplices</span><span class="p">)</span>
 
-<span class="n">tris1s</span> <span class="o">=</span> <span class="n">lv</span><span class="o">.</span><span class="n">triangles</span><span class="p">(</span><span class="s2">&quot;t1s&quot;</span><span class="p">,</span>  <span class="n">wireframe</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">colour</span><span class="o">=</span><span class="s2">&quot;#77ff88&quot;</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
-<span class="n">tris1s</span><span class="o">.</span><span class="n">vertices</span><span class="p">(</span><span class="n">t1</span><span class="o">.</span><span class="n">points</span><span class="o">*</span><span class="mf">0.999</span><span class="p">)</span>
-<span class="n">tris1s</span><span class="o">.</span><span class="n">indices</span><span class="p">(</span><span class="n">t1</span><span class="o">.</span><span class="n">simplices</span><span class="p">)</span>
+    <span class="n">mesh_viewer</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">k3d</span><span class="o">.</span><span class="n">mesh</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">indices</span><span class="p">,</span> <span class="n">wireframe</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> 
+                   <span class="n">color</span><span class="o">=</span><span class="mh">0x99AABB</span><span class="p">,</span> 
+                   <span class="n">name</span><span class="o">=</span><span class="s2">&quot;mesh viewer </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span>
+                   <span class="n">flat_shading</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">1.0</span>  <span class="p">))</span>
 
-<span class="n">tris2w</span> <span class="o">=</span> <span class="n">lv</span><span class="o">.</span><span class="n">triangles</span><span class="p">(</span><span class="s2">&quot;t2w&quot;</span><span class="p">,</span>  <span class="n">wireframe</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">colour</span><span class="o">=</span><span class="s2">&quot;#444444&quot;</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
-<span class="n">tris2w</span><span class="o">.</span><span class="n">vertices</span><span class="p">(</span><span class="n">t2</span><span class="o">.</span><span class="n">points</span><span class="p">)</span>
-<span class="n">tris2w</span><span class="o">.</span><span class="n">indices</span><span class="p">(</span><span class="n">t2</span><span class="o">.</span><span class="n">simplices</span><span class="p">)</span>
+    <span class="n">wire_viewer</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">k3d</span><span class="o">.</span><span class="n">mesh</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">indices</span><span class="p">,</span> <span class="n">wireframe</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> 
+                   <span class="n">color</span><span class="o">=</span><span class="mh">0x002244</span><span class="p">,</span> 
+                   <span class="n">name</span><span class="o">=</span><span class="s2">&quot;wire frame viewer </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span>
+                   <span class="n">flat_shading</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">1.0</span>  <span class="p">))</span>
 
-<span class="n">tris2s</span> <span class="o">=</span> <span class="n">lv</span><span class="o">.</span><span class="n">triangles</span><span class="p">(</span><span class="s2">&quot;t2s&quot;</span><span class="p">,</span>  <span class="n">wireframe</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">colour</span><span class="o">=</span><span class="s2">&quot;#77ff88&quot;</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
-<span class="n">tris2s</span><span class="o">.</span><span class="n">vertices</span><span class="p">(</span><span class="n">t2</span><span class="o">.</span><span class="n">points</span><span class="o">*</span><span class="mf">0.999</span><span class="p">)</span>
-<span class="n">tris2s</span><span class="o">.</span><span class="n">indices</span><span class="p">(</span><span class="n">t2</span><span class="o">.</span><span class="n">simplices</span><span class="p">)</span>
+    <span class="n">plot</span> <span class="o">+=</span> <span class="n">mesh_viewer</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">plot</span> <span class="o">+=</span> <span class="n">wire_viewer</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    
 
-<span class="n">tris3w</span> <span class="o">=</span> <span class="n">lv</span><span class="o">.</span><span class="n">triangles</span><span class="p">(</span><span class="s2">&quot;t3w&quot;</span><span class="p">,</span>  <span class="n">wireframe</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">colour</span><span class="o">=</span><span class="s2">&quot;#444444&quot;</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
-<span class="n">tris3w</span><span class="o">.</span><span class="n">vertices</span><span class="p">(</span><span class="n">t3</span><span class="o">.</span><span class="n">points</span><span class="p">)</span>
-<span class="n">tris3w</span><span class="o">.</span><span class="n">indices</span><span class="p">(</span><span class="n">t3</span><span class="o">.</span><span class="n">simplices</span><span class="p">)</span>
+<span class="c1">## This helps to manage the wireframe / transparency</span>
 
-<span class="n">tris3s</span> <span class="o">=</span> <span class="n">lv</span><span class="o">.</span><span class="n">triangles</span><span class="p">(</span><span class="s2">&quot;t3s&quot;</span><span class="p">,</span>  <span class="n">wireframe</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">colour</span><span class="o">=</span><span class="s2">&quot;#77ff88&quot;</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
-<span class="n">tris3s</span><span class="o">.</span><span class="n">vertices</span><span class="p">(</span><span class="n">t3</span><span class="o">.</span><span class="n">points</span><span class="o">*</span><span class="mf">0.999</span><span class="p">)</span>
-<span class="n">tris3s</span><span class="o">.</span><span class="n">indices</span><span class="p">(</span><span class="n">t3</span><span class="o">.</span><span class="n">simplices</span><span class="p">)</span>
 
-<span class="n">tris4w</span> <span class="o">=</span> <span class="n">lv</span><span class="o">.</span><span class="n">triangles</span><span class="p">(</span><span class="s2">&quot;t4w&quot;</span><span class="p">,</span>  <span class="n">wireframe</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">colour</span><span class="o">=</span><span class="s2">&quot;#444444&quot;</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
-<span class="n">tris4w</span><span class="o">.</span><span class="n">vertices</span><span class="p">(</span><span class="n">t4</span><span class="o">.</span><span class="n">points</span><span class="p">)</span>
-<span class="n">tris4w</span><span class="o">.</span><span class="n">indices</span><span class="p">(</span><span class="n">t4</span><span class="o">.</span><span class="n">simplices</span><span class="p">)</span>
+<span class="n">indices</span> <span class="o">=</span> <span class="n">ico3</span><span class="o">.</span><span class="n">simplices</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint32</span><span class="p">)</span>
+<span class="n">points</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">(</span><span class="n">ico3</span><span class="o">.</span><span class="n">points</span><span class="o">.</span><span class="n">T</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
 
-<span class="n">tris4s</span> <span class="o">=</span> <span class="n">lv</span><span class="o">.</span><span class="n">triangles</span><span class="p">(</span><span class="s2">&quot;t4s&quot;</span><span class="p">,</span>  <span class="n">wireframe</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">colour</span><span class="o">=</span><span class="s2">&quot;#77ff88&quot;</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
-<span class="n">tris4s</span><span class="o">.</span><span class="n">vertices</span><span class="p">(</span><span class="n">t4</span><span class="o">.</span><span class="n">points</span><span class="o">*</span><span class="mf">0.999</span><span class="p">)</span>
-<span class="n">tris4s</span><span class="o">.</span><span class="n">indices</span><span class="p">(</span><span class="n">t4</span><span class="o">.</span><span class="n">simplices</span><span class="p">)</span>
 
-<span class="n">lv</span><span class="o">.</span><span class="n">hide</span><span class="p">(</span><span class="s2">&quot;t1s&quot;</span><span class="p">)</span>
-<span class="n">lv</span><span class="o">.</span><span class="n">hide</span><span class="p">(</span><span class="s2">&quot;t1w&quot;</span><span class="p">)</span>
-<span class="n">lv</span><span class="o">.</span><span class="n">hide</span><span class="p">(</span><span class="s2">&quot;t2s&quot;</span><span class="p">)</span>
-<span class="n">lv</span><span class="o">.</span><span class="n">hide</span><span class="p">(</span><span class="s2">&quot;t2w&quot;</span><span class="p">)</span>
-<span class="n">lv</span><span class="o">.</span><span class="n">hide</span><span class="p">(</span><span class="s2">&quot;t4s&quot;</span><span class="p">)</span>
-<span class="n">lv</span><span class="o">.</span><span class="n">hide</span><span class="p">(</span><span class="s2">&quot;t4w&quot;</span><span class="p">)</span>
+<span class="n">background</span> <span class="o">=</span> <span class="n">k3d</span><span class="o">.</span><span class="n">mesh</span><span class="p">(</span><span class="n">points</span><span class="o">*</span><span class="mf">0.9</span><span class="p">,</span> <span class="n">indices</span><span class="p">,</span> <span class="n">wireframe</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> 
+                   <span class="n">color</span><span class="o">=</span><span class="mh">0xBBBBBB</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">flat_shading</span><span class="o">=</span><span class="kc">False</span>  <span class="p">)</span>
 
-<span class="n">lv</span><span class="o">.</span><span class="n">translation</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">3.748</span><span class="p">)</span>
-<span class="n">lv</span><span class="o">.</span><span class="n">rotation</span><span class="p">(</span><span class="mf">37.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">90.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">37.5</span><span class="p">)</span>
+<span class="n">plot</span> <span class="o">+=</span> <span class="n">background</span>
+<span class="n">plot</span><span class="o">.</span><span class="n">display</span><span class="p">()</span>
 
-<span class="n">lv</span><span class="o">.</span><span class="n">control</span><span class="o">.</span><span class="n">Panel</span><span class="p">()</span>
-<span class="n">lv</span><span class="o">.</span><span class="n">control</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">command</span><span class="o">=</span><span class="s2">&quot;hide triangles; show t1s; show t1w; redraw&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;EBV&quot;</span><span class="p">)</span>
-<span class="n">lv</span><span class="o">.</span><span class="n">control</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">command</span><span class="o">=</span><span class="s2">&quot;hide triangles; show t2s; show t2w; redraw&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;EBT&quot;</span><span class="p">)</span>
-<span class="n">lv</span><span class="o">.</span><span class="n">control</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">command</span><span class="o">=</span><span class="s2">&quot;hide triangles; show t3s; show t3w; redraw&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;CBV&quot;</span><span class="p">)</span>
-<span class="n">lv</span><span class="o">.</span><span class="n">control</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">command</span><span class="o">=</span><span class="s2">&quot;hide triangles; show t4s; show t4w; redraw&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;CBT&quot;</span><span class="p">)</span>
-<span class="n">lv</span><span class="o">.</span><span class="n">control</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="c1">## ## ## </span>
 
-<span class="n">vdisplay</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interact</span><span class="p">,</span> <span class="n">interactive</span>
+<span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
+
+<span class="n">choices</span> <span class="o">=</span> <span class="p">{</span>  <span class="s2">&quot;edge triangulation&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+             <span class="s2">&quot;edge t triangulation&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> 
+             <span class="s2">&quot;centroid triangulation&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> 
+             <span class="s2">&quot;centroid t triangulation&quot;</span><span class="p">:</span> <span class="mi">3</span>  <span class="p">}</span>
+
+<span class="nd">@interact</span><span class="p">(</span><span class="n">choice</span><span class="o">=</span><span class="n">choices</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+<span class="k">def</span> <span class="nf">chooser</span><span class="p">(</span><span class="n">choice</span><span class="p">):</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="p">):</span>
+        <span class="n">mesh_viewer</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">visible</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">wire_viewer</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">visible</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="n">mesh_viewer</span><span class="p">[</span><span class="n">choices</span><span class="p">[</span><span class="n">choice</span><span class="p">]]</span><span class="o">.</span><span class="n">visible</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">wire_viewer</span><span class="p">[</span><span class="n">choices</span><span class="p">[</span><span class="n">choice</span><span class="p">]]</span><span class="o">.</span><span class="n">visible</span> <span class="o">=</span> <span class="kc">True</span>
+    
+    <span class="k">return</span> 
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
-<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
 
 <span class="kn">import</span> <span class="nn">cartopy</span>
 <span class="kn">import</span> <span class="nn">cartopy.crs</span> <span class="k">as</span> <span class="nn">ccrs</span>
@@ -1402,8 +1391,6 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="n">equant</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">E</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">E</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">size_ratio</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">A</span><span class="p">))</span>
 <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;CBT&quot;</span><span class="p">,</span> <span class="n">T</span><span class="o">.</span><span class="n">simplices</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">equant</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="n">equant</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">size_ratio</span><span class="p">)</span>
-
-
 </pre></div>
 </div>
 </div>

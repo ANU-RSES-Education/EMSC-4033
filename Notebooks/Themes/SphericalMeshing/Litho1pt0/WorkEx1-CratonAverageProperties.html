@@ -619,7 +619,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2 current active has-children">
     <a class="reference internal" href="Ex1-Litho1Layers.html">
-     Introduction to the stripy wrapper for litho 1.0
+     Introduction to the stripy/python wrapper for litho 1.0
     </a>
     <input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
     <label for="toctree-checkbox-8">
@@ -805,14 +805,11 @@ const thebe_selector_output = ".output, .cell_output"
 
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
-        <a class="dropdown-buttons"
-            href="../../../../_sources/Notebooks/Themes/SphericalMeshing/Litho1pt0/WorkEx1-CratonAverageProperties.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
+        
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../../../_sources/Notebooks/Themes/SphericalMeshing/Litho1pt0/WorkEx1-CratonAverageProperties.md"><button type="button"
+        <a class="dropdown-buttons" href="../../../../_sources/Notebooks/Themes/SphericalMeshing/Litho1pt0/WorkEx1-CratonAverageProperties.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
                 onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -848,14 +845,14 @@ const thebe_selector_output = ".output, .cell_output"
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/ANU-RSES-Education/EMSC-4033/master?urlpath=tree/Notebooks/Themes/SphericalMeshing/Litho1pt0/WorkEx1-CratonAverageProperties.md"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/ANU-RSES-Education/EMSC-4033/master?urlpath=tree/Notebooks/Themes/SphericalMeshing/Litho1pt0/WorkEx1-CratonAverageProperties.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../../../_static/images/logo_binder.svg"
                     alt="Interact on binder">Binder</button></a>
         
         
-        <a class="jupyterhub-button" href="https://emsc4033.rses.underworldcloud.org/hub/user-redirect/git-pull?repo=https://github.com/ANU-RSES-Education/EMSC-4033&urlpath=tree/EMSC-4033/Notebooks/Themes/SphericalMeshing/Litho1pt0/WorkEx1-CratonAverageProperties.md&branch=master"><button type="button"
+        <a class="jupyterhub-button" href="https://emsc4033.rses.underworldcloud.org/hub/user-redirect/git-pull?repo=https://github.com/ANU-RSES-Education/EMSC-4033&urlpath=tree/EMSC-4033/Notebooks/Themes/SphericalMeshing/Litho1pt0/WorkEx1-CratonAverageProperties.ipynb&branch=master"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
                 data-placement="left"><img class="jupyterhub-button-logo"
                     src="../../../../_static/images/logo_jupyterhub.svg"
@@ -905,7 +902,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Stripy can produce the relevant sample points (we could, perhaps, use the original sample points for the litho1.0 model, or well- distributed points from a face-included icosahedron). Litho1.0 and Crust1.0 have the interpolation tools we need.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">litho1pt0</span> <span class="k">as</span> <span class="nn">litho1pt0</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">litho1pt0</span> <span class="k">as</span> <span class="nn">litho1pt0</span>
 <span class="kn">import</span> <span class="nn">stripy</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 </pre></div>
@@ -914,44 +911,56 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">even_mesh</span> <span class="o">=</span> <span class="n">stripy</span><span class="o">.</span><span class="n">spherical_meshes</span><span class="o">.</span><span class="n">icosahedral_mesh</span><span class="p">(</span><span class="n">include_face_points</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">refinement_levels</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">even_mesh</span> <span class="o">=</span> <span class="n">stripy</span><span class="o">.</span><span class="n">spherical_meshes</span><span class="o">.</span><span class="n">icosahedral_mesh</span><span class="p">(</span><span class="n">include_face_points</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">refinement_levels</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">number_of_mesh_points</span> <span class="o">=</span> <span class="n">even_mesh</span><span class="o">.</span><span class="n">npoints</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">number_of_mesh_points</span> <span class="o">=</span> <span class="n">even_mesh</span><span class="o">.</span><span class="n">npoints</span>
 <span class="nb">print</span> <span class="p">(</span><span class="n">number_of_mesh_points</span><span class="p">)</span>
 <span class="nb">print</span> <span class="p">(</span><span class="n">even_mesh</span><span class="o">.</span><span class="n">lats</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">latitudes_in_radians</span> <span class="o">=</span> <span class="n">even_mesh</span><span class="o">.</span><span class="n">lats</span>
-<span class="n">latitudes_in_degrees</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">degrees</span><span class="p">(</span><span class="n">latitudes_in_radians</span><span class="p">)</span>
-
-<span class="n">longitudes_in_radians</span> <span class="o">=</span> <span class="n">even_mesh</span><span class="o">.</span><span class="n">lons</span> 
-<span class="n">longitudes_in_degrees</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">degrees</span><span class="p">(</span><span class="n">longitudes_in_radians</span><span class="p">)</span><span class="o">%</span><span class="mf">360.0</span> <span class="o">-</span> <span class="mf">180.0</span>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>30722
+(30722,)
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">## Plot these points to check the mesh is reasonable</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">latitudes_in_radians</span> <span class="o">=</span> <span class="n">even_mesh</span><span class="o">.</span><span class="n">lats</span>
+<span class="n">latitudes_in_degrees</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">degrees</span><span class="p">(</span><span class="n">latitudes_in_radians</span><span class="p">)</span>
+
+<span class="n">longitudes_in_radians</span> <span class="o">=</span> <span class="n">even_mesh</span><span class="o">.</span><span class="n">lons</span> 
+<span class="n">longitudes_in_degrees</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">degrees</span><span class="p">(</span><span class="n">longitudes_in_radians</span><span class="p">)</span><span class="o">%</span><span class="k">360</span>.0 - 180.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Plot these points to check the mesh is reasonable</span>
 
 <span class="nb">print</span> <span class="p">(</span><span class="n">latitudes_in_degrees</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">latitudes_in_degrees</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
 <span class="nb">print</span> <span class="p">(</span><span class="n">longitudes_in_degrees</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">longitudes_in_degrees</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-90.0 90.0
+-180.0 180.0
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">## Other version of this</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Other version of this</span>
 
 <span class="c1"># Make an empty array with the same size as the number of mesh points</span>
 <span class="n">crustype2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">number_of_mesh_points</span><span class="p">)</span>
@@ -959,7 +968,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 <span class="c1"># Loop and fill the array with crust regionalisation values</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">even_mesh</span><span class="o">.</span><span class="n">npoints</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">i</span><span class="o">%</span><span class="mi">1000</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">i</span><span class="o">%</span><span class="k">1000</span> == 0:
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Iteration: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
     <span class="n">crustype2</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">litho1pt0</span><span class="o">.</span><span class="n">crust_type_at</span><span class="p">(</span><span class="n">lat</span><span class="o">=</span><span class="n">latitudes_in_degrees</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">lon</span><span class="o">=</span><span class="n">longitudes_in_degrees</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
     
@@ -967,19 +976,77 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 </div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">## Now need depth values from litho1pt0 geophysical model </span>
-
-<span class="n">litho1pt0</span><span class="o">.</span><span class="n">l1_layer_decode</span>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Iteration: 0
+Iteration: 1000
+Iteration: 2000
+Iteration: 3000
+Iteration: 4000
+Iteration: 5000
+Iteration: 6000
+Iteration: 7000
+Iteration: 8000
+Iteration: 9000
+Iteration: 10000
+Iteration: 11000
+Iteration: 12000
+Iteration: 13000
+Iteration: 14000
+Iteration: 15000
+Iteration: 16000
+Iteration: 17000
+Iteration: 18000
+Iteration: 19000
+Iteration: 20000
+Iteration: 21000
+Iteration: 22000
+Iteration: 23000
+Iteration: 24000
+Iteration: 25000
+Iteration: 26000
+Iteration: 27000
+Iteration: 28000
+Iteration: 29000
+Iteration: 30000
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">l1</span> <span class="o">=</span> <span class="n">litho1pt0</span><span class="o">.</span><span class="n">layer_depth</span><span class="p">(</span><span class="n">latitudes_in_degrees</span><span class="p">,</span> <span class="n">longitudes_in_degrees</span><span class="p">,</span> <span class="s2">&quot;LID-BOTTOM&quot;</span><span class="p">)</span> <span class="o">*</span><span class="mf">0.001</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Now need depth values from litho1pt0 geophysical model </span>
+
+<span class="n">litho1pt0</span><span class="o">.</span><span class="n">l1_layer_decode</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>OrderedDict([(&#39;ASTHENO-TOP&#39;, 0),
+             (&#39;LID-BOTTOM&#39;, 1),
+             (&#39;LID-TOP&#39;, 2),
+             (&#39;CRUST3-BOTTOM&#39;, 3),
+             (&#39;CRUST3-TOP&#39;, 4),
+             (&#39;CRUST2-BOTTOM&#39;, 5),
+             (&#39;CRUST2-TOP&#39;, 6),
+             (&#39;CRUST1-BOTTOM&#39;, 7),
+             (&#39;CRUST1-TOP&#39;, 8),
+             (&#39;SEDS3-BOTTOM&#39;, 9),
+             (&#39;SEDS3-TOP&#39;, 10),
+             (&#39;SEDS2-BOTTOM&#39;, 11),
+             (&#39;SEDS2-TOP&#39;, 12),
+             (&#39;SEDS1-BOTTOM&#39;, 13),
+             (&#39;SEDS1-TOP&#39;, 14),
+             (&#39;WATER-BOTTOM&#39;, 15),
+             (&#39;WATER-TOP&#39;, 16),
+             (&#39;ICE-BOTTOM&#39;, 17),
+             (&#39;ICE-TOP&#39;, 18)])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">l1</span> <span class="o">=</span> <span class="n">litho1pt0</span><span class="o">.</span><span class="n">layer_depth</span><span class="p">(</span><span class="n">latitudes_in_degrees</span><span class="p">,</span> <span class="n">longitudes_in_degrees</span><span class="p">,</span> <span class="s2">&quot;LID-BOTTOM&quot;</span><span class="p">)</span> <span class="o">*</span><span class="mf">0.001</span>
 <span class="n">l2</span> <span class="o">=</span> <span class="n">litho1pt0</span><span class="o">.</span><span class="n">layer_depth</span><span class="p">(</span><span class="n">latitudes_in_degrees</span><span class="p">,</span> <span class="n">longitudes_in_degrees</span><span class="p">,</span> <span class="s2">&quot;LID-TOP&quot;</span><span class="p">)</span> <span class="o">*</span><span class="mf">0.001</span>
 
 <span class="n">lthickness</span> <span class="o">=</span> <span class="p">(</span><span class="n">l1</span> <span class="o">-</span> <span class="n">l2</span><span class="p">)</span>
@@ -988,10 +1055,15 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Litho thickness - 0.18207070637820522, 270.38195360489254
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">c1</span> <span class="o">=</span> <span class="n">litho1pt0</span><span class="o">.</span><span class="n">layer_depth</span><span class="p">(</span><span class="n">latitudes_in_degrees</span><span class="p">,</span> <span class="n">longitudes_in_degrees</span><span class="p">,</span> <span class="s2">&quot;CRUST3-BOTTOM&quot;</span><span class="p">)</span> <span class="o">*</span><span class="mf">0.001</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c1</span> <span class="o">=</span> <span class="n">litho1pt0</span><span class="o">.</span><span class="n">layer_depth</span><span class="p">(</span><span class="n">latitudes_in_degrees</span><span class="p">,</span> <span class="n">longitudes_in_degrees</span><span class="p">,</span> <span class="s2">&quot;CRUST3-BOTTOM&quot;</span><span class="p">)</span> <span class="o">*</span><span class="mf">0.001</span>
 <span class="n">c2</span> <span class="o">=</span> <span class="n">litho1pt0</span><span class="o">.</span><span class="n">layer_depth</span><span class="p">(</span><span class="n">latitudes_in_degrees</span><span class="p">,</span> <span class="n">longitudes_in_degrees</span><span class="p">,</span> <span class="s2">&quot;CRUST1-TOP&quot;</span><span class="p">)</span> <span class="o">*</span><span class="mf">0.001</span>
 
 <span class="n">s0</span> <span class="o">=</span> <span class="n">litho1pt0</span><span class="o">.</span><span class="n">layer_depth</span><span class="p">(</span><span class="n">latitudes_in_degrees</span><span class="p">,</span> <span class="n">longitudes_in_degrees</span><span class="p">,</span> <span class="s2">&quot;SEDS1-TOP&quot;</span><span class="p">)</span> <span class="o">*</span><span class="mf">0.001</span>
@@ -1003,12 +1075,17 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Crust thickness - 0.6228762225032742, 80.13736217341496
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">## Is that sensible ?</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Is that sensible ?</span>
 
-<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
 
 <span class="kn">import</span> <span class="nn">cartopy</span>
 <span class="kn">import</span> <span class="nn">cartopy.crs</span> <span class="k">as</span> <span class="nn">ccrs</span>
@@ -1028,7 +1105,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 <span class="n">colormap</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s1">&#39;RdYlBu_r&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
 
-<span class="n">m</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">longitudes_in_degrees</span><span class="p">,</span> <span class="n">latitudes_in_degrees</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">sthickness</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">colormap</span><span class="p">,</span>
+<span class="n">m</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">longitudes_in_degrees</span><span class="p">,</span> <span class="n">latitudes_in_degrees</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">cthickness</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">colormap</span><span class="p">,</span>
                <span class="n">s</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">mappable</span><span class="o">=</span><span class="n">m</span><span class="p">,</span> <span class="n">orientation</span><span class="o">=</span><span class="s2">&quot;horizontal&quot;</span><span class="p">,</span> <span class="n">shrink</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
@@ -1038,17 +1115,23 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;cartopy.mpl.feature_artist.FeatureArtist at 0x12f0a9b80&gt;
+</pre></div>
+</div>
+<img alt="../../../../_images/WorkEx1-CratonAverageProperties_10_1.png" src="../../../../_images/WorkEx1-CratonAverageProperties_10_1.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">crustype</span> <span class="o">=</span> <span class="n">litho1pt0</span><span class="o">.</span><span class="n">crust_type_at</span><span class="p">(</span><span class="n">lat</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">degrees</span><span class="p">(</span><span class="n">even_mesh</span><span class="o">.</span><span class="n">lats</span><span class="p">),</span> <span class="n">lon</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">degrees</span><span class="p">(</span><span class="n">even_mesh</span><span class="o">.</span><span class="n">lons</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">crustype</span> <span class="o">=</span> <span class="n">litho1pt0</span><span class="o">.</span><span class="n">crust_type_at</span><span class="p">(</span><span class="n">lat</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">degrees</span><span class="p">(</span><span class="n">even_mesh</span><span class="o">.</span><span class="n">lats</span><span class="p">),</span> <span class="n">lon</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">degrees</span><span class="p">(</span><span class="n">even_mesh</span><span class="o">.</span><span class="n">lons</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># litho1pt0.c1_region_descriptor in 2,3,4 are Archean terranes - this is an easy way to get those values</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># litho1pt0.c1_region_descriptor in 2,3,4 are Archean terranes - this is an easy way to get those values</span>
 
 <span class="n">craton_cthickness</span> <span class="o">=</span> <span class="n">cthickness</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="n">crustype</span><span class="o">&lt;=</span><span class="mi">4</span><span class="p">,</span> <span class="n">crustype</span><span class="o">&gt;=</span><span class="mi">2</span><span class="p">)]</span>
 <span class="n">craton_lthickness</span> <span class="o">=</span> <span class="n">lthickness</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="n">crustype</span><span class="o">&lt;=</span><span class="mi">4</span><span class="p">,</span> <span class="n">crustype</span><span class="o">&gt;=</span><span class="mi">2</span><span class="p">)]</span>
@@ -1063,21 +1146,35 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">craton_lthickness</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">craton_lthickness</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">proton_lthickness</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>153.6753799728947
+129.3727533981214
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">crustName</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">litho1pt0</span><span class="o">.</span><span class="n">c1_region_descriptor</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">crustName</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">litho1pt0</span><span class="o">.</span><span class="n">c1_region_descriptor</span><span class="p">):</span>
     <span class="k">if</span> <span class="s2">&quot;Archean&quot;</span> <span class="ow">in</span> <span class="n">crustName</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="s2">&quot;-&quot;</span><span class="p">,</span><span class="n">crustName</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2 - Archean (Antarctica)
+3 - Early Archean
+4 - Late Archean
+</pre></div>
 </div>
+</div>
+</div>
+<p>Another worked example: <a class="reference internal" href="WorkEx2-OceanDepthAge.html"><span class="doc std std-doc">Depth Age Relationship for the Oceans</span></a></p>
 </div>
 
     <script type="text/x-thebe-config">
