@@ -1,16 +1,12 @@
 name: base
 channels: 
     - conda-forge
-    - geo-down-under    
 dependencies:
-    - python=3.7
-    - cloudstor
-    - stripy
-    - litho1pt0
-    - proj=7.*.        # errors with cartopy when 6.2.* is used
-    - cartopy=0.18.*   # 0.17.?
+    - numpy
+    # - proj=7.*.        # errors with cartopy when 6.2.* is used
+    - cartopy
     - gdal
-    - libgdal  # ?
+    - libgdal 
     - obspy
     - pandas
     - pip 
@@ -18,11 +14,16 @@ dependencies:
     - xarray
     - jupytext
     - h5netcdf
+    - netcdf4
     - xlrd
     - openpyxl
+    - gfortran
     - pip:
-      - lavavu<1.7
+      - lavavu
       - xvfbwrapper 
+      - cloudstor
+      - stripy
+      - litho1pt0
 
       
       
