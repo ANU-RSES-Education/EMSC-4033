@@ -42,8 +42,8 @@ repository:
 
 launch_buttons:
   # switch this off when droplet is not active
-  #jupyterhub_url: "https://emsc4033-2021.rses.underworldcloud.org"  # The URL for your JupyterHub. 
-  binderhub_url:  "https://mybinder.org"  # The URL of the BinderHub (e.g., https://mybinder.org)
+  jupyterhub_url: "https://emsc4033.rses.underworldcloud.org"  # The URL for your JupyterHub. 
+  # binderhub_url:  "https://mybinder.org"  # The URL of the BinderHub (e.g., https://mybinder.org)
   notebook_interface: "classic" # "jupyterlab" or "classic"
 
 

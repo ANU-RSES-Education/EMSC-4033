@@ -21,7 +21,7 @@ For this example, you can see the [online version](https://ANU-RSES-Education.gi
 
 To make a "binder-like" link to a repository on a droplet that you have set up, you can read the [nbgitpuller documentation](https://jupyterhub.github.io/nbgitpuller/link.html) or fill out a form here:
 
-[![https://img.shields.io/badge/<LABEL>-<MESSAGE>-<COLOR>](https://img.shields.io/badge/Admin-LinkMaker-red)](https://jupyterhub.github.io/nbgitpuller/link.html?hub=https://emsc4033-2021.rses.underworldcloud.org&repo=https://github.com/ANU-RSES-Education/EMSC-4033)
+[![https://img.shields.io/badge/<LABEL>-<MESSAGE>-<COLOR>](https://img.shields.io/badge/Admin-LinkMaker-red)](https://jupyterhub.github.io/nbgitpuller/link.html?hub=https://emsc4033.rses.underworldcloud.org&repo=https://github.com/ANU-RSES-Education/EMSC-4033)
 
 You can launch this example particular example to try it out by clicking on this link. Your work is persistent. 
 
@@ -42,7 +42,7 @@ And the corresponding page for an admin user to authorise the users after they s
 
 Admin users also have access to the hub control panel to shut down wayward servers and add / remove users. 
     
-[![ControlPanel](https://img.shields.io/badge/Admin-HubControlPanel-red)](https://emsc4033-2021.rses.underworldcloud.org/hub/admin)
+[![ControlPanel](https://img.shields.io/badge/Admin-HubControlPanel-red)](https://emsc4033.rses.underworldcloud.org/hub/admin)
     
     
 
