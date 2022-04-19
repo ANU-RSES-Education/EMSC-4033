@@ -8,12 +8,12 @@ parts:
 
 - caption: What is Python like ?
   chapters:
-  - file: Notebooks/FirstSteps/Introduction2Python/0-CharacteristicsOfPython.md
+  - file: Notebooks/FirstSteps/Introduction2Python/0-CharacteristicsOfPython
     sections:
-    - file: Notebooks/FirstSteps/Introduction2Python/1-LePlumeDeMaTante.md
-    - file: Notebooks/FirstSteps/Introduction2Python/2-LiterateProgramming.md
-    - file: Notebooks/FirstSteps/Introduction2Python/3-IntroductionToJupyterNotebooks.md
-    - file: Notebooks/FirstSteps/Introduction2Python/4-IntroductionToIpython.md
+    - file: Notebooks/FirstSteps/Introduction2Python/1-LePlumeDeMaTante
+    - file: Notebooks/FirstSteps/Introduction2Python/2-LiterateProgramming
+    - file: Notebooks/FirstSteps/Introduction2Python/3-IntroductionToJupyterNotebooks
+    - file: Notebooks/FirstSteps/Introduction2Python/4-IntroductionToIpython
     - file: Notebooks/FirstSteps/Introduction2Python/5-PythonDataTypes
     - file: Notebooks/FirstSteps/Introduction2Python/6-PythonClasses  
 
@@ -27,32 +27,32 @@ parts:
 
 - caption: Python, Step by Step
   chapters:
-  - file: Notebooks/StepByStep/Introduction.md
+  - file: Notebooks/StepByStep/Introduction
     sections:
-    - file: Notebooks/StepByStep/Ex01/Ex1-GettingStarted.ipynb
-    - file: Notebooks/StepByStep/Ex02/Ex2-VariablesAndFunctions.ipynb
-    - file: Notebooks/StepByStep/Ex03/Ex3-LoopsAndConditionals.ipynb
-    - file: Notebooks/StepByStep/Ex04/Ex4-GuessingGames.ipynb
-    - file: Notebooks/StepByStep/Ex05/Ex5-ListsEtc.ipynb
-    - file: Notebooks/StepByStep/Ex06/Ex6-MoreLoops.ipynb
-    - file: Notebooks/StepByStep/Ex07/Ex7-Strings.ipynb
+    - file: Notebooks/StepByStep/Ex01/Ex1-GettingStarted
+    - file: Notebooks/StepByStep/Ex02/Ex2-VariablesAndFunctions
+    - file: Notebooks/StepByStep/Ex03/Ex3-LoopsAndConditionals
+    - file: Notebooks/StepByStep/Ex04/Ex4-GuessingGames
+    - file: Notebooks/StepByStep/Ex05/Ex5-ListsEtc
+    - file: Notebooks/StepByStep/Ex06/Ex6-MoreLoops
+    - file: Notebooks/StepByStep/Ex07/Ex7-Strings
     - file: Notebooks/StepByStep/Ex08/Charles other methods._ipynb
-    - file: Notebooks/StepByStep/Ex08/Ex8-ReadWriteFiles.ipynb
-    - file: Notebooks/StepByStep/Ex09/Ex9-Modules.ipynb
-    - file: Notebooks/StepByStep/Ex10/Ex10-Exceptions.ipynb
-    - file: Notebooks/StepByStep/Ex11/Ex11-numpy.ipynb
-    - file: Notebooks/StepByStep/Ex11/Ex11a-Sudoku.ipynb
-    - file: Notebooks/StepByStep/Ex12/Ex12-Plotting.ipynb
-    - file: Notebooks/StepByStep/Ex13/Ex13-RadioactiveDecay.ipynb
-    - file: Notebooks/StepByStep/Ex13/Untitled.ipynb
-    - file: Notebooks/StepByStep/Ex14/Ex14-PandasDatabases.ipynb
-    - file: Notebooks/StepByStep/Ex15/Ex15-MorePlotting.ipynb
+    - file: Notebooks/StepByStep/Ex08/Ex8-ReadWriteFiles
+    - file: Notebooks/StepByStep/Ex09/Ex9-Modules
+    - file: Notebooks/StepByStep/Ex10/Ex10-Exceptions
+    - file: Notebooks/StepByStep/Ex11/Ex11-numpy
+    - file: Notebooks/StepByStep/Ex11/Ex11a-Sudoku
+    - file: Notebooks/StepByStep/Ex12/Ex12-Plotting
+    - file: Notebooks/StepByStep/Ex13/Ex13-RadioactiveDecay
+    - file: Notebooks/StepByStep/Ex13/Untitled
+    - file: Notebooks/StepByStep/Ex14/Ex14-PandasDatabases
+    - file: Notebooks/StepByStep/Ex15/Ex15-MorePlotting
     - file: Notebooks/StepByStep/Ex15/original_ex_15._ipynb
-    - file: Notebooks/StepByStep/Ex16/Ex16-Maps.ipynb
-    - file: Notebooks/StepByStep/Ex17/Ex17-FourierAnalysis.ipynb
-    - file: Notebooks/StepByStep/Ex18/Ex18-Objects.ipynb
-    - file: Notebooks/StepByStep/Ex19/Ex19-DifferentialEqs.ipynb
-    - file: Notebooks/StepByStep/Ex20/Ex20-Sorting.ipynb
+    - file: Notebooks/StepByStep/Ex16/Ex16-Maps
+    - file: Notebooks/StepByStep/Ex17/Ex17-FourierAnalysis
+    - file: Notebooks/StepByStep/Ex18/Ex18-Objects
+    - file: Notebooks/StepByStep/Ex19/Ex19-DifferentialEqs
+    - file: Notebooks/StepByStep/Ex20/Ex20-Sorting
 
 
 
