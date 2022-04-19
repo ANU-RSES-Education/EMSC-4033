@@ -5,6 +5,9 @@ on:
     paths:
       - 'ServerID.md'                         # change the ID file
       - .github/workflows/install_tljh.yml    # or this file
+  
+  workflow_dispatch:
+
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
