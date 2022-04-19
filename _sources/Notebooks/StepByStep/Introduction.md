@@ -49,3 +49,7 @@ ecosystem. These exercises give you an introduction to the topic and you can dig
 
 There are more [in-depth examples](../Themes/0-StartHere.md) that you can now start to work through. These will
 assume you understand python and are trying to understand the programming process. 
+
+```python
+
+```

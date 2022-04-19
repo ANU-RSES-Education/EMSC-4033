@@ -888,14 +888,9 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="exercise-16-maps">
 <h1>Exercise 16 - Maps<a class="headerlink" href="#exercise-16-maps" title="Permalink to this headline">¶</a></h1>
+<p><em>Andrew Valentine, Louis Moresi, <a class="reference external" href="mailto:louis&#46;moresi&#37;&#52;&#48;anu&#46;edu&#46;au">louis<span>&#46;</span>moresi<span>&#64;</span>anu<span>&#46;</span>edu<span>&#46;</span>au</a></em></p>
 <p>Often in geosciences research, we wish to produce maps displaying spatial data. Python provides two sets of tools for handling mapping: <code class="docutils literal notranslate"><span class="pre">Basemap</span></code> and <code class="docutils literal notranslate"><span class="pre">Cartopy</span></code>. <code class="docutils literal notranslate"><span class="pre">Basemap</span></code> is currently probably more popular, but its developers have announced that it will shortly be phased out in favour of <code class="docutils literal notranslate"><span class="pre">Cartopy</span></code>. We will therefore use <code class="docutils literal notranslate"><span class="pre">Cartopy</span></code> in this course.</p>
-<p>The RSES Jupyter server does not have Cartopy installed by default. You therefore need to install a copy for yourself. To do this, you need to run the following code in a Python cell:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>import sys
-!conda install --yes --prefix {sys.prefix} cartopy
-</pre></div>
-</div>
-<p>Hopefully, your system will ‘think’ for a while and then display a message that the install has been successful. You only need to do this install procedure once; Cartopy will then be available for you to use in any Jupyter notebook. You can use a similar command to install any other package you may wish to use in future.</p>
-<p>Once Cartopy is installed, you should be able to import it. We only need certain submodules from Cartopy; we will do</p>
+<p>We only need certain submodules from Cartopy; we will do</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cartopy.crs</span> <span class="k">as</span> <span class="nn">ccrs</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 </pre></div>
@@ -991,6 +986,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
+<p>There is a more comprehensive guide to <code class="docutils literal notranslate"><span class="pre">cartopy</span></code> that you can find in the in-depth section under <span class="xref myst">Mapping</span></p>
 </div>
 
     <script type="text/x-thebe-config">
