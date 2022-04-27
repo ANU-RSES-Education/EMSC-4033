@@ -94,10 +94,10 @@ for i in range(0, A.shape[0]):
 print(A)
 print()
 
-print (A[::2, ::2])
+print(A[::2, ::2])
 
 
-print (A[::-1, ::-1])
+print(A[::-1, ::-1])
 ```
 
 ## Speed
@@ -325,7 +325,7 @@ X = np.arange(0.0, 2.0*np.pi, 0.0001)
 
 
 ```
-print (X)
+print(X)
 ```
 
 
@@ -389,7 +389,7 @@ __Hints:__ you might find it useful to know about:
 
 ```
 X = np.linspace(0.0, 2.0*np.pi, 10000000)
-print (X.shape)
+print(X.shape)
 
 # ... 
 ```
@@ -436,7 +436,7 @@ for i in range(0, 100):
 ```
 X = np.linspace(0.0, 2.0*np.pi, 10000000)
 Xj = X + 1.0j
-print (Xj.shape, Xj.dtype)
+print(Xj.shape, Xj.dtype)
 ```
 
 
